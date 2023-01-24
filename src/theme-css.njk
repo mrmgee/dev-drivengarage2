@@ -1,0 +1,12 @@
+---
+permalink: theme.css
+eleventyExcludeFromCollections: true
+---
+{% set css %}
+  {% include "./_css/bulma.css" %}
+  {% include "./_css/custom.css" %}
+  {% include "./_css/mobile.css" %}
+  {% include "./_css/cfaccordion-style.css" %}
+  {% include "./_css/sticky.css" %}
+{% endset %}
+{{ css | cssmin | safe }}

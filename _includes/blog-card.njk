@@ -1,0 +1,20 @@
+
+<div class="tarjeta">
+
+  <figure class="image is-5by3">
+    <a href="{{ blog.url }}">
+      <img src="{{blog.data.featuredImage}}" alt="{{blog.data.title}}" loading="lazy">
+    </a>
+  </figure>
+  <div class="header-full">
+    <h3 class="tarjeta-title is-size-4 has-text-weight-bold"><a href="{{ blog.url }}">{{ blog.data.title }}</a></h3>
+  </div>
+
+  <div class="tarjeta-cont">
+    <div class="halftone-overlay"></div>
+    <div class="tarjeta-body">
+        <p class="has-text-grey-dark">{{ blog.data.description | descriptionLength }}</p>
+    </div>   
+  </div>
+
+</div>

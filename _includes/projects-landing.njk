@@ -1,0 +1,82 @@
+---
+title: Driven Garage - Projects
+description: Driven Garage nothern California restomod auto customization and repair shop
+featuredImage: /_images/default.jpg
+---
+
+
+{% include "head.njk" %}
+
+<body class="is-flex is-flex-direction-column">
+  {% include "nav.njk" %}
+
+    <section class="hero-services">
+        <div class="halftone-overlay"></div>
+        <div class="sec-bkg-img">
+
+        {% if featuredImage %}
+          <img src="..{{featuredImage}}" alt="{{title}}" style="margin-top: -24%; object-position: 0px 0px;">
+        {% endif %}
+
+        </div>
+        <div class="hero-body is-overlay">
+            <div class="container">
+                <h1 class="title">Projects</h1>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="projects">
+      <div class="container">
+        <h2>Featured Projects</h2>
+        <h3>Every build is infused with our blood and sweat. Taming metal and tuning performace.</h3>
+      </div>
+
+      {% for proj in collections.project %}
+        {%set pageSlideP = "./src/"+proj.data.urlPath %}
+        {%set imgSlideP = proj.data.featuredImage %}
+        {%set fullSlideP = pageSlideP+imgSlideP %}
+        {% set imgSlideAlt = slide.altText %}
+
+      <div class="body-full">
+        <div class="bkg-stripe primary">
+        </div>
+        <div class="container">
+          <div class="columns">
+            <div class="column">
+              <a class="galitem" href="/{{ proj.data.urlPath }}">
+                <figure class="image">
+                  <div class="control">
+                    <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
+                  </div>
+        {% if proj.data.featuredImage|length %}
+            {% image ""+fullSlideP, ""+imgSlideAlt %}
+        {% endif %}
+
+                    </figure>
+                </a><!-- END galitem -->
+
+            </div>
+            <div class="column">
+ 
+              <div class="control">
+                <a href="/{{ proj.data.urlPath }}" target="_self">
+                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
+                </a>
+              </div>
+
+              <h3>{{ proj.data.title }}</h3>
+              {{ proj.data.content | safe }}
+            </div>
+          </div><!-- END columns -->
+        </div>
+      </div><!-- END body-full -->
+      {% endfor %}
+
+    </section>
+
+  {% include "footer.njk" %}
+</body>
+
+</html>

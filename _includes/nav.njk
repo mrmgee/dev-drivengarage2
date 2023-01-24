@@ -1,0 +1,53 @@
+<nav id="main-navbar" class="navbar is-spaced has-background-dark" role="navigation" aria-label="main navigation">
+  <div class="container">
+
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger ml-0" aria-label="menu" aria-expanded="false" data-target="mobile-navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+      <a class="navbar-item" href="{{ config.url }}">
+          <img src="{{ rootPath }}{{ config.logoUrl }}" alt="{{ config.title }}"/>
+      </a>
+      <a id="share-mobile" href="#" class="navbar-item is-hidden-desktop ml-auto mr-2" aria-label="share button for mobile">
+        <span class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" width="20" height="20" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"><g fill="currentColor"><path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/></g></svg>
+        </span>
+      </a>
+    </div><!-- END navbar-brand -->
+
+    <div id="mobile-navbar" class="navbar-menu">
+
+  {% set navPages = collections.all | eleventyNavigation %}
+      {% macro renderNavListItem(entry) %}
+        {% if entry.children.length %}
+          <div class="navbar-item navigation-item has-dropdown">
+            <a class="navbar-link"><span>{{ entry.title }}</span></a>
+            
+            <div class="navbar-dropdown">
+              {%- for child in entry.children %}{{ renderNavListItem(child) }}{% endfor -%}
+            </div><!-- END navbar-dropdown -->
+          </div><!-- END navbar-item has-dropdown -->
+        {% else %}
+          <a class="navbar-item navigation-item" href="{{ entry.url }}"{% if entry.url == page.url %} aria-current="page" {% endif %}><span>{{ entry.title }}</span></a>
+        {%- endif -%}
+      {%- endmacro %}
+      
+      <div class="navbar-end" role="list">
+      {%- for entry in navPages %}{{ renderNavListItem(entry) }}{%- endfor -%}
+
+      {% if page.fileSlug|length %}
+      <div class="level-item cta-bar">
+          <h3>Need work done?</h3>
+          <div class="control">
+            <a class="button is-primary slant js-modal-trigger" data-target="modal-js-example" href="#" target="_self"><h4>Click for Estimate  &gt; </h4></a>
+          </div>
+        </div>
+      </div>
+      {%- endif -%}
+
+    </div><!-- END mobile-navbar -->
+
+  </div>
+</nav>

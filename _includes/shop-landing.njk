@@ -1,0 +1,154 @@
+---
+title: Driven Garage - Speed Shop
+description: Driven Garage nothern California restomod auto customization and repair shop
+featuredImage: /_images/default.jpg
+---
+
+
+{% include "head.njk" %}
+
+<body class="is-flex is-flex-direction-column">
+  {% include "nav.njk" %}
+
+    <section class="hero-services">
+        <div class="halftone-overlay"></div>
+        <div class="sec-bkg-img">
+
+        {% if featuredImage %}
+          <img src="..{{featuredImage}}" alt="{{title}}" style="margin-top: -24%; object-position: 0px -440px;">
+        {% endif %}
+
+        </div>
+        <div class="hero-body is-overlay">
+            <div class="container">
+                <h1 class="title">{{title}}</h1>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="projects-body">
+       {% topPostMinimalAd %}
+
+        
+
+        {% bottomContentPostMinimalAd %}
+    </section>
+
+
+    <section class="projects">
+      <div class="container">
+        {{ content | safe }}
+      </div>
+    </section>
+
+
+
+
+    <section class="shop-slider">
+      
+        <div class="container">
+      
+          <div class="story-over">
+      
+            <div class="container story-body">
+              <h3>Coming soon to serve the Bay Area</h3>
+              <p>We offer only the highest quality hand-selected performance parts and accessory</p>
+              <p>Stop by and talk with our experts - we'll work with you and discuss the best approach for your project</p>
+              <p>Plus we'll show you the parts we use and give you the insider tips to install and tune them</p>
+            </div>
+      
+          </div><!-- END story-over -->
+      
+      
+      
+          <!-- <div class="swiffy-slider"> -->
+          <div class="swiffy-slider slider-item-helper slider-item-show2 slider-item-reveal slider-item-snapstart slider-item-nogap">  
+            
+            <ul class="slider-container">
+                <li>
+                  <div class="slide-box">
+                    <div class="halftone-overlay"></div>
+                    <img src="{{ rootPath }}_images/Ridetech_shocks.jpg" alt="Ridetech shocks">
+                    <div class="feat-item_overlay">
+                      <div class="feat-item_overlay_body">
+                        <div class="logo-bkg-stripe">
+                          <figure>
+                            <img src="{{ rootPath }}_images/l-ridetech.png" alt="Ridetech logo">
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li><!-- END slide 1 -->
+      
+                <li>
+                  <div class="slide-box">
+                    <div class="halftone-overlay"></div>
+                    <img src="{{ rootPath }}_images/69_Dodge_Coronet_gibson_exhaust.jpg" alt="69 Dodge Coronet gibson custom exhaust" style="object-position: 0px -250px;">
+                    <div class="feat-item_overlay">
+                      <div class="feat-item_overlay_body">
+                        <div class="logo-bkg-stripe">
+                          <figure>
+                            <img src="{{ rootPath }}_images/l-gibson.png" style="width: 94%;" alt="Gibson logo">
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li><!-- END slide 2 -->
+      
+                <li>
+                  <div class="slide-box">
+                    <div class="halftone-overlay"></div>
+                    <img src="{{ rootPath }}_images/Restomod-Air-Conditioning-Cadillac.jpg" alt="Restomod Air" style="object-position: 0px -120px;">
+                    <div class="feat-item_overlay">
+                      <div class="feat-item_overlay_body">
+                        <div class="logo-bkg-stripe">
+                          <figure>
+                            <img src="{{ rootPath }}_images/l-restomod_air.png" alt="Restomod Air logo">
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li><!-- END slide 3 -->
+      
+                <li>
+                  <div class="slide-box">
+                    <div class="halftone-overlay"></div>
+                    <img src="{{ rootPath }}_images/Wilwood_brakes_66_c10_pickup.jpg" alt="Wilwood brakes 66 c10 pickup" style="object-position: 0px -220px;">
+                    <div class="feat-item_overlay">
+                      <div class="feat-item_overlay_body">
+                        <div class="logo-bkg-stripe">
+                          <figure>
+                            <img src="{{ rootPath }}_images/l-wilwood.png" alt="Wilwood logo">
+                          </figure>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li><!-- END slide 4 -->
+      
+            </ul>
+      
+            <button type="button" class="slider-nav"></button>
+            <button type="button" class="slider-nav slider-nav-next"></button>
+      
+            <div class="slider-indicators">
+                <button class="active"></button>
+                <button></button>
+                <button></button>
+            </div>
+          </div>
+      
+      </div>
+      </section>
+    
+
+
+
+  {% include "footer.njk" %}
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+---
+layout: base.njk
+title: Driven Garage - Project Detail
+description: Driven Garage nothern California restomod auto customization and repair shop
+featuredImage: /_images/default.jpg
+---
+
+
+
+<!-- Build slide image position -->
+<style>
+  @media screen and (min-width: 769px) {
+{% for slideStyles in heroSlides %}
+
+    .slide-box.s{{ loop.index }} picture img {
+      object-position: {{ slideStyles.position }}
+    }
+
+{% endfor %}
+  }
+</style>
+
+
+
+<section class="project-slider">
+    <div class="swiffy-slider slider-item-nogap slider-nav-caret slider-nav-dark slider-indicators-square slider-indicators-dark slider-nav-touch slider-nav-autopause slider-nav-animation slider-item-last-visible" id="infiniteSliding">
+    <ul class="slider-container">
+
+{% for slide in heroSlides %}
+  {%set pageSlideP = "./src"+page.url %}
+  {%set imgSlideP = slide.image %}
+  {%set fullSlideP = pageSlideP+imgSlideP %}
+  {% set imgSlideAlt = slide.altText %}
+  {% set imgSlidePos = "" %}
+  {% set imgSizesResp = "13" %}
+        <li class="slide-visible">
+  {% if slide.title|length %}
+          <div class="slide-box s{{ loop.index }}">
+            <div class="columns">
+    {% if slide.slidelayout !== 1 %}
+              <div class="column">
+                <div class="carousel-cont">
+                  {% if slide.subtitle|length %}
+                    <h4>{{ slide.subtitle }}</h4>
+                  {% endif %}
+                  {% if slide.title|length %}
+                    <h3>{{ slide.title }}</h3>
+                  {% endif %}
+                  {% if slide.text|length %}
+                    <p>{{ slide.text | safe }}</p>
+                  {% endif %}  
+                </div>
+              </div>
+
+              <div class="column">
+        {% if slide.image|length %}
+            {% image ""+fullSlideP, ""+imgSlideAlt, ""+imgSlidePos, ""+imgSizesResp %}
+        {% endif %}
+              </div>
+
+      {% else %}        
+
+              <div class="column">
+        {% if slide.image|length %}
+            {% image ""+fullSlideP, ""+imgSlideAlt, ""+imgSlidePos, ""+imgSizesResp %}
+        {% endif %}
+              </div>
+              <div class="column">
+                <div class="carousel-cont">
+                  {% if slide.subtitle|length %}
+                    <h4>{{ slide.subtitle }}</h4>
+                  {% endif %}
+                  {% if slide.title|length %}
+                    <h3>{{ slide.title }}</h3>
+                  {% endif %}
+                  {% if slide.text|length %}
+                    {{ slide.text | safe }}
+                  {% endif %}  
+                </div>
+              </div>
+
+
+    {% endif %}          
+
+
+            </div><!-- END columns -->
+          </div><!-- END slide-box -->
+  {% else %}
+          <div class="slide-box s{{ loop.index }} slide-img-full">
+    {% if slide.image|length %}
+        {% image ""+fullSlideP, ""+imgSlideAlt, ""+imgSlidePos, ""+imgSizesResp %}
+    {% endif %}  
+          </div>
+  {% endif %}
+
+
+
+        </li>
+{% endfor %}
+
+    </ul>
+
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+    <div class="slider-indicators">
+        <button class="active" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class=""></button>
+    </div>
+  </div>
+
+
+</section>
+
+
+
+
+<section class="gallery-project">
+
+{% gallery "uzupis" %}
+
+{% for cont in collections[collectionName] %}
+  {% if cont.data.isHome !==1 %}  <!-- // Don't output if Home flag is true in index.md -->
+
+    {%set pageP = "./src"+page.url %}  {# .src/projects/67-camaro-forsyth/ = adds './src' to page url #}
+    {%set imgP = cont.data.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
+    {%set fullP = pageP+imgP %}  {# .src/projects/67-camaro-forsyth/67camaro_forsyth-0608.jpg = combines all for full img path #}
+    {% set imgAlt = cont.data.altTag %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
+    <div class="column column is-3 is-3-fullhd is-3-desktop is-6-tablet is-12-mobile">
+    {% if cont.data.image|length %}  {# Required to wrap in conditional statement to make it work #}
+        {% galleryImage ""+fullP, ""+imgAlt %}  {# EXACT syntax neede pass src and alt vars to Image plugin #}
+    {% endif %}
+    </div>
+    {% endif %}
+{% endfor %}
+
+{% endgallery %}
+
+
+</section>
+
+
+
+<script>
+        window.addEventListener('load', () => {
+            let sliderElement = document.getElementById('infiniteSliding');
+            const container = sliderElement.querySelector(".slider-container");
+
+            const infiniteScrollToFirstWhenOnLast = () => {
+                if (container.lastElementChild == container.querySelector('.slide-visible')) {
+                    container.scroll({
+                        left: 0,
+                        behavior: "instant"
+                    });
+                }
+            };
+            //Append the first slide as the last
+            container.appendChild(container.firstElementChild.cloneNode(true));
+            //Add an additional indicator button to keep counts correct
+            sliderElement.querySelector(".slider-indicators").appendChild(sliderElement.querySelector(".slider-indicators").lastElementChild.cloneNode(true));
+            swiffyslider.onSlideEnd(sliderElement, infiniteScrollToFirstWhenOnLast, 90);
+        });
+    </script> 

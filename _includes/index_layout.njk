@@ -1,0 +1,17 @@
+---
+title: Once theme
+---
+
+{% include "head.njk" %}
+
+<body class="home is-flex is-flex-direction-column">
+  {% include "nav.njk" %}
+
+  {% topIndexAd %}
+
+  {{ content | safe }}
+
+  {% include "footer.njk" %}
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+{%set pagePath = "./src"+page.url %}
+{%set imgHeroPath = featuredImage %}
+{# {%set fullHeroPath = pagePath+imgHeroPath %} #}
+{%set fullHeroPath = featuredImage %}
+{% set heroAlt = featuredImageAlt %}
+<!-- 
+pagePath: {{ pagePath }}
+imgHeroPath: {{ imgHeroPath }}
+fullHeroPath: {{ fullHeroPath }}
+heroAlt: {{ heroAlt }}
+-->    
+
+<!-- Build hero image position -->
+<style>
+  @media screen and (min-width: 769px) {
+    .sec-bkg-img img {
+      {{ featuredImagePos }}
+    }
+  }
+</style>
+
+    <section class="hero-services">
+        <div class="halftone-overlay"></div>
+        <div class="sec-bkg-img">
+
+{% if fullHeroPath|length %}
+            {% image ""+fullHeroPath, ""+heroAlt %}
+{% endif %}
+
+        {# {% if featuredImage %} #}
+<!--          <img src="{{ rootPath }}{{featuredImage}}" alt="{{featuredImageAlt}}" style="{{featuredImagePos}}"> -->
+        {# {% endif %} #}
+
+        </div>
+        <div class="hero-body is-overlay">
+            <div class="container">
+                <h1 class="title">{{title}}</h1>
+            </div>
+        </div>
+    </section>

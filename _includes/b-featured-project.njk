@@ -1,0 +1,147 @@
+{% set heroSlides = proj1 %}
+{%set collectionNameLink = "projects/69-barracuda-formula-s/" %}
+
+<section class="project-slider">
+    <div class="swiffy-slider slider-item-nogap slider-nav-caret slider-nav-dark slider-indicators-square slider-indicators-dark slider-nav-touch slider-nav-autopause slider-nav-animation slider-item-last-visible" id="infiniteSliding">
+    <ul class="slider-container">
+
+{% for heroSlides, item in heroSlides %}
+  {%set pageSlideP = "./src/" %}
+  {%set imgSlideP = item.image %}
+  {%set fullSlideP = pageSlideP+imgSlideP %}
+  {% set imgSlideAlt = item.altText %}
+  {% set imgSlidePos = "" %}
+  {% set imgSizesResp = "12" %}
+        <li class="slide-visible">
+            <a href="{{ collectionNameLink }}">
+  {% if item.title|length %}
+          <div class="slide-box s{{ loop.index }}">
+            <div class="columns">
+
+    {% if item.slidelayout !== 1 %}
+              <div class="column">
+                <div class="carousel-cont">
+                  {% if item.subtitle|length %}
+                    <h4>{{ item.subtitle }}</h4>
+                  {% endif %}
+                  {% if item.title|length %}
+                    <h3>{{ item.title }}</h3>
+                  {% endif %}
+                  {% if item.text|length %}
+                    <p>{{ item.text | safe }}</p>
+                  {% endif %}  
+                </div>
+              </div>
+
+              <div class="column">
+        {% if item.image|length %}
+            {% image ""+fullSlideP, ""+imgSlideAlt, ""+imgSlidePos, ""+imgSizesResp %}
+        {% endif %}
+              </div>
+
+      {% else %}
+
+              <div class="column">
+        {% if item.image|length %}
+            {% image ""+fullSlideP, ""+imgSlideAlt, ""+imgSlidePos, ""+imgSizesResp %}
+        {% endif %}
+              </div>
+
+              <div class="column">
+                <div class="carousel-cont">
+                  {% if item.subtitle|length %}
+                    <h4>{{ item.subtitle }}</h4>
+                  {% endif %}
+                  {% if item.title|length %}
+                    <h3>{{ item.title }}</h3>
+                  {% endif %}
+                  {% if item.text|length %}
+                    {{ item.text | safe }}
+                  {% endif %}  
+                </div>
+              </div>
+
+    {% endif %}
+            </div><!-- END columns -->
+          </div><!-- END slide-box -->
+
+  {% else %}
+
+          <div class="slide-box s{{ loop.index }} slide-img-full">
+    {% if item.image|length %}
+        {% image ""+fullSlideP, ""+imgSlideAlt, ""+imgSlidePos, ""+imgSizesResp %}
+    {% endif %}  
+          </div>
+  {% endif %}
+
+
+        </a>
+        </li>
+{% endfor %}
+
+    </ul>
+
+    <button type="button" class="slider-nav" aria-label="Go left"></button>
+    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+
+    <div class="slider-indicators">
+        <button class="active" aria-label="Go to slide"></button>
+        <button aria-label="Go to slide" class=""></button>
+        <button aria-label="Go to slide" class=""></button>
+    </div>
+  </div>
+
+
+</section>
+
+
+
+
+{%set collectionName = "69BarracudaFormulaS" %}
+{%set collectionNameLink = "projects/69-barracuda-formula-s/" %}
+
+
+<section class="projects">
+    <div class="container">
+        <div class="columns">
+
+
+    {% for cont in collections[collectionName] %}
+
+        {% if (loop.index <= 5) %}
+            {% if cont.data.isHome !==1 %}  <!-- // Don't output if Home flag is true in index.md -->
+
+    {%set pageP = "./src/"+collectionNameLink %}
+    {%set imgP = cont.data.image %}
+    {%set fullP = pageP+imgP %}
+    {% set imgAlt = cont.data.altTag %}
+            <div class="column">
+                <a class="galitem" href="{{ collectionNameLink }}">
+                    <figure class="image">
+                        <div class="control">
+
+                                <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
+
+                        </div>
+        {% if cont.data.image|length %}
+            {% image ""+fullP, ""+imgAlt %}
+        {% endif %}
+
+                    </figure>
+                </a><!-- END galitem -->
+            </div>
+            {% endif %}
+        {% endif %}
+
+    {% endfor %}
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,221 @@
+<style>
+  #mapid {
+    width:800px; height:600px;
+  }
+</style>
+<footer class="section has-background-dark has-text-white">
+  <div class="container">
+
+    <div class="columns">
+      <div class="column">
+        <a class="navbar-item" href="{{ config.url }}">
+          {% if config.logoUrl.length > 0 %}
+            {#
+              Si logo desde fichero: <img src="{{ config.logoUrl }}" alt="{{ config.title }}"/>
+              Si logo insertado como SVG: {% logoSVG %}
+            #}
+            <img src="{{ rootPath }}{{ config.logoUrl }}" alt="{{ config.title }}"/>
+          {% else %}
+            {{ config.title }}
+          {% endif %}
+        </a>
+      </div>
+      <div class="column">
+        <div class="level-item cta-bar">
+          <h3>Need work done?</h3>
+          <div class="control">
+            <a class="button is-primary slant js-modal-trigger" data-target="modal-js-example" href="#" target="_self"><h4>Click for Estimate  > </h4></a>
+          </div>
+
+        </div>
+      </div>
+
+    </div><!-- END columns -->
+
+
+    <div class="columns">
+      <div class="column is-one-quarter">
+        <p>2051 Alpine Way</p>
+        <p>Hayward, CA 94545</p>
+        <h4 class="foot-tag">Small jobs, big jobs,
+          all makes and models...
+          <span class="hilite"> <i>Yes, even that one</i></span>
+        </h4>
+        <p class="footer-social-icons">
+          {% if config.social.facebook.length > 0 %}
+            <span><a href="{{ config.social.facebook }}" rel="nofollow noreferrer" target="_blank" aria-label="facebook profile link"><span class="icon">{% facebookLightIcon %}</span></a></span>
+          {% endif %}
+          {% if config.social.twitter.length > 0 %}
+            <span><a href="{{ config.social.twitter }}" rel="nofollow noreferrer" target="_blank" aria-label="twitter profile link"><span class="icon">{% twitterLightIcon %}</span></a></span>
+          {% endif %}
+          {% if config.social.pinterest.length > 0 %}
+            <span><a href="{{ config.social.pinterest }}" rel="nofollow noreferrer" target="_blank" aria-label="pinterest profile link"><span class="icon">{% pinterestLightIcon %}</span></a></span>
+          {% endif %}
+          {% if config.social.instagram.length > 0 %}
+            <span><a href="{{ config.social.instagram }}" rel="nofollow noreferrer" target="_blank" aria-label="instagram profile link"><span class="icon">{% instagramLightIcon %}</span></a></span>
+          {% endif %}
+          {% if config.social.github.length > 0 %}
+            <span><a href="{{ config.social.github }}" rel="nofollow noreferrer" target="_blank" aria-label="github profile link"><span class="icon">{% githubLightIcon %}</span></a></span>
+          {% endif %}
+        </p>
+    
+      </div>
+      <div class="column is-one-quarter">
+        <div class="columns is-mobile">
+          <div class="column">
+            <p>Monday</p>
+            <p>Tuesday</p>
+            <p>Wednesday</p>
+            <p>Thursday</p>
+            <p>Friday</p>
+            <p>Saturday</p>
+            <p>Sunday</p>
+          </div>
+          <div class="column">
+            <p>8:30am - 6:00pm</p>
+            <p>8:30am - 6:00pm</p>
+            <p>8:30am - 6:00pm</p>
+            <p>8:30am - 6:00pm</p>
+            <p>8:30am - 6:00pm</p>
+            <p>By appointment</p>
+            <p>Closed</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="gmap_canvas">
+<iframe id="gmap_canvas" src="https://maps.google.com/maps?q=2051+Alpine+Way,+Hayward,+CA+94545&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no">
+</iframe>
+        </div>
+
+<!--
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3159.029202777731!2d-122.1272245846017!3d37.64851747978264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808f91211544eb87%3A0x4f82bc55dacaee40!2s2051%20Alpine%20Way%2C%20Hayward%2C%20CA%2094545!5e0!3m2!1sen!2sus!4v1674233041940!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+-->
+
+<!--        <div id="mapid"></div> -->
+      </div>
+    </div><!-- END columns -->
+
+  </div><!-- END container -->
+</footer>
+
+
+<div id="modal-js-example" class="modal">
+  <div class="modal-background"></div>
+
+  <div class="modal-content">
+    <div class="box">
+      <h2>Need some work done on your ride?</h2>
+      <h3>Just give us your info, tell us what needs fixed or work you need done<br>
+        We'll figure out the best plan and shoot back a detailed estimate</h3>
+      <!-- Your content -->
+      <iframe src="https://app.shopmonkey.io/quote-request/028a78c54fda5e7ae2570db0fb187cd5?noExternalScripts=1" width="100%" height="700" frameborder="0"></iframe>
+    </div>
+  </div>
+
+  <button class="modal-close is-large" aria-label="close"></button>
+</div>
+
+
+
+
+
+{% if config.showCookiesAdvice %}
+  {% if config.googleAnalyticsID.length > 0 %}
+    <script> var analyticsID = "{{ config.googleAnalyticsID }}"</script>
+  {% endif %}
+  {% include "cookies-advice.njk" %}
+{% endif %}
+
+<!-- Scripts -->
+{% set js %}
+  {% include "scripts.js" %}
+  {% if config.showCookiesAdvice %}
+    {% include "cookies-advice-script.js" %}
+  {% endif %}
+{% endset %}
+<script>
+  {{ js | jsmin | safe }}
+</script>
+
+
+
+<!-- Swiffy Slider -->
+<script src="{{ rootPath }}_js/swiffy-slider.min.js" crossorigin="anonymous" defer></script>
+
+
+
+
+<script>
+
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.has-dropdown'), 0);
+
+    // Add a click event on each of them
+    $navbarBurgers.forEach( el => {
+      el.addEventListener('click', () => {
+
+        // Get the target from the "data-target" attribute
+        const target = el.dataset.target;
+        const $target = document.getElementById(target);
+
+        // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+        el.classList.toggle('is-active');
+        $target.classList.toggle('is-active');
+
+      });
+    });
+
+  });
+
+
+
+
+  document.addEventListener('DOMContentLoaded', () => {
+  // Functions to open and close a modal
+  function openModal($el) {
+    $el.classList.add('is-active');
+  }
+
+  function closeModal($el) {
+    $el.classList.remove('is-active');
+  }
+
+  function closeAllModals() {
+    (document.querySelectorAll('.modal') || []).forEach(($modal) => {
+      closeModal($modal);
+    });
+  }
+
+  // Add a click event on buttons to open a specific modal
+  (document.querySelectorAll('.js-modal-trigger') || []).forEach(($trigger) => {
+    const modal = $trigger.dataset.target;
+    const $target = document.getElementById(modal);
+
+    $trigger.addEventListener('click', () => {
+      openModal($target);
+    });
+  });
+
+  // Add a click event on various child elements to close the parent modal
+  (document.querySelectorAll('.modal-background, .modal-close, .modal-card-head .delete, .modal-card-foot .button') || []).forEach(($close) => {
+    const $target = $close.closest('.modal');
+
+    $close.addEventListener('click', () => {
+      closeModal($target);
+    });
+  });
+
+  // Add a keyboard event to close all modals
+  document.addEventListener('keydown', (event) => {
+    const e = event || window.event;
+
+    if (e.keyCode === 27) { // Escape key
+      closeAllModals();
+    }
+  });
+});
+  
+</script>

@@ -1,0 +1,13 @@
+{% include "head.njk" %}
+
+  <body{% if bodyName|length %} class="{{ bodyName }}"{% endif %}>
+
+{% include "nav.njk" %}
+
+{{ content | safe }}
+
+{% include "footer.njk" %}
+
+  </body>
+
+</html> 

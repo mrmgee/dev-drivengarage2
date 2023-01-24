@@ -1,0 +1,120 @@
+---
+title: Repair & Maintenance
+tags: ['service']
+eleventyNavigation:
+  key: Repair & Maintenance
+  parent: Services
+  order: 1
+description: Driven Garage nothern California restomod auto customization and repair shop  
+introHead: Keep Up your Ride
+intro: Proper maintenance of your classic car help avoid nasty and expensive problems down the road. Aggressive and consistent maintenance is the best way to ensure your car will be ready when you want to drive, and that you don't get surprised with unexpected failures. Your car is special - this much you know. What you may not know is that your classic may need special services and additives to keep it running at peak performance.
+featuredImage: ./src/_images/65_Mustang_quick_service.jpg
+featuredImageAlt: "65 Mustang quick service"
+featuredImagePos: "margin-top: -38%;"
+collectionName: repairMaintenance
+mylistfield:
+  - "General repair"
+  - "Classic car oil changes"
+  - "Carb tuning and timing"
+  - "Pre-Purchase inspections"
+  - "Get it running"
+  - "Electrical Repair"
+---
+
+  {% include "head.njk" %}
+
+  <body class="is-flex is-flex-direction-column service-detail">
+
+    {% include "nav.njk" %}
+
+    {% include "hero-services.njk" %}
+
+    <section class="projects">
+
+{% include "service-page-intro.njk" %}
+
+        <div class="container feat-layout">
+            <div class="feat-over is-overlay">
+                <div class="columns">
+                    <div class="column">
+                    </div><!-- END 1 col -->
+                    <div class="column">
+                        <div class="feat-body">
+                            <h3>Get it Running</h3>
+                            <p>Wanted to take out your classic car for a Saturday crusie and it wouldn't start?
+                                We're here in the Bay Area to help you get your baby back on the road.</p>
+                            <p>From diagnostics to fuel and electrical issuse, our techs will inspect all systems to ensure we'll get you on your way safely.
+                                And when you're ready to get a performance boost or other upgrades, we're here for you.</p>
+                            <div class="level-item cta-bar">
+                                <h3>Get back on the Road?</h3>
+                                <div class="control">
+                                  <a class="button is-primary slant js-modal-trigger" data-target="modal-js-example" href="#" target="_self"><h4>Let’s Talk  > </h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- END 2 col -->
+                </div>
+
+
+            </div><!-- END feat-over is-overlay -->
+
+
+
+{% include "service-slider.njk" %}
+
+
+        </div><!-- END container -->
+      
+
+</section>
+
+
+
+
+<section class="services-listing">
+  <div class="container">
+    <div class="halftone-overlay"></div>
+    <div class="sec-bkg-img">
+      <img src="{{ rootPath }}_images/65_Mustang_quick_service.jpg" alt="65 Mustang quick service">
+    </div>
+    <div class="hero-body is-overlay">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-one-third">
+            <h1 class="title">Complete Repair & Maintenance services We Offer</h1>
+          </div>
+          <div class="column is-two-third">
+
+            <div class="columns">
+              <div class="column" style="background: rgba(255,255,255,.70);">
+                <ul>
+                  <li>General repair</li>
+                  <li>Classic car oil changes</li>
+                  <li>Carb tuning and timing</li>
+                </ul>
+              </div>
+              <div class="column" style="background: rgba(255,255,255,.70);">
+                <ul>
+                  <li>Pre-Purchase inspections</li>
+                  <li>Electrical Repair</li>
+                </ul>
+              </div>
+            </div>
+
+          </div><!-- END column is-two-third -->
+        </div>
+
+      </div>
+    </div><!-- END hero-body is-overlay -->
+
+    </div><!-- END container 1 row -->
+</section>
+
+
+{% include "services-related.njk" %}
+
+
+    {% include "footer.njk" %}
+  </body>
+
+</html>

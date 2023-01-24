@@ -1,0 +1,28 @@
+<div class="slider-cont">
+
+<!-- START swiffy-slider -->
+    <div class="swiffy-slider slider-nav-autoplay slider-item-helper slider-item-snapstart slider-item-nogap">  
+      <ul class="slider-container">
+
+{% for cont in collections[collectionName] %}
+        <li>
+          <div class="slide-box">
+            <img src="{{ rootPath }}{{ cont.data.image }}" alt="{{ cont.data.altTag }}">
+          </div>
+        </li><!-- END slide xx -->
+{% endfor %}
+
+      </ul>
+
+      <button type="button" class="slider-nav"></button>
+      <button type="button" class="slider-nav slider-nav-next"></button>
+
+      <div class="slider-indicators">
+          <button class="active"></button>
+          <button></button>
+          <button></button>
+      </div>
+    </div>
+<!-- END swiffy-slider -->
+
+</div><!-- END slider-cont -->

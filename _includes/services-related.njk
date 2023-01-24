@@ -1,0 +1,50 @@
+<section class="services related">
+  <div class="container">
+    <h2>All Our Services</h2>
+  </div>
+
+  <div class="container">
+    <div class="columns is-multiline">
+<!-- START loop -->
+
+  {%- for post in collections.service %}
+
+    {%set imgPostP = post.data.featuredImage %}
+    {% set imgPostAlt = post.data.featuredImageAlt %}
+
+    {% if (post.data.title !== title) %}
+      <div class="column is-one-fifth">
+        <div class="feat-item-over">
+          <a href="{{ post.url }}"></a>
+        {% if imgPostP|length %}
+            {% image ""+imgPostP, ""+imgPostAlt %}
+        {% endif %}
+          
+          <div class="item__overlay">
+            <div class="card-halftone-overlay"></div>
+            <h3 aria-hidden="true">{{ post.data.title }}</h3>
+            <div class="item__body">
+              <ul>
+              {%- for listitem in (post.data.mylistfield) -%}
+                <li>{{ listitem }}</li>
+              {%- endfor %}
+              </ul>
+              <div class="control">
+                <a href="#" target="_self">click for more
+                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- END column 1 -->
+    {% endif %}
+  {%- endfor %}
+
+<!-- END loop -->
+  </div><!-- END  columns -->
+
+
+
+  </div>
+</section>
