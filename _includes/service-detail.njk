@@ -1,0 +1,138 @@
+---
+layout: base.njk
+title: Service Detail
+---
+<!--
+<html>
+  <body>
+-->
+    {% include "hero-services.njk" %}
+
+    <section class="projects">
+
+    {% include "service-page-intro.njk" %}  
+
+
+
+
+        <div class="container feat-layout">
+            <div class="feat-over is-overlay">
+                <div class="columns">
+                    <div class="column">
+                    </div><!-- END 1 col -->
+                    <div class="column">
+                        <div class="feat-body">
+                            <h3>{{ featLayoutTitle }}</h3>
+                            {{ featLayoutBody  | safe }}
+                            <div class="level-item cta-bar">
+                                <h3>{{ featLayoutCTAtag }}</h3>
+                                <div class="control">
+                                  <a class="button is-primary slant js-modal-trigger" data-target="modal-js-example" href="#" target="_self"><h4>Let’s Talk  > </h4></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- END 2 col -->
+                </div>
+
+
+            </div><!-- END feat-over is-overlay -->
+<style>
+.slider-cont {
+  width: 820px;
+  height: 544px;
+}
+.slider-cont .slide-box {
+  position: relative;
+  height: 540px;
+  background-color: #f79837;
+  overflow-y: hidden;
+}
+
+</style>
+<div class="slider-cont">
+
+<!-- START swiffy-slider -->
+    <div class="swiffy-slider slider-nav-autoplay slider-item-helper slider-item-snapstart slider-item-nogap">  
+      
+      <ul class="slider-container">
+
+{% for cont in collections[collectionName] %}
+  {% if cont.data.isHome !==1 %}  <!-- // Don't output if Home flag is true in index.md -->
+
+    {%set pageP = "./src/" %}  {# .src/projects/67-camaro-forsyth/ = adds './src' to page url #}
+    {%set imgP = cont.data.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
+    {%set fullP = pageP+imgP %}  {# .src/projects/67-camaro-forsyth/67camaro_forsyth-0608.jpg = combines all for full img path #}
+    {% set imgAlt = cont.data.altTag %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
+        <li>
+            <div class="slide-box">
+    {% if cont.data.image|length %}  {# Required to wrap in conditional statement to make it work #}
+        {% image ""+fullP, ""+imgAlt %}  {# EXACT syntax neede pass src and alt vars to Image plugin #}
+    {% endif %}
+            </div>
+        </li>
+    {% endif %}
+{% endfor %}
+
+      </ul>
+
+      <button type="button" class="slider-nav"></button>
+      <button type="button" class="slider-nav slider-nav-next"></button>
+
+      <div class="slider-indicators">
+          <button class="active"></button>
+          <button></button>
+          <button></button>
+      </div>
+    </div>
+<!-- END swiffy-slider -->
+
+</div><!-- END slider-cont -->
+
+        </div><!-- END container -->
+      
+
+</section>
+
+
+<section class="services-listing">
+  <div class="container">
+    <div class="halftone-overlay"></div>
+    <div class="sec-bkg-img">
+      <img src="{{ rootPath }}_images/65_Mustang_quick_service.jpg" alt="65 Mustang quick service">
+    </div>
+    <div class="hero-body is-overlay">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-one-third">
+            <h1 class="title">Complete {{ title }} services We Offer</h1>
+          </div>
+          <div class="column is-two-third">
+            <div class="columns">
+
+                {%- for items in mylistfield | slice(2) %}
+                <div class="column loop-{{ loop.index }}" style="background: rgba(255,255,255,.70);">
+                    <ul>
+                {%- for item in items %}
+                     <li>{{ item }}</li>
+                {%- endfor %}
+                    </ul>
+                </div>
+              {%- endfor %}
+
+            </div>
+
+
+          </div><!-- END column is-two-third -->
+        </div>
+
+      </div>
+    </div><!-- END hero-body is-overlay -->
+
+    </div><!-- END container 1 row -->
+</section>
+
+
+
+{% include "services-related.njk" %}
+
+

@@ -2,7 +2,7 @@
 title: "Service01 item01 Title"
 author: "Michael Bond"
 image: "_images/55buick-6220.jpg"
-altTag: "70 Mustang03 radio"
+altTag: "55 Buick three quarters front left"
 rating: 4.5
 buyLink: "/"
 ---
