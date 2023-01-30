@@ -57,14 +57,14 @@ title: Service Detail
       <ul class="slider-container">
 
 {% for cont in collections[collectionName] %}
-  {% if cont.data.isHome !==1 %}  <!-- // Don't output if Home flag is true in index.md -->
+  {% if cont.data.isHome !==1 %}
 
     {%set pageP = "./src/" %}  {# .src/projects/67-camaro-forsyth/ = adds './src' to page url #}
     {%set imgP = cont.data.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
     {%set fullP = pageP+imgP %}  {# .src/projects/67-camaro-forsyth/67camaro_forsyth-0608.jpg = combines all for full img path #}
     {% set imgAlt = cont.data.altTag %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
         <li>
-            <div class="slide-box">
+            <div class="slide-box">            
     {% if cont.data.image|length %}  {# Required to wrap in conditional statement to make it work #}
         {% image ""+fullP, ""+imgAlt %}  {# EXACT syntax neede pass src and alt vars to Image plugin #}
     {% endif %}
