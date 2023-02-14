@@ -66,7 +66,7 @@ a.navbar-link,
 .navbar-end > a.navbar-item span, 
 .navbar-link:hover, 
 section.carousel .container .control a span, 
-section.services .item__body .control a {
+.item__body .control a {
   color: #dbdbdb;
 }
 
@@ -148,7 +148,8 @@ h4.cta-tag,
 .button.is-primary.slant,
 section .container .column .item__body ul li,
 section.shop-slider .container.story-body h3,
-section.shop-slider .container.story-body p {
+section.shop-slider .container.story-body p, 
+section.blog-cards .item__body {
   color: #ffffff;
 }
 
@@ -656,20 +657,24 @@ section.services.related .feat-item-over h3 {
 }
 */
 
-section.services .feat-item-over a:hover ~ .item__overlay,
-section.services .feat-item-over a:focus ~ .item__overlay {
+/* section.services */ 
+.feat-item-over a:hover ~ .item__overlay, 
+.feat-item-over a:focus ~ .item__overlay {
   transform: translate3d(0, 0, 0);
 }
-section.services .feat-item-over a:hover ~ .item__overlay h3,
-section.services .feat-item-over a:focus ~ .item__overlay h3 {
+/* section.services */ 
+.feat-item-over a:hover ~ .item__overlay h3,
+.feat-item-over a:focus ~ .item__overlay h3 {
   transform: translate3d(0, 0, 0);
 }
 .feat-item-over a:hover ~ .item__overlay .item__body,
 .feat-item-over a:focus ~ .item__overlay .item__body,
-section.services .feat-item-over a:hover ~ .item__overlay .card-halftone-overlay {
+/* section.services */ 
+.feat-item-over a:hover ~ .item__overlay .card-halftone-overlay {
   opacity: 1;
 }
-section.services .feat-item-over a:hover ~ img {
+/* section.services */ 
+.feat-item-over a:hover ~ img {
   transform: scale(1.2);
 }
 
@@ -730,7 +735,8 @@ section.services.related .item__body li {
 .item__body ul ul li {
   font-size: 0.9rem;
 }
-section.services .item__body .control {
+/* section.services */
+.item__body .control {
   width: 8rem;
   height: 1.2rem;
   right: 0.4rem;
@@ -738,7 +744,8 @@ section.services .item__body .control {
   background-color: rgba(0, 0, 0, 0.33);
   z-index: 8;
 }
-section.services .item__body .control a, 
+/* section.services */
+.item__body .control a, 
 .container .control a {
   display: flex;
   justify-content: flex-end;
@@ -747,7 +754,8 @@ section.services .item__body .control a,
 .container .control a span {
   margin: 0.5rem 0 0 0;
 }
-section.services .item__body .control a img, 
+/* section.services */
+.item__body .control a img, 
 .container .control a img {
   margin: 0 0 0 0.4rem;
 }

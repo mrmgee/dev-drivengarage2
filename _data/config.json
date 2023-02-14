@@ -4,7 +4,7 @@
   "domain": "https://once-eleventy.netlify.app",
   "language": "en",
   "logoUrl": "_images/driven_white.svg",
-  "search": true,
+  "search": false,
   "showCookiesAdvice": false,
   "cookiesAdviceText": "Cookies advice text",
   "cookiesAdviceMoreInfoAnchor": "More Info",

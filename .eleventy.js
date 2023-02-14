@@ -288,7 +288,7 @@ module.exports = function (eleventyConfig) {
     // Número de caracteres para Card  orig:70
     eleventyConfig.addFilter('descriptionLength', function(text) {
         let resultado
-        text === undefined ? resultado = '' : resultado = String(text).slice(0, 420);
+        text === undefined ? resultado = '' : resultado = String(text).split(" ").splice(0,32).join(" ") + ' ...';
         return resultado
     });
 
