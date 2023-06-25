@@ -509,11 +509,14 @@ eleventyExcludeFromCollections: true
   </div>
   <div class="container">
     <div class="columns is-variable is-5-desktop is-multiline is-mobile">     
-      {% for blog in collections.blog %}
-        <div class="column is-one-third-tablet is-full-mobile mb-5">
+      {# {% for blog in collections.blog %} #}
+<!-- include "blog-card.njk" -->
+
           {% include "blog-card.njk" %}
-        </div>
-      {% endfor %}
+
+
+
+      {# {% endfor %} #}
     </div>
 
     <div class="columns">

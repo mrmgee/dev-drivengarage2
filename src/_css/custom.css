@@ -213,9 +213,23 @@ section.shop-slider  .container.story-body h3,
   padding: 1rem;
 }
 .modal-content h3 {
-  margin: 0 0 2rem 0;
-  padding: 1rem 2rem;
+  /* margin: 0 0 2rem 0; */
+  padding: 0.8rem;
+  font-size: 1.1rem;
+  font-weight: 500;
 }
+.modal-content > .box > .toggle-content.is-visible > p {
+  margin: 0 0 2rem 0;
+}
+.modal-content .toggle-content.is-visible figure img {
+  width: 100%;
+  max-height: 7rem;
+  display: block;
+  object-fit: cover;
+  transition: transform 300ms;
+}
+
+
 section.hero-project .container .column ul li {
   font-weight: 400;
 }

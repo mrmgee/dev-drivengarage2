@@ -1,8 +1,30 @@
+{% for blog in collections.blog %}   
+   
       <div class="column">
         <div class="feat-item-over">
           <a href="{{ blog.url }}"></a>
-            {# {% image "./src/_images/65_Mustang_quick_service.jpg", "65 Mustang quick service" %} #}
-            <img src="{{blog.data.featuredImage}}" alt="{{blog.data.title}}" loading="lazy">
+
+            <!-- <img src="{{blog.data.featuredImage}}" alt="{{blog.data.title}}" loading="lazy"> -->
+
+    {% if blog.data.featuredImage | length %}
+      {%set pageP = "./src/" %}    
+      {%set imgP = blog.data.featuredImage %}
+      {# {%set imgP = "_images/Roadkill_blog.jpg" %} #}
+      {%set fullP = pageP+imgP %}
+
+      {%set imgAlt = blog.data.title %}
+<!-- 
+  GOOD on index.njk pageP = src/
+  blog.data.featuredImage = {{ blog.data.featuredImage }} 
+fullP: {{ fullP }}
+-->
+
+        {# {% image ""+fullP, ""+imgAlt %} #}
+        {% image fullP, imgAlt %}
+
+    {% endif %}
+
+
           <div class="item__overlay">
             <div class="card-halftone-overlay"></div>
             <h3 aria-hidden="true">{{ blog.data.title }}</h3>
@@ -16,4 +38,5 @@
             </div>
           </div>
         </div>
-      </div><!-- END column 1 -->
+      </div><!-- END column {{ loop.index }} -->
+{% endfor %}

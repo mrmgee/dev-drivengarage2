@@ -18,7 +18,7 @@ featuredImage: /_images/default.jpg
       <article class="container articulo">
         <header class=" container has-text-centered">
           <h1 class="title is-1 is-size-3-mobile has-text-weight-bold">{{ title}}</h1>
-          <p class="is-size-5 has-text-grey-dark has-text-weight-light is-family-sans-serif">{{ description }}</p>
+<!--          <p class="is-size-5 has-text-grey-dark has-text-weight-light is-family-sans-serif">{{ description }}</p> -->
           <div class="tags is-justify-content-center mt-3">
             {% for tag in tags %}
               <a href="/tags/{{ tag }}" class="tag">{{ tag }}</a>
@@ -29,11 +29,19 @@ featuredImage: /_images/default.jpg
           {% endif %}
         </header>
 
-        {% if featuredImage %}
+
+        {% if featuredImage | length %}
+          {%set pageP = "src/" %}
+          {%set imgP = featuredImage %}
+          {%set fullP = pageP+imgP %}
+          {%set imgAlt = title %}
+
           <figure class="image featured-image py-5">
-            <img src="..{{featuredImage}}" alt="{{title}}" class="image is-fullwidth">
+            {% image ""+fullP, ""+imgAlt %}
           </figure>
+
         {% endif %}
+
 
         {% bottomImagePostAd %}
 
@@ -56,10 +64,31 @@ featuredImage: /_images/default.jpg
       </article>
     </main>
 
-    {% if config.showRelatedPosts %}
+    {% if config.xx-showRelatedPosts %}
       {% include "related-posts.njk" %}
     {% endif %}
 
+<aside class="section has-background-light">
+<section class="blog-cards">
+  <div class="container">
+    <p class="title is-4 has-text-centered mt-4 mb-4">{{ config.relatedPostsTitle }}</p>
+  </div>
+  <div class="container">
+    <div class="columns is-variable is-5-desktop is-multiline is-mobile">
+
+          {% include "blog-card.njk" %}
+
+    </div>
+
+    <div class="columns">
+      <div class="column has-text-centered">
+        {% include "pagination.njk" %}
+      </div>
+    </div>
+
+  </div>
+</section>
+</aside>
 
     {% include "footer.njk" %}
   </body>
