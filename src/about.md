@@ -31,3 +31,12 @@ Driven Garage was born out of a passion for classic cars – and keeping them on
 Most of all – we feel that there has been a loss of respect in the auto repair industry. Our mission is to respect the customer, respect the machine, and do good work at a fair price. We won’t sell you services you don’t need. We won’t apply inflated markups to parts. We won’t milk the clock on your dime… We want customers for life – and we want them to tell everyone about us. All we ask in return for our respect – is that you do the same… respect our expertise, our time, our overhead costs.
 
 Submit a <a href="http://drivengarage.com/work-request/">request for work </a>today – you’ll see the difference immediately.
+
+
+
+
+
+
+
+
+

@@ -147,6 +147,7 @@ h4.cta-tag,
 .header-full h3 a:hover,
 .button.is-primary.slant,
 section .container .column .item__body ul li,
+.item__body p,
 section.shop-slider .container.story-body h3,
 section.shop-slider .container.story-body p, 
 section.blog-cards .item__body {
@@ -190,6 +191,10 @@ section.shop-slider  .container.story-body h3,
   margin: 0 0 0.8rem 0;
   font-size: 2rem;
   font-weight: 700;
+}
+.item__body p {
+  font-size: 1.3rem;
+  padding: 0.4rem;
 }
 .modal-content h2 {
   font-size: 1.6rem;
@@ -305,6 +310,9 @@ section.hero-project .bkg-stripe {
   min-height: 3rem;
   margin: 4rem 0 0 0;
   padding: 0.2rem 0 0.2rem 0;
+}
+body.performance-upgrades section.projects .bkg-stripe {
+  max-height: 4rem;
 }
 section.projects .halftone-overlay {
   max-height: 6.2rem;
@@ -1389,7 +1397,7 @@ section.blog-cards > .container:nth-child(1) {
 }
 section.projects .body-full h3 {
   /* margin: 0 0 0 42rem; */
-  margin: 3.2rem 0 2rem 0;
+  margin: 3.6rem 0 2rem 0;
 }
 section.hero-project .body-full h3 {
   margin: 3.2rem 0 2rem 0;
