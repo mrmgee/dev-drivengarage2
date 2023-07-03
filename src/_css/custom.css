@@ -1032,6 +1032,21 @@ section.shop-slider .slider-item-helper:not(.slider-item-ratio) .slider-containe
 }
 
 
+/*
+* SERVICES CONTENT PAGE
+*/
+body.performance-upgrades section.hero-services .halftone-overlay {
+  max-height: 13rem;
+}
+body.performance-upgrades section.hero-services .sec-bkg-img {
+  max-height: 7.4rem;
+}
+body.performance-upgrades section.hero-services .sec-bkg-img::before {
+  max-height: 13rem;
+}
+
+
+
 
 
 

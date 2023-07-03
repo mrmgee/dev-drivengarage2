@@ -15,7 +15,7 @@
 
     <title>Services</title>
     <meta name="description" content="Driven Garage nothern California restomod auto customization and repair shop">
-    <link rel="stylesheet" href="../theme.css?v=1688327781">
+    <link rel="stylesheet" href="../theme.css?v=1688355168">
     <link rel="icon" type="image/png" href="../_images/favicon.png" sizes="32x32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CUbuntu:300,300italic,400,400italic,500,500italic,700,700italic%7CRoboto:300,regular,500" media="all">
 
@@ -1143,10 +1143,33 @@
     }
   });
 });
-  
 
 
+</script>
 
+<!-- Accordion JS code -->
+<script>
+function initAcc(elem, option){
+  document.addEventListener('click', function (e) {
+      if (!e.target.matches(elem+' .a-btn')) return;
+      else{
+          if(!e.target.parentElement.classList.contains('active')){
+              if(option==true){
+                  var elementList = document.querySelectorAll(elem+' .a-container');
+                  Array.prototype.forEach.call(elementList, function (e) {
+                      e.classList.remove('active');
+                  });
+              }            
+              e.target.parentElement.classList.add('active');
+          }else{
+              e.target.parentElement.classList.remove('active');
+          }
+      }
+  });
+}
+
+initAcc('.accordion.v1', true);
+initAcc('.accordion.v2', false);
 
 </script>
   </body>
