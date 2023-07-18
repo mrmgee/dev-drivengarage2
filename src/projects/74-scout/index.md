@@ -38,5 +38,3 @@ heroSlides:
 
 
 It’s a Scout thing. This is the Scout you want if you love — or want to love — going offroad, driving over things, pulling friends and strangers out of ditches, or just blowing by them on your way up the mountain. Your call, we won’t judge.
-
-Featuring the best of the best – including a FAST TBI self learning fuel injected IH 304, custom everything, SOA, Dana 44 axles and poser operated Cadillac leather seats.

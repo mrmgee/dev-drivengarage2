@@ -7,7 +7,7 @@ featuredImage: /_images/default.jpg
 
 {% include "head.njk" %}
 
-<body class="is-flex is-flex-direction-column">
+<body class="projects is-flex is-flex-direction-column">
   {% include "nav.njk" %}
 
     <section class="hero-services">
@@ -27,54 +27,64 @@ featuredImage: /_images/default.jpg
     </section>
 
 
-    <section class="projects">
-      <div class="container">
-        <h2>Featured Projects</h2>
-        <h3>Every build is infused with our blood and sweat. Taming metal and tuning performace.</h3>
-      </div>
 
-      {% for proj in collections.project %}
+
+
+
+
+<!-- START projects grid-->
+
+<section class="services">
+  <div class="container">
+    <h2>Featured Projects</h2>
+    <h3>Every build is infused with our blood and sweat. Taming metal and tuning performace.</h3>
+  </div>
+
+    <div class="container">
+      <div class="columns is-multiline">
+  
+        
+        {% for proj in collections.project %}
         {%set pageSlideP = "./src/"+proj.data.urlPath %}
         {%set imgSlideP = proj.data.featuredImage %}
         {%set fullSlideP = pageSlideP+imgSlideP %}
         {% set imgSlideAlt = slide.altText %}
+        <!-- START {{ proj.data.title }} -->
 
-      <div class="body-full">
-        <div class="bkg-stripe primary">
-        </div>
-        <div class="container">
-          <div class="columns">
-            <div class="column">
-              <a class="galitem" href="/{{ proj.data.urlPath }}">
-                <figure class="image">
-                  <div class="control">
+        <div class="column is-one-third">
+          <div class="feat-item-over">
+            <a href="/{{ proj.data.urlPath }}"aria-labelledby="person1"></a>
+            {% if proj.data.featuredImage|length %}
+              {% image ""+fullSlideP, ""+imgSlideAlt %}
+            {% endif %}
+          
+            <div class="item__overlay">
+              <div class="card-halftone-overlay"></div>
+              <h3 aria-hidden="true">{{ proj.data.title }}</h3>
+              <div class="item__body">
+                {{ proj.data.content | safe }}
+    
+                <div class="control">
+                  <a href="#" target="_self">click for more
                     <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                  </div>
-        {% if proj.data.featuredImage|length %}
-            {% image ""+fullSlideP, ""+imgSlideAlt %}
-        {% endif %}
-
-                    </figure>
-                </a><!-- END galitem -->
-
-            </div>
-            <div class="column">
- 
-              <div class="control">
-                <a href="/{{ proj.data.urlPath }}" target="_self">
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
+                  </a>
+                </div>
               </div>
 
-              <h3>{{ proj.data.title }}</h3>
-              {{ proj.data.content | safe }}
             </div>
-          </div><!-- END columns -->
-        </div>
-      </div><!-- END body-full -->
-      {% endfor %}
+          </div>
+        </div><!-- END {{ proj.data.title }} -->
+        {% endfor %}
 
-    </section>
+
+
+      </div><!-- END columns -->
+    </div><!-- END container -->
+ 
+</section>
+<!-- END -->
+
+
 
   {% include "footer.njk" %}
 </body>
