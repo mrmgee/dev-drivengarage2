@@ -15,7 +15,7 @@
 
     <title>Body, Paint &amp; Metalwork</title>
     <meta name="description" content="Driven Garage nothern California restomod auto customization and repair shop">
-    <link rel="stylesheet" href="../../theme.css?v=1689652599">
+    <link rel="stylesheet" href="../../theme.css?v=1690239427">
     <link rel="icon" type="image/png" href="../../_images/favicon.png" sizes="32x32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CUbuntu:300,300italic,400,400italic,500,500italic,700,700italic%7CRoboto:300,regular,500" media="all">
 
@@ -286,13 +286,22 @@ section.services-detail-cost-box .column p.tips-subhead {
 
 <!-- START COST LOCKUP -->    
 <style>
+
   section.services-detail-cost-box > .container, 
   section.services-content.know-tips > .container {
     min-width: 100%;
   }
   section.services-content.know-tips .bkg-stripe.primary {
-  background-color: #363636;
-}
+    background-color: #363636;
+  }
+
+  section.services-detail-cost-box .sec-bkg-img {
+    max-height: 26rem;
+  }
+  section.services-detail-cost-box .sec-bkg-img::before {
+    max-height: 32rem;
+  }
+
 
   section.services-detail-cost-box .title {
     font-size: 2rem;
@@ -350,6 +359,12 @@ section.services-detail-cost-box .column p.tips-subhead {
 .hero-body.is-overlay .columns.pad-top {
   padding-top: 2rem;
 }
+section.services-detail-cost-box .image img {
+    display: block;
+    height: auto;
+    width: auto;
+    max-height: 20rem;
+}
 
 </style>
 
@@ -358,7 +373,7 @@ section.services-detail-cost-box .column p.tips-subhead {
   <div class="container">
     <!-- <div class="halftone-overlay"></div> -->
     <div class="sec-bkg-img">
-      <img style="margin-top: -66%;" src="../../_images/70_Mustang01_green_lights.jpg" alt="65 Mustang quick service">
+      <img src="../../_images/Mustang_teal_paintbooth.jpg" alt="65 Mustang quick service">
     </div>
     <div class="bkg-stripe primary">
       <div class="container know-tips">
@@ -371,14 +386,16 @@ section.services-detail-cost-box .column p.tips-subhead {
       <div class="container">
         <div class="columns pad-top">
           <div class="column is-one-third">
-            <img src="../../_images/CCS_Inition_distributor.jpg" alt="CCS Inition distributor">
+            <figure class="image">
+            <img src="../../_images/67_El_Camino_block_sanding.jpg" alt="CCS Inition distributor">
+          </figure>
           </div>
           <div class="column">
             <p class="tips-subhead">
               <!-- With years under cars, out techs have learned the right parts and techniques – the hard way -->
               After years under cars, we've honed the best installation matched with the right parts to do the job right
             </p>
-            <h4>Timing Control with EFI</h4>
+            <h4>Perfect Paint starts with a Smooth Body</h4>
             <p>With a few components we can add timing control to most EFI systems. This enables the EFI computer to control the timing curve on your engine as well as the fuel map. This allows us to dial in your advance curve to make your car more responsive and put the fuel and timing map in concert to help make the most power at the right time.</p>
           </div>
         </div><!-- END columns -->
@@ -423,57 +440,6 @@ section.services-detail-cost-box .column p.tips-subhead {
 }
 </style>
 
-    <section class="services half-split">
-      <div class="container">
-        <div class="columns">
-          <div class="column">
-            <figure class="image">
-              <img src="../../_images/Aeromotive_in-tank_pump.jpg" alt="Custom fabricated exhaust">
-            </figure>
-          </div>
-          <div class="column">
-            <div class="half-split-cont">
-              <h3>Components Matter</h3>
-              <p>
-                We custom match components to your application based not just on brand name - but your goals for performance and reliability. We don’t cheap out on plumbing and fittings - because who likes to watch their car burn to the ground? We spec in-tank fuel pumps with a return system every time, and have seen the failures not doing this causes. Is it harder or more expensive to do it right? Yes…. But our experience tells us to do it right and pay now, or re-do it later and pay again. 
-              </p>
-            </div>
-            <div class="control">
-              <div class="button is-primary slant toggle-btn"><h4>Ready to go - Get started ></h4></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="columns">
-
-          <div class="column">
-            <div class="half-split-cont">
-              <h3 class="sm"><em>Will my car pass smog if I switch to EFI?</em></h3>
-              <p>
-                In most cases, yes - but with exceptions. We’ve done conversions on smog era vehicles with California legal components in the past - but we need to spec the right components for you. We can’t do this for every vehicle - but kits are available for a surprisingly wide range from various companies. 
-              </p>
-            </div>
-          </div>
-
-          <div class="column">
-            <figure class="image">
-              <img src="../../_images/001-corvette-holley-efi-sniper-quadrajet-throttle-body.jpg" alt="Custom fabricated exhaust">
-            </figure>
-          </div>
-
-        </div>
-
-        <h3>Ready for a quote for an EFI conversion?</h3>
-
-        <div class="control">
-          <div class="button is-primary slant toggle-btn"><h4>Get started ></h4></div>
-        </div>
-
-      </div><!-- END container -->
-    </section>
-
-
-
 
 
 
@@ -499,6 +465,10 @@ section.services-detail-cost-box .column p.tips-subhead {
 .bkg-grad1 {
   background-image: linear-gradient(180deg, #dadada 40%, #363636);
 }
+.bkg-grad2 {
+  background-image: linear-gradient(180deg, #dadada 40%, #636363);
+}
+
 
   section.services-detail-cost-box-alt .title {
     font-size: 2rem;
@@ -509,63 +479,100 @@ section.services-detail-cost-box .column p.tips-subhead {
     padding-right: 6rem;
     font-size: 0.9rem;
   }
+
+  .cost-box {
+    min-width: 100%;
+  }
+
+
+  .cost-box h3 {
+    margin: 0 0 0.4rem 1.4rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #868686;
+  }
+
+
+
+
+  section.services-detail-cost-box-alt .column p {
+    font-size: 1.2rem;
+  }
+
   section.services-detail-cost-box-alt .column p:not(:last-child) {
     margin-bottom: 1rem;
   }
   .cost-box-inner {
     max-width: 60%;
     margin-bottom: 1rem;
-    padding: 0.4rem 1rem 0.4rem 1rem;
+    margin-left: 1.4rem;
+    padding: 1rem 0 0 0;
     /* background-color: #dadada; */
     background-color: rgb(255 255 255 / 82%);
+
+    text-align: right;
+    border: 4px solid #f79837;
+    border-width: 6px 6px 0 0;
   }
+
+
   section.services-detail-cost-box-alt .column span {
     font-size: 1.6rem;
     font-weight: 600;
   }
   section.services-detail-cost-box-alt .column .cost-box-inner h3 {
+    margin: 0 1rem 1rem 0;
     font-size: 1.6rem;
     font-weight: 600;
+    color: #363636;
   }
+
   section.services-detail-cost-box-alt .column .cost-box-inner p {
     font-size: 0.9rem;
-    padding-left: 0.4rem;
+    /* padding-left: 0.4rem; */
+    padding: 0.2rem;
+    margin: 0;
+    background: #fff;
+    display: inline-block;
   }
+
+
+
 </style>
 
-<section class="services-detail-cost-box-alt bkg-grad1">
+<section class="services-detail-cost-box-alt bkg-grad2">
   <div class="container">
     <div class="columns">
-      <div class="column is-one-third">
+      <div class="column">
           <h1 class="title">What’s the cost?</h1>
           <h3>Each job will be estimated individually, but here are some guidelines to help you budget</h3>
       </div>
-      <div class="column">
-        <div class="columns">
-          <div class="column">
-            <p>
-              For a standard install which includes a Holley Sniper EFI throttle body, AN hose and fittings and an in-tank pump with return and filters.</p>
-            <p>Each system based on the components that will work best for your application.</p>
-            
-          </div><!-- END 1 column -->
-          <div class="column">
-            <p>You can expect to pay around:</p>
-            <div class="cost-box-inner">
-              <h3>$2,000 - $2,500</h3>
-              <p>for the parts</p>
-            </div>
-            <div class="cost-box-inner">
-              <h3>$1,600 - $1,800</h3>
-              <p>for installation, plumbing, wiring and tuning.</p>
-            </div>
-          </div>
-        </div><!-- END columns -->
-      </div>
 
+      <div class="column">
+        <p>We only offer two levels of auto painting at Driven Garage &#8212; Great and Show-Quality.</p>
+        <!-- <p>The results speak for themselves and the amount of work is based on 
+          wether you are looking for 10-foot or 10-inch finish.</p> -->
+        <p>Walk through the steps below to understand how we give your car the best finish.</p>
+        <p>Wether you are looking for 10-foot or 10-inch finish, we'll give you the best results.</p>
+      </div>
+      
+      <div class="column">
+        <div class="cost-box">
+          <h3>Approximate Cost</h3>
+          <div class="cost-box-inner">
+            <h3>$20,000 - $25,000</h3>
+            <p>Great finish</p>
+          </div>
+          <div class="cost-box-inner">
+            <h3>$40,00 - $60,000</h3>
+            <p>Show-Quality finish</p>
+          </div>
+        </div>
+      </div>
+    
+    </div><!-- END columns -->
 
   </div>
-
-
 </section>
 
 
@@ -593,22 +600,21 @@ section.services-detail-cost-box .column p.tips-subhead {
   flex-direction: column;
   width: 100%;
   /* padding-bottom: 5px; */
-  margin-bottom: 1.4rem;
+  margin-bottom: 3rem;
 }
 .accordion .a-container .a-btn {
-  margin: 0;
   position: relative;
-  padding: 15px 30px;
+  padding: 0 0 0.4rem 0;
   width: 100%;
   color: #dadada;
-  font-weight: 400;
   display: block;
+  font-size: 1.6rem;
   font-weight: 500;
   background-color: #363636;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
-  transform: skew(-24deg);
+  /* transform: skew(-24deg); */
   /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important; */
 }
 .accordion .a-container .a-btn span {
@@ -656,7 +662,7 @@ section.services-detail-cost-box .column p.tips-subhead {
   transform: rotate(0deg);
 }
 .accordion .a-container.active .a-panel {
-  padding: 15px 10px 10px 10px;
+  padding: 2rem;
   opacity: 1;
   max-height: 500px;
 }
@@ -667,8 +673,10 @@ section.services-detail-cost-box .column p.tips-subhead {
   padding: 1rem;
 }
 .acc-cont .cost-box h3 {
-  font-size: 1.4rem;
+  margin: 0 0 0.4rem 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
+  color: #868686;
 }
 .acc-cont .cost-box p {
   font-size: 0.8rem;
@@ -676,7 +684,38 @@ section.services-detail-cost-box .column p.tips-subhead {
 }
 .acc-cont .cost-box .cost-box-inner {
   max-width: 100%;
+  margin-left: 1.4rem;
+  padding: 0.4rem 0 0 0.4rem;
+  text-align: right;
+  border: 4px solid #f79837;
+  border-width: 6px 6px 0 0;
 }
+.acc-cont .cost-box .cost-box-inner h3 {
+  margin: 0 0.2rem 0 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #363636;
+}
+.acc-cont .cost-box .cost-box-inner p {
+  padding: 0.2rem;
+  margin: 0;
+  background: #fff;
+  display: inline-block;
+}
+
+.a-btn i {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0 0 -2rem;
+  padding: 0.8rem 1.4rem;
+  color: #ffffff;
+  background: #f79837;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+  /* transform: skew(24deg); */
+}
+
 </style>
 
 
@@ -684,9 +723,10 @@ section.services-detail-cost-box .column p.tips-subhead {
   <div class="container">
 
     <div class="accordion v1">
+      
       <div class="a-container">
-        <p class="a-btn">Step 1 Prep and Primer<span></span></p>
-        <div class="a-panel">
+        <p class="a-btn"><i>1</i> Prep and Primer<span></span></p>
+        <div class="a-panel bkg-grad2">
           <div class="columns acc-cont">
             <div class="column is-one-fifth">
               <figure class="image">
@@ -701,43 +741,98 @@ section.services-detail-cost-box .column p.tips-subhead {
               </p>
             </div>
             <div class="column is-one-fifth">
-              <div class="cost-box bkg-grad1">
-                <p>You can expect to pay around:</p>
+              <div class="cost-box">
+                <h3>Approximate Cost</h3>
                 <div class="cost-box-inner">
                   <h3>$2,000 - $2,500</h3>
-                  <p>for the parts</p>
+                  <p>parts</p>
                 </div>
                 <div class="cost-box-inner">
                   <h3>$1,600 - $1,800</h3>
-                  <p>for installation, plumbing, wiring and tuning.</p>
+                  <p>labor</p>
                 </div>
               </div>
             </div>
           </div>
 
         </div>
-      </div>
+      </div><!-- END a-container -->
+
+
+
       <div class="a-container">
-        <p class="a-btn">What will happend to my gas mileage if I upgrade to to EFI?<span></span></p>
-        <div class="a-panel">
-          <h4>Lorem ipsum dolor sit amet.</h4>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima dolores assumenda id.
-            Porro consequuntur at dolor eum, neque labore!</p>
+        <p class="a-btn"><i>2</i> Color and Clearcoat Spray<span></span></p>
+        <div class="a-panel bkg-grad2">
+          <div class="columns acc-cont">
+            <div class="column is-one-fifth">
+              <figure class="image">
+                <img src="../../_images/67_El_Camino_block_sanding.jpg" alt="Custom fabricated exhaust">
+              </figure>
+            </div>
+            <div class="column">
+              <p>
+                To achive the best finish, the process starts with making the body smooth and ready for paint application.
+                A very thin skim of polyester body filler is the start. The initial filler is worked with a sanding block or body file, reapplying filler as needed.</p>
+                <p>Once the repair is satisfactorily feathered-in with the surrounding metal, it can be sanded progressively finer in preparation for the primer-surfacer coat. If sanding alone does not clean the filled surface, another coat of filler or a glaze coat can be applied.
+              </p>
+            </div>
+            <div class="column is-one-fifth">
+              <div class="cost-box">
+                <h3>Approximate Cost</h3>
+                <div class="cost-box-inner">
+                  <h3>$2,000 - $2,500</h3>
+                  <p>parts</p>
+                </div>
+                <div class="cost-box-inner">
+                  <h3>$1,600 - $1,800</h3>
+                  <p>labor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
+      </div><!-- END a-container -->
+
+
+
       <div class="a-container">
-        <p class="a-btn">FAQ Question 3 <span></span></p>
-        <div class="a-panel">
-          <h4>Lorem ipsum dolor sit amet.</h4>
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium minima dolores assumenda id.
-            Porro consequuntur at dolor eum, neque labore!</p>
-          <h4>Lorem ipsum dolor sit amet.</h4>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur non sint sequi ipsa laudantium, a
-            iure rem vel nemo soluta temporibus, consectetur at corrupti aspernatur maxime, iusto neque
-            blanditiis deleniti.</p>
+        <p class="a-btn"><i>3</i> Cutting and Buffing<span></span></p>
+        <div class="a-panel bkg-grad2">
+          <div class="columns acc-cont">
+            <div class="column is-one-fifth">
+              <figure class="image">
+                <img src="../../_images/67_El_Camino_block_sanding.jpg" alt="Custom fabricated exhaust">
+              </figure>
+            </div>
+            <div class="column">
+              <p>
+                To achive the best finish, the process starts with making the body smooth and ready for paint application.
+                A very thin skim of polyester body filler is the start. The initial filler is worked with a sanding block or body file, reapplying filler as needed.</p>
+                <p>Once the repair is satisfactorily feathered-in with the surrounding metal, it can be sanded progressively finer in preparation for the primer-surfacer coat. If sanding alone does not clean the filled surface, another coat of filler or a glaze coat can be applied.
+              </p>
+            </div>
+            <div class="column is-one-fifth">
+              <div class="cost-box">
+                <p>You can expect to pay around:</p>
+                <div class="cost-box-inner">
+                  <h3>$2,000 - $2,500</h3>
+                  <p>parts</p>
+                </div>
+                <div class="cost-box-inner">
+                  <h3>$1,600 - $1,800</h3>
+                  <p>labor</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
-      </div>
-    </div>
+      </div><!-- END a-container -->
+
+
+
+    </div><!-- END accordion v1 -->
 
   </div>
 </section>
