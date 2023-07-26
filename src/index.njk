@@ -5,16 +5,134 @@ description: Driven Garage nothern California restomod auto customization and re
 eleventyExcludeFromCollections: true
 ---
 
+<style>
+  section.hero .slide-box {
+    min-height: 36rem;
+  }
+  section.hero .slide-box > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  section.hero .slide-box .feat-item_overlay_body {
+    /* align-items: center; */
+    margin-bottom: 4rem;
+    z-index: 1;
+  }
+  section.hero .swiffy-slider .slider-nav {
+    z-index: 5;
+  }
+
+
+</style>
+
 <section class="hero is-medium is-primary has-background">
+
+  <!-- <div class="swiffy-slider"> -->  <!-- slider-nav-autoplay slider-nav-autopause -->
+  <div class="swiffy-slider slider-nav-autoplay slider-nav-autopause">  
+
+    <ul class="slider-container">
+        <li>
+          <div class="slide-box">
+            <img src="{{ rootPath }}_images/67_dart_vader_graffiti.jpg" alt="67 Dart Vader" style="object-position: 0px -245px;">
+            <div class="feat-item_overlay">
+              <div class="feat-item_overlay_body">
+                <div class="container">
+                  <h3 class="subtitle">
+                    Born from our
+                  </h3>
+                <div class="hero-head">
+                  <h1 class="title">Passion</h1>
+                  <h1 class="title-sm">for</h1> 
+                  <h1 class="title">Classic Cars</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li><!-- END slide 1 -->
+
+        <li>
+          <div class="slide-box">
+            <img src="/assets/images/69-cuda-5-1275.jpeg" alt="69 Cuda">
+            <div class="feat-item_overlay">
+              <div class="feat-item_overlay_body">
+                <div class="container">
+                  <h3 class="subtitle">
+                    69 Cuda
+                  </h3>
+                <div class="hero-head">
+                  <h1 class="title">Every</h1>
+                  <h1 class="title-sm">bolt</h1> 
+                  <h1 class="title">Touched</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li><!-- END slide 2 -->
+
+        <li>
+          <div class="slide-box">
+            <img src="{{ rootPath }}_images/55buick-6220.jpg" alt="55 Buick" style="object-position: 0px -245px;">
+            <div class="feat-item_overlay">
+              <div class="feat-item_overlay_body">
+                <div class="container">
+                  <h3 class="subtitle">
+                    55 Buick
+                  </h3>
+                <div class="hero-head">
+                  <h1 class="title">Classic</h1>
+                  <h1 class="title-sm">Frame-off</h1>
+                  <h1 class="title">Restoration</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li><!-- END slide 3 -->
+
+        <li>
+          <div class="slide-box">
+            <img src="/assets/images/67camaro_forsyth-5857-2000.jpeg" alt="67 Camaro" style="object-position: 0px -445px;">
+            
+            <div class="feat-item_overlay">
+              <div class="feat-item_overlay_body">
+                <div class="container">
+                  <h3 class="subtitle">
+                    67 Camaro
+                  </h3>
+                <div class="hero-head">
+                  <h1 class="title">Mean</h1>
+                  <h1 class="title-sm">Detroit</h1>
+                  <h1 class="title">Muscle</h1>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li><!-- END slide 4 -->
+
+    </ul>
+
+    <button type="button" class="slider-nav"></button>
+    <button type="button" class="slider-nav slider-nav-next"></button>
+
+    <div class="slider-indicators">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+    </div>
+  </div><!-- END swiffy-slider -->
+
+
+
   {%set fullHeroPath = "./src/_images/cameros_half.png" %}
   {% set heroAlt = "3 generations Cameros" %}
   {% set heroClassName = "hero-background is-transparent" %}
   {% set heroSizesResp = "19heroSizesResp" %}
 
 {% if fullHeroPath|length %}
-  {% image ""+fullHeroPath, ""+heroAlt, ""+heroClassName, ""+heroSizesResp %}
+
 {% endif %}
 
+<!--
   <div class="hero-body is-overlay">
     <div class="container">
       <h3 class="subtitle">
@@ -27,6 +145,7 @@ eleventyExcludeFromCollections: true
       </div>
     </div>
   </div>
+-->
   <div class="columns">
     <div class="column">
       <h4 class="cta-tag">Small jobs, big jobs,
@@ -43,6 +162,12 @@ eleventyExcludeFromCollections: true
     </div>
   </div><!-- END columns -->
 </section>
+
+
+
+
+
+
 
 
 <section class="services">
@@ -311,116 +436,6 @@ eleventyExcludeFromCollections: true
 
 
 
-
-
-<section class="shop-slider">
-  <div class="header-full">
-    <div class="container">
-      <h3>Speed Shop</h3>
-      <p>The Bay Area's newest Speed Shop to meet all your performance parts needs</p>
-      </div>
-  </div>
-
-  <div class="container">
-
-    <div class="story-over">
-
-      <div class="container story-body">
-        <h3>Coming soon to serve the Bay Area</h3>
-        <p>We offer only the highest quality hand-selected performance parts and accessory</p>
-        <p>Stop by and talk with our experts - we'll work with you and discuss the best approach for your project</p>
-        <p>Plus we'll show you the parts we use and give you the insider tips to install and tune them</p>
-      </div>
-
-    </div><!-- END story-over -->
-
-
-
-    <!-- <div class="swiffy-slider"> -->
-    <div class="swiffy-slider slider-item-helper slider-item-show2 slider-item-reveal slider-item-snapstart slider-item-nogap">  
-      
-      <ul class="slider-container">
-          <li>
-            <div class="slide-box">
-              <div class="halftone-overlay"></div>
-              <img src="{{ rootPath }}_images/Ridetech_shocks.jpg" alt="Ridetech shocks">
-              <div class="feat-item_overlay">
-                <div class="feat-item_overlay_body">
-                  <div class="logo-bkg-stripe">
-                    <figure>
-                      <img src="{{ rootPath }}_images/l-ridetech.png" alt="Ridetech logo">
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li><!-- END slide 1 -->
-
-          <li>
-            <div class="slide-box">
-              <div class="halftone-overlay"></div>
-              <img src="{{ rootPath }}_images/69_Dodge_Coronet_gibson_exhaust.jpg" alt="69 Dodge Coronet gibson custom exhaust" style="object-position: 0px -250px;">
-              <div class="feat-item_overlay">
-                <div class="feat-item_overlay_body">
-                  <div class="logo-bkg-stripe">
-                    <figure>
-                      <img src="{{ rootPath }}_images/l-gibson.png" style="width: 94%;" alt="Gibson logo">
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li><!-- END slide 2 -->
-
-          <li>
-            <div class="slide-box">
-              <div class="halftone-overlay"></div>
-              <img src="{{ rootPath }}_images/Restomod-Air-Conditioning-Cadillac.jpg" alt="Restomod Air" style="object-position: 0px -120px;">
-              <div class="feat-item_overlay">
-                <div class="feat-item_overlay_body">
-                  <div class="logo-bkg-stripe">
-                    <figure>
-                      <img src="{{ rootPath }}_images/l-restomod_air.png" alt="Restomod Air logo">
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li><!-- END slide 3 -->
-
-          <li>
-            <div class="slide-box">
-              <div class="halftone-overlay"></div>
-              <img src="{{ rootPath }}_images/Wilwood_brakes_66_c10_pickup.jpg" alt="Wilwood brakes 66 c10 pickup" style="object-position: 0px -220px;">
-              <div class="feat-item_overlay">
-                <div class="feat-item_overlay_body">
-                  <div class="logo-bkg-stripe">
-                    <figure>
-                      <img src="{{ rootPath }}_images/l-wilwood.png" alt="Wilwood logo">
-                    </figure>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </li><!-- END slide 4 -->
-
-      </ul>
-
-      <button type="button" class="slider-nav"></button>
-      <button type="button" class="slider-nav slider-nav-next"></button>
-
-      <div class="slider-indicators">
-          <button class="active"></button>
-          <button></button>
-          <button></button>
-      </div>
-    </div>
-
-</div>
-</section>
-
-
-
 <section class="projects-head">
   <div class="container">
     <div class="control">
@@ -434,7 +449,11 @@ eleventyExcludeFromCollections: true
 </section>
 {% include "b-featured-project.njk" %}
 
-
+<style>
+  section.carousel {
+    min-height: 32rem;
+  }
+</style>
 
 <section class="carousel">
   <div class="header-full">
@@ -523,29 +542,38 @@ eleventyExcludeFromCollections: true
 
 
 
+<style>
+  section.media-logos h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #363636;
+  }
+  section.media-logos > .container > .columns {
+    margin-top: 2rem;
+  }
+  section.media-logos > .container > .columns img {
+    max-width: 70%;
+  }
+</style>
 
-<section class="blog-cards">
+<section class="media-logos">
   <div class="container">
-    <h2>Recent Blog Posts</h2>
-    <h3>See what we're up to and follow the latest news</h3>
-  </div>
-  <div class="container">
-    <div class="columns is-variable is-5-desktop is-multiline is-mobile">     
-      {# {% for blog in collections.blog %} #}
-<!-- include "blog-card.njk" -->
-
-          {% include "blog-card.njk" %}
-
-
-
-      {# {% endfor %} #}
-    </div>
-
+    <h2>Driven featured in the Media</h2>
+    <h3>You may have seen us on your favorite show, blog, or magazine</h3>
     <div class="columns">
-      <div class="column has-text-centered">
-        {% include "pagination.njk" %}
+      <div class="column">
+        <img src="{{ rootPath }}_images/l-Roadkill.png" alt="Roadkill">
+      </div>
+      <div class="column">
+        <img src="{{ rootPath }}_images/l-The-Drive.png" alt="The Drive">
+      </div>
+      <div class="column">
+        <img src="{{ rootPath }}_images/l-Mopar-Muscle.jpg" alt="Mopar Muscle">
       </div>
     </div>
-
   </div>
 </section>
+
+
+
+
