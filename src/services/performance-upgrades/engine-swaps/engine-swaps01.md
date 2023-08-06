@@ -1,11 +1,10 @@
 ---
-title: "EFI Conversion item01 Title"
+title: "Chevy LS Engine Swap"
 author: "Driven Garage"
-image: "_images/001-corvette-holley-efi-sniper-quadrajet-throttle-body.jpg"
+image: "./src/_images/engine_swap.jpg"
 altTag: "holley efi sniper quadrajet throttle body"
 rating: 4.5
 buyLink: "/"
 ---
 
-I enjoyed this book very much, and so did my 3 year old.
-
+Revitalize your classic car with an engine swap and unlock its true potential as a high-performance beast. Get ready to feel the exhilarating rush of increased horsepower that will completely transform your driving experience like never before

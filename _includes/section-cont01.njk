@@ -1,0 +1,87 @@
+    <section class="top services half-split">
+      <div class="container">
+
+
+{% for cont in collections[collectionName] %}
+    {% if cont.data.isHome !==1 %}  <!-- // Don't output if Home flag is true in index.md -->
+<!-- collectionName: {{ collectionName }}  -->
+<!-- cont: {{ cont }}  -->
+<!-- cont.data.title: {{ cont.data.title }}  -->
+        
+
+        {%set pageP = "./src"+page.url %}  {# .src/projects/67-camaro-forsyth/ = adds './src' to page url #}
+        {%set imgP = cont.data.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
+
+        {%set fullP = cont.data.image %}
+        {% set imgAlt = cont.data.altTag %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
+
+
+        {# check if even or odd #}
+        {# loop.index(1) = index.md so loop.index(2) = brake-upgrades01.md  so 2/2 = 1 TRUE even  #}
+
+        {% if (loop.index)/2 == 1 %}  
+        
+
+
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+                <figure class="image">
+                {% if cont.data.image|length %}
+                    {% image ""+fullP, ""+imgAlt, ""+imgSlidePos, ""+imgSizesResp %}
+                {% endif %}
+                </figure>
+            </div>
+            <div class="column">
+                <div class="half-split-cont">
+                {% if cont.data.title|length %}
+                    <h3>{{ cont.data.title }}</h3>
+                {% endif %}
+                {% if cont.templateContent|length %}
+                    {{ cont.templateContent | safe }}
+                {% endif %}
+                </div>
+                {% if cont.data.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant toggle-btn"><h4>{{ cont.data.CTAlabel }}</h4></div>
+                </div> 
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+
+
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+              <div class="half-split-cont">
+                {% if cont.data.title|length %}
+                    <h3>{{ cont.data.title }}</h3>
+                {% endif %}
+                {% if cont.templateContent|length %}
+                    {{ cont.templateContent | safe }}
+                {% endif %}
+                {% if cont.data.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant toggle-btn"><h4>{{ cont.data.CTAlabel }}</h4></div>
+                </div> 
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="column">
+                <figure class="image">
+                    {% if cont.data.image|length %}
+                        {% image ""+fullP, ""+imgAlt, ""+imgSlidePos, ""+imgSizesResp %}
+                    {% endif %}
+                    </figure>
+            </div>
+          </div>        
+
+        
+        {% endif %}
+
+
+
+    {% endif %}
+{% endfor %}
+      </div>
+    </section>

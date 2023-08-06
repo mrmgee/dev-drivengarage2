@@ -71,20 +71,39 @@ h3 {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 30px;
-  height: 30px;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
   background: inherit;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
   z-index: 1;
 }
-
+.timeline ul li:nth-child(1)::after {
+  content: "1";
+}
+.timeline ul li:nth-child(2)::after {
+  content: "2";
+}
+.timeline ul li:nth-child(3)::after {
+  content: "3";
+}
+.timeline ul li:nth-child(4)::after {
+  content: "4";
+  bottom: 8rem;
+}
+.timeline ul li:nth-child(5)::after {
+  content: "5";
+}
 .timeline ul li > div {
   position: relative;
   bottom: 0;
   /* width: 400px; */
   /* padding: 15px; */
-  width: 42rem;
-  padding: 1rem;
+  min-width: 42rem;
+  /* padding: 1rem; */
   background-color: rgb(248 248 248);
 }
 
@@ -124,6 +143,24 @@ time {
   font-weight: bold;
   margin-bottom: 8px;
 }
+.timeline .process-item h5, 
+.timeline .process-item .columns {
+  padding: 0.8rem;
+}
+.timeline .process-item .img-wrap {
+  background-color: #fff0;
+}
+.timeline .process-item .img-wrap .icon {
+  font-size: 8rem;
+}
+
+.timeline .process-item p {
+  font-size: 1.2rem;
+}
+
+.timeline ul li:nth-last-child(1) {
+  padding-bottom: 8rem;
+}
 
 /*
 section.timeline .column img {
@@ -139,8 +176,8 @@ section.timeline .column img {
 }
 
 .timeline ul li.in-view::after {
-  /* background: #f45b69; */
-  background: rgb(153 153 153);
+  background: #f79837;
+  /* background: rgb(153 153 153); */
 }
 
 .timeline ul li > div {
@@ -286,85 +323,85 @@ section.timeline .column img {
 </section>
 -->
 
+
+
 <section class="timeline">
   <ul>
     <li>
       <div class="in-view">
-        <time>Teardown, Strip</time>
-        <div class="columns">
-          <div class="column">
-            {% image "./src/_images/67_Nova_body03.jpg", "67 Nova body work" %}
-          </div>
-          <div class="column">
-            <p>A quick blow-over can be achieved by just scuffing, taping, and shooting. Perfection means pulling the car apart and down to a bare shell, stripped of the last nut and bolt, and kicking off the paintwork from there.</p>
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div>
-        <time>Body Building</time>
-        <div class="columns">
-          <div class="column">
-            <p>After stripping the car to bare metal, the body build will progress to sheetmetal repair. In the process of a major body restoration such as ours, you will be looking at two basic choices: repair or replace. In the case of bolt-on body panels for which replacements are readily available, it doesn’t take long for the cost of new metal to make economic sense versus the option of repairing the existing panel.</p>
-          </div>
-          <div class="column"><!-- 67_El_Camino_block_sanding.jpg -->
-            {% image "./src/_images/67_El_Camino_block_sanding.jpg", "67 El Camino block sanding" %}
+        <div class="process-item">
+          <h5>Get a Quote</h5>
+          <div class="columns">
+            <div class="column is-one-third">
+              <div class="img-wrap">
+                <i class="icon flaticon-car-search"></i>
+              </div>
+            </div>
+            <div class="column">
+              <p>Tells us what's wrong with your car or work you want done. We'll shoot back a detailed estimate that includes diagnosis, parts, and labor.</p>
+            </div>
           </div>
         </div>
       </div>
     </li>
     <li>
       <div>
-        <time>Body Alignment</time>
-        <div class="columns">
-          <div class="column">
-            {% image "./src/_images/014-plymouth-valiant-fender-door-gap.jpg", "014 plymouth valiant fender door gap" %}
-          </div>
-          <div class="column">
-            <p>While replacing individual panels might seem simple enough, the real measure of a quality job is the fit and alignment. Replacement panels will typically need custom work for a perfect result. Often, welding and dolly work are needed to get the lines and gaps perfect. The honest news here is that perfection often involves welding on panel edges to perfect the gap, especially with replacement sheetmetal.</p>
+        <div class="process-item">
+          <h5>Approve Repairs</h5>
+          
+          <div class="columns">
+            <div class="column">
+              <p>Once you approve the estimate, we'll book an appoitment to drop off your car and our team will get to work.</p>
+            </div>
+            <div class="column is-one-third">
+              <div class="img-wrap">
+                <i class="icon flaticon-autolift"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </li>
+
+    <li>
+      <div class="in-view">
+        <div class="process-item">
+          <h5>Time is Money</h5>
+          <div class="columns">
+            <div class="column is-one-third">
+              <div class="img-wrap">
+                <i class="icon i-timesheet">
+                  <img src="{{ rootPath }}_images/i-timesheet.svg" alt="timesheet">
+                </i>
+              </div>
+            </div>
+            <div class="column">
+              <p>Only pay for time our team is working on your car. We use strict time tracking to ensure you won't pay extra. </p>
+            </div>
+        </div>
+      </div>
+    </li>
+
+    
     <li>
       <div>
-        <time>Prep and Primer</time>
-        <div class="columns">
-          <div class="column">
-            <p>If the metalwork and body panel repairs are nicely done, just a very thin skim of polyester body filler will achieve perfection. The initial filler is worked with a sanding block or body file, reapplying filler as needed. Once the repair is satisfactorily feathered-in with the surrounding metal, it can be sanded progressively finer in preparation for the primer-surfacer coat. If sanding alone does not clean the filled surface, another coat of filler or a glaze coat can be applied.</p>
-          </div>
-          <div class="column"><!-- 67_El_Camino_block_sanding.jpg -->
-            {% image "./src/_images/Mopar_muscle_prime-5383.jpg", "Mopar muscle prime" %}
-          </div>
-        </div>
-      </div>
-    </li>
-    <li>
-      <div>
-        <time>Spraying Paint</time>
-        <div class="columns">
-          <div class="column">
-            {% image "./src/_images/Mustang-8871.jpg", "Mustang turquoise paint" %}
-          </div>
-          <div class="column">
-            <p>Before painting, it is important that the surfaces are totally free of debris and contaminants. Once the base color coat is sufficiently flashed dry, the clear follows. It is a simple step-by-step process. Previously painted areas are carefully masked, and the loose panels racked in the booth.</p>
+        <div class="process-item">
+          <h5>Hit the Road</h5>
+          
+          <div class="columns">
+            <div class="column">
+              <p>Our certified team will fix your car and get you back on the road.</p>
+            </div>
+            <div class="column is-one-third">
+              <div class="img-wrap">
+                <i class="icon flaticon-fix-sign"></i>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </li>
-    <li>
-      <div>
-        <time>Cutting and Buffing</time>
-        <div class="columns">
-          <div class="column">
-            <p>The process of cutting and polishing the paint takes it to the next level. To get a show-quality paint finish, the cut and buff process takes the approach perfection. No matter how clean the paint might be, and no matter how skillfully the paint is sprayed, there will be flaws and surface texture. If everything was done to top standards, the texture will be minimal and the paint surface will have very little contamination. A glass-smooth surface with a mirror finish demands just that little bit more.</p>          </div>
-          <div class="column"><!-- 67_El_Camino_block_sanding.jpg -->
-            {% image "./src/_images/Dart_paintbooth.jpg", "Dart paintbooth" %}
-          </div>
-        </div>
-      </div>
-    </li>
+
 
   </ul>
 </section>
