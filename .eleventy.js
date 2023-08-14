@@ -149,6 +149,9 @@ function galleryShortcode(content, name) {
 }
 
 
+const { EleventyRenderPlugin } = require("@11ty/eleventy");
+const pluginWebc = require("@11ty/eleventy-plugin-webc");
+
 
 
 
@@ -163,6 +166,13 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("src/_css/swiffy-slider.min.css");
     eleventyConfig.addPassthroughCopy("src/_css/photoswipe.css");
     eleventyConfig.addPassthroughCopy("htaccess");
+    eleventyConfig.addPlugin(EleventyRenderPlugin);
+
+    eleventyConfig.addPlugin(pluginWebc, {
+        components: "./_includes/components/**/*.webc",
+      });
+
+
 
     // Flaticon icon font
     eleventyConfig.addPassthroughCopy("src/_css/flaticon/flaticon.css");
@@ -211,6 +221,27 @@ module.exports = function (eleventyConfig) {
         })
         return tagsSet
       })
+
+
+
+    // Add slots and shortcode
+	const slots = {};
+	eleventyConfig.addGlobalData('eleventyComputed.slots', function() {
+		return data => {
+			const key = data.page.inputPath;
+			slots[key] = slots[key] || {};
+			return slots[key];
+		}
+	});
+
+    eleventyConfig.addPairedShortcode('slot', function (content, name) {
+		if (!name) throw new Error('Missing name for {% slot %} block!');
+		slots[this.page.inputPath][name] = content;
+		return '';
+	});
+
+
+
 
 
     /* --- ADS --- */

@@ -1,0 +1,80 @@
+        {%set pageP = rootPath + "_images/" %}  {# .src/projects/67-camaro-forsyth/ = adds './src' to page url #}
+        {%set imgP = cont.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
+
+
+        {%set fullP = pageP+imgP %}
+
+        {% set imgAlt = cont.altText %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
+
+
+        {# check if even or odd #}
+        {# loop.index(1) = index.md so loop.index(2) = brake-upgrades01.md  so 2/2 = 1 TRUE even  #}
+
+        {% if (loop.index)/2 == 1 %}  
+<!-- dddddddddd -->
+<!-- pageP: {{ pageP }} -->
+<!-- imgP: {{ imgP }} -->
+<!-- imgAlt: {{ imgAlt }} -->
+<!-- cont.image: {{ cont.image  }} -->
+<!-- cont.data.image: {{ cont.data.image  }} -->
+<!-- fullP: {{ fullP }} -->
+
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+                <figure class="image">
+{# image "./src/_images/Exhaust_custom_stainless.jpg", "67 Camaro engine" #}
+                <!-- {{ loop.index }} imgP: {{ imgP }} -->
+                </figure>
+            </div>
+            <div class="column">
+                <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                </div>
+                {% if cont.data.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant toggle-btn"><h4>{{ cont.data.CTAlabel }}</h4></div>
+                </div> 
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+
+<!-- odd -->
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+              <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                {% if cont.data.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant toggle-btn"><h4>{{ cont.data.CTAlabel }}</h4></div>
+                </div> 
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="column">
+                <figure class="image">
+                    <!-- {{ loop.index }} imgP: {{ imgP }} -->
+                    {% if cont.imgPxx|length %}
+                        {% image ""+imgP, ""+imgAlt %}
+                    {% endif %}
+                    {# image "./src/_images/Exhaust_custom_stainless.jpg", "67 Camaro engine" #}
+                    </figure>
+            </div>
+          </div>        
+
+        
+        {% endif %}
+
+
+

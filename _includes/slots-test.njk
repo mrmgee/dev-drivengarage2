@@ -1,0 +1,22 @@
+---
+layout: base.njk
+title: Slots Test
+---
+
+<article>
+	<h1>{{ title }}</h1>
+	<div class='layout'>
+		<div class='ingredients'>
+			<h2>Ingredients</h3>
+			{% renderTemplate 'njk,md', slots %}
+                {{ ingredients | safe }} 
+            {% endrenderTemplate %}
+		</div>
+		<div class='instructions'>
+			<h2>Instructions</h3> 
+			{% renderTemplate 'njk,md', slots %}
+                {{ instructions | safe }} 
+            {% endrenderTemplate %}
+		</div>
+	</div>
+</article>

@@ -1,0 +1,462 @@
+---
+layout: base.njk
+title: Performance Upgrades Detail
+---
+
+  {% include "head.njk" %}
+
+  <body class="is-flex is-flex-direction-column performance-upgrades">
+
+    {% include "hero-services.njk" %}
+
+
+{% set sectionStart = 1 %}  {# sets START section true #}
+{% for cont in sectionCont %}
+  {% set imgP = cont.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
+  {% set imgAlt = cont.altText %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
+  {% set imgBkgP = cont.bkgImage %}
+
+    {% if cont.pattern == "sec-2col-pos1" %}
+
+            {% if sectionStart == 1 %} 
+    <section class="top first services half-split"><!-- START sectionStart: {{ sectionStart }}-->
+      <div class="container">
+                {% set sectionStart = sectionStart + 1 %}
+                <!-- sectionStart: {{ sectionStart }}-->
+            {% endif %}
+
+        {# check if even or odd #}
+        {# loop.index(1) = index.md so loop.index(2) = brake-upgrades01.md  so 2/2 = 1 TRUE even  #}
+
+        {% if (loop.index)/2 == 1 %}  
+
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+                <figure class="image">
+                    {% if imgP|length %}
+                        {% image ""+imgP, ""+imgAlt %}
+                    {% endif %}
+                </figure>
+            </div>
+            <div class="column">
+                <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                </div>
+                {% if cont.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant js-modal-trigger" data-target="modal-js-example"><h4>{{ cont.CTAlabel }}</h4></div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% else %}
+<!-- odd -->
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+              <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                {% if cont.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant js-modal-trigger" data-target="modal-js-example"><h4>{{ cont.CTAlabel }}</h4></div>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="column">
+                <figure class="image">
+                    <!-- loop:{{ loop.index }} imgP: {{ imgP }} -->
+                    {% if imgP|length %}
+                        {% image ""+imgP, ""+imgAlt %}
+                    {% endif %}
+                    </figure>
+            </div>
+          </div>        
+
+        {% endif %}
+
+<!-- END sec-2col -->
+
+    {% elif cont.pattern == "sec-tips" %}
+{% set sectionStart = 0 %}  {# sets START section FALSE #}
+{% if sectionStart == 0 %}  {# CLOSE section tag #}
+      </div>
+    </section><!-- {{ loop.index }} END top services half-split -->
+{% endif %}
+
+
+{# include "sec-tips.njk" #}
+
+<!-- START pro-tips -->
+<section class="pro-tips">
+  <div class="container">
+    <!-- <div class="halftone-overlay"></div> -->
+    <div class="sec-bkg-img">
+<!--      <img style="margin-top: -66%;" src="{{ rootPath }}_images/70_Mustang01_green_lights.jpg" alt="65 Mustang quick service"> -->
+
+          {% if imgBkgP|length %}
+              {% image ""+imgBkgP, ""+imgAlt %}
+          {% endif %}
+    </div>
+    <div class="bkg-stripe primary">
+      <div class="container know-tips">
+        <h3>How <span style="color: #f79837;">Driven</span> <i>Does It Right</i></h3>
+        <span class="hilite"><i>Tips from the Pros</i></span> <!-- What we've learned -->
+      </div>
+    </div>
+
+    <div class="hero-body is-overlay">
+      <div class="container">
+        <div class="columns pad-top">
+          <div class="column is-one-third">
+<!--            <img src="{{ rootPath }}_images/CCS_Inition_distributor.jpg" alt="CCS Inition distributor"> -->
+          {% if imgP|length %}
+              {% image ""+imgP, ""+imgAlt %}
+          {% endif %}
+          </div>
+          <div class="column">
+            <p class="tips-subhead">
+              After years under cars, we've honed the best installation matched with the right parts to do the job right
+            </p>
+        {% if cont.title|length %}
+            <h4>{{ cont.title }}</h4>
+        {% endif %}
+        {% if cont.text|length %}
+            <p>{{ cont.text | safe }}</p>
+        {% endif %}
+          </div>
+        </div><!-- END columns -->
+      </div>
+    </div><!-- END hero-body is-overlay -->
+
+  </div><!-- END container -->
+</section>
+<!-- END pro-tips -->
+
+
+
+
+
+
+
+
+    {% elif cont.pattern == "sec-2col-pos2" %}
+    
+        {# include "sec-2col.njk" #}    
+ 
+            {% if sectionStart == 0 %} 
+    <section class="top services half-split"><!-- START sectionStart: {{ sectionStart }}-->
+      <div class="container">
+                {% set sectionStart = sectionStart + 1 %}
+                <!-- sectionStart: {{ sectionStart }}-->
+            {% endif %}
+
+ {% if (loop.index)%2 == 0 %}  {# loop.index(4)%2 = 0   loop.index(5)%2 = 1 #}
+
+        <div class="columns"><!-- section:{{ loop.index }}  {{ loop.index%2 }} -->
+            <div class="column">
+              <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                {% if cont.data.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant toggle-btn"><h4>{{ cont.data.CTAlabel }}</h4></div>
+                </div> 
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="column">
+                <figure class="image">
+                    <!-- loop:{{ loop.index }} imgP: {{ imgP }} -->
+                    {% if imgP|length %}
+                        {% image ""+imgP, ""+imgAlt %}
+                    {% endif %}
+                    </figure>
+            </div>
+        </div>
+
+        {% else %}
+<!-- odd -->
+        <div class="columns"><!-- section:{{ loop.index }} {{ loop.index%2 }} -->
+            <div class="column">
+                <figure class="image">
+                    {% if imgP|length %}
+                        {% image ""+imgP, ""+imgAlt %}
+                    {% endif %}
+                </figure>
+            </div>
+            <div class="column">
+                <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                </div>
+                {% if cont.data.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant toggle-btn"><h4>{{ cont.data.CTAlabel }}</h4></div>
+                </div> 
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+<!-- END sec-2col -->
+
+
+    {% elif cont.pattern == "sec-cost" %}
+
+{% set sectionStart = 0 %}  {# sets START section FALSE #}
+{% if sectionStart == 0 %}  {# CLOSE section tag #}
+      </div>
+    </section><!-- {{ loop.index }} END top services half-split -->
+{% endif %}
+    
+        {% include "sec-cost.njk" %}  
+
+    {% elif cont.pattern == "sec-faq-accordion" %}
+    
+        {% include "sec-faq-accordion.njk" %} 
+
+
+    {% endif %}
+
+
+
+
+
+
+{% endfor %}
+
+
+
+
+
+
+<!-- START  -->
+<style>
+.container.feat-layout {
+    margin: 0 auto 6rem auto;
+}
+.feat-body {
+    margin: 4rem 2rem 0 0;
+    padding: 1.4rem;
+    background-color: #363636;
+    color: #fff;
+}
+.feat-body h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #f79837;
+}
+.feat-over {
+    min-height: 12rem;
+    z-index: 8;
+}
+.feat-layout figure img {
+    max-height: 544px;
+}
+.know-tips {
+  /* margin-bottom: 1rem; */
+  display: flex;
+  justify-content: space-between;
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- START carousel-cars section -->
+<style>
+  section.carousel-cars .slider-nav {
+    z-index: 10;
+  }
+  section.carousel-cars .slider-item-helper:not(.slider-item-ratio) .slider-container>* {
+    min-height: 2rem;
+  }
+  section.carousel-cars .slider-item-helper .slider-container>* {
+    display: block;
+  }
+  section.carousel-cars .slide-box {
+    max-width: 22rem;
+    max-height: 10rem;
+  }
+  section.carousel-cars .slide-box>img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+</style>
+
+<section class="carousel-cars">
+  <div class="container">
+
+
+    <!-- <div class="swiffy-slider"> -->
+      <div class="swiffy-slider slider-item-helper slider-item-show4 slider-item-reveal slider-item-snapstart slider-item-nogap">  
+      
+        <ul class="slider-container">
+            <li>
+              <div class="slide-box">
+
+                <img src="{{ rootPath }}_images/67_dart_vader_graffiti.jpg" alt="Ridetech shocks">
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                        <h3>1967 Dart Vader</h3>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide 1 -->
+  
+            <li>
+              <div class="slide-box">
+
+                <img src="{{ rootPath }}_images/Mercury_Comet.jpg" alt="69 Dodge Coronet gibson custom exhaust">
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                        <h3>Mercury_Comet</h3>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide 2 -->
+  
+            <li>
+              <div class="slide-box">
+
+                <img src="/assets/images/67camaro_forsyth-5857-800.jpeg" alt="Restomod Air">
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                        <h3>1967 Camaro</h3>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide 3 -->
+  
+            <li>
+              <div class="slide-box">
+
+                <img src="/assets/images/69-cuda-5-800.jpeg" alt="Wilwood brakes 66 c10 pickup">
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                        <h3>1969 Baracuda</h3>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide 4 -->
+  <!-- ORIG 4 -->
+            <li>
+              <div class="slide-box">
+                <img src="{{ rootPath }}_images/67_dart_vader_graffiti.jpg" alt="Ridetech shocks">
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                        <h3>5 1967 Dart Vader</h3>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide 5 -->
+            <li>
+              <div class="slide-box">
+                <img src="/assets/images/69-cuda-5-800.jpeg" alt="Wilwood brakes 66 c10 pickup">
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                        <h3>6 1969 Baracuda</h3>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide 6 -->
+            <li>
+              <div class="slide-box">
+                <img src="/assets/images/67camaro_forsyth-5857-800.jpeg" alt="Restomod Air">
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                        <h3>7 1967 Camaro</h3>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide 7 -->
+            <li>
+              <div class="slide-box">
+                <img src="{{ rootPath }}_images/Mercury_Comet.jpg" alt="69 Dodge Coronet gibson custom exhaust">
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                        <h3>8 Mercury_Comet</h3>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide 8 -->
+
+
+        </ul>
+  
+        <button type="button" class="slider-nav"></button>
+        <button type="button" class="slider-nav slider-nav-next"></button>
+  
+        <div class="slider-indicators">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+        </div>
+      </div><!-- END swiffy-slider -->
+
+    </div>
+  </section>
+<!-- END carousel-cars section -->

@@ -1,0 +1,60 @@
+{% block secTips %}
+
+
+{% for cont in sectionCont %}
+    {% if cont.pattern == "sec-tips" %}
+    
+      {% set imgP = cont.image %}
+      {% set imgAlt = cont.altText %}
+      {% set imgBkgP = cont.bkgImage %}
+
+
+<!-- START pro-tips -->
+<section class="pro-tips">
+  <div class="container">
+    <!-- <div class="halftone-overlay"></div> -->
+    <div class="sec-bkg-img">
+      {% if imgBkgP|length %}
+          {% image ""+imgBkgP, ""+imgAlt %}
+      {% endif %}
+    </div>
+    <div class="bkg-stripe primary">
+      <div class="container know-tips">
+        <h3>How <span style="color: #f79837;">Driven</span> <i>Does It Right</i></h3>
+        <span class="hilite"><i>Tips from the Pros</i></span> <!-- What we've learned -->
+      </div>
+    </div>
+
+    <div class="hero-body is-overlay">
+      <div class="container">
+        <div class="columns pad-top">
+          <div class="column is-one-third">
+            {% if imgP|length %}
+                {% image ""+imgP, ""+imgAlt %}
+            {% endif %}
+          </div>
+          <div class="column">
+            <p class="tips-subhead">
+              <!-- With years under cars, out techs have learned the right parts and techniques – the hard way -->
+              After years under cars, we've honed the best installation matched with the right parts to do the job right
+            </p>
+        {% if cont.title|length %}
+            <h4>{{ cont.title }}</h4>
+        {% endif %}
+        {% if cont.text|length %}
+            <p>{{ cont.text | safe }}</p>
+        {% endif %}
+          </div>
+        </div><!-- END columns -->
+      </div>
+    </div><!-- END hero-body is-overlay -->
+
+  </div><!-- END container -->
+</section>
+<!-- END ONE - COST LOCKUP -->
+
+  {% endif %}
+{% endfor %}
+
+
+{% endblock secTips %}

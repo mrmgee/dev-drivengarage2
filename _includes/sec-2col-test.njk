@@ -1,0 +1,77 @@
+
+
+        {# check if even or odd #}
+        {# loop.index(1) = index.md so loop.index(2) = brake-upgrades01.md  so 2/2 = 1 TRUE even  #}
+
+<div class="test">
+    <p> imgP: {{ imgP }} </p>
+    <p> imgAlt: {{ imgAlt }} </p>
+    <p> cont.image: {{ cont.image  }} </p>
+    <p> cont.data.image: {{ cont.data.image  }} </p>
+</div>
+
+
+        {% if (loop.index)/2 == 1 %}  
+
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+                <figure class="image">
+{# image "./src/_images/Exhaust_custom_stainless.jpg", "67 Camaro engine" #}
+            {% include "img-test.njk" %}
+
+
+                <!-- {{ loop.index }} imgP: {{ imgP }} -->
+                </figure>
+            </div>
+            <div class="column">
+                <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                </div>
+                {% if cont.data.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant toggle-btn"><h4>{{ cont.data.CTAlabel }}</h4></div>
+                </div> 
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+
+<!-- odd -->
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+              <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                {% if cont.data.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant toggle-btn"><h4>{{ cont.data.CTAlabel }}</h4></div>
+                </div> 
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="column">
+                <figure class="image">
+                    <!-- {{ loop.index }} imgP: {{ imgP }} -->
+                    {% if cont.imgPxx|length %}
+                        {% image ""+imgP, ""+imgAlt %}
+                    {% endif %}
+                    {# image "./src/_images/Exhaust_custom_stainless.jpg", "67 Camaro engine" #}
+                    </figure>
+            </div>
+          </div>        
+
+        
+        {% endif %}
+
+
+

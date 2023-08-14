@@ -1,0 +1,19 @@
+---
+layout: base.njk
+title: Page 2
+---
+
+Hello! Welcome to Page 2
+
+{% renderTemplate "webc" %}
+<webc01></webc01>
+{% endrenderTemplate %}
+
+
+{% renderTemplate "webc" %}
+<a-card>
+  <a href="#" slot="title">The Hypnotoad</a>
+  <img src="../../_images/69-cuda-10.jpg" style="width:25%;" slot="media">
+  <p slot="body">All glory to the Hypnotoad~</p>
+</a-card>
+{% endrenderTemplate %}

@@ -1,0 +1,45 @@
+{% block secFAQs %}
+
+{% for cont in sectionCont %}
+  {% set imgP = cont.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
+  {% set imgAlt = cont.altText %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
+  {% set imgBkgP = cont.bkgImage %}
+
+    {% if cont.pattern == "sec-faq-accordion" %}
+
+<!-- START accordion -->
+<section class="faq-accordion">
+  <div class="container">
+    <div class="accordion v1">
+
+      {% for item in cont.qaCont %}
+
+      <div class="a-container">
+        <p class="a-btn">
+        {% if item.que|length %}
+            {{ item.que }}
+        {% endif %}
+         <span></span>
+        </p>
+        <div class="a-panel">
+            <p>
+            {% if item.ans|length %}
+                {{ item.ans }}
+            {% endif %}
+            </p>
+        </div>
+      </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+<!-- END accordion -->
+
+
+    {% endif %}
+{% endfor %}
+
+{% endblock secFAQs %}

@@ -1,0 +1,48 @@
+{% block secCost %}
+
+{% for cont in sectionCont %}
+    {% if cont.pattern == "sec-cost" %}
+
+<!-- START alt COST LOCKUP -->
+<section class="services-detail-cost-box-alt bkg-grad1">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+          <h1 class="title">What’s the cost?</h1>
+          <h3>Each job will be estimated individually, but here are some guidelines to help you budget</h3>
+      </div>
+      <div class="column">
+        <div class="columns">
+          <div class="column">
+
+              {% if cont.text | length %}
+                  {{ cont.text | safe }}
+              {% endif %}
+
+          </div><!-- END 1 column -->
+
+          <div class="column">
+            <p>You can expect to pay around:</p>
+      {% for fig in cont.figures %}
+                  <div class="cost-box-inner">
+                  {% if fig.title|length %}
+                      <h3>{{ fig.title }}</h3>
+                  {% endif %}
+                  {% if fig.subtitle|length %}
+                      <p>{{ fig.subtitle }}</p>
+                  {% endif %}
+                  </div>
+      {% endfor %}
+          </div>
+        </div><!-- END columns -->
+      </div>
+
+
+  </div>
+</section>
+<!-- End alt COST LOCKUP --> 
+
+  {% endif %}
+{% endfor %}
+
+{% endblock secCost %}

@@ -1,0 +1,153 @@
+---
+layout: base.njk
+title: Performance Upgrades Detail
+---
+
+  {% include "head.njk" %}
+
+  <body class="is-flex is-flex-direction-column performance-upgrades">
+
+    {% include "hero-services.njk" %}
+
+
+
+    {% include "hero-services.njk" %}
+
+
+{% set imgP = featuredImage %}
+{% set imgAlt = featuredImageAlt %}
+<p>imgP: {{ imgP }}</p>
+
+{% renderTemplate "webc", title %}
+<a-card>
+  <a href="#" slot="title">The Hypnotoad | title: <template @text="title" webc:nokeep></template></p></a>
+<!-- <img src="./src/_images/69-cuda-10.jpg" slot="media"> -->
+
+<!-- <p slot="media">webc-featuredImage :featuredImage="class"</p> -->
+
+<figure slot="media">
+    <p>webc-featuredImage: <template @text="title" webc:nokeep></template></p>
+
+
+<p>imgP: {{ imgP }}</p>
+        {% if imgP|length %}
+            {% image ""+imgP, ""+imgAlt %}
+        {% endif %}
+</figure>
+
+  <p slot="body">This is a test it is only a test All glory to the Hypnotoad~</p>
+</a-card>
+{% endrenderTemplate %}
+
+
+{% renderTemplate "webc" %}
+<webc01></webc01>
+{% endrenderTemplate %}
+
+    <section class="top first services half-split"><!-- START sectionStart: {{ sectionStart }}-->
+        <div class="container">
+            <div class="columns">
+                <div class="column">
+                    <div class="half-split-cont">
+<!-- START renderTemplate secFirst01 -->
+			{% renderTemplate 'njk,md', slots %}
+                {{ secFirst01 | safe }} 
+            {% endrenderTemplate %}
+            
+<!-- END renderTemplate secFirst01 -->   
+                    </div>
+                </div>
+                <div class="column">
+                    <figure class="image">
+                        <p>slots.secFirst01img: {{ slots.secFirst01img | safe }} </p>
+                        
+                {% set imgP = slots.secFirst01img | striptags(true) | escape  %}
+                {% set imgAlt = "alt comment here" %}
+                        <p>imgP: {{ imgP }}</p>
+
+                        {% if imgP|length %}
+                        <p>yep: {{ imgP }}</p>
+
+                            {% image ""+imgP, ""+imgAlt %}
+                        {% endif %}
+
+                    </figure>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <figure class="image">
+                {% set imgP = secFirst02Img %}
+                {% set imgAlt = secFirst02ImgAlt %}
+
+                        {% if imgP|length %}
+                            {% image ""+imgP, ""+imgAlt %}
+                        {% endif %}
+                    </figure>
+                </div>
+                <div class="column">
+                    <div class="half-split-cont">
+<!-- START renderTemplate secFirst01 -->                        
+			{% renderTemplate 'njk,md', slots %}
+                {{ secFirst02 | safe }} 
+            {% endrenderTemplate %}
+<!-- END renderTemplate secFirst01 -->   
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+
+
+<!-- START pro-tips -->
+    <section class="pro-tips">
+        <div class="container">
+            <!-- <div class="halftone-overlay"></div> -->
+            <div class="sec-bkg-img">
+                {% set imgBkgP = slots.secTipsBkgImage | striptags(true) | escape  %}
+                {% set imgAlt = "alt comment here" %}
+            {% if imgBkgP|length %}
+                {% image ""+imgBkgP, ""+imgAlt %}
+            {% endif %}
+            </div>
+            <div class="bkg-stripe primary">
+            <div class="container know-tips">
+                <h3>How <span style="color: #f79837;">Driven</span> <i>Does It Right</i></h3>
+                <span class="hilite"><i>Tips from the Pros</i></span> <!-- What we've learned -->
+            </div>
+            </div>
+
+            <div class="hero-body is-overlay">
+            <div class="container">
+                <div class="columns pad-top">
+                <div class="column is-one-third">
+                {% set secTipsImg = slots.secTipsImage | striptags(true) | escape  %}
+                {% set imgAlt = "alt comment here" %}
+            {% if secTipsImg|length %}
+                {% image ""+secTipsImg, ""+imgAlt %}
+            {% endif %}
+                </div>
+                <div class="column">
+                    <p class="tips-subhead">
+                    <!-- With years under cars, out techs have learned the right parts and techniques – the hard way -->
+                    After years under cars, we've honed the best installation matched with the right parts to do the job right
+                    </p>
+			{% renderTemplate 'njk,md', slots %}
+                {{ secTips | safe }} 
+            {% endrenderTemplate %}
+                </div>
+                </div><!-- END columns -->
+            </div>
+            </div><!-- END hero-body is-overlay -->
+
+        </div><!-- END container -->
+    </section>
+<!-- END ONE - COST LOCKUP -->
+
+
+
+
+
