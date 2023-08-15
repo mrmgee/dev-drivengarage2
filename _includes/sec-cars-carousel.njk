@@ -1,0 +1,86 @@
+{% block secCarsAll %}
+
+    {% set heroSlides = carsAll %}
+
+<style>
+  section.carousel-cars > .container > h3 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #363636;
+  }    
+  section.carousel-cars .slider-nav {
+    z-index: 10;
+  }
+  section.carousel-cars .slider-item-helper:not(.slider-item-ratio) .slider-container>* {
+    min-height: 2rem;
+  }
+  section.carousel-cars .slider-item-helper .slider-container>* {
+    display: block;
+  }
+  section.carousel-cars .slide-box {
+    max-width: 22rem;
+    max-height: 10rem;
+  }
+  section.carousel-cars .slide-box>img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+  }
+.slide-box>img.p-top-50 {
+    object-position: 0 -50px;
+  }
+.slide-box>img.p-top-20 {
+    object-position: 0 -20px;
+  }
+</style>
+
+<section class="carousel-cars">
+  <div class="container">
+    <h3>Cars of Customers We've Helped</h3>
+    <div class="swiffy-slider slider-item-helper slider-item-show4 slider-item-reveal slider-item-snapstart slider-item-nogap">
+        <ul class="slider-container">
+{% for heroSlides, item in heroSlides %}
+  {%set pageSlideP = "./src/" %}
+  {%set imgSlideP = item.image %}
+  {%set fullSlideP = pageSlideP+imgSlideP %}
+  {% set imgSlideAlt = item.altText %}
+  {% set imgSlidePos = item.position %}
+  {% set imgSizesResp = "12" %}
+            <li>
+              <div class="slide-box">
+        {% if item.image|length %}
+            {% image ""+fullSlideP, ""+imgSlideAlt, ""+imgSlidePos, ""+imgSizesResp %}
+        {% endif %}
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                    {% if item.title|length %}
+                        <h3>{{ item.title }}</h3>
+                    {% endif %}
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </li><!-- END slide {{ loop.index }} -->
+{% endfor %}
+
+        </ul>
+  
+        <button type="button" class="slider-nav"></button>
+        <button type="button" class="slider-nav slider-nav-next"></button>
+  
+        <div class="slider-indicators">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+        </div>
+      </div><!-- END swiffy-slider -->
+
+    </div>
+  </section>
+<!-- END carousel-cars section -->
+
+{% endblock secCarsAll %}
