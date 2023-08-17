@@ -1,38 +1,38 @@
 ---
 layout: perf-up-det04.njk
-title: AC System Installations
-urlPath: services/performance-upgrades/ac-system/
+title: Power Adders
+urlPath: services/performance-upgrades/power-adders/
 tags: ['service']
 description: Driven Garage nothern California restomod auto customization and repair shop
-featuredImage: ./src/_images/Exhaust_custom_stainless.jpg
-featuredImageAlt: "Custom stainless Exhaust"
+featuredImage: ./src/_images/F100_green_electric_steering.jpg
+featuredImageAlt: "DCE electric power-assisted steering system (EPAS)"
 featuredImagePos: "margin-top: -48%;"
 collectionName: acSystem
 isHome: 1
 sectionCont:
   - pattern: sec-2col-pos1
-    title: Keep it Chill
+    title: Pump up the Power
     subtitle: 
-    image: ./src/_images/Restomod_Air02.jpg
-    altText: Restomod Air Impala dash
+    image: https://marvel-b1-cdn.bc0a.com/f00000000270523/s19529.pcdn.co/wp-content/uploads/2021/06/DSC0276.jpg
+    altText: Chevy engine with supercharger
     position: 
-    text: Cruising with the windows down can be a blast, but you'll definitely miss A/C when the heat gets unbearable. When hot summer day keeps you off the streets, and a new bolt-in or updated factory-correct climate control system may get you back behind the wheel.
+    text: Power adders can help you squeeze more horsepower out of your OEM or a performance-built engine. Turbocharging, supercharging and nitrous are the primary options. Each of these, in slightly different ways, add more air to burn restyling in a richer fuel mixture and more power.
     slidelayout:
   - pattern: sec-2col-pos1
     title: 
     subtitle: 
-    image: ./src/_images/Restomod_Air01.jpg
-    altText: Restomod Air boxes
+    image: ./src/_images/F100_green_electric_steering.jpg
+    altText: DCE electric power-assisted steering system (EPAS)
     position: 
-    text: Aftermarket A/C systems designed specifically to install in your make and model is a great option. These perform similar to a system in a modern vehicle, efficiently and reliably blasting ice-cold to keep you comfortable no matter the weather.
-    CTAlabel: Let's Chill Out >
+    text: It’s simple. More Air = More Power. A supercharger or turbocharger essentially sucks in air and pumps it into the engine for a more explosive combustion increasing power and torque.
+    CTAlabel: Ready to upgrade >
     slidelayout: 1
   - pattern: sec-tips
-    title: AC System Installations tips
-    image: ./src/_images/Restomod-Air-Conditioning-Cadillac.jpg
+    title: Power Adders tips
+    image: ./src/_images/67_gto_red_steering_wheel.jpg
     altText: 66 Chevelle engine
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
-    text: AC System Installations tip paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: Power Adders tip paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
     slidelayout:
   - pattern: sec-2col-pos2
     title: Trans Section 03
@@ -56,7 +56,7 @@ sectionCont:
     image:
     altText:
     position:
-    text: Suspension Upgrades cost paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: Power Adders cost paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
     figures:
       - title: $1,100 - $1,855
         subtitle: for the parts
@@ -64,19 +64,19 @@ sectionCont:
         subtitle: for installation and calibration
     slidelayout: 1
   - pattern: sec-faq-accordion
-    title: AC System Installations FAQs
+    title: SPower Adders FAQs
     subtitle: 
     image: 
     altText: 
     position: 
     text: 
     qaCont:
-      - que: Q1 AC System Installations
-        ans: A1 AC System Installations answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q2 AC System Installations
-        ans: A2 AC System Installations answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q3 AC System Installations
-        ans: A3 AC System Installations answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: Q1 Power Adders
+        ans: A1 Power Adders answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: Q2 Power Adders
+        ans: A2 Power Adders answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: Q3 Power Adders
+        ans: A3 Power Adders answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
     slidelayout: 1
 ---
 
