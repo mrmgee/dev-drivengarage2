@@ -3,10 +3,6 @@ layout: project-detail.njk
 title: ’70 Malibu
 urlPath: projects/70-malibu/
 tags: ['project']
-eleventyNavigation:
-  key: 70 Malibu
-  parent: Projects
-  order: 2
 description: Driven Garage nothern California restomod auto customization and repair shop
 featuredImage: 70_malibu_white.jpg
 featuredImageAlt: ’67 Dart Vader three quarters front left

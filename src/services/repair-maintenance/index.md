@@ -6,7 +6,7 @@ tags: ['service']
 eleventyNavigation:
   key: Repair & Maintenance
   parent: Services
-  order: 1
+  order: 2
 description: Driven Garage nothern California restomod auto customization and repair shop  
 introHead: Keep Up your Ride
 intro: Proper maintenance of your classic car help avoid nasty and expensive problems down the road. Aggressive and consistent maintenance is the best way to ensure your car will be ready when you want to drive, and that you don't get surprised with unexpected failures. Your car is special - this much you know. What you may not know is that your classic may need special services and additives to keep it running at peak performance.

@@ -22,6 +22,10 @@
   ],
   "navbarMenu": [
     {
+      "anchor": "Home",
+      "url": "/"
+    },
+    {
       "anchor": "Services",
       "url": "services/"
     },

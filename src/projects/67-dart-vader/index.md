@@ -3,10 +3,6 @@ layout: project-detail.njk
 title: ’67 Dart Vader
 urlPath: projects/67-dart-vader/
 tags: ['project']
-eleventyNavigation:
-  key: 67 Dart Vader
-  parent: Projects
-  order: 2
 description: Driven Garage nothern California restomod auto customization and repair shop
 featuredImage: 67_dart_vader_graffiti.jpg
 featuredImageAlt: ’67 Dart Vader three quarters front left

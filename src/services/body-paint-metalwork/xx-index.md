@@ -3,10 +3,6 @@ layout: service-detail.njk
 title: Body, Paint & Metalwork
 bodyName: p-service-body-paint-metalwork
 tags: ['service']
-eleventyNavigation:
-  key: Body, Paint & Metalwork
-  parent: Services
-  order: 3
 description: Driven Garage nothern California restomod auto customization and repair shop
 introHead: Clean Up your Ride
 intro: We specialize in restoration work, not collision repair, so our technicians are focused on the quality of your project and not throughput.

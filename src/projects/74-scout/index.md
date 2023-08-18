@@ -3,10 +3,6 @@ layout: project-detail.njk
 title: ’74 Scout II
 urlPath: projects/74-scout/
 tags: ['project']
-eleventyNavigation:
-  key: 74 Scout
-  parent: Projects
-  order: 3
 description: 25 Driven Garage nothern California restomod auto customization and repair shop
 featuredImage: Scout-0668.jpg
 featuredImageAlt: "74 Scout three quarters front left"

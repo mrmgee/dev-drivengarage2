@@ -3,10 +3,6 @@ layout: project-detail.njk
 title: ’68 Valiant
 urlPath: projects/68-valiant/
 tags: ['project']
-eleventyNavigation:
-  key: 68 Valiant
-  parent: Projects
-  order: 2
 description: Driven Garage nothern California restomod auto customization and repair shop
 featuredImage: 69-cuda-5.jpg
 featuredImageAlt: ’67 Dart Vader three quarters front left
