@@ -2,10 +2,13 @@
 layout: perf-up-det04.njk
 title: Suspension Upgrades
 urlPath: services/performance-upgrades/suspension-upgrades/
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 5
 description: Driven Garage nothern California restomod auto customization and repair shop
-featuredImage: ./src/_images/Exhaust_custom_stainless.jpg
-featuredImageAlt: "Custom stainless Exhaust"
+featuredImage: ./src/_images/67_Camaro_shocks.jpg
+featuredImageAlt: "67 Camaro shocks"
 featuredImagePos: "margin-top: -48%;"
 collectionName: suspensionUpgrades
 isHome: 1

@@ -196,6 +196,19 @@ module.exports = function (eleventyConfig) {
         });
     });
 
+    // Order performanceUpgrades collection
+    eleventyConfig.addCollection("performanceUpgrades", collection =>
+    collection
+    //   .getAll()
+      .getFilteredByTag("performanceUpgrades")
+      .filter(function(item) {
+        return "performanceUpgradesItems" in item.data;
+      })
+      .sort((a, b) => {
+        return (a.data.performanceUpgradesItems.order || 0) - (b.data.performanceUpgradesItems.order || 0);
+      })
+  );
+
     // gallery and shortcode   
     eleventyConfig.addPairedNunjucksShortcode('gallery', galleryShortcode);
     eleventyConfig.addNunjucksAsyncShortcode('galleryImage', galleryImageShortcode);

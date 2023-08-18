@@ -2,12 +2,15 @@
 layout: perf-up-det04.njk
 title: Power Steering Conversions
 urlPath: services/performance-upgrades/power-steering/
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 8
 description: Driven Garage nothern California restomod auto customization and repair shop
 featuredImage: ./src/_images/F100_green_electric_steering.jpg
 featuredImageAlt: "DCE electric power-assisted steering system (EPAS)"
 featuredImagePos: "margin-top: -48%;"
-collectionName: acSystem
+collectionName: powerSteering
 isHome: 1
 sectionCont:
   - pattern: sec-2col-pos1
@@ -80,4 +83,4 @@ sectionCont:
     slidelayout: 1
 ---
 
-If you're looking to improve the handling, ride quality, and performance of your classic car, upgrading the suspension is a great way to do it.
+Give your tired arms a break and upgrade to an electric power-assisted steering system.

@@ -2,12 +2,15 @@
 layout: perf-up-det04.njk
 title: Power Adders
 urlPath: services/performance-upgrades/power-adders/
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 10
 description: Driven Garage nothern California restomod auto customization and repair shop
-featuredImage: ./src/_images/F100_green_electric_steering.jpg
-featuredImageAlt: "DCE electric power-assisted steering system (EPAS)"
+featuredImage: ./src/_images/67_Camaro01.jpg
+featuredImageAlt: "67 Camaro engine"
 featuredImagePos: "margin-top: -48%;"
-collectionName: acSystem
+collectionName: powerAdders
 isHome: 1
 sectionCont:
   - pattern: sec-2col-pos1
@@ -16,7 +19,7 @@ sectionCont:
     image: https://marvel-b1-cdn.bc0a.com/f00000000270523/s19529.pcdn.co/wp-content/uploads/2021/06/DSC0276.jpg
     altText: Chevy engine with supercharger
     position: 
-    text: Power adders can help you squeeze more horsepower out of your OEM or a performance-built engine. Turbocharging, supercharging and nitrous are the primary options. Each of these, in slightly different ways, add more air to burn restyling in a richer fuel mixture and more power.
+    text: Power adders can help you squeeze more horsepower out of your OEM or a performance-built engine. Turbocharging, supercharging and nitrous are the primary options. Each of these, in slightly different ways, add more air to burn resulting in a richer fuel mixture and more power.
     slidelayout:
   - pattern: sec-2col-pos1
     title: 
@@ -80,4 +83,4 @@ sectionCont:
     slidelayout: 1
 ---
 
-If you're looking to improve the handling, ride quality, and performance of your classic car, upgrading the suspension is a great way to do it.
+Power adders can help you squeeze more horsepower out of your engine by adding more air to burn and increasing power.

@@ -2,7 +2,10 @@
 layout: perf-up-det04.njk
 title: EFI Conversions
 urlPath: services/performance-upgrades/suspension-upgrades/
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 1
 description: Driven Garage nothern California restomod auto customization and repair shop
 featuredImage: ./src/_images/67_Camaro01.jpg
 featuredImageAlt: "67 Camaro engine"
@@ -81,4 +84,4 @@ sectionCont:
     slidelayout: 1
 ---
 
-If you're looking to improve the handling, ride quality, and performance of your classic car, upgrading the suspension is a great way to do it.
+EFI isn’t a magic bullet that solves poor running conditions - but it can make your car easier to start both when cold and hot and increase overall reliability in most driving conditions.

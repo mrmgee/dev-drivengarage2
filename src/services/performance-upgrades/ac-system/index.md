@@ -2,10 +2,13 @@
 layout: perf-up-det04.njk
 title: AC System Installations
 urlPath: services/performance-upgrades/ac-system/
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 7
 description: Driven Garage nothern California restomod auto customization and repair shop
-featuredImage: ./src/_images/Exhaust_custom_stainless.jpg
-featuredImageAlt: "Custom stainless Exhaust"
+featuredImage: ./src/_images/Restomod-Air-Conditioning-Cadillac.jpg
+featuredImageAlt: "Restomod Air aftermarket climate control"
 featuredImagePos: "margin-top: -48%;"
 collectionName: acSystem
 isHome: 1
@@ -80,4 +83,4 @@ sectionCont:
     slidelayout: 1
 ---
 
-If you're looking to improve the handling, ride quality, and performance of your classic car, upgrading the suspension is a great way to do it.
+When hot summer day keeps you off the streets, and a new bolt-in or updated factory-correct climate control system may get you back behind the wheel.

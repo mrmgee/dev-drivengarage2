@@ -2,7 +2,10 @@
 layout: perf-up-det04.njk
 title: Exhaust
 urlPath: services/performance-upgrades/exhaust/
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 6
 description: Driven Garage nothern California restomod auto customization and repair shop
 featuredImage: ./src/_images/Exhaust_custom_stainless.jpg
 featuredImageAlt: "Custom stainless Exhaust"

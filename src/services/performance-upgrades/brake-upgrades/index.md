@@ -2,7 +2,10 @@
 layout: perf-up-det04.njk
 title: Brake Upgrades
 urlPath: services/performance-upgrades/brake-upgrades/
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 4
 description: Driven Garage nothern California restomod auto customization and repair shop
 featuredImage: ./src/_images/67_Nova_wilwood_brakes3.jpg
 featuredImageAlt: "67 Nova Wilwood brakes"

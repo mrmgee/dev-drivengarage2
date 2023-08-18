@@ -2,10 +2,13 @@
 layout: perf-up-det04.njk
 title: Engine Swaps
 urlPath: services/performance-upgrades/engine-swaps/
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 2
 description: Driven Garage nothern California restomod auto customization and repair shop
-featuredImage: ./src/_images/Exhaust_custom_stainless.jpg
-featuredImageAlt: "Custom stainless Exhaust"
+featuredImage: ./src/_images/engine_swap.jpg
+featuredImageAlt: "Engine swap"
 featuredImagePos: "margin-top: -48%;"
 collectionName: engineSwaps
 isHome: 1

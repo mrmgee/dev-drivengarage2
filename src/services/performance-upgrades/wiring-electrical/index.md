@@ -2,10 +2,13 @@
 layout: perf-up-det04.njk
 title: Wiring and Electrical
 urlPath: services/performance-upgrades/wiring-electrical
-tags: ['service']
+tags: ['performanceUpgrades']
+performanceUpgradesItems:
+  tag: performanceUpgrades
+  order: 3
 description: Driven Garage nothern California restomod auto customization and repair shop
-featuredImage: ./src/_images/F100_green_radio.jpg
-featuredImageAlt: "Green truck radio"
+featuredImage: ./src/_images/F150_blue_dash_Ross01.jpg
+featuredImageAlt: "Ford F150 underdash wiring"
 featuredImagePos: "margin-top: -48%;"
 isHome: 1
 sectionCont:
