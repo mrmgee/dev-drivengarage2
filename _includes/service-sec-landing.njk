@@ -1,0 +1,80 @@
+---
+title: Service Section Landing
+tags: ['service']
+description: Driven Garage nothern California restomod auto customization and repair shop
+featuredImage: ./src/_images/67_Camaro01.jpg
+featuredImageAlt: "67 Camaro engine"
+featuredImagePos: "margin-top: -20%;"
+---
+
+  {% include "head.njk" %}
+
+  <body class="is-flex is-flex-direction-column {{ bodyName }}">
+
+    {% include "nav.njk" %}
+
+    {% include "hero-services.njk" %}
+    {% if post.content | length %}
+      <p>{{ post.content | safe }}</p>
+    {% endif %}
+
+<!-- START all Service Sections -->
+
+<section class="services">
+  <div class="container">
+    {% if introHead | length %}
+      <h2>{{ introHead | safe }}</h2>
+    {% endif %}
+    {% if intro | length %}
+      <h3>{{ intro | safe }}</h3>
+    {% endif %}
+  </div>
+
+  <div class="container">
+    <div class="columns is-multiline">
+<!-- START loop -->
+
+  {% for post in collections[collectionName] %}
+
+    {% set imgPostP = post.data.featuredImage %}
+    {% set imgPostAlt = post.data.featuredImageAlt %}
+
+    {% if (post.data.title !== title) %}
+      <div class="column is-one-third">
+        <div class="feat-item-over">
+          <a href="{{ post.url }}"></a>
+        {% if imgPostP|length %}
+            {% image ""+imgPostP, ""+imgPostAlt %}
+        {% endif %}
+          
+          <div class="item__overlay">
+            <div class="card-halftone-overlay"></div>
+            <h3 aria-hidden="true">{{ post.data.title }}</h3>
+            <div class="item__body">
+              {% if post.content | length %}
+              <p>{{ post.content | safe }}</p>
+              {% endif %}
+              <div class="control">
+                <a href="#" target="_self">click for more
+                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div><!-- END column {{ loop.index }} -->
+    {% endif %}
+  {%- endfor %}
+
+<!-- END loop -->
+  </div><!-- END  columns -->
+
+  </div>
+</section>
+
+
+
+    {% include "footer.njk" %}
+  </body>
+
+</html>
