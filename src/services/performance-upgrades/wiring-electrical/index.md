@@ -36,22 +36,6 @@ sectionCont:
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
     text: We keep the wires as hidden as possible. Not only does this give a clean finish without wires crisscrossing the engine, it protects the wires from heat and moving components to ensure years of trouble-free service.
     slidelayout:
-  - pattern: sec-2col-pos2
-    title: Trans Section 03
-    subtitle: Tuned to perform
-    image: ./src/_images/Exhaust_custom_stainless.jpg
-    altText: 74 Scout three quarters front left
-    position: 0px 0px
-    text: We custom match components to your application based not just on brand name - but your goals for performance and reliability. We don’t cheap out on plumbing and fittings - because who likes to watch their car burn to the ground? We spec in-tank fuel pumps with a return system every time, and have seen the failures not doing this causes. Is it harder or more expensive to do it right? Yes…. But our experience tells us to do it right and pay now, or re-do it later and pay again.
-    slidelayout: 1
-  - pattern: sec-2col-pos2
-    title: Trans Section 04
-    subtitle: Tuned to perform
-    image: ./src/_images/CCS_transmission_swap.jpg
-    altText: 74 Scout three quarters front left
-    position: 0px 0px
-    text: We custom match components to your application based not just on brand name - but your goals for performance and reliability. We don’t cheap out on plumbing and fittings - because who likes to watch their car burn to the ground? We spec in-tank fuel pumps with a return system every time, and have seen the failures not doing this causes. Is it harder or more expensive to do it right? Yes…. But our experience tells us to do it right and pay now, or re-do it later and pay again.
-    slidelayout: 1
   - pattern: sec-cost
     title: What's the cost?
     subtitle: 

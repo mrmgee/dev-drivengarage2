@@ -14,52 +14,36 @@ collectionName: engineSwaps
 isHome: 1
 sectionCont:
   - pattern: sec-2col-pos1
-    title: Chevy LS Engine Swap
+    title: Retune your Carburetor for more Power
     subtitle: 
-    image: ./src/_images/89_Grand_Wagoneer-LS-side-top.jpg
-    altText: 89 Grand Wagoneer LS side top
+    image: ./src/_images/67_GTO_red_carb.jpg
+    altText: 67 GTO red carb
     position: 
-    text: Supercharge Your Vehicle with a Chevy LS Crate Engine Swap. This beast is no joke when it comes to power. We're talking up to a mind-blowing 525 horsepower and 485 ft-lbs of torque. Say goodbye to sluggish starts and hello to lightning-fast acceleration!
+    text: Classic car owners know today’s gasoline is significantly different from the fuel mixture available when the car was new. The different formula effects performance, especially compared to using a carburetor instead of modern computer-controlled fuel-injected systems. Today’s gasolines can cause your carburetor to shift about 3-5% leaner and also cause misfires and poor throttle response. To get the most out of your classic car’s engine, you need to retune the carburetor and distributor.
     slidelayout:
   - pattern: sec-2col-pos1
-    title: Transplant your Powerplant
+    title: Too Lean or Poor Throttle Response
     subtitle: Tuned to perform
-    image: ./src/_images/engine_swap.jpg
-    altText: Engine swap
+    image: ./src/_images/83_Mercedes_Benz_E300_TD_wagon_silver_carb.jpg
+    altText: 83 Mercedes Benz E300 TD wagon silver carb
     position: 
-    text: If your original engine is shot or you’d like to get more power and performance. we’ll work with you revitalize your classic ride.
+    text: If running too lean, the off-idle circuit needs to be enriched. Regardless of the carburetor brand,  we can make the right adjustments to ensure your engine gets the correct amount of fuel it needs. If the problem is throttle response, the pump circuit needs to be more active. We’ll adjust your carburetor, or recommend a high-performance replacement, that will give you power when you need it. Lastly, the ignition spark timing curve and the air-fuel mix curve should be retuned. With the proper mix and firing, we’ll make sure your classic gives you the power to make it fun to drive again.
     CTAlabel: Let's Go >
     slidelayout: 1
   - pattern: sec-tips
-    title: Engine Swaps tips
-    image: ./src/_images/66_Chevelle03.jpg
-    altText: 66 Chevelle engine
+    title: Carb & Timing tips
+    image: ./src/_images/67_GTO_red_carb.jpg
+    altText: 67 GTO red carb
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
-    text: Engine Swaps tip paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: Carb & Timing tip paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
     slidelayout:
-  - pattern: sec-2col-pos2
-    title: Trans Section 03
-    subtitle: Tuned to perform
-    image: ./src/_images/Exhaust_custom_stainless.jpg
-    altText: 74 Scout three quarters front left
-    position: 0px 0px
-    text: We custom match components to your application based not just on brand name - but your goals for performance and reliability. We don’t cheap out on plumbing and fittings - because who likes to watch their car burn to the ground? We spec in-tank fuel pumps with a return system every time, and have seen the failures not doing this causes. Is it harder or more expensive to do it right? Yes…. But our experience tells us to do it right and pay now, or re-do it later and pay again.
-    slidelayout: 1
-  - pattern: sec-2col-pos2
-    title: Trans Section 04
-    subtitle: Tuned to perform
-    image: ./src/_images/CCS_transmission_swap.jpg
-    altText: 74 Scout three quarters front left
-    position: 0px 0px
-    text: We custom match components to your application based not just on brand name - but your goals for performance and reliability. We don’t cheap out on plumbing and fittings - because who likes to watch their car burn to the ground? We spec in-tank fuel pumps with a return system every time, and have seen the failures not doing this causes. Is it harder or more expensive to do it right? Yes…. But our experience tells us to do it right and pay now, or re-do it later and pay again.
-    slidelayout: 1
   - pattern: sec-cost
     title: What's the cost?
     subtitle: 
     image: ./src/_images/Exhaust_custom_stainless.jpg
     altText: 74 Scout three quarters front left
     position: 0px 0px
-    text: Engine Swaps cost paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: Carb & Timing cost paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
     figures:
       - title: $1,100 - $1,855
         subtitle: for the parts
@@ -67,19 +51,19 @@ sectionCont:
         subtitle: for installation and calibration
     slidelayout: 1
   - pattern: sec-faq-accordion
-    title: Engine Swaps FAQs
+    title: Carb & Timing FAQs
     subtitle: 
     image: 
     altText: 
     position: 
     text: 
     qaCont:
-      - que: Q1 Engine Swaps
-        ans: A1 Engine Swaps answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q2 Engine Swaps
-        ans: A2 Engine Swaps answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q3 Engine Swaps
-        ans: A3 Engine Swaps answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: Q1 Carb & Timing
+        ans: A1 Carb & Timing answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: Q2 Carb & Timing
+        ans: A2 Carb & Timing answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: Q3 Carb & Timing
+        ans: A3 Carb & Timing answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
     slidelayout: 1
 ---
 
