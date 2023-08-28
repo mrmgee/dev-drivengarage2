@@ -497,6 +497,7 @@ section.process {
   color: #ffffff;
   background-color: #4a4a4a;
 }
+
 .process-item h5 span {
   width: 3rem;
   height: 3rem;
@@ -1258,22 +1259,21 @@ section.services-detail-cost-box-alt .column .cost-box-inner p {
   margin-bottom: 1.4rem;
 }
 .accordion .a-container .a-btn {
+  display: flex;
+  align-items: center;
   margin: 0;
   position: relative;
   padding: 15px 30px;
   width: 100%;
   color: #dadada;
-  font-weight: 400;
-  display: block;
-  font-weight: 500;
   background-color: #363636;
+  font-size: 1.2rem;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   border-radius: 4px;
-  transform: skew(-24deg);
-  /* box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15), 0 10px 10px -5px rgba(0, 0, 0, 0.1) !important; */
 }
-.accordion .a-container .a-btn span {
+.accordion .a-container .a-btn > span {
   display: block;
   position: absolute;
   height: 14px;
@@ -1281,7 +1281,7 @@ section.services-detail-cost-box-alt .column .cost-box-inner p {
   right: 20px;
   top: 18px;
 }
-.accordion .a-container .a-btn span:after {
+.accordion .a-container .a-btn > span:after {
   content: "";
   width: 14px;
   height: 3px;
@@ -1290,7 +1290,7 @@ section.services-detail-cost-box-alt .column .cost-box-inner p {
   position: absolute;
   top: 6px;
 }
-.accordion .a-container .a-btn span:before {
+.accordion .a-container .a-btn > span:before {
   content: "";
   width: 14px;
   height: 3px;
@@ -1301,7 +1301,36 @@ section.services-detail-cost-box-alt .column .cost-box-inner p {
   transform: rotate(90deg);
   transition: all 0.3s ease-in-out;
 }
+.a-btn .rnd-orng, 
+.a-panel .rnd-orng {
+  margin: 0 0.6rem 0 0;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.a-btn .rnd-orng span, 
+.a-panel .rnd-orng span {
+  width: 3rem;
+  height: 3rem;
+  padding: 0.1rem 0.6rem 0.4rem 0.6rem;
+  color: #ffffff;
+  background: #f79837;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+}
+.a-btn .rnd-orng span {
+  margin: 0 0 0 -1.2rem;
+}
+.a-container.active .a-btn .rnd-orng span {
+  background: #dadada;
+}
+
+
+
 .accordion .a-container .a-panel {
+  display: flex;
+  align-items: center;
+  padding: 15px 30px;
   width: 100%;
   color: #262626;
   transition: all 0.2s ease-in-out;
@@ -1309,7 +1338,6 @@ section.services-detail-cost-box-alt .column .cost-box-inner p {
   height: auto;
   max-height: 0;
   overflow: hidden;
-  padding: 0px 10px;
 }
 .accordion .a-container.active .a-btn {
   color: #fff;

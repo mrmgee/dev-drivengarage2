@@ -15,13 +15,19 @@
       {% for item in cont.qaCont %}
 
       <div class="a-container">
-        <p class="a-btn">
+        <div class="a-btn">
+          <div class="rnd-orng">
+            <span>Q</span>
+          </div>
         {% if item.que|length %}
             {{ item.que }}
         {% endif %}
          <span></span>
-        </p>
+        </div>
         <div class="a-panel">
+          <div class="rnd-orng">
+            <span>A</span>
+          </div>
             <p>
             {% if item.ans|length %}
                 {{ item.ans }}
