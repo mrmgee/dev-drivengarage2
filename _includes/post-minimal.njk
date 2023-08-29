@@ -1,42 +1,13 @@
 ---
-title: Título Artículo
-
+layout: base-4.njk
+title: Post Minimal
 ---
+{% include "hero-services.njk" %}
 
-  {% include "head.njk" %}
-
-  <body class="is-flex is-flex-direction-column">
-
-    {% include "nav.njk" %}
-
-    <section class="hero-services">
-        <div class="halftone-overlay"></div>
-        <div class="sec-bkg-img">
-          <img src="{{ rootPath }}_images/65_Mustang_quick_service.jpg" alt="65 Mustang quick service">
-        </div>
-        <div class="hero-body is-overlay">
-            <div class="container">
-                <h1 class="title">{{ title }}</h1>
-            </div>
-        </div>
-    </section>
-
-    <section class="section is-flex-grow-1">
-
-       {% topPostMinimalAd %}
-
-      <div class="container articulo content">
+    <section>
+      <div class="container">
 
         {{ content | safe }}
 
-        {% bottomContentPostMinimalAd %}
-
       </div>
-
     </section>
-
-
-    {% include "footer.njk" %}
-  </body>
-
-</html>

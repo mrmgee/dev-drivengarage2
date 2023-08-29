@@ -8,7 +8,11 @@
   <div class="container">
     <div class="columns">
       <div class="column is-one-third">
-          <h1 class="title">What’s the cost?</h1>
+          <h1 class="title">
+      {% if cont.title | length %}
+        {{ cont.title | safe }}
+      {% endif %}
+          </h1>
           <h3>Each job will be estimated individually, but here are some guidelines to help you budget</h3>
       </div>
       <div class="column">

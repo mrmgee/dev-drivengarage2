@@ -175,6 +175,7 @@ section.blog-cards .item__body {
 
 /* FONT SIZES */
 
+body.page section h2,
 section.services h2,
 .header-full h3,  /* section.header-full */
 section.projects h2,
@@ -295,6 +296,9 @@ section.projects-head {
   margin: 3rem 0 1rem 0;
 }
 section.project-slider {
+  margin: 0 0 1rem 0;
+}
+body.page section p {
   margin: 0 0 1rem 0;
 }
 

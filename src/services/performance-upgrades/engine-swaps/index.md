@@ -37,13 +37,29 @@ sectionCont:
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
     text: Modern engine swaps are a great way to make your classic car more powerful, reliable and efficient - but along with the engine itself, we also need to modernize the transmission, fuel system, cooling system, exhaust and more. These parts add up and often surprise a customer before they even pull the trigger on a swap.
     slidelayout:
+  - pattern: sec-2col-pos2
+    title: Oddball swaps - Count us in!
+    subtitle: Tuned to perform
+    image: ./src/_images/83_Mercedes_Benz_E300_TD_wagon_silver_carb.jpg
+    altText: 83 Mercedes Benz E300 TD wagon silver carb
+    position: 0px 0px
+    text: Swapping from an inline 6 to a V8? No problemo! Swapping from an old 4 cylinder to a modern v8 or inline turbo 4? We got you. Our team is not only well versed in the mechanical end - but we have on staff fabricators who can make brackets, exhaust pipes, crossmembers, etc… oddball swaps are what excites us.  
+    slidelayout: 1
+  - pattern: sec-2col-pos2
+    title: Can you work with old school power plants?
+    subtitle: Tuned to perform
+    image: ./src/_images/83_Mercedes_Benz_E300_TD_wagon_silver_carb.jpg
+    altText: 83 Mercedes Benz E300 TD wagon silver carb
+    position: 0px 0px
+    text: Totally! Flatheads are still cool… and who doesn’t like a big block with a multi-carb setup and a blower sticking out of the hood. We’ve seen it all and can handle it all.
+    slidelayout: 1
   - pattern: sec-cost
     title: What's the cost?
     subtitle: 
     image: ./src/_images/Exhaust_custom_stainless.jpg
     altText: 74 Scout three quarters front left
     position: 0px 0px
-    text: Engine Swaps cost paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: Engine swaps are tough to give a “rough” estimate on as the price of parts can vary wildly. Many LS swaps are an easy bolt in.
     figures:
       - title: $1,100 - $1,855
         subtitle: for the parts
@@ -60,10 +76,10 @@ sectionCont:
     qaCont:
       - que: I have a used engine my buddy gave me - can you install it?
         ans: We can - but be aware that you are paying for labor - and used parts can have issues. 
-      - que: Q2 Engine Swaps
-        ans: A2 Engine Swaps answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q3 Engine Swaps
-        ans: A3 Engine Swaps answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: I want to buy a crate engine online and have it shipped to you. Can I do that?
+        ans: We would rather spec, and purchase the parts for you. We buy in volume wholesale and can meet or beat most online pricing - and make sure you get the right stuff.
+      - que: Can you guys re-build my engine for me?
+        ans: We don’t do engine machine work in house - but we do work with several reputable shops to do this work. We either have the machine shop assemble the engine - or in some cases we do the assembly in house.
     slidelayout: 1
 ---
 
