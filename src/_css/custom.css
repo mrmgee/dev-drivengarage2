@@ -181,7 +181,8 @@ section.projects h2,
 section.projects-head h2,
 section.carousel h2,
 section.blog-cards h2,
-section.services.related h2 {
+section.services.related h2, 
+body.p-cars section > .container > h2 {
   font-size: 3rem;
   font-weight: 700;
 }
@@ -634,7 +635,8 @@ section.shop-slider .slider-item-helper:not(.slider-item-ratio) .slider-containe
 
 /* SERVICES */
 
-section.services .container:nth-child(1) > h3 {
+section.services .container:nth-child(1) > h3, 
+body.p-cars section .container:nth-child(1) > h3 {
   margin: 0 0 2rem 0;
 }
 
@@ -1346,7 +1348,6 @@ section.services-detail-cost-box-alt .column .cost-box-inner p {
   transform: rotate(0deg);
 }
 .accordion .a-container.active .a-panel {
-  padding: 15px 10px 10px 10px;
   opacity: 1;
   max-height: 500px;
 }
@@ -1938,97 +1939,68 @@ section.carousel .carousel-cont h3 {
 
 
 /*
-* BEFORE & AFTER
+* CARS PHOTO WALL
 */
-/* Before After section */
-section.fbp-feat {
-  position: relative;
-  width: 100%;
-  margin: 2rem auto;
-  display: inline-block;
+
+
+body.p-cars .slide-box {
+  height: 12rem;
 }
-section.fbp-feat .header-full {
+body.p-cars .logo-bkg-stripe {
   width: 100%;
-  margin: 2rem auto;
+  margin: 0 auto;
+  background: #dadada;
+}
+body.p-cars .feat-item_overlay_body figure {
+  max-width: 100%;
+  padding: 0 0 0 0.4rem;
 }
 
-section.fbp-feat .halftone-overlay {
-  margin-top: 2rem;
+body.p-cars .logo-bkg-stripe h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+body.p-cars .slide-box>img.p-top-20 {
+  object-position: 0 -0.8rem;
 }
 
-/* NOT USED 
-section.fbp-feat .img-cont {
-  position: absolute;
-  max-height: 80%;
-  top: 0; 
-  bottom: 0;
-  left: 0; 
-  right: 0;
-  overflow: hidden;
-  z-index: 0;
+
+/*
+* CAROUSEL CARS
+*/
+section.carousel-cars > .container > h3 {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #363636;
+}    
+section.carousel-cars .slider-nav {
+  z-index: 10;
 }
-body.single-service-area section.fbp-feat .img-cont {
-  max-height: 76%;
+section.carousel-cars .slider-item-helper:not(.slider-item-ratio) .slider-container>* {
+  min-height: 2rem;
 }
-section.fbp-feat .img-cont img {
+section.carousel-cars .slider-item-helper .slider-container>* {
   display: block;
+}
+section.carousel-cars .slide-box {
+  max-width: 22rem;
+  max-height: 10rem;
+}
+section.carousel-cars .slide-box a {
+  color: #4a4a4a;
+}
+section.carousel-cars .slide-box>img {
   width: 100%;
-  max-height: 100%;
+  height: 100%;
+  display: block;
   object-fit: cover;
 }
-*/
-
-section.fbp-feat .img-cont::before {
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), linear-gradient(0deg, rgba(193, 153, 92, 0.8), rgba(193, 153, 92, 0.8));
+.slide-box>img.p-top-50 {
+  object-position: 0 -50px;
 }
-section.fbp-feat.feat-gallery .img-cont::before {
-/*  background-color: #0e4767;*/
-  background: #0e4767;
+.slide-box>img.p-top-20 {
+  object-position: 0 -20px;
 }
-section.fbp-feat .img-cont:before {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-}
-
-section.fbp-feat .container {
-  padding: 2rem 0 0 0;
-  z-index: 4;
-}
-section.fbp-feat .control {
-  position: absolute;
-  right: 1rem;
-}
-section.fbp-feat .control .button.is-primary {
-  background-color: #00AEEF;
-}
-section.fbp-feat .control .button.is-primary:hover {
-  background-color: #c59d5f;
-}
-
-body.single-service-area section.fbp-feat.feat-gallery > .container > .columns > .column {
-  align-self: flex-end;
-}
-
-section.fbp-feat h3 {
-  font-size: 3rem;
-  color: #ffffff;
-}
-body.single-service-area section.fbp-feat h3 {
-  margin: 0 0 2rem 0;
-  font-size: 1.8rem;
-}
-section.fbp-feat p {
-  margin: 0 0 2rem 0;
-  color: #000000;
-}
-
-
 
 
 

@@ -1,0 +1,45 @@
+---
+layout: base-4.njk
+title: Photo Wall
+---
+{% set carSlides = carsAll %}
+
+{% include "hero-services.njk" %}
+
+<section>
+    <div class="container">
+        {{ content | safe }}
+
+        <div class="columns is-multiline">
+
+{% for carSlides, item in carSlides %}
+  {%set pageSlideP = "./src/" %}
+  {%set imgSlideP = item.image %}
+  {%set fullSlideP = pageSlideP+imgSlideP %}
+  {% set imgSlideAlt = item.altText %}
+  {% set imgSlidePos = item.position %}
+  {% set imgSizesResp = "12" %}
+
+            <div class="column is-one-quarter">
+              <div class="slide-box">
+        {% if item.image|length %}
+            {% image ""+fullSlideP, ""+imgSlideAlt, ""+imgSlidePos, ""+imgSizesResp %}
+        {% endif %}
+                <div class="feat-item_overlay">
+                  <div class="feat-item_overlay_body">
+                    <div class="logo-bkg-stripe">
+                      <figure>
+                    {% if item.title|length %}
+                        <h3>{{ item.title }}</h3>
+                    {% endif %}
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div><!-- end {{ loop.index }} -->
+    {% endfor %}
+        </div><!-- end columns -->
+
+    </div>
+</section>

@@ -1,9 +1,9 @@
 {
     "slide01": {
-        "title": "1967 Dart Vader",
+        "title": "’67 Dart Vader",
         "subtitle": "Classic Period-correct restoration",
         "image": "_images/67_dart_vader_graffiti.jpg",
-        "altText": "’1967 Dart Vader three quarters rear left",
+        "altText": "’67 Dart Vader three quarters rear left",
         "position": "",
         "text": "<ul><li>Resprayed in original A4 silver</li><li>Original 340 engine</li><li>Original 4-speed transmission w/Hurst shifter</li><li>Original 8 ¾” Sure-Grip rear end</li><li>Every nut and bolt on this car was touched</li><li>Period-correct restoration using NOS parts wherever possible</li><li>High-quality aftermarket parts when needed</li></ul>",
         "slidelayout": 1
@@ -24,63 +24,105 @@
         "position": ""
     },
     "slide04": {
+        "title": "’65 Mercury Comet",
+        "image": "_images/65_Mercury_Comet05.jpg",
+        "altText": "’65 Mercury Comet blue three quarters front right",
+        "position": ""
+    },
+    "slide05": {
         "title": "’67 Camaro",
         "image": "projects/67-camaro-forsyth/67camaro_forsyth-5857.jpg",
         "altText": "’67 Camaro three quarters front left",
         "position": "p-top-50"
     },
-    "slide05": {
+    "slide06": {
         "title": "’67 Cuda",
         "image": "_images/67_Cuda_blue.jpg",
         "altText": "’67 Cuda blue three quarters front left",
         "position": ""
     },
-    "slide06": {
+    "slide07": {
         "title": "’67 GTO",
         "image": "_images/67_GTO_red.jpg",
         "altText": "’67 GTO red three quarters front right",
         "position": "p-top-20"
     },
-    "slide07": {
+    "slide08": {
         "title": "’67 Valiant",
         "image": "_images/67_Valiant_blue.jpg",
         "altText": "’67 Valiant blue three quarters front left",
         "position": ""
     },
-    "slide08": {
+    "slide09": {
         "title": "’68 Mercedes",
         "image": "_images/68_Mercedes_cream.jpg",
         "altText": "’68 Mercedes cream three quarters front left",
         "position": ""
     },
-    "slide09": {
+    "slide10": {
         "title": "’69 Custom S",
         "image": "_images/69_Custom_S_silver.jpg",
         "altText": "’69 Custom S silver three quarters front right",
-        "position": ""
+        "position": "p-top-20"
     },
-    "slide10": {
+    "slide11": {
         "title": "’70 El Camino",
         "image": "_images/70_El-Camino_dk_blue.jpg",
         "altText": "’70 El Camino dark blue three quarters front left",
         "position": "p-top-20"
     },
-    "slide11": {
+    "slide12": {
         "title": "’70 Malibu",
         "image": "_images/70_Malibu_white_rear_rt.jpg",
         "altText": "’70 Malibu white three quarters rear right",
         "position": ""
     },
-    "slide12": {
+    "slide13": {
         "title": "’74 Vega",
         "image": "_images/74_Vega_green.jpg",
         "altText": "’74 Vega green three quarters front right",
         "position": "p-top-20"
     },
-    "slide13": {
+    "slide14": {
         "title": "’76 Chevelle",
         "image": "_images/76_Chevelle_silver.jpg",
         "altText": "’76 Chevelle silver three quarters front left",
+        "position": ""
+    },
+    "slide15": {
+        "title": "’56 Studebaker Hawk",
+        "image": "_images/56_Studebaker_Hawk.jpg",
+        "altText": "’56 Studebaker Hawk black side left",
+        "position": ""
+    },
+    "slide16": {
+        "title": "Kellison",
+        "image": "_images/Kellison.jpg",
+        "altText": "Kellison detail badge",
+        "position": ""
+    },
+    "slide17": {
+        "title": "’30 Ford Model A",
+        "image": "_images/30_Ford_Model_A.jpg",
+        "altText": "’30 Ford Model A yellow side right",
+        "position": ""
+    },
+    "slide18": {
+        "title": "bill lovens",
+        "image": "_images/bill_lovens.jpg",
+        "altText": "bill lovens cream three quarters front right",
+        "position": ""
+    },
+    "slide19": {
+        "title": "’70 Mustang",
+        "image": "_images/70_Mustang01.jpg",
+        "altText": "’70 Mustang black three quarters front left",
+        "position": ""
+    },
+    "slide20": {
+        "title": "F100",
+        "image": "_images/F100.jpg",
+        "altText": "F100 green three quarters front right",
         "position": ""
     }
 }
