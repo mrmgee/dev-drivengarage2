@@ -31,11 +31,11 @@ sectionCont:
     CTAlabel: Let's Go >
     slidelayout: 1
   - pattern: sec-tips
-    title: Suspension Upgrades tips
-    image: ./src/_images/66_Chevelle03.jpg
-    altText: 66 Chevelle engine
+    title: Quality components matter
+    image: ./src/_images/Hotchkis_suspension.jpg
+    altText: Hotchkis suspension detail
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
-    text: Suspension Upgrades tip paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: We install suspension upgrade kits from Ride Tech, QA1, Hotchkis Suspension, Detroit Speed and more. We can work with you to determine your goals for the handling - and spec a and purchase a kit for you that gives you the best bang for your buck.
     slidelayout:
   - pattern: sec-cost
     title: What's the cost?

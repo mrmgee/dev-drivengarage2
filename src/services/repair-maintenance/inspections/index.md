@@ -14,12 +14,12 @@ collectionName: engineSwaps
 isHome: 1
 sectionCont:
   - pattern: sec-2col-pos1
-    title: Pre-Purchase or Ready to Sell
+    title: Just purchased? <br> Been sitting idle for years?
     subtitle: 
-    image: ./src/_images/67_gto_red_steering_wheel.jpg
-    altText: 67 GTO red steering wheel
+    image: ./src/_images/F150_blue_carb_wiring_Ross03.jpg
+    altText: F150 blue under hood inspection tool Ross
     position: 
-    text: Looking to buy a new classic and want to have us give it a once-over? Or making sure your car is in top shape to sell? We’ve got you covered.
+    text: We can perform a <b>rigorous</b> inspection to get your baby back on the road - or know that your new purchase is up to par. We concentrate on safety - and tuning to make sure all systems are go for your ride. At the end - you’ll get a full report of our findings, along with a plan of attack for the big things, as well as the small stuff that needs attention.
     slidelayout:
   - pattern: sec-2col-pos1
     title: Let us peek under the Hood
@@ -31,12 +31,20 @@ sectionCont:
     CTAlabel: Let's Go >
     slidelayout: 1
   - pattern: sec-tips
-    title: Inspections tips
+    title: We’re not here to gouge you
     image: ./src/_images/66_Chevelle03.jpg
     altText: 66 Chevelle engine
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
-    text: Inspections tip paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: We want customers for life - and that means you have to be living! Our inspection focuses on safety foremost. We don’t need to pad the report - we always have a customer backlog of work! We want you to have a great driving experience - and most of all keep you and your family safe for the drive.
     slidelayout:
+  - pattern: sec-2col-pos2
+    title: Pre-Purchase or Ready to Sell
+    subtitle: Tuned to perform
+    image: ./src/_images/67_gto_red_steering_wheel.jpg
+    altText: 67 GTO red steering wheel
+    position: 0px 0px
+    text: Looking to buy a new classic and want to have us give it a once-over? Or making sure your car is in top shape to sell? We’ve got you covered. If the seller is willing - we’ll let you know how the car looks, and what it may need after purchase putting you in the driver's seat for negotiations. If you’re selling - give potential buyers a piece of mind with a full inspection that shows your car is in tip-top shape.
+    slidelayout: 1
   - pattern: sec-cost
     title: What's the cost?
     subtitle: 
@@ -45,10 +53,10 @@ sectionCont:
     position: 0px 0px
     text: Inspections cost paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
     figures:
-      - title: $1,100 - $1,855
-        subtitle: for the parts
-      - title: $2,100 - $2,655
-        subtitle: for installation and calibration
+      - title: Varies wildly
+        subtitle: Sometimes $0 for the parts
+      - title: $350 - $550
+        subtitle: 2-3 hours labor
     slidelayout: 1
   - pattern: sec-faq-accordion
     title: Inspections FAQs
@@ -58,12 +66,10 @@ sectionCont:
     position: 
     text: 
     qaCont:
-      - que: Q1 Inspections
-        ans: A1 Inspections answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q2 Inspections
-        ans: A2 Inspections answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q3 Inspections
-        ans: A3 Inspections answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: Can you tell me EVERYTHING that is wrong with my car?
+        ans: We can only tell you what we can see - and what our tools can see. We are not fortune tellers with a crystal ball that can tell you what is going to break next, but we have a pretty good idea of where your car is mechanically NOW.
+      - que: My car hasn’t run in many years, can you get it going?
+        ans: In most cases - YES INDEED. Typical issues for a car that has been sitting (besides what parked it in the first place) are - old gas, tires, tune up, oil change, coolant flush, brake flush and leaks from sitting.
     slidelayout: 1
 ---
 

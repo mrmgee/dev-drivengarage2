@@ -14,28 +14,28 @@ collectionName: engineSwaps
 isHome: 1
 sectionCont:
   - pattern: sec-2col-pos1
-    title: Chevy LS Engine Swap
+    title: We don’t just do the flashy stuff.
     subtitle: 
     image: ./src/_images/89_Grand_Wagoneer-LS-side-top.jpg
     altText: 89 Grand Wagoneer LS side top
     position: 
-    text: Supercharge Your Vehicle with a Chevy LS Crate Engine Swap. This beast is no joke when it comes to power. We're talking up to a mind-blowing 525 horsepower and 485 ft-lbs of torque. Say goodbye to sluggish starts and hello to lightning-fast acceleration!
+    text: Basic repairs to classic cars are our specialty. We can diagnose, repair and get you back to cruising in no time.
     slidelayout:
   - pattern: sec-2col-pos1
-    title: Transplant your Powerplant
+    title: Oil changes, Tune ups, Preventative care.
     subtitle: Tuned to perform
-    image: ./src/_images/engine_swap.jpg
-    altText: Engine swap
+    image: ./src/_images/65_Mustang_quick_service.jpg
+    altText: 65 Mustang quick service
     position: 
-    text: If your original engine is shot or you’d like to get more power and performance. we’ll work with you revitalize your classic ride.
+    text: Don’t trust handing your keys to a shop littered with Prius(s) (or is it Priii?) - bring it to the folks that know classics, muscle cars and old schools. It’s a rare occasion you’ll find a Honda in our shop (though some of our customer love us so much they force us to work on their daily drivers as well).
     CTAlabel: Let's Go >
     slidelayout: 1
   - pattern: sec-tips
-    title: Engine Swaps tips
+    title: The right oil matters
     image: ./src/_images/66_Chevelle03.jpg
     altText: 66 Chevelle engine
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
-    text: Engine Swaps tip paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: We use oil specially formulated for your old school engine. Did you know the EPA mandated the removal of zinc additives from most motor oils? This means that the stuff the Quickee lube sells is bad for your classic car - it needs that Zinc to keep the cam and lifters alive. We use only high quality zinc enhanced oils for most classic cars.
     slidelayout:
   - pattern: sec-cost
     title: What's the cost?
