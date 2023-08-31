@@ -48,8 +48,8 @@ sectionCont:
   - pattern: sec-2col-pos2
     title: Can you work with old school power plants?
     subtitle: Tuned to perform
-    image: ./src/_images/83_Mercedes_Benz_E300_TD_wagon_silver_carb.jpg
-    altText: 83 Mercedes Benz E300 TD wagon silver carb
+    image: ./src/_images/Slant-Six_goldfinger.jpg
+    altText: Slant-Six goldfinger
     position: 0px 0px
     text: Totally! Flatheads are still cool… and who doesn’t like a big block with a multi-carb setup and a blower sticking out of the hood. We’ve seen it all and can handle it all.
     slidelayout: 1

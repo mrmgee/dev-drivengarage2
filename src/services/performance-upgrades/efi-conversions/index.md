@@ -7,8 +7,8 @@ performanceUpgradesItems:
   tag: performanceUpgrades
   order: 1
 description: Driven Garage nothern California restomod auto customization and repair shop
-featuredImage: ./src/_images/67_Camaro01.jpg
-featuredImageAlt: "67 Camaro engine"
+featuredImage: ./src/_images/69_Coronet_efi.jpg
+featuredImageAlt: "69 Coronet Holley EFI Sniper"
 featuredImagePos: "margin-top: -20%;"
 collectionName: efiConversions
 isHome: 1
@@ -16,8 +16,8 @@ sectionCont:
   - pattern: sec-2col-pos1
     title: EFI Done Right
     subtitle: 
-    image: ./src/_images/001-corvette-holley-efi-sniper-quadrajet-throttle-body.jpg
-    altText: Holley EFI Sniper quadrajet throttle body
+    image: ./src/_images/69_Coronet_efi.jpg
+    altText: 69 Coronet Holley EFI Sniper
     position: 
     text: Here’s how we do it right, and how to get the best experience from your EFI install. We’ve been ripping carburetors off and replacing them with throttle body EFI since George W. Bush was in the White House. After thousands of installs from every brand that makes these “Kits” -  we know what works well. We’re picky about the parts choice as well as how these systems are installed as we’ve seen what works best in real world driving on our own cars as well as customers rides.
     CTAlabel: Ready to go? - Get started >
@@ -50,6 +50,7 @@ sectionCont:
         subtitle: for the parts
       - title: $2,100 - $2,655
         subtitle: for installation, plumbing, wiring and tuning
+    CTAlabel: Give me an Estimate - I’m Ready!>
     slidelayout: 1
   - pattern: sec-faq-accordion
     title: EFI Conversions FAQs
@@ -63,8 +64,6 @@ sectionCont:
         ans: In most cases, yes - but with exceptions. We’ve done conversions on smog era vehicles with California legal components in the past - but we need to spec the right components for you. We can’t do this for every vehicle - but kits are available for a surprisingly wide range from various companies.
       - que: What will happen to my gas mileage if I upgrade to EFI?
         ans: A2 EFI Conversions answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q3 EFI Conversions
-        ans: A3 EFI Conversions answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
     slidelayout: 1
 ---
 

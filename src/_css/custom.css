@@ -224,7 +224,8 @@ section.shop-slider  .container.story-body h3,
   margin: 0 0 0 4.4rem;
 }
 .navbar-end .cta-bar h3, 
-.navbar-end .button.is-primary.slant h4 {
+.navbar-end .button.is-primary.slant h4,
+.column.detail-cost-box-cont .button.is-primary.slant h4 {
   font-size: 0.9rem;
 }
 .modal-content h2 {
@@ -1092,6 +1093,7 @@ body.performance-upgrades section.hero-services .sec-bkg-img::before {
 font-size: 1.8rem;
 }
 .half-split-cont {
+  position: relative;
   margin: 0 0 1rem 0;
   padding: 1rem;
 }
@@ -1218,6 +1220,15 @@ section.services-detail-cost-box-alt {
   padding: 2rem 0;
   /* background-color: #bdbdbd; */
 }
+.column.detail-cost-box-cont {
+  position: relative;
+}
+
+section.services-detail-cost-box-alt .control {
+  bottom: 0;
+  left: 0;
+}
+
 .silver1 {
 background: linear-gradient(
   22deg, #787878 0%,
@@ -1699,6 +1710,10 @@ section.feat-story .control {
   position: absolute;
   right: 1rem;
 }
+section.half-split .control {
+  margin: 1rem 0 0 0;
+}
+
 .body-full {
   width: 100%;
   position: relative;

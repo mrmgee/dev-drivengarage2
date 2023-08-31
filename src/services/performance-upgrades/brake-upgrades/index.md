@@ -40,16 +40,16 @@ sectionCont:
   - pattern: sec-2col-pos2
     title: Disc brake swaps require more than just the calipers and rotors
     subtitle: Tuned to perform
-    image: ./src/_images/83_Mercedes_Benz_E300_TD_wagon_silver_carb.jpg
-    altText: 83 Mercedes Benz E300 TD wagon silver carb
+    image: ./src/_images/69_Custom_S_engine_cu.jpg
+    altText: 69 Custom S engine detail
     position: 0px 0px
     text: A braking system has many components. And when swapping to front (or 4 wheel) disc brakes we also need to change the lines, and most importantly the brake master cylinder. You can’t use a drum/drum master for a disc/drum set-up.
     slidelayout: 1
   - pattern: sec-2col-pos2
     title: Pedal ratio is math that solves problems!
     subtitle: Tuned to perform
-    image: ./src/_images/83_Mercedes_Benz_E300_TD_wagon_silver_carb.jpg
-    altText: 83 Mercedes Benz E300 TD wagon silver carb
+    image: ./src/_images/73_Scout_II_dash_cu.jpg
+    altText: 73 Scout II orange dash brakes detail
     position: 0px 0px
     text: Have to hammer those brakes to get the car to stop? Or is your pedal “Touchy” sending the car into a screech without much pressure. Pedal ratio may be the issue - we can get to the root of this issue and get you stopping safely.
     slidelayout: 1

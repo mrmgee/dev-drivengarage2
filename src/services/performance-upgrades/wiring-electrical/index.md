@@ -23,8 +23,8 @@ sectionCont:
   - pattern: sec-2col-pos1
     title: Repair or Rewire?
     subtitle: Tuned to perform
-    image: ./src/_images/ron-francis-wiring_chevy.jpg
-    altText: Ron Francis Wiring
+    image: ./src/_images/fuses_wiring01.jpg
+    altText: fuses wiring
     position: 0px 0px
     text: We will troubleshoot and diagnose any electrical issue. A complete rewire is sometimes the best solution. The wiring in most classic cars is old, brittle and beyond its usable life - a complete re-wire takes care of all of the issues at once - instead of circuits failing one at a time and leaving you stranded, tow, repair - then do it all again.
     CTAlabel: Let's Get Started >

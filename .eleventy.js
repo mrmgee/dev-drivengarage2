@@ -10,7 +10,9 @@ const imageShortcode = async (
   sizesResp,
   widths = [400, 800, 1280],
   formats = ['jpeg'],
-  sizes = '(min-width: 768px) 600px, 100vw'
+  sizes = '(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)'
+//  '(min-width: 1420px) 318px, (min-width: 1220px) 270px, (min-width: 1040px) 222px, (min-width: 780px) calc(25vw - 18px), calc(100vw - 24px)'
+//  sizes = '(min-width: 768px) 600px, 100vw'
 //   sizes = '(min-width: 930px) 932px, 100vw'
 ) => {
     const imageMetadata = await Image(src, {
@@ -381,7 +383,7 @@ module.exports = function (eleventyConfig) {
 
     // PurgeCss
     const purgeCssPlugin = require("eleventy-plugin-purgecss");
-    if (process.env.ELEVENTY_ENV === "production") {
+    if (process.env.ELEVENTY_ENV === "productionCSS") {
         eleventyConfig.addPlugin(purgeCssPlugin, {
             // Optional: Specify the location of your PurgeCSS config
             config: "./purgecss.config.js",

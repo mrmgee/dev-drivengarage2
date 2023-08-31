@@ -3,6 +3,12 @@
 {% for cont in sectionCont %}
     {% if cont.pattern == "sec-cost" %}
 
+<style>
+  .column.detail-cost-box-cont {
+    position: relative;
+  }
+</style>
+
 <!-- START alt COST LOCKUP -->
 <section class="services-detail-cost-box-alt bkg-grad1">
   <div class="container">
@@ -17,10 +23,16 @@
       </div>
       <div class="column">
         <div class="columns">
-          <div class="column">
+          <div class="column detail-cost-box-cont">
 
               {% if cont.text | length %}
                   {{ cont.text | safe }}
+              {% endif %}
+
+              {% if cont.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant js-modal-trigger" data-target="modal-js-example"><h4>{{ cont.CTAlabel }}</h4></div>
+                </div>
               {% endif %}
 
           </div><!-- END 1 column -->
