@@ -55,7 +55,18 @@ a.navbar-item:hover,
   background-color: #f79837;
 
 }
-
+/* Work Request Form Modal */
+.modal-content .box {
+  padding: 0 0 1rem 0;
+  border-radius: 0.4rem 0.4rem 0 0;
+}
+.toggle-content {
+	display: none;
+  padding: 1rem;
+}
+.toggle-content.is-visible {
+	display: block;
+}
 
 
 /* COLORS */
@@ -217,7 +228,8 @@ section.shop-slider  .container.story-body h3,
   font-size: 0.9rem;
 }
 .modal-content h2 {
-  padding: 1rem;
+  padding: 0.6rem;
+  border-radius: 0.4rem 0.4rem 0 0;
 }
 .modal-content h3 {
   /* margin: 0 0 2rem 0; */
@@ -227,6 +239,9 @@ section.shop-slider  .container.story-body h3,
 }
 .modal-content > .box > .toggle-content.is-visible > p {
   margin: 0 0 2rem 0;
+}
+.modal-content > .box > #modal-form.toggle-content.is-visible > p {
+  margin: 0 0 0.6rem 0;
 }
 .modal-content .toggle-content.is-visible figure img {
   width: 100%;
@@ -455,21 +470,21 @@ section.process {
   /* border: 1px solid #078f46; */
   background-color: #fafafa;
 }
-.process-item .img-wrap {
+.img-wrap {
   width: 100%;
   min-height: 8rem;
   text-align: center;
-  /* border: 1px solid #12cde9; */
+}
+body.home .img-wrap {
   background-color: #ffffff;  
 }
-
-.process-item .img-wrap .icon {
+.img-wrap .icon {
     width: 100%;
     font-size: 6rem;
     vertical-align: top;
     color: #f79837;
 }
-.process-item .img-wrap .icon.i-timesheet img {
+.img-wrap .icon.i-timesheet img {
   max-height: 6.2rem;
   margin: 0.3rem 0 0 0;
 }
@@ -477,7 +492,7 @@ section.process {
     display: inline-block;
     line-height: 1;
 }
-.process-item .img-wrap .icon:before {
+.img-wrap .icon:before {
     font-size: inherit;
     margin-left: 0;
     vertical-align: top;
