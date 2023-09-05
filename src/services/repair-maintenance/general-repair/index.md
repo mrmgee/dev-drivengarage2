@@ -14,29 +14,37 @@ collectionName: engineSwaps
 isHome: 1
 sectionCont:
   - pattern: sec-2col-pos1
-    title: We don’t just do the flashy stuff.
+    title: We’re specialists in classic cars, muscle cars and old schools.
     subtitle: 
     image: ./src/_images/89_Grand_Wagoneer-LS-side-top.jpg
     altText: 89 Grand Wagoneer LS side top
     position: 
-    text: Basic repairs to classic cars are our specialty. We can diagnose, repair and get you back to cruising in no time.
+    text: Don’t trust handing your keys to a shop littered with Prius(s) (or is it Priii?) - bring it to the folks that know classics, muscle cars and old schools. It’s a rare occasion you’ll find a Honda in our shop (though some of our customer love us so much they force us to work on their daily drivers as well).
     slidelayout:
   - pattern: sec-2col-pos1
-    title: Oil changes, Tune ups, Preventative care.
+    title: We speak carburetors, timing, and the like.
     subtitle: Tuned to perform
     image: ./src/_images/65_Mustang_quick_service.jpg
     altText: 65 Mustang quick service
     position: 
-    text: Don’t trust handing your keys to a shop littered with Prius(s) (or is it Priii?) - bring it to the folks that know classics, muscle cars and old schools. It’s a rare occasion you’ll find a Honda in our shop (though some of our customer love us so much they force us to work on their daily drivers as well).
+    text: Most shops will shy away from your classic - but we can get you back up and running in no time with the tools, expertise and facility to tackle any issue with your classic.
     CTAlabel: Let's Go >
     slidelayout: 1
   - pattern: sec-tips
-    title: The right oil matters
+    title: Experience matters
     image: ./src/_images/66_Chevelle03.jpg
     altText: 66 Chevelle engine
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
-    text: We use oil specially formulated for your old school engine. Did you know the EPA mandated the removal of zinc additives from most motor oils? This means that the stuff the Quickee lube sells is bad for your classic car - it needs that Zinc to keep the cam and lifters alive. We use only high quality zinc enhanced oils for most classic cars.
+    text: Just like doctors - we are specialists. We have the experience, knowledge and tools to diagnose issues with your classic car quickly. Nothing against shops that work on modern cars - they may have an old guy in the back that knows his stuff - but we do this every day.
     slidelayout:
+  - pattern: sec-2col-pos2
+    title: Diagnosis is key
+    subtitle: Tuned to perform
+    image: ./src/_images/69_Custom_S_engine_cu.jpg
+    altText: 69 Custom S engine detail
+    position: 0px 0px
+    text: Battery keeps going dead? Could be the alternator, regulator or another component drawing power.
+    slidelayout: 1
   - pattern: sec-cost
     title: What's the cost?
     subtitle: 
@@ -58,12 +66,12 @@ sectionCont:
     position: 
     text: 
     qaCont:
-      - que: Q1 Engine Swaps
-        ans: A1 Engine Swaps answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q2 Engine Swaps
-        ans: A2 Engine Swaps answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q3 Engine Swaps
-        ans: A3 Engine Swaps answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: Another shop, my buddy, Google - already told me what is wrong. Can you just fix it?
+        ans: That mechanic, your buddy and no one named Google works here. We’ll still need to perform a proper diagnosis. Period.
+      - que: I have my own parts - can you just put them on?
+        ans: We shy away from this - as if it doesn’t fix the issue, or the part fails - you blame us… If we buy the parts, we know where they came from. Simply said - no warranty on parts or install if we didn’t procure the parts.
+      - que: My car just broke down - can I have it towed to you right now?
+        ans: We typically have a back-log of customers waiting. We’ll do our best to accommodate you but we only have so much room in the shop, and so many hours available for the work we have in and scheduled to come in. <span class="js-modal-trigger" data-target="modal-js-example">Submit a work request</span> or call first!
     slidelayout: 1
 ---
 

@@ -1,0 +1,189 @@
+{% block secCostAlt %}
+
+
+{% for cont in sectionCont %}
+    {% if cont.pattern == "sec-cost-alt" %}
+
+<style>
+  section.services-detail-cost-box-alt {
+    margin: 0 0 8rem 0;
+    }
+  .column.detail-cost-box-cont {
+    position: relative;
+  }
+  section.services-detail-cost-box-alt p {
+    margin-bottom: 1rem;
+  }
+  section.services-detail-cost-box-alt table {
+    margin: 2rem auto 0 auto;
+  }
+</style>
+
+<!-- START alt COST LOCKUP -->
+<section class="services-detail-cost-box-alt bkg-grad1">
+  <div class="container">
+    <h1 class="title">
+      {% if cont.title | length %}
+        {{ cont.title | safe }}
+      {% endif %}
+    </h1>
+    <p>
+    {% if cont.text | length %}
+        {{ cont.text | safe }}
+    {% endif %}
+    </p>
+
+
+
+
+
+    <table class="table">
+        <thead>
+            <tr style="background-color: #f79837;">
+                <th colspan="8">Metal / Body / Paint / Finish - Just metal / body / paint work for a standard job to full on show car.</th>
+            </tr>
+          <tr>
+            <th>Description</th>
+            <th>Rate</th>
+            <th>Hrs Low</th>
+            <th>Hrs Med</th>
+            <th>Hrs High</th>
+            <th>Cost Low</th>
+            <th>Cost Med</th>
+            <th>Cost High</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Basic Disassembly</th>
+                <td>$100.00</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>$2,000.00</td>
+                <td>$3,000.00</td>
+                <td>$4,000.00</td>
+            </tr>
+            <tr>
+                <th>Metalwork</th>
+                <td>$180.00</td>
+                <td>20</td>
+                <td>50</td>
+                <td>100</td>
+                <td>$3,600.00</td>
+                <td>$9,000.00</td>
+                <td>$18,000.00</td>
+            </tr>
+            <tr>
+                <th>Body / Paint prep</th>
+                <td>$140.00</td>
+                <td>80</td>
+                <td>120</td>
+                <td>150</td>
+                <td>$11,200.00</td>
+                <td>$16,800.00</td>
+                <td>$21,000.00</td>
+            </tr>
+            <tr>
+                <th>Paint / Finish</th>
+                <td>$150.00</td>
+                <td>40</td> 
+                <td>80</td>
+                <td>120</td>
+                <td>$6,000.00</td>
+                <td>$12,000.00</td>
+                <td>$18,000.00</td>
+            </tr>
+            <tr>
+                <th>Re-assembly</th>
+                <td>$140.00</td>
+                <td>20</td> 
+                <td>60</td>
+                <td>100</td>
+                <td>$2,800.00</td>
+                <td>$8,400.00</td>
+                <td>$14,000.00</td>
+            </tr>
+            <tr>
+                <th>Paint / Body Materials</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$4,500.00</td>
+                <td>$6,500.00</td>
+                <td>$8,500.00</td>
+            </tr>
+            <tr>
+                <th>Weatherstripping / Rubber</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$500.00</td>
+                <td>$800.00</td>
+                <td>$1,500.00</td>
+            </tr>
+            <tr>
+                <th>Trim / Bumpers</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$1,000.00</td>
+                <td>$2,000.00</td>
+                <td>$6,000.00</td>
+            </tr>
+            <tr style="background-color: #363636; color: #ffffffd1;">
+                <th></th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Subtotal</td>
+                <td>$31,600.00</td>
+                <td>$58,500.00</td>
+                <td>$91,000.00</td>
+            </tr>
+            <tr style="background-color: #999999;">
+                <th></th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Labor only</td>
+                <td>$25,600.00</td>
+                <td>$49,200.00</td>
+                <td>$75,000.00</td>
+            </tr>
+            <tr style="background-color: #999999;">
+                <th></th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Parts/Materials only</td>
+                <td>$6,000.00</td>
+                <td>$9,300.00</td>
+                <td>$16,000.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+    {% if cont.CTAlabel|length %}
+    <div class="control">
+        <div class="button is-primary slant js-modal-trigger" data-target="modal-js-example"><h4>{{ cont.CTAlabel }}</h4></div>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+<!-- End alt COST LOCKUP --> 
+
+  {% endif %}
+{% endfor %}
+
+
+
+{% endblock secCostAlt %}

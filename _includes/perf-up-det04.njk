@@ -24,10 +24,32 @@ title: Performance Upgrades Detail 4 - perf-up
         {% include "sec-cost.njk" %}
     {% endblock secCost %}
 
+    {% block secCont03 %}
+        {% include "sec-cont03.njk" %}
+    {% endblock secCont03 %}
+
+{% if bodyName == "custom-high-end-paint" %}
+
+    {% block secContAccordion %}
+        {% include "sec-cont-accordion.njk" %}
+    {% endblock secContAccordion %}
+
+    {% block secCostAlt %}
+        {% include "sec-cost-alt.njk" %}
+    {% endblock secCostAlt %}
+
+    {% block secFAQs2 %}
+        {% include "sec-faq-accordion.njk" %}
+    {% endblock secFAQs2 %}
+
+
+{% else %}
 
     {% block secFAQs %}
         {% include "sec-faq-accordion.njk" %}
     {% endblock secFAQs %}
+
+{% endif %}
 
     {% block secCarsAll %}
         {% include "sec-cars-carousel.njk" %}

@@ -20,7 +20,7 @@
             <span>Q</span>
           </div>
         {% if item.que|length %}
-            {{ item.que }}
+            {{ item.que | safe }}
         {% endif %}
          <span></span>
         </div>
@@ -30,7 +30,7 @@
           </div>
             <p>
             {% if item.ans|length %}
-                {{ item.ans }}
+                {{ item.ans | safe }}
             {% endif %}
             </p>
         </div>

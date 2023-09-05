@@ -1,0 +1,76 @@
+{% block secContAccordion %}
+
+<style>
+.bkg-grad2 {
+  background-image: linear-gradient(180deg, #dadada 40%, #636363);
+}
+.accordion .a-container.active .a-panel {
+  padding: 2rem;
+}
+</style>
+
+{% for cont in sectionCont %}
+
+    {% if cont.pattern == "sec-cont-accordion" %}
+
+<!-- START accordion -->
+<section class="cont-accordion">
+    <div class="container">
+{% if cont.title|length %}
+        <h3>{{ cont.title }}</h3>
+{% endif %}
+{% if cont.text|length %}
+        {{ cont.text | safe }}
+{% endif %}
+    </div>
+    <div class="container">
+
+    <div class="accordion v1">
+
+      {% for item in cont.qaCont %}
+        {% set imgP = item.ansImg %}  {# 67camaro_forsyth-0608.jpg = image file name #}
+        {% set imgAlt = item.ansImgAlt %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
+
+
+      <div class="a-container{% if loop.index == 1 %} active{% endif %}">
+        <p class="a-btn"><i>{{ loop.index }}</i> 
+        {% if item.que|length %}
+            {{ item.que }}
+        {% endif %}
+         <span></span>
+        </p>
+        <div class="a-panel bkg-grad2">
+          <div class="columns acc-cont">
+        {% if imgP|length %}
+            <div class="column">
+              <figure class="image">
+                {% if imgP|length %}
+                    {% image ""+imgP, ""+imgAlt %}
+                {% endif %}                
+              </figure>
+            </div>
+        {% endif %}
+            <div class="column">
+                {% if item.ansText|length %}
+                    {{ item.ansText | safe }}
+                {% endif %}
+            </div>
+          </div>
+
+        </div>
+      </div><!-- END a-container -->
+
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+</section>
+<!-- END accordion -->
+
+
+    {% endif %}
+{% endfor %}
+
+{% endblock secContAccordion %}

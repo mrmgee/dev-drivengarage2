@@ -96,7 +96,9 @@ section.carousel h2,
 .cta-bar h3,
 section.hero-services .title,
 section.services-listing .title, 
-section.project-slider .carousel-cont h3 {
+section.project-slider .carousel-cont h3,
+.a-panel a, 
+.a-panel .js-modal-trigger {
   color: #f79837;
 }
 
@@ -200,7 +202,8 @@ body.p-cars section > .container > h2 {
 }
 
 section.shop-slider  .container.story-body h3,
-.story-over h3 {
+.story-over h3,
+section.cont-accordion h3 {
   margin: 0 0 0.8rem 0;
   font-size: 2rem;
   font-weight: 700;
@@ -1258,21 +1261,28 @@ section.services-detail-cost-box-alt .column p:not(:last-child) {
 .cost-box-inner {
   max-width: 60%;
   margin-bottom: 1rem;
-  padding: 0.4rem 1rem 0.4rem 1rem;
-  /* background-color: #dadada; */
+  padding: 1rem 0 0 0;
   background-color: rgb(255 255 255 / 82%);
+  text-align: right;
+  border: 4px solid #f79837;
+  border-width: 6px 6px 0 0;
 }
 section.services-detail-cost-box-alt .column span {
   font-size: 1.6rem;
   font-weight: 600;
 }
 section.services-detail-cost-box-alt .column .cost-box-inner h3 {
+  margin: 0 1rem 1rem 0;
   font-size: 1.6rem;
   font-weight: 600;
+  color: #363636;
 }
 section.services-detail-cost-box-alt .column .cost-box-inner p {
+  margin: 0;
+  padding: 0.2rem;
   font-size: 0.9rem;
-  padding-left: 0.4rem;
+  background: #fff;
+  display: inline-block;
 }
 
 
@@ -1384,6 +1394,58 @@ section.services-detail-cost-box-alt .column .cost-box-inner p {
 
 
 
+/* 
+
+CONT ACCORDION -  Body Paint Metalwork
+
+*/
+section.cont-accordion .container:nth-child(1) {
+  margin-bottom: 2rem;
+}
+
+section.cont-accordion .accordion .a-container.active .a-panel {
+  min-height: 4rem;
+  max-height: 80rem;
+}
+
+section.cont-accordion .accordion .a-container .a-btn {
+  display: block;
+  position: relative;
+  padding: 0 0 0.4rem 0;
+  width: 100%;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+.a-btn i {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0 0 -2rem;
+  padding: 0.8rem 1.4rem;
+  color: #ffffff;
+  background: #f79837;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+  font-style: normal;
+}
+section.cont-accordion .acc-cont h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+section.cont-accordion ul {
+  /* list-style: circle; */
+}
+section.cont-accordion .container .column ul li {
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.acc-cont p {
+  padding-bottom: 1rem;
+}
+section.cont-accordion li b {
+  font-weight: 500;
+}
 
 
 

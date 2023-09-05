@@ -1,0 +1,81 @@
+{% block secCont03 %}
+
+    <section class="top first services half-split"><!-- START sectionStart: {{ sectionStart }}-->
+      <div class="container">
+
+{% for cont in sectionCont %}
+  {% set imgP = cont.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
+  {% set imgAlt = cont.altText %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
+  {% set imgBkgP = cont.bkgImage %}
+
+    {% if cont.pattern == "sec-2col-pos3" %}
+        {# check if even or odd #}
+        {# loop.index(1) = index.md so loop.index(2) = brake-upgrades01.md  so 2/2 = 1 TRUE even  #}
+
+        {% if (loop.index)%2 == 0 %}  {# loop.index(4)%2 = 0 EVEN   loop.index(5)%2 = 1 ODD #}
+
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+                <figure class="image">
+                    {% if imgP|length %}
+                        {% image ""+imgP, ""+imgAlt %}
+                    {% endif %}
+                </figure>
+            </div>
+            <div class="column">
+                <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                </div>
+                {% if cont.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant js-modal-trigger" data-target="modal-js-example"><h4>{{ cont.CTAlabel }}</h4></div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        {% else %}
+<!-- odd -->
+        <div class="columns"><!-- section:{{ loop.index }} -->
+            <div class="column">
+              <div class="half-split-cont">
+                {% if cont.title|length %}
+                    <h3>{{ cont.title }}</h3>
+                {% endif %}
+                {% if cont.text|length %}
+                    {{ cont.text | safe }}
+                {% endif %}
+                {% if cont.CTAlabel|length %}
+                <div class="control">
+                    <div class="button is-primary slant js-modal-trigger" data-target="modal-js-example"><h4>{{ cont.CTAlabel }}</h4></div>
+                </div>
+                {% endif %}
+              </div>
+            </div>
+
+            <div class="column">
+                <figure class="image">
+                    <!-- loop:{{ loop.index }} imgP: {{ imgP }} -->
+                    {% if imgP|length %}
+                        {% image ""+imgP, ""+imgAlt %}
+                    {% endif %}
+                    </figure>
+            </div>
+          </div>        
+
+        {% endif %}
+
+    {% endif %}
+
+<!-- END sec-2col -->
+{% endfor %}
+
+      </div>
+    </section><!-- {{ loop.index }} END top services half-split -->
+
+{% endblock secCont03 %}
