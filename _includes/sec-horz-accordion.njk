@@ -1,0 +1,376 @@
+{% block secHorzAccordion %}
+
+
+<style>
+/* LIST */
+section.horz-accordion {
+    position: relative;
+    display: block;
+}
+section.horz-accordion ul {
+  /* display: flex; */
+}
+
+/* FORM */
+input {
+  position: absolute;
+  top: -9px;
+  left: -9px;
+  /* visibility: hidden; */
+  opacity: 0;
+}
+
+label {
+  display: block;
+  float: left;
+  height: 80vh;
+  width: 2vw;
+  overflow: hidden;
+  background: #30354a;
+  text-align: center;
+  font-size: 14px;
+  line-height: 50px;
+  transition: background 300ms ease;
+}
+.clear {
+    clear: both;
+}
+label:hover {
+  transition-duration: 0s;
+}
+section.horz-accordion li {
+    position: relative;
+}
+
+li:nth-child(even) > input + label {
+  background: #3a4059;
+}
+
+label:hover,
+li:nth-child(even) > input + label:hover {
+  background: #2196f3;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type=radio]:checked ~ label {
+  background: #f79837;
+  color: #fff;
+  cursor: default !important;
+}
+
+/* SLIDES */
+.accslide {
+  display: block;
+  height: 100%;
+  width: 0px;
+  padding: 10px 0;
+  float: left;
+  overflow-x: hidden;
+  /* white-space: nowrap; */
+  transition: all 700ms ease;
+}
+.accslide * {
+  padding-left: 10px;
+}
+.accslide img {
+  /* margin-top: 10px; */
+}
+.accslide .content {
+    padding: 2rem;
+}
+
+input[type=radio]:not(:checked) ~ label > * {
+  padding-left: 7px;
+  font-size: 1.2em;
+  white-space: nowrap;
+  transform: rotate(90deg);
+  color: aquamarine;
+}
+
+input[type=radio]:checked ~ label > * {
+  display: none;
+}
+
+li:nth-child(1):nth-last-child(2) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 80px);
+}
+
+li:nth-child(2):nth-last-child(1) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 80px);
+}
+
+li:nth-child(1):nth-last-child(3) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 120px);
+}
+
+li:nth-child(2):nth-last-child(2) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 120px);
+}
+
+li:nth-child(3):nth-last-child(1) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 120px);
+}
+
+li:nth-child(1):nth-last-child(4) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 160px);
+}
+
+li:nth-child(2):nth-last-child(3) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 160px);
+}
+
+li:nth-child(3):nth-last-child(2) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 160px);
+}
+
+li:nth-child(4):nth-last-child(1) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 160px);
+}
+
+li:nth-child(1):nth-last-child(5) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 200px);
+}
+
+li:nth-child(2):nth-last-child(4) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 200px);
+}
+
+li:nth-child(3):nth-last-child(3) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 200px);
+}
+
+li:nth-child(4):nth-last-child(2) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 200px);
+}
+
+li:nth-child(5):nth-last-child(1) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 200px);
+}
+
+li:nth-child(1):nth-last-child(6) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 240px);
+}
+
+li:nth-child(2):nth-last-child(5) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 240px);
+}
+
+li:nth-child(3):nth-last-child(4) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 240px);
+}
+
+li:nth-child(4):nth-last-child(3) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 240px);
+}
+
+li:nth-child(5):nth-last-child(2) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 240px);
+}
+
+li:nth-child(6):nth-last-child(1) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 240px);
+}
+
+li:nth-child(1):nth-last-child(7) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 280px);
+}
+
+li:nth-child(2):nth-last-child(6) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 280px);
+}
+
+li:nth-child(3):nth-last-child(5) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 280px);
+}
+
+li:nth-child(4):nth-last-child(4) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 280px);
+}
+
+li:nth-child(5):nth-last-child(3) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 280px);
+}
+
+li:nth-child(6):nth-last-child(2) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 280px);
+}
+
+li:nth-child(7):nth-last-child(1) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 280px);
+}
+
+li:nth-child(1):nth-last-child(8) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 320px);
+}
+
+li:nth-child(2):nth-last-child(7) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 320px);
+}
+
+li:nth-child(3):nth-last-child(6) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 320px);
+}
+
+li:nth-child(4):nth-last-child(5) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 320px);
+}
+
+li:nth-child(5):nth-last-child(4) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 320px);
+}
+
+li:nth-child(6):nth-last-child(3) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 320px);
+}
+
+li:nth-child(7):nth-last-child(2) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 320px);
+}
+
+li:nth-child(8):nth-last-child(1) input[type=radio]:checked ~ .accslide {
+  width: calc(100% - 320px);
+}
+</style>
+
+
+
+
+<section class="horz-accordion">
+
+<!-- These variables help keep track of the input name and ID-->
+<!-- currentTab helps keep track of each individual input-->
+<!-- tabControlName is used as a unique identifier for the accordion-->
+<ul>
+  <li>
+    <!-- Using radio inputs means only one can be selected at a time-->
+    <!-- The ID must be unique so the label will point to the input-->
+    <input id="rad1" type="radio" name="rad" checked="checked"/>
+    <label for="rad1">
+      <div>Step 1: Build spec / design</div>
+    </label>
+    <div class="accslide">
+      <div class="content">
+        <h1>Step 1: Build spec / design</h1>
+        <div class="columns">
+            <div class="column">
+                {% image "./src/_images/67_dart_vader_graffiti.jpg", "67 Dart Vader" %}
+            </div>
+            <div class="column">
+                <p>For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p>
+                <p>Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!</p>
+            </div>
+
+        </div>
+
+
+
+      </div>
+    </div>
+  </li>
+  <li>
+    <input id="rad2" type="radio" name="rad"/>
+    <label for="rad2">
+      <div>Second panel</div>
+    </label>
+    <div class="accslide">
+      <div class="content">
+        <h1>Second panel</h1>
+        <p>Lorem ipsum...</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <input id="rad3" type="radio" name="rad"/>
+    <label for="rad3">
+      <div>Third panel</div>
+    </label>
+    <div class="accslide">
+      <div class="content">
+        <h1>Third panel</h1>
+        <p>Lorem ipsum...</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <!-- Using radio inputs means only one can be selected at a time-->
+    <!-- The ID must be unique so the label will point to the input-->
+    <input id="rad4" type="radio" name="rad"/>
+    <label for="rad4">
+      <div>Fourth panel</div>
+    </label>
+    <div class="accslide">
+      <div class="content">
+        <h1>Fourth panel</h1>
+        <p>Lorem ipsum...</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <!-- Using radio inputs means only one can be selected at a time-->
+    <!-- The ID must be unique so the label will point to the input-->
+    <input id="rad5" type="radio" name="rad"/>
+    <label for="rad5">
+      <div>Fifth panel</div>
+    </label>
+    <div class="accslide">
+      <div class="content">
+        <h1>Fifth panel</h1>
+        <p>Lorem ipsum...</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <!-- Using radio inputs means only one can be selected at a time-->
+    <!-- The ID must be unique so the label will point to the input-->
+    <input id="rad6" type="radio" name="rad"/>
+    <label for="rad6">
+      <div>Sixth panel</div>
+    </label>
+    <div class="accslide">
+      <div class="content">
+        <h1>Sixth panel</h1>
+        <p>Lorem ipsum...</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <!-- Using radio inputs means only one can be selected at a time-->
+    <!-- The ID must be unique so the label will point to the input-->
+    <input id="rad7" type="radio" name="rad"/>
+    <label for="rad7">
+      <div>Seventh panel</div>
+    </label>
+    <div class="accslide">
+      <div class="content">
+        <h1>Seventh panel</h1>
+        <p>Lorem ipsum...</p>
+      </div>
+    </div>
+  </li>
+  <li>
+    <!-- Using radio inputs means only one can be selected at a time-->
+    <!-- The ID must be unique so the label will point to the input-->
+    <input id="rad8" type="radio" name="rad"/>
+    <label for="rad8">
+      <div>Eighth panel</div>
+    </label>
+    <div class="accslide">
+      <div class="content">
+        <h1>Step 8: Paint / Clear coat / Finish</h1>
+        <p>It all comes down to this - All the work to get to this point has given us a solid foundation that is straight, smooth and ready to be finished. Most people think that we just sand a car real quick, prime it and spray on the paint - but in reality the actual painting process is the least labor intensive part of what we do. We do hundreds of hours of prep work to get here - and it’s under 20 hours of actual painting.  Here are the paint and finish steps we adhere to.</p>
+        <p>8.1: Clean, clean, clean again and mask: The spray booth needs to be cleaned and new filters installed. The car and body panels will be cleaned several times here. We can’t have any contaminants on the surface prior to paint. Any areas we are not painting are masked off.</p>
+        <p>8.2: Base coat and drop coat: We spray 3-4 coats of base coat - and for metallics do a final “drop coat” that ensures there is no striping or panel to panel issues with the metallics in the paint. We feature high quality paint products from Spies Hecker / Axalta for all of our  work.</p>
+        <p>8.3: Clearcoat: The first phase of clear coat consists of 3-4 coats of clear coat applied with proper flash times between coats. This provides the shine over the base coat and protects it from the sun / elements.</p>
+        <p>8.4: Wet sand: After the initial 3-4 coats of clear are laid down - we wet sand all of the outside surfaces with 800-1000 grit sandpaper by hand with blocks to remove the “orange peel” texture, and any imperfections. This mechanical sanding provides us with a mechanical adhesion for the final flow coat.</p>
+        <p>8.5: Flow coat This is the final step of clear coat. We add 2-3 additional coats of clear coat to the wet sanded surfaces to add more depth and shine. We add a little more reducer to the clear allowing it to “flow” and level better.</p>
+        <p>8.6 Wet / dry sand for compound and polish: After the flow coat - the surface is smooth and glossy with little orange peel. But we take it a step further to make the surface smooth as a mirror. We start by wet sanding by hand with blocks the entire exterior 1,200 grit. We follow that up with 4 rounds of machine sanding using 1,500 grit, 2,000 grit, 2,500 grit and 3,000 grit.</p>
+        <p>8.7: Compound and polish: the wet / dry sand process has left the surface of the clear smooth - but now we have to shine it all back up and remove the 3000 grit scratches. This process involves using compound and polish in 3 steps with a rotary and orbital buffer. This gives the clear coat that wet and glossy look that we’re all aiming for.</p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </li>
+</ul>
+<div class="xdxdclear"></div>
+</section>
+{% endblock secHorzAccordion %}

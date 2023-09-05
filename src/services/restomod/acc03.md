@@ -1,0 +1,11 @@
+---
+title: "Step 3: Metalwork / Modification / Pre-assembly & Fit"
+tags: ['restomodAccord']
+subtitle: Passion for Classic Cars
+author: Driven photographer
+image: ./src/_images/67_dart_vader_graffiti.jpg
+altTag: 67 Dart Vader
+---
+In this step we repair (or replace) all the damaged sheet metal and pre-assemble the car to fit all the panels either on the chassis or on a build stand and refine all the gaps for doors, fenders, trunk and hood. Even new reproduction panels sometimes require significant modifications in metal to ensure proper fit.
+
+If we’re doing body modifications we do them all in this step and fully build the basic car with these mods to ensure all the panels fit and all the holes we don’t need and components we are changing fit. Sometimes we may fully build the car with the engine and transmission and even suspension so that all the modification can be done without any risk of scratching paint.

@@ -1,0 +1,11 @@
+---
+title: "Step 1: Build spec / design"
+tags: ['restomodAccord']
+subtitle: Passion for Classic Cars
+author: Driven photographer
+image: ./src/_images/67_dart_vader_graffiti.jpg
+altTag: 67 Dart Vader
+---
+acc01 - For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time. 
+
+Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!

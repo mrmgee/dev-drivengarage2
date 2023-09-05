@@ -196,7 +196,8 @@ section.projects-head h2,
 section.carousel h2,
 section.blog-cards h2,
 section.services.related h2, 
-body.p-cars section > .container > h2 {
+body.p-cars section > .container > h2,
+section.restomod h2 {
   font-size: 3rem;
   font-weight: 700;
 }

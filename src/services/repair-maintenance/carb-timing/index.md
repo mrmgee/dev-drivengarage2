@@ -31,11 +31,11 @@ sectionCont:
     CTAlabel: Let's Go >
     slidelayout: 1
   - pattern: sec-tips
-    title: Carb & Timing tips
+    title: Carb and timing are like peanut butter and jelly
     image: ./src/_images/67_GTO_red_carb.jpg
     altText: 67 GTO red carb
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
-    text: Carb & Timing tip paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
+    text: We have to tune both together for optimum results. Sometimes that means simply adjusting the carb.
     slidelayout:
   - pattern: sec-cost
     title: What's the cost?

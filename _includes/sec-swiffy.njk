@@ -1,0 +1,74 @@
+<style>
+  section.hero .slide-box {
+    min-height: 36rem;
+  }
+  section.hero .slide-box > img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  section.hero .slide-box .feat-item_overlay_body {
+    /* align-items: center; */
+    margin-bottom: 4rem;
+    z-index: 1;
+  }
+  section.hero .swiffy-slider .slider-nav {
+    z-index: 5;
+  }
+</style>
+
+
+<section class="hero is-medium is-primary has-background">
+
+  <!-- <div class="swiffy-slider"> -->  <!-- slider-nav-autoplay slider-nav-autopause -->
+  <div class="swiffy-slider slider-nav-autoplay slider-nav-autopause">  
+
+    <ul class="slider-container">
+
+{% for item in collections[collectionName] %}
+  {% if item.data.isHome !==1 %}  {# <!-- // Don't output if Home flag is true in index.md --> #}
+    {%set pageSlideP = "./src/" %}
+    {%set imgSlideP = item.data.image %}
+    {%set fullSlideP = pageSlideP+imgSlideP %}
+    {% set imgSlideAlt = item.data.altTag %}
+    {% set imgSlidePos = item.data.position %}
+    {% set imgSizesResp = "12" %}
+
+      <li>
+        <div class="slide-box">
+  {% if item.data.image | length %}
+      {% image ""+imgSlideP, ""+imgSlideAlt %}
+  {% endif %}
+          <div class="feat-item_overlay">
+            <div class="feat-item_overlay_body">
+              <div class="container">
+  {% if item.data.title | length %}
+                <h3 class="subtitle">
+                  {{ item.data.title }}
+                </h3>
+  {% endif %}
+
+  {% if item.data.subtitle | length %}
+                <div class="hero-head">
+                  <h1 class="title">{{ item.data.subtitle }}</h1>
+                </div>
+  {% endif %}
+              </div>
+            </div>
+          </div>
+        </li><!-- END slide {{ loop.index }} -->
+  {% endif %}
+{% endfor %}
+
+    </ul>
+
+    <button type="button" class="slider-nav"></button>
+    <button type="button" class="slider-nav slider-nav-next"></button>
+
+    <div class="slider-indicators">
+        <button class="active"></button>
+        <button></button>
+        <button></button>
+    </div>
+  </div><!-- END swiffy-slider -->
+  </section>

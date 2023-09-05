@@ -43,20 +43,7 @@ sectionCont:
     image: ./src/_images/69_Custom_S_engine_cu.jpg
     altText: 69 Custom S engine detail
     position: 0px 0px
-    text: Battery keeps going dead? Could be the alternator, regulator or another component drawing power.
-    slidelayout: 1
-  - pattern: sec-cost
-    title: What's the cost?
-    subtitle: 
-    image: ./src/_images/Exhaust_custom_stainless.jpg
-    altText: 74 Scout three quarters front left
-    position: 0px 0px
-    text: Engine Swaps cost paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
-    figures:
-      - title: $1,100 - $1,855
-        subtitle: for the parts
-      - title: $2,100 - $2,655
-        subtitle: for installation and calibration
+    text: Battery keeps going dead? Could be the alternator, regulator or another component drawing power. Running rough and stalling - could be the carburetor, a vacuum leak or other issue. Whatever the problem is it will require a bit of time to diagnose - then repair. We cant always tell you what it is from a work request, but if it takes only a short time to fix, you’ll be charged for just that. If it takes more time and parts we’ll let you know.
     slidelayout: 1
   - pattern: sec-faq-accordion
     title: Engine Swaps FAQs

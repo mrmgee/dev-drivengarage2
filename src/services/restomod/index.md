@@ -1,25 +1,29 @@
 ---
-layout: perf-up-det04.njk
+layout: service-cont.njk
 title: Restomod & Full Builds
-bodyName: p-restomod
+bodyName: restomod
 tags: ['service']
 eleventyNavigation:
   key: Restomod & Full Builds
   parent: Services
   order: 5
+collectionName: restomod
+isHome: 1
 description: Driven Garage nothern California restomod auto customization and repair shop  
 featuredImage: ./src/_images/67_dart_vader_graffiti.jpg
 featuredImageAlt: "67 Dart Vader three quarters front left graffiti"
-introHead: Keep Up your Ride
-intro: From concept drawings to completion - we can put modern touches in any classic car giving you a whole package that looks amazing and is a one of a kind performance machine.
+introHead: All the show + All the GO!
+intro: <p>Whether we’re creating a wild Resto-Mod or something more subtle we follow a strict process to ensure quality of work and get the best outcome. Some of the steps change based on the type of build - but our process for the basic metalwork, body and paint remains the same no matter what level we are taking the job to.</p><p>Over the years we have honed our process to the 13 Step approach described here. There are smaller steps in-between - and we sweat every detail. We won’t compromise here, as compromising by skipping steps or changing our process usually results in sub-par work.</p>
 sectionCont:
   - pattern: sec-2col-pos1
-    title: Design Services
+    title: "Step 1: Build spec / design"
     subtitle: 
     image: ./src/_images/67_dart_vader_graffiti.jpg
     altText: 67 Dart Vader three quarters front left graffiti
     position: 
-    text: Classic car owners know today’s gasoline is significantly different from the fuel mixture available when the car was new. The different formula effects performance, especially compared to using a carburetor instead of modern computer-controlled fuel-injected systems. Today’s gasolines can cause your carburetor to shift about 3-5% leaner and also cause misfires and poor throttle response. To get the most out of your classic car’s engine, you need to retune the carburetor and distributor.
+    text: "For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p>
+    <p>
+    Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!"
     slidelayout:
   - pattern: sec-2col-pos1
     title: Custom Metal Modifications
