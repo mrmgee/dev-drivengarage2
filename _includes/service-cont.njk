@@ -5,6 +5,7 @@ title: Service Content
 
     {% include "sec-swiffy.njk" %}
 
+
     {% if introHead | length %}
     <section class="{{ collectionName }}">
         <div class="container">
@@ -18,36 +19,13 @@ title: Service Content
     {% endif %}
 
 
+{% block secHorzAccordion %}
+    {% include "sec-horz-accordion.njk" %}
+{% endblock secHorzAccordion %}
 
 
-    <!-- START accordion -->
-    <section class="cont-accordion restomodAccord">
-        <div class="container">
 
-            <div class="accordion v1">
 
-{% for cont in collections.restomodAccord %}
-                <div class="a-container{% if loop.index == 1 %} active{% endif %}">
-                    <p class="a-btn"><i>{{ loop.index }}</i> 
-                    {% if cont.data.title | length %}
-                        {{ cont.data.title }}
-                    {% endif %}
-                    <span></span>
-                    </p>
-                    <div class="a-panel bkg-grad2">
-                        <div class="columns acc-cont">
-                        {{ cont.content | safe }}
-                        </div>
-                    </div>
-                </div><!-- END a-container -->
-{% endfor %}
-            </div><!-- END accordion v1 -->
-        </div>
-    </section>
-
-    {% block secCont01 %}
-        {% include "sec-cont01.njk" %}
-    {% endblock secCont01 %}
 
     
     {% block secTips %}
@@ -60,36 +38,21 @@ title: Service Content
     {% endblock secCont02 %}
 
 
-    {% block secCost %}
-        {% include "sec-cost.njk" %}
-    {% endblock secCost %}
+    {% block secCostAlt %}
+        {% include "sec-cost-alt.njk" %}
+    {% endblock secCostAlt %}
 
     {% block secCont03 %}
         {% include "sec-cont03.njk" %}
     {% endblock secCont03 %}
 
-{% if bodyName == "custom-high-end-paint" %}
 
-    {% block secContAccordion %}
-        {% include "sec-cont-accordion.njk" %}
-    {% endblock secContAccordion %}
-
-    {% block secCostAlt %}
-        {% include "sec-cost-alt.njk" %}
-    {% endblock secCostAlt %}
-
-    {% block secFAQs2 %}
-        {% include "sec-faq-accordion.njk" %}
-    {% endblock secFAQs2 %}
-
-
-{% else %}
 
     {% block secFAQs %}
         {% include "sec-faq-accordion.njk" %}
     {% endblock secFAQs %}
 
-{% endif %}
+
 
     {% block secCarsAll %}
         {% include "sec-cars-carousel.njk" %}

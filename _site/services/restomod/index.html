@@ -14,7 +14,7 @@
 
     <title>Restomod &amp; Full Builds</title>
     <meta name="description" content="Driven Garage nothern California restomod auto customization and repair shop">
-    <link rel="stylesheet" href="../../theme.css?v=1693950217">
+    <link rel="stylesheet" href="../../theme.css?v=1694043203">
     <link rel="icon" type="image/png" href="../../_images/favicon.png" sizes="32x32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CUbuntu:300,300italic,400,400italic,500,500italic,700,700italic%7CRoboto:300,regular,500" media="all">
 
@@ -414,6 +414,7 @@
   </div><!-- END swiffy-slider -->
   </section>
 
+
     
     <section class="restomod">
         <div class="container">
@@ -428,233 +429,538 @@
 
 
 
-
-    <!-- START accordion -->
-    <section class="cont-accordion restomodAccord">
-        <div class="container">
-
-            <div class="accordion v1">
+    
 
 
-                <div class="a-container active">
-                    <p class="a-btn"><i>1</i> 
-                    
-                        Step 1: Build spec / design
-                    
-                    <span></span>
-                    </p>
-                    <div class="a-panel bkg-grad2">
-                        <div class="columns acc-cont">
-                        <p>acc01 - For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p>
-<p>Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!</p>
 
-                        </div>
-                    </div>
-                </div><!-- END a-container -->
+<style>
+.tab-container {
+    margin: 0 5%;
+    padding: 3rem 0;
+}
 
-                <div class="a-container">
-                    <p class="a-btn"><i>2</i> 
-                    
-                        Step 2: Disassembly / Media blast / condition assessment
-                    
-                    <span></span>
-                    </p>
-                    <div class="a-panel bkg-grad2">
-                        <div class="columns acc-cont">
-                        <p>The first thing we do is completely disassemble the car. Every nut, bolt, piece of glass, wires, piece of trim is removed, cataloged and marked. Along the way we take notes for broken bolts, missing parts etc. From here we start a list of what we will need to complete your job in detail. Once the car is back from the media blaster - We will assess body damage and metalwork required - and which panels will be replaced or repaired.</p>
+.tab-wrap {
+  transition: 0.3s box-shadow ease;
+  /* border-radius: 6px; */
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  /* position: relative; */
+  position: sticky;
+  min-height: 200px;
+  list-style: none;
+  background-color: #fff;
+  /* margin: 40px 0; */
+  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+}
+.tab-wrap:hover {
+  /* box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19); */
+}
+.tab-nav {
+    /* position: sticky; */
+	top: 2rem;
+}
 
-                        </div>
-                    </div>
-                </div><!-- END a-container -->
+.tab {
+  display: none;
+}
 
-                <div class="a-container">
-                    <p class="a-btn"><i>3</i> 
-                    
-                        Step 3: Metalwork / Modification / Pre-assembly &amp; Fit
-                    
-                    <span></span>
-                    </p>
-                    <div class="a-panel bkg-grad2">
-                        <div class="columns acc-cont">
-                        <p>In this step we repair (or replace) all the damaged sheet metal and pre-assemble the car to fit all the panels either on the chassis or on a build stand and refine all the gaps for doors, fenders, trunk and hood. Even new reproduction panels sometimes require significant modifications in metal to ensure proper fit.</p>
-<p>If we’re doing body modifications we do them all in this step and fully build the basic car with these mods to ensure all the panels fit and all the holes we don’t need and components we are changing fit. Sometimes we may fully build the car with the engine and transmission and even suspension so that all the modification can be done without any risk of scratching paint.</p>
+.tab:checked:nth-of-type(1) ~ .tab__content:nth-of-type(1), 
+.tab:checked:nth-of-type(2) ~ .tab__content:nth-of-type(2), 
+.tab:checked:nth-of-type(3) ~ .tab__content:nth-of-type(3), 
+.tab:checked:nth-of-type(4) ~ .tab__content:nth-of-type(4), 
+.tab:checked:nth-of-type(5) ~ .tab__content:nth-of-type(5), 
+.tab:checked:nth-of-type(6) ~ .tab__content:nth-of-type(6), 
+.tab:checked:nth-of-type(7) ~ .tab__content:nth-of-type(7), 
+.tab:checked:nth-of-type(8) ~ .tab__content:nth-of-type(8), 
+.tab:checked:nth-of-type(9) ~ .tab__content:nth-of-type(9), 
+.tab:checked:nth-of-type(10) ~ .tab__content:nth-of-type(10), 
+.tab:checked:nth-of-type(11) ~ .tab__content:nth-of-type(11), 
+.tab:checked:nth-of-type(12) ~ .tab__content:nth-of-type(12), 
+.tab:checked:nth-of-type(13) ~ .tab__content:nth-of-type(13) {
+  opacity: 1;
+  transition: 0.5s opacity ease-in, 0.8s transform ease;
+  position: relative;
+  top: 0;
+  transform: translateY(0px);
+  text-shadow: 0 0 0;
+}
+.tab:first-of-type:not(:last-of-type) + label {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.tab:not(:first-of-type):not(:last-of-type) + label {
+  border-radius: 0;
+}
+.tab:last-of-type:not(:first-of-type) + label {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.tab:checked + label {
+    color: #fff;
+    background-color: #f79837;
+    box-shadow: 0 -1px 0 #fff inset;
+    cursor: default;
+}
+.tab:checked + label:hover {
+  box-shadow: 0 -1px 0 #fff inset;
+  background-color: #f79837;
+}
 
-                        </div>
-                    </div>
-                </div><!-- END a-container -->
+.tab + label:nth-of-type(1) {
+    margin-left: 0;
+}
 
-                <div class="a-container">
-                    <p class="a-btn"><i>4</i> 
-                    
-                        Step 4: Bodywork / Block Sand / Refinement
-                    
-                    <span></span>
-                    </p>
-                    <div class="a-panel bkg-grad2">
-                        <div class="columns acc-cont">
-                        <p>Bodywork / Filler: Once everything is fit and we’re happy with the panel gaps and mods in metal we do our body filler work - We don’t call it “Bondo” and it’s not a bad word. Filler work is required to get the surface of all body panels closer to where we need them to be. Done properly, this filler can last 50+ years without issues.  Can we metalwork your car without using any filler? Totally - but that’s easily 800-1000 hours of labor to get there. Using modern body fillers - and making sure that our metalwork is within 1/16” or less we can get the same or better results in less time.</p>
+.tab + label {
+  /* box-shadow: 0 -1px 0 #eee inset; */
+  /* border-radius: 6px 6px 0 0; */
+  /* border-left: 2px solid #fff; */
+  /*  Didn't work - only 1 side slanted 
+  border-color: blue transparent Pink transparent;
+  border-width: 0 0 100px 100px;
+*/
 
-                        </div>
-                    </div>
-                </div><!-- END a-container -->
+  clip-path: polygon( 10% 0, 100% 0%, 90% 100%, 0% 100% );
+  margin-left: -0.5rem;
+  display: block;
+  text-decoration: none;
+  color: #333;
+  flex-grow: 3;
+  text-align: center;
+  background-color: #f2f2f2;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  transition: 0.3s background-color ease, 0.3s box-shadow ease;
+  height: 3rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  z-index: 10;
+  cursor: pointer;
+}
 
-                <div class="a-container">
-                    <p class="a-btn"><i>5</i> 
-                    
-                        Step 5: Prime and Block Sand
-                    
-                    <span></span>
-                    </p>
-                    <div class="a-panel bkg-grad2">
-                        <div class="columns acc-cont">
-                        <div class="columns">
-    <div class="column">
-<img alt="67 Dart Vader three quarters front left graffiti" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_graffiti-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_dart_vader_graffiti-400.jpeg 400w, /assets/images/67_dart_vader_graffiti-800.jpeg 800w, /assets/images/67_dart_vader_graffiti-1280.jpeg 1280w, /assets/images/67_dart_vader_graffiti-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-5.1: Prime round 1: We follow bodywork with an overall epoxy primer on every surface inside and out and apply a high build primer directly to the epoxy. This encapsulates the metal and filler bonding through and gives us a build of primer to start our block sanding work.
-    </div>
-    <div class="column">
-    <img alt="67 GTO red carb" loading="lazy" decoding="async" src="/assets/images/67_GTO_red_carb-400.jpeg" width="2000" height="1294" srcset="/assets/images/67_GTO_red_carb-400.jpeg 400w, /assets/images/67_GTO_red_carb-800.jpeg 800w, /assets/images/67_GTO_red_carb-1280.jpeg 1280w, /assets/images/67_GTO_red_carb-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-5.3: Block sanding and finish body work: After primer we will re-assemble the panels and hand block sand with long-boards in 120 / 180 grit finish. At this stage we further refine the lines and bodywork to make every panel and gap laser straight and smooth.
-    </div>
-    <div class="column">
-    <img alt="67 Dart Vader three quarters front left graffiti" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_graffiti-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_dart_vader_graffiti-400.jpeg 400w, /assets/images/67_dart_vader_graffiti-800.jpeg 800w, /assets/images/67_dart_vader_graffiti-1280.jpeg 1280w, /assets/images/67_dart_vader_graffiti-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-5.4: Prime round 2: Here we re-prime the entire exterior again after a clean and mask to fill in all the 180 grit sand scratches and build another layer of primer for further surface refinements. Here we spray a medium build surfacing primer after a thorough cleaning.
-    </div>
-    <div class="column">
-    <img alt="67 GTO red carb" loading="lazy" decoding="async" src="/assets/images/67_GTO_red_carb-400.jpeg" width="2000" height="1294" srcset="/assets/images/67_GTO_red_carb-400.jpeg 400w, /assets/images/67_GTO_red_carb-800.jpeg 800w, /assets/images/67_GTO_red_carb-1280.jpeg 1280w, /assets/images/67_GTO_red_carb-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-5.5: Block sand… Again: Now we switch to block sanding with 220 / 320 grit paper by hand again using longboards. This further smooths the surface of the primer and allows us to get all the final lines and finish very smooth.
-    </div>
-</div>
-                        </div>
-                    </div>
-                </div><!-- END a-container -->
+/* 
+.tab + label:after {
+    content:'';
+  display: block;
+  border-right: 4px solid #000;
+  transform: rotate(24deg);
+  height: 52px;
+  width: 20px;
+  position: absolute;
+  cursor: pointer;
+  right: 9px;
+  top: -5px;
+}
+*/
 
-            </div><!-- END accordion v1 -->
+
+
+/* 
+.tab + label:after {
+    content:'';
+  display: block;
+  border-top: 16px solid #000;
+  border-right: 16px solid #000;
+  transform: rotate(45deg);
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  cursor: pointer;
+  right: 0;
+  top: 50%;
+}
+*/
+
+
+/* 
+.tab + label:after {
+    content:'';
+  display: block;
+  width: 0px;
+    height: 0px;
+    border-top: 30px solid transparent;
+    border-bottom: 30px solid transparent;
+    border-left: 30px solid green;
+  position: absolute;
+  cursor: pointer;
+  left: o;
+  top: 50%;
+} */
+
+
+
+.tab + label:hover {
+  /* background-color: #f9f9f9; */
+  background-color: #f79837;
+  /* box-shadow: 0 1px 0 #f4f4f4 inset; */
+}
+.tab__content {
+  padding: 10px 25px;
+  background-color: transparent;
+  position: absolute;
+  width: 100%;
+  z-index: -1;
+  opacity: 0;
+  left: 0;
+  transform: translateY(-3px);
+  border-radius: 6px;
+}
+
+section.tabs-var-height input,
+section.tabs-var-height label {
+    position: sticky;
+    top: 0;
+}
+
+
+
+</style>
+
+
+<section class="tabs-var-height bkg-grad1">
+    <div class="tab-container">
+    
+      <div class="tab-wrap">
+
+            <!-- active tab on page load gets checked attribute -->
+            <input type="radio" id="tab1" name="tabGroup1" class="tab" checked="checked">
+            <label for="tab1">Step 1 <!-- Build spec / design --></label>
+        
+            <input type="radio" id="tab2" name="tabGroup1" class="tab">
+            <label for="tab2">Step 2 <!-- Disassembly / Media blast / condition assessment --></label>
+
+            <input type="radio" id="tab3" name="tabGroup1" class="tab">
+            <label for="tab3">Step 3 <!-- Metalwork / Modification / Pre-assembly & Fit --></label>
+
+            <input type="radio" id="tab4" name="tabGroup1" class="tab">
+            <label for="tab4">Step 4 <!-- Bodywork / Block Sand / Refinement --></label>
+
+            <input type="radio" id="tab5" name="tabGroup1" class="tab">
+            <label for="tab5">Step 5 <!-- Prime and Block Sand --></label>
+
+            <input type="radio" id="tab6" name="tabGroup1" class="tab">
+            <label for="tab6">Step 6 <!-- Final Paint Prep --></label>
+
+            <input type="radio" id="tab7" name="tabGroup1" class="tab">
+            <label for="tab7">Step 7 <!-- Final fit / Mock-up --></label>
+
+            <input type="radio" id="tab8" name="tabGroup1" class="tab">
+            <label for="tab8">Step 8 <!-- Paint / Clear coat / Finish --></label>
+
+            <input type="radio" id="tab9" name="tabGroup1" class="tab">
+            <label for="tab9">Step 9 <!-- Exterior re-assembly --></label>
+
+            <input type="radio" id="tab10" name="tabGroup1" class="tab">
+            <label for="tab10">Step 10 <!-- Exterior re-assembly --></label>
+
+            <input type="radio" id="tab11" name="tabGroup1" class="tab">
+            <label for="tab11">Step 11 <!-- Wiring / Plumbing / Exhaust --></label>
+
+            <input type="radio" id="tab12" name="tabGroup1" class="tab">
+            <label for="tab12">Step 12 <!-- Wiring / Plumbing / Exhaust --></label>
+
+            <input type="radio" id="tab13" name="tabGroup1" class="tab">
+            <label for="tab13">Step 13 <!-- Tuning and Validation --></label>
+
+        <div class="tab__content">
+            <h2>Step 1: Build spec / design</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_graffiti-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_dart_vader_graffiti-400.jpeg 400w, /assets/images/67_dart_vader_graffiti-800.jpeg 800w, /assets/images/67_dart_vader_graffiti-1280.jpeg 1280w, /assets/images/67_dart_vader_graffiti-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p>
+                    <p>Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!</p>
+                </div>
+            </div>
         </div>
-    </section>
-
     
-        
-
-    <section class="top first services half-split"><!-- START sectionStart: -->
-      <div class="container">
-
-
-    
-    
-  
-
-    
-        
-        
-
-        
-<!-- odd -->
-        <div class="columns"><!-- section:1 -->
-            <div class="column">
-              <div class="half-split-cont">
-                
-                    <h3>Step 1: Build spec / design</h3>
-                
-                
-                    <p>For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p> <p> Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!</p>
-                
-                
+        <div class="tab__content">
+          <h2>Step 2: Disassembly / Media blast / condition assessment</h2>
+          <div class="columns">
+              <div class="column">
+                  <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/7x_Chevelle_engine_shop-400.jpeg" width="2000" height="1333" srcset="/assets/images/7x_Chevelle_engine_shop-400.jpeg 400w, /assets/images/7x_Chevelle_engine_shop-800.jpeg 800w, /assets/images/7x_Chevelle_engine_shop-1280.jpeg 1280w, /assets/images/7x_Chevelle_engine_shop-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
               </div>
-            </div>
-
-            <div class="column">
-                <figure class="image">
-                    <!-- loop:1 imgP: ./src/_images/67_dart_vader_graffiti.jpg -->
-                    
-                        <img alt="67 Dart Vader three quarters front left graffiti" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_graffiti-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_dart_vader_graffiti-400.jpeg 400w, /assets/images/67_dart_vader_graffiti-800.jpeg 800w, /assets/images/67_dart_vader_graffiti-1280.jpeg 1280w, /assets/images/67_dart_vader_graffiti-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                    
-                    </figure>
-            </div>
-          </div>        
-
-        
-
+              <div class="column">
+                  <p>The first thing we do is completely disassemble the car. Every nut, bolt, piece of glass, wires, piece of trim is removed, cataloged and marked. Along the way we take notes for broken bolts, missing parts etc. From here we start a list of what we will need to complete your job in detail. Once the car is back from the media blaster - We will assess body damage and metalwork required - and which panels will be replaced or repaired.</p>
+              </div>
+          </div>
+        </div>
     
+        <div class="tab__content">
+          <h2>Step 3: Metalwork / Modification / Pre-assembly & Fit</h2>
+          <div class="columns">
+              <div class="column">
+                  <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg" width="873" height="582" srcset="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg 400w, /assets/images/014-plymouth-valiant-fender-door-gap-800.jpeg 800w, /assets/images/014-plymouth-valiant-fender-door-gap-873.jpeg 873w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+              </div>
+              <div class="column">
+                  <p>In this step we repair (or replace) all the damaged sheet metal and pre-assemble the car to fit all the panels either on the chassis or on a build stand and refine all the gaps for doors, fenders, trunk and hood. Even new reproduction panels sometimes require significant modifications in metal to ensure proper fit.</p>
+                  <p>If we’re doing body modifications we do them all in this step and fully build the basic car with these mods to ensure all the panels fit and all the holes we don’t need and components we are changing fit. Sometimes we may fully build the car with the engine and transmission and even suspension so that all the modification can be done without any risk of scratching paint.</p>
+              </div>
+          </div>
+        </div>
 
-<!-- END sec-2col -->
 
-    
-    
-  
-
-    
-        
-        
-
-          
-
-        <div class="columns"><!-- section:2 -->
-            <div class="column">
-                <figure class="image">
-                    
-                        <img alt="’69 Barracuda Formula S three quarters front left" loading="lazy" decoding="async" src="/assets/images/69-cuda-5-400.jpeg" width="1275" height="850" srcset="/assets/images/69-cuda-5-400.jpeg 400w, /assets/images/69-cuda-5-800.jpeg 800w, /assets/images/69-cuda-5-1275.jpeg 1275w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                    
-                </figure>
-            </div>
-            <div class="column">
-                <div class="half-split-cont">
-                
-                    <h3>Custom Metal Modifications</h3>
-                
-                
-                    <p>If running too lean, the off-idle circuit needs to be enriched. Regardless of the carburetor brand,  we can make the right adjustments to ensure your engine gets the correct amount of fuel it needs. If the problem is throttle response, the pump circuit needs to be more active. We’ll adjust your carburetor, or recommend a high-performance replacement, that will give you power when you need it. Lastly, the ignition spark timing curve and the air-fuel mix curve should be retuned. With the proper mix and firing, we’ll make sure your classic gives you the power to make it fun to drive again.</p>
-                
+        <div class="tab__content">
+            <h2>Step 4: Bodywork / Block Sand / Refinement</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                 </div>
-                
-                <div class="control">
-                    <div class="button is-primary slant js-modal-trigger" data-target="modal-js-example"><h4>Let&#39;s Go &gt;</h4></div>
+                <div class="column">
+                    <p>Bodywork / Filler: Once everything is fit and we’re happy with the panel gaps and mods in metal we do our body filler work - We don’t call it “Bondo” and it’s not a bad word. Filler work is required to get the surface of all body panels closer to where we need them to be. Done properly, this filler can last 50+ years without issues.  Can we metalwork your car without using any filler? Totally - but that’s easily 800-1000 hours of labor to get there. Using modern body fillers - and making sure that our metalwork is within 1/16” or less we can get the same or better results in less time.</p>
                 </div>
-                
             </div>
         </div>
 
-        
 
-    
+        <div class="tab__content">
+            <h2>Step 5: Prime and Block Sand</h2>
+            <section id="endpoints--root">
+                <div class="columns">
+                    <div class="column">
+                        <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                    </div>
+                    <div class="column">
+                        <h3>5.1: Prime round 1</h3>
+                        <p>We follow bodywork with an overall epoxy primer on every surface inside and out and apply a high build primer directly to the epoxy. This encapsulates the metal and filler bonding through and gives us a build of primer to start our block sanding work.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="endpoints--cities-overview">
+                <div class="columns">
+                    <div class="column">
+                        <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/63_Corvette_dk_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/63_Corvette_dk_blue-400.jpeg 400w, /assets/images/63_Corvette_dk_blue-800.jpeg 800w, /assets/images/63_Corvette_dk_blue-1280.jpeg 1280w, /assets/images/63_Corvette_dk_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                    </div>
+                    <div class="column">
+                        <h3>5.2: Block sanding and finish body work</h3>
+                        <p>After primer we will re-assemble the panels and hand block sand with long-boards in 120 / 180 grit finish. At this stage we further refine the lines and bodywork to make every panel and gap laser straight and smooth.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="endpoints--city-detail">
+                <div class="columns">
+                    <div class="column">
+                        <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/63_Corvette_dk_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/63_Corvette_dk_blue-400.jpeg 400w, /assets/images/63_Corvette_dk_blue-800.jpeg 800w, /assets/images/63_Corvette_dk_blue-1280.jpeg 1280w, /assets/images/63_Corvette_dk_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                    </div>
+                    <div class="column">
+                        <h3>5.3: Prime round 2</h3>
+                        <p>Here we re-prime the entire exterior again after a clean and mask to fill in all the 180 grit sand scratches and build another layer of primer for further surface refinements. Here we spray a medium build surfacing primer after a thorough cleaning.</p>
+                    </div>
+                </div>
+            </section>
+            <section id="endpoints--city-config">
+                <div class="columns">
+                    <div class="column">
+                        <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/63_Corvette_dk_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/63_Corvette_dk_blue-400.jpeg 400w, /assets/images/63_Corvette_dk_blue-800.jpeg 800w, /assets/images/63_Corvette_dk_blue-1280.jpeg 1280w, /assets/images/63_Corvette_dk_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                    </div>
+                    <div class="column">
+                        <h3>5.4: Block sand… Again</h3>
+                        <p>Now we switch to block sanding with 220 / 320 grit paper by hand again using longboards. This further smooths the surface of the primer and allows us to get all the final lines and finish very smooth.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-<!-- END sec-2col -->
-
-    
-    
-  
-
-    
-
-<!-- END sec-2col -->
-
-    
-    
-  
-
-    
-
-<!-- END sec-2col -->
-
-    
-    
-  
-
-    
-
-<!-- END sec-2col -->
-
-    
-    
-  
-
-    
-
-<!-- END sec-2col -->
+        <div class="tab__content">
+            <h2>Step 6: Final Paint Prep</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/65_Mercury_Comet05-400.jpeg" width="2048" height="1365" srcset="/assets/images/65_Mercury_Comet05-400.jpeg 400w, /assets/images/65_Mercury_Comet05-800.jpeg 800w, /assets/images/65_Mercury_Comet05-1280.jpeg 1280w, /assets/images/65_Mercury_Comet05-2048.jpeg 2048w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>6.1: Final prime / Sealer: This is our final primer stage. At this point the car is taken back apart and a sealer coat is applied to all outside and inside surfaces. This final coat locks everything down and is what the base coat and clear coat will be applied to. We also use this last seal step to apply any urethane seam sealer to panel overlaps and seams.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/66_Chevelle03-400.jpeg" width="1080" height="745" srcset="/assets/images/66_Chevelle03-400.jpeg 400w, /assets/images/66_Chevelle03-800.jpeg 800w, /assets/images/66_Chevelle03-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>6.7: Final sand: After the sealer is applied, we wet sand all of the panels 600/800 grit to remove any “Orange Peel” and imperfections from the sealer coat and allow the scratches from this sanding round to act as the mechanical bond for the paint and clear coat.</p>
+                </div>
+            </div>
+        </div>
 
 
-      </div>
-    </section><!--  END top services half-split -->
+        <div class="tab__content">
+            <h2>Step 7: Final fit / Mock-up</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Camaro_shocks-400.jpeg" width="1080" height="720" srcset="/assets/images/67_Camaro_shocks-400.jpeg 400w, /assets/images/67_Camaro_shocks-800.jpeg 800w, /assets/images/67_Camaro_shocks-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>If we’re spraying a metallic color on the car - at this point we will paint and clear coat the inside of the panels and the door jambs, fender and trunk jambs so that we can spray the car together. This is an important step for metallic paints as when the base coat comes out of the gun - we want to ensure that the flakes are oriented in the right direction from fender to door, door to quarter panels, etc. On solid color cars with no metallic this is the only step we skip as we can just paint the panels and fit them after.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Camaro01-400.jpeg" width="1080" height="720" srcset="/assets/images/67_Camaro01-400.jpeg 400w, /assets/images/67_Camaro01-800.jpeg 800w, /assets/images/67_Camaro01-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>7.1:  Clean and spray jambs: Clean everything 3x mask and spray all the insides of panels and the door jambs, fender jambs, and trunk jambs. We give everything 3 coats of base coat followed by 3-4 coats of high quality high solids clear coat.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Cuda_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_Cuda_blue-400.jpeg 400w, /assets/images/67_Cuda_blue-800.jpeg 800w, /assets/images/67_Cuda_blue-1280.jpeg 1280w, /assets/images/67_Cuda_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>7.2: Assembly and panel align: After the jambs and insides are done - it’s time to put it all back together and align the panels for the metallic paint.  We’re sure you’ve seen cars that look like one panel is a bit “off” from the next - that’s because the shop skipped this step and painted a metallic color in pieces. The spray pattern needs to flow from panel to panel.</p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="tab__content">
+            <h2>Step 8: Paint / Clear coat / Finish</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_burnout-400.jpeg" width="2000" height="1380" srcset="/assets/images/67_dart_vader_burnout-400.jpeg 400w, /assets/images/67_dart_vader_burnout-800.jpeg 800w, /assets/images/67_dart_vader_burnout-1280.jpeg 1280w, /assets/images/67_dart_vader_burnout-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>It all comes down to this - All the work to get to this point has given us a solid foundation that is straight, smooth and ready to be finished. Most people think that we just sand a car real quick, prime it and spray on the paint - but in reality the actual painting process is the least labor intensive part of what we do. We do hundreds of hours of prep work to get here - and it’s under 20 hours of actual painting.  Here are the paint and finish steps we adhere to.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_cover-400.jpeg" width="2000" height="1470" srcset="/assets/images/67_dart_vader_cover-400.jpeg 400w, /assets/images/67_dart_vader_cover-800.jpeg 800w, /assets/images/67_dart_vader_cover-1280.jpeg 1280w, /assets/images/67_dart_vader_cover-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>8.1: Clean, clean, clean again and mask: The spray booth needs to be cleaned and new filters installed. The car and body panels will be cleaned several times here. We can’t have any contaminants on the surface prior to paint. Any areas we are not painting are masked off.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_graffiti-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_dart_vader_graffiti-400.jpeg 400w, /assets/images/67_dart_vader_graffiti-800.jpeg 800w, /assets/images/67_dart_vader_graffiti-1280.jpeg 1280w, /assets/images/67_dart_vader_graffiti-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>8.2: Base coat and drop coat: We spray 3-4 coats of base coat - and for metallics do a final “drop coat” that ensures there is no striping or panel to panel issues with the metallics in the paint. We feature high quality paint products from Spies Hecker / Axalta for all of our  work.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_headlights-400.jpeg" width="1080" height="720" srcset="/assets/images/67_dart_vader_headlights-400.jpeg 400w, /assets/images/67_dart_vader_headlights-800.jpeg 800w, /assets/images/67_dart_vader_headlights-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>8.3: Clearcoat: The first phase of clear coat consists of 3-4 coats of clear coat applied with proper flash times between coats. This provides the shine over the base coat and protects it from the sun / elements.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_GTO_red_carb-400.jpeg" width="2000" height="1294" srcset="/assets/images/67_GTO_red_carb-400.jpeg 400w, /assets/images/67_GTO_red_carb-800.jpeg 800w, /assets/images/67_GTO_red_carb-1280.jpeg 1280w, /assets/images/67_GTO_red_carb-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>8.4: Wet sand: After the initial 3-4 coats of clear are laid down - we wet sand all of the outside surfaces with 800-1000 grit sandpaper by hand with blocks to remove the “orange peel” texture, and any imperfections. This mechanical sanding provides us with a mechanical adhesion for the final flow coat.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_gto_red_steering_wheel-400.jpeg" width="2000" height="1294" srcset="/assets/images/67_gto_red_steering_wheel-400.jpeg 400w, /assets/images/67_gto_red_steering_wheel-800.jpeg 800w, /assets/images/67_gto_red_steering_wheel-1280.jpeg 1280w, /assets/images/67_gto_red_steering_wheel-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>8.5: Flow coat This is the final step of clear coat. We add 2-3 additional coats of clear coat to the wet sanded surfaces to add more depth and shine. We add a little more reducer to the clear allowing it to “flow” and level better.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_GTO_red-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_GTO_red-400.jpeg 400w, /assets/images/67_GTO_red-800.jpeg 800w, /assets/images/67_GTO_red-1280.jpeg 1280w, /assets/images/67_GTO_red-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>8.6 Wet / dry sand for compound and polish: After the flow coat - the surface is smooth and glossy with little orange peel. But we take it a step further to make the surface smooth as a mirror. We start by wet sanding by hand with blocks the entire exterior 1,200 grit. We follow that up with 4 rounds of machine sanding using 1,500 grit, 2,000 grit, 2,500 grit and 3,000 grit.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_GTO_wheel_brakes-400.jpeg" width="1440" height="930" srcset="/assets/images/67_GTO_wheel_brakes-400.jpeg 400w, /assets/images/67_GTO_wheel_brakes-800.jpeg 800w, /assets/images/67_GTO_wheel_brakes-1280.jpeg 1280w, /assets/images/67_GTO_wheel_brakes-1440.jpeg 1440w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>8.7: Compound and polish: the wet / dry sand process has left the surface of the clear smooth - but now we have to shine it all back up and remove the 3000 grit scratches. This process involves using compound and polish in 3 steps with a rotary and orbital buffer. This gives the clear coat that wet and glossy look that we’re all aiming for.</p>
+                </div>
+            </div>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_body_gaps02-400.jpeg" width="1080" height="720" srcset="/assets/images/67_Nova_body_gaps02-400.jpeg 400w, /assets/images/67_Nova_body_gaps02-800.jpeg 800w, /assets/images/67_Nova_body_gaps02-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>8.8: mask and spray urethane texture (optional): For many jobs - we also spray the inside, and underneath of the car with a urethane texture coat. This coating is similar to pickup truck bed liner and offers protection from road debris, as well as heat and sound insulation.</p>
+                </div>
+            </div>
+
+        </div><!-- END tab__content Step 8 -->
+
+        <div class="tab__content">
+            <h2>Step 9: Exterior re-assembly</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_body03-400.jpeg" width="1080" height="720" srcset="/assets/images/67_Nova_body03-400.jpeg 400w, /assets/images/67_Nova_body03-800.jpeg 800w, /assets/images/67_Nova_body03-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>Now that the paint work is all done - it’s time to install the chrome trim, stainless window moldings and bumpers, handles, door and window weatherstripping. We take great care not to scratch  all of our hard work putting the bright work back on. Glass will be installed at this point as well.</p>
+                </div>
+            </div>
+        </div><!-- END tab__content Step 9 -->
+
+        <div class="tab__content">
+            <h2>Step 10: Mechanical Assembly</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_exhaust01-400.jpeg" width="2000" height="1292" srcset="/assets/images/67_Nova_exhaust01-400.jpeg 400w, /assets/images/67_Nova_exhaust01-800.jpeg 800w, /assets/images/67_Nova_exhaust01-1280.jpeg 1280w, /assets/images/67_Nova_exhaust01-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>At this stage - the body and paint team hands the car over to the assembly team to put suspension brakes, engine, trans, etc back into the car. Since all the basic components have been fit already - we know there won’t be any surprises here.</p>
+                </div>
+            </div>
+        </div><!-- END tab__content Step 10 -->
+
+        <div class="tab__content">
+            <h2>Step 11: Wiring / Plumbing / Exhaust</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_rear_bumper02-400.jpeg" width="1080" height="791" srcset="/assets/images/67_Nova_rear_bumper02-400.jpeg 400w, /assets/images/67_Nova_rear_bumper02-800.jpeg 800w, /assets/images/67_Nova_rear_bumper02-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>Once the components are all in place we do all of the plumbing, wiring and electrical work. Wiring and plumbing can be as tedious and time consuming as prepping for paint. If it’s a restoration - we’ll use the factory harness or a reproduction and materials and routing similar to how the car was built. If we’re doing a Resto-Mod we will hide what we can and go to great lengths to make the harness neat, tidy and serviceable. The final part is usually exhaust - Whether a factory system or fully custom tig welded system or anything in-between. If we’re doing a stereo, or air conditioning - Wei’ll install it now as well.</p>
+                </div>
+            </div>
+        </div><!-- END tab__content Step 11 -->
+
+        <div class="tab__content">
+            <h2>Step 12: Interior finish</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_suspension03-400.jpeg" width="2000" height="1333" srcset="/assets/images/67_Nova_suspension03-400.jpeg 400w, /assets/images/67_Nova_suspension03-800.jpeg 800w, /assets/images/67_Nova_suspension03-1280.jpeg 1280w, /assets/images/67_Nova_suspension03-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>Once all the paint, mechanicals and electrical is complete - it’s off to interior for things like seat upholstery, headliner, carpet, door panels and the like. We will either send this out if it’s a full custom job to our preferred interior trim shop - or do some or all of it in house. Full custom jobs may take an interim step before paint to have panels fabricated then finished off and installed when the mechanicals and paint are complete.</p>
+                </div>
+            </div>
+        </div><!-- END tab__content Step 12 -->
+
+        <div class="tab__content">
+            <h2>Step 13: Tuning and Validation</h2>
+            <div class="columns">
+                <div class="column">
+                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_wilwood_brakes3-400.jpeg" width="1440" height="930" srcset="/assets/images/67_Nova_wilwood_brakes3-400.jpeg 400w, /assets/images/67_Nova_wilwood_brakes3-800.jpeg 800w, /assets/images/67_Nova_wilwood_brakes3-1280.jpeg 1280w, /assets/images/67_Nova_wilwood_brakes3-1440.jpeg 1440w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                </div>
+                <div class="column">
+                    <p>Once the car is finished - it’s not over. The final steps are to start the engine, tune the carb and timing (or ECU in the case of a car with a modern engine swap) and test drive. We want to get a few miles on the car, and look everything over once more to make sure there are no issues, leaks, loose fasteners, etc. In the case of a full build we’ll want to put a minimum of 500 miles on the car and service it again before we hand you the keys. We know you’ve waited a long time to get here and are excited - but let us make sure it’s as close to 100 percent as it can be.</p>
+                </div>
+            </div>
+        </div><!-- END tab__content Step 13 -->
+
+
+
+      </div><!-- END tab-wrap -->
+    </div><!-- END tab-container-->
+
+</section>
 
 
 
@@ -663,8 +969,13 @@
 
 
 
-    
-    
+
+
+
+
+
+
+
 
     
     
@@ -733,8 +1044,6 @@
 
     
 
-    
-
 
 
 
@@ -777,43 +1086,6 @@
   
 
     
-        
-        
-
-          
-
-        <div class="columns"><!-- section:4 -->
-            <div class="column">
-                <figure class="image">
-                    
-                        <img alt="83 Mercedes Benz E300 TD wagon silver carb" loading="lazy" decoding="async" src="/assets/images/83_Mercedes_Benz_E300_TD_wagon_silver_carb-400.jpeg" width="2000" height="1294" srcset="/assets/images/83_Mercedes_Benz_E300_TD_wagon_silver_carb-400.jpeg 400w, /assets/images/83_Mercedes_Benz_E300_TD_wagon_silver_carb-800.jpeg 800w, /assets/images/83_Mercedes_Benz_E300_TD_wagon_silver_carb-1280.jpeg 1280w, /assets/images/83_Mercedes_Benz_E300_TD_wagon_silver_carb-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                    
-                </figure>
-            </div>
-            <div class="column">
-                <div class="half-split-cont">
-                
-                    <h3>Custom High End Paint</h3>
-                
-                
-                    We custom match components to your application based not just on brand name - but your goals for performance and reliability. We don’t cheap out on plumbing and fittings - because who likes to watch their car burn to the ground? We spec in-tank fuel pumps with a return system every time, and have seen the failures not doing this causes. Is it harder or more expensive to do it right? Yes…. But our experience tells us to do it right and pay now, or re-do it later and pay again.
-                
-                </div>
-                
-            </div>
-        </div>
-
-        
-
-    
-
-<!-- END sec-2col -->
-
-    
-    
-  
-
-    
 
 <!-- END sec-2col -->
 
@@ -844,7 +1116,6 @@
         
 
 
-    
 
     
 
@@ -855,60 +1126,173 @@
     
 
 <style>
+  section.services-detail-cost-box-alt {
+    margin: 0 0 8rem 0;
+    }
   .column.detail-cost-box-cont {
     position: relative;
+  }
+  section.services-detail-cost-box-alt p {
+    margin-bottom: 1rem;
+  }
+  section.services-detail-cost-box-alt table {
+    margin: 2rem auto 0 auto;
   }
 </style>
 
 <!-- START alt COST LOCKUP -->
 <section class="services-detail-cost-box-alt bkg-grad1">
   <div class="container">
-    <div class="columns">
-      <div class="column is-one-third">
-          <h1 class="title">
+    <h1 class="title">
       
-        What's the cost?
+        What does it all cost?
       
-          </h1>
-          <h3>Each job will be estimated individually, but here are some guidelines to help you budget</h3>
-      </div>
-      <div class="column">
-        <div class="columns">
-          <div class="column detail-cost-box-cont">
+    </h1>
+    <p>
+    
+        <p>That’s a very loaded question! On the lower end our paint service requires at a minimum exterior disassembly with all trim and glass removed and stripping to bare metal. On the higher end and rotisserie restoration to concours level or a magazine feature worthy custom Resto-Mod and anything in-between is in our wheelhouse.  Price really comes down to level of fit and finish, modifications and parts we use.</p><p>There is no single price - but see the table below that details the basics for 3 levels of build level based on labor and components / modifications. There is crossover from one extreme to the other and every job is different - but you can use this as a guide to see how low - or far we can go.</p>
+    
+    </p>
 
-              
-                  Restomod cost paragraph. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat. Nunc vitae viverra massa. Duis placerat a augue in eleifend. Pellentesque ut neque ex. Ut non nisi ultrices, tincidunt nunc vitae, tincidunt orci. Donec cursus sagittis felis sed tempus. Ut et viverra arcu.
-              
 
-              
 
-          </div><!-- END 1 column -->
 
-          <div class="column">
-            <p>You can expect to pay around:</p>
-      
-                  <div class="cost-box-inner">
-                  
-                      <h3>$1,100 - $1,855</h3>
-                  
-                  
-                      <p>for the parts</p>
-                  
-                  </div>
-      
-                  <div class="cost-box-inner">
-                  
-                      <h3>$2,100 - $2,655</h3>
-                  
-                  
-                      <p>for installation and calibration</p>
-                  
-                  </div>
-      
-          </div>
-        </div><!-- END columns -->
-      </div>
 
+    <table class="table">
+        <thead>
+            <tr style="background-color: #f79837;">
+                <th colspan="8">Metal / Body / Paint / Finish - Just metal / body / paint work for a standard job to full on show car.</th>
+            </tr>
+          <tr>
+            <th>Description</th>
+            <th>Rate</th>
+            <th>Hrs Low</th>
+            <th>Hrs Med</th>
+            <th>Hrs High</th>
+            <th>Cost Low</th>
+            <th>Cost Med</th>
+            <th>Cost High</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Basic Disassembly</th>
+                <td>$100.00</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>$2,000.00</td>
+                <td>$3,000.00</td>
+                <td>$4,000.00</td>
+            </tr>
+            <tr>
+                <th>Metalwork</th>
+                <td>$180.00</td>
+                <td>20</td>
+                <td>50</td>
+                <td>100</td>
+                <td>$3,600.00</td>
+                <td>$9,000.00</td>
+                <td>$18,000.00</td>
+            </tr>
+            <tr>
+                <th>Body / Paint prep</th>
+                <td>$140.00</td>
+                <td>80</td>
+                <td>120</td>
+                <td>150</td>
+                <td>$11,200.00</td>
+                <td>$16,800.00</td>
+                <td>$21,000.00</td>
+            </tr>
+            <tr>
+                <th>Paint / Finish</th>
+                <td>$150.00</td>
+                <td>40</td> 
+                <td>80</td>
+                <td>120</td>
+                <td>$6,000.00</td>
+                <td>$12,000.00</td>
+                <td>$18,000.00</td>
+            </tr>
+            <tr>
+                <th>Re-assembly</th>
+                <td>$140.00</td>
+                <td>20</td> 
+                <td>60</td>
+                <td>100</td>
+                <td>$2,800.00</td>
+                <td>$8,400.00</td>
+                <td>$14,000.00</td>
+            </tr>
+            <tr>
+                <th>Paint / Body Materials</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$4,500.00</td>
+                <td>$6,500.00</td>
+                <td>$8,500.00</td>
+            </tr>
+            <tr>
+                <th>Weatherstripping / Rubber</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$500.00</td>
+                <td>$800.00</td>
+                <td>$1,500.00</td>
+            </tr>
+            <tr>
+                <th>Trim / Bumpers</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$1,000.00</td>
+                <td>$2,000.00</td>
+                <td>$6,000.00</td>
+            </tr>
+            <tr style="background-color: #363636; color: #ffffffd1;">
+                <th></th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Subtotal</td>
+                <td>$31,600.00</td>
+                <td>$58,500.00</td>
+                <td>$91,000.00</td>
+            </tr>
+            <tr style="background-color: #999999;">
+                <th></th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Labor only</td>
+                <td>$25,600.00</td>
+                <td>$49,200.00</td>
+                <td>$75,000.00</td>
+            </tr>
+            <tr style="background-color: #999999;">
+                <th></th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Parts/Materials only</td>
+                <td>$6,000.00</td>
+                <td>$9,300.00</td>
+                <td>$16,000.00</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+
+
+
+    
 
   </div>
 </section>
@@ -920,6 +1304,8 @@
 
 
 
+
+
     
 
     
@@ -928,14 +1314,6 @@
     <section class="top first services half-split"><!-- START sectionStart: -->
       <div class="container">
 
-
-    
-    
-  
-
-    
-
-<!-- END sec-2col -->
 
     
     
@@ -989,12 +1367,6 @@
     
         
 
-
-    
-    
-  
-
-    
 
     
     

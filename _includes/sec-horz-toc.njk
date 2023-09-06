@@ -539,4 +539,226 @@ section.tabs-var-height label {
 
 
 
+
+<style>
+
+/* 1. Enable smooth scrolling */
+html {
+	scroll-behavior: smooth;
+}
+
+/* 2. Make nav sticky */
+main > nav {
+	position: sticky;
+	top: 2rem;
+	align-self: start;
+}
+
+/* 3. ScrollSpy active styles (see JS tab for activation) */
+.section-nav li.active > a {
+	color: #333;
+	font-weight: 500;
+}
+
+/* Sidebar Navigation */
+.section-nav {
+	padding-left: 0;
+	border-left: 1px solid #efefef;
+}
+
+.section-nav a {
+	text-decoration: none;
+	display: block;
+	padding: .125rem 0;
+	color: #ccc;
+	transition: all 50ms ease-in-out; /* 💡 This small transition makes setting of the active state smooth */
+}
+
+.section-nav a:hover,
+.section-nav a:focus {
+	color: #666;
+}
+
+
+li {
+	margin-left: 1rem;
+}
+
+h1 {
+	font-weight: 300;
+}
+
+/** page layout **/
+main {
+	display: flex;
+	/* grid-template-columns: 1fr 15em; */
+	max-width: 100em;
+	width: 90%;
+	margin: 0 auto;
+}
+.scroll-cont {
+    width: 100%;
+}
+
+
+</style>
+
+
+
+
+<section class="horz-accordion">
+
+
+<main>
+	<div class="scroll-cont">
+		<section id="introduction">
+			<h2>Step 1: Build spec / design</h2>
+            <div class="columns">
+                <div class="column">
+                    {% image "./src/_images/67_dart_vader_graffiti.jpg", "67 Dart Vader" %}
+                </div>
+                <div class="column">
+                    <p>For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p>
+                    <p>Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!</p>
+                </div>
+            </div>
+		</section>
+		<section id="request-response">
+			<h2>Step 2: Disassembly / Media blast / condition assessment</h2>
+            <div class="columns">
+                <div class="column">
+                    {% image "./src/_images/7x_Chevelle_engine_shop.jpg", "67 Dart Vader" %}
+                </div>
+                <div class="column">
+                    <p>The first thing we do is completely disassemble the car. Every nut, bolt, piece of glass, wires, piece of trim is removed, cataloged and marked. Along the way we take notes for broken bolts, missing parts etc. From here we start a list of what we will need to complete your job in detail. Once the car is back from the media blaster - We will assess body damage and metalwork required - and which panels will be replaced or repaired.</p>
+                </div>
+            </div>
+		</section>
+		<section id="authentication">
+			<h2>Step 3: Metalwork / Modification / Pre-assembly & Fit</h2>
+            <div class="columns">
+                <div class="column">
+                    {% image "./src/_images/014-plymouth-valiant-fender-door-gap.jpg", "67 Dart Vader" %}
+                </div>
+                <div class="column">
+                    <p>In this step we repair (or replace) all the damaged sheet metal and pre-assemble the car to fit all the panels either on the chassis or on a build stand and refine all the gaps for doors, fenders, trunk and hood. Even new reproduction panels sometimes require significant modifications in metal to ensure proper fit.</p>
+                    <p>If we’re doing body modifications we do them all in this step and fully build the basic car with these mods to ensure all the panels fit and all the holes we don’t need and components we are changing fit. Sometimes we may fully build the car with the engine and transmission and even suspension so that all the modification can be done without any risk of scratching paint.</p>
+                </div>
+            </div>
+		</section>
+		<section id="Step4">
+			<h2>Step 4: Bodywork / Block Sand / Refinement</h2>
+            <div class="columns">
+                <div class="column">
+                    {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
+                </div>
+                <div class="column">
+                    <p>Bodywork / Filler: Once everything is fit and we’re happy with the panel gaps and mods in metal we do our body filler work - We don’t call it “Bondo” and it’s not a bad word. Filler work is required to get the surface of all body panels closer to where we need them to be. Done properly, this filler can last 50+ years without issues.  Can we metalwork your car without using any filler? Totally - but that’s easily 800-1000 hours of labor to get there. Using modern body fillers - and making sure that our metalwork is within 1/16” or less we can get the same or better results in less time.</p>
+                </div>
+            </div>
+		</section>
+
+
+        
+		<section id="endpoints">
+			<h2>Step 5: Prime and Block Sand</h2>
+			<section id="endpoints--root">
+				<h3>5.1: Prime round 1</h3>
+                <p>We follow bodywork with an overall epoxy primer on every surface inside and out and apply a high build primer directly to the epoxy. This encapsulates the metal and filler bonding through and gives us a build of primer to start our block sanding work.</p>
+			</section>
+			<section id="endpoints--cities-overview">
+				<h3>5.2: Block sanding and finish body wor</h3>
+				<p>After primer we will re-assemble the panels and hand block sand with long-boards in 120 / 180 grit finish. At this stage we further refine the lines and bodywork to make every panel and gap laser straight and smooth.</p>
+			</section>
+			<section id="endpoints--city-detail">
+				<h3>5.3: Prime round 2</h3>
+				<p>Here we re-prime the entire exterior again after a clean and mask to fill in all the 180 grit sand scratches and build another layer of primer for further surface refinements. Here we spray a medium build surfacing primer after a thorough cleaning.</p>
+			</section>
+			<section id="endpoints--city-config">
+				<h3>5.4: Block sand… Again</h3>
+				<p>Now we switch to block sanding with 220 / 320 grit paper by hand again using longboards. This further smooths the surface of the primer and allows us to get all the final lines and finish very smooth.</p>
+			</section>
+			<section id="endpoints--city-spots-overview">
+				<h3>City Spots Overview</h3>
+				<p>…</p>
+			</section>
+			<section id="endpoints--city-spot-detail">
+				<h3>City Spot Detail</h3>
+				<p>…</p>
+			</section>
+			<section id="endpoints--city-icons-overview">
+				<h3>City Icons Overview</h3>
+				<p>…</p>
+			</section>
+			<section id="endpoints--city-icon-detail">
+				<h3>City Icon Detail</h3>
+				<p>…</p>
+			</section>
+		</section>
+		<section id="links">
+			<h2>Links</h2>
+			<p>…</p>
+		</section>
+		<section id="expanders">
+			<h2>Expanders</h2>
+			<p>…</p>
+		</section>
+		<section id="filters">
+			<h2>Filters</h2>
+			<p>…</p>
+		</section>
+	</div>
+	<nav class="section-nav">
+		<ol>
+			<li><a href="#introduction">Step 1: Build spec / design</a></li>
+			<li><a href="#request-response">Step 2: Disassembly / Media blast / condition assessment</a></li>
+			<li><a href="#authentication">Step 3: Metalwork / Modification / Pre-assembly & Fit</a></li>
+            <li><a href="#Step4">Step 4: Bodywork / Block Sand / Refinement</a></li>
+            
+			<li><a href="#endpoints">Step 5: Prime and Block Sand</a>
+				<ul>
+					<li class=""><a href="#endpoints--root">5.1: Prime round 1</a></li>
+					<li class=""><a href="#endpoints--cities-overview">5.2: Block sanding and finish body work</a></li>
+					<li class=""><a href="#endpoints--city-detail">5.3: Prime round 2</a></li>
+					<li class=""><a href="#endpoints--city-config">5.4: Block sand… Again</a></li>
+				</ul>
+			</li>
+			<li class=""><a href="#links">Links</a></li>
+			<li class=""><a href="#expanders">Expanders</a></li>
+			<li class=""><a href="#filters">Filters</a></li>
+		</ol>
+	</nav>
+</main>
+
+
+</section>
+
+
+
+
+
+<script>
+
+window.addEventListener('DOMContentLoaded', () => {
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        const id = entry.target.getAttribute('id');
+        if (entry.intersectionRatio > 0) {
+            document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.add('active');
+        } else {
+            document.querySelector(`nav li a[href="#${id}"]`).parentElement.classList.remove('active');
+        }
+    });
+});
+
+// Track all sections that have an `id` applied
+document.querySelectorAll('section[id]').forEach((section) => {
+    observer.observe(section);
+});
+
+});
+
+</script>
+
 {% endblock secHorzAccordion %}
