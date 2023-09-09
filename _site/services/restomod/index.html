@@ -14,7 +14,7 @@
 
     <title>Restomod &amp; Full Builds</title>
     <meta name="description" content="Driven Garage nothern California restomod auto customization and repair shop">
-    <link rel="stylesheet" href="../../theme.css?v=1694043203">
+    <link rel="stylesheet" href="../../theme.css?v=1694291578">
     <link rel="icon" type="image/png" href="../../_images/favicon.png" sizes="32x32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CUbuntu:300,300italic,400,400italic,500,500italic,700,700italic%7CRoboto:300,regular,500" media="all">
 
@@ -129,7 +129,7 @@
 <section class="hero is-medium is-primary has-background">
 
   <!-- <div class="swiffy-slider"> -->  <!-- slider-nav-autoplay slider-nav-autopause -->
-  <div class="swiffy-slider slider-nav-autoplay slider-nav-autopause">  
+  <div id="hero-slider" class="swiffy-slider slider-nav-autoplay slider-nav-autopause">  
 
     <ul class="slider-container">
 
@@ -433,538 +433,709 @@
 
 
 
+
 <style>
-.tab-container {
-    margin: 0 5%;
-    padding: 3rem 0;
+
+html {
+    scroll-behavior: smooth;
+}
+section.hero .slide-box {
+    height: 19rem;
+    min-height: 36rem;
+  }
+
+section.nav-links section {
+    /* height: 75vh; */
+    min-height: 75vh;
+    width: 100%;
+    padding: 0 0 2rem 0;
+    background-color: rgb(248 248 248);
+    border: 1px solid #ffffff;
 }
 
-.tab-wrap {
-  transition: 0.3s box-shadow ease;
-  /* border-radius: 6px; */
-  max-width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  /* position: relative; */
-  position: sticky;
-  min-height: 200px;
-  list-style: none;
-  background-color: #fff;
-  /* margin: 40px 0; */
-  /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
-}
-.tab-wrap:hover {
-  /* box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19); */
-}
-.tab-nav {
-    /* position: sticky; */
-	top: 2rem;
-}
-
-.tab {
-  display: none;
-}
-
-.tab:checked:nth-of-type(1) ~ .tab__content:nth-of-type(1), 
-.tab:checked:nth-of-type(2) ~ .tab__content:nth-of-type(2), 
-.tab:checked:nth-of-type(3) ~ .tab__content:nth-of-type(3), 
-.tab:checked:nth-of-type(4) ~ .tab__content:nth-of-type(4), 
-.tab:checked:nth-of-type(5) ~ .tab__content:nth-of-type(5), 
-.tab:checked:nth-of-type(6) ~ .tab__content:nth-of-type(6), 
-.tab:checked:nth-of-type(7) ~ .tab__content:nth-of-type(7), 
-.tab:checked:nth-of-type(8) ~ .tab__content:nth-of-type(8), 
-.tab:checked:nth-of-type(9) ~ .tab__content:nth-of-type(9), 
-.tab:checked:nth-of-type(10) ~ .tab__content:nth-of-type(10), 
-.tab:checked:nth-of-type(11) ~ .tab__content:nth-of-type(11), 
-.tab:checked:nth-of-type(12) ~ .tab__content:nth-of-type(12), 
-.tab:checked:nth-of-type(13) ~ .tab__content:nth-of-type(13) {
-  opacity: 1;
-  transition: 0.5s opacity ease-in, 0.8s transform ease;
-  position: relative;
-  top: 0;
-  transform: translateY(0px);
-  text-shadow: 0 0 0;
-}
-.tab:first-of-type:not(:last-of-type) + label {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
-.tab:not(:first-of-type):not(:last-of-type) + label {
-  border-radius: 0;
-}
-.tab:last-of-type:not(:first-of-type) + label {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-.tab:checked + label {
-    color: #fff;
-    background-color: #f79837;
-    box-shadow: 0 -1px 0 #fff inset;
-    cursor: default;
-}
-.tab:checked + label:hover {
-  box-shadow: 0 -1px 0 #fff inset;
-  background-color: #f79837;
-}
-
-.tab + label:nth-of-type(1) {
-    margin-left: 0;
-}
-
-.tab + label {
-  /* box-shadow: 0 -1px 0 #eee inset; */
-  /* border-radius: 6px 6px 0 0; */
-  /* border-left: 2px solid #fff; */
-  /*  Didn't work - only 1 side slanted 
-  border-color: blue transparent Pink transparent;
-  border-width: 0 0 100px 100px;
-*/
-
-  clip-path: polygon( 10% 0, 100% 0%, 90% 100%, 0% 100% );
-  margin-left: -0.5rem;
-  display: block;
-  text-decoration: none;
-  color: #333;
-  flex-grow: 3;
-  text-align: center;
-  background-color: #f2f2f2;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-  text-align: center;
-  transition: 0.3s background-color ease, 0.3s box-shadow ease;
-  height: 3rem;
-  box-sizing: border-box;
-  padding: 1rem;
-  font-size: 1.1rem;
-  font-weight: 500;
-  z-index: 10;
-  cursor: pointer;
-}
-
-/* 
-.tab + label:after {
-    content:'';
-  display: block;
-  border-right: 4px solid #000;
-  transform: rotate(24deg);
-  height: 52px;
-  width: 20px;
-  position: absolute;
-  cursor: pointer;
-  right: 9px;
-  top: -5px;
-}
-*/
-
-
-
-/* 
-.tab + label:after {
-    content:'';
-  display: block;
-  border-top: 16px solid #000;
-  border-right: 16px solid #000;
-  transform: rotate(45deg);
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  cursor: pointer;
-  right: 0;
-  top: 50%;
-}
-*/
-
-
-/* 
-.tab + label:after {
-    content:'';
-  display: block;
-  width: 0px;
-    height: 0px;
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    border-left: 30px solid green;
-  position: absolute;
-  cursor: pointer;
-  left: o;
-  top: 50%;
-} */
-
-
-
-.tab + label:hover {
-  /* background-color: #f9f9f9; */
-  background-color: #f79837;
-  /* box-shadow: 0 1px 0 #f4f4f4 inset; */
-}
-.tab__content {
-  padding: 10px 25px;
-  background-color: transparent;
-  position: absolute;
-  width: 100%;
-  z-index: -1;
-  opacity: 0;
-  left: 0;
-  transform: translateY(-3px);
-  border-radius: 6px;
-}
-
-section.tabs-var-height input,
-section.tabs-var-height label {
+section.nav-links .tab-nav {
     position: sticky;
     top: 0;
+    min-height: 4rem;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0.5rem 0 0 0;
+    background-color: #eef0f1;
+    z-index: 10;
+}
+@media(max-width: 768px) {
+    section.nav-links .tab-nav {
+        top: 60px;
+    }
 }
 
+section.nav-links .tab-nav ul {
+    display: flex;
+    justify-content: center;
+}
+section.nav-links .tab-nav ul li {
+    margin: 0 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background-color: #e4e4e4; /* rgb(228 228 228); */
+    transform: skew(-24deg);
+    border-radius:4px;
+}
 
+section.nav-links .tab-nav ul li a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #363636;
+    transform: skew(24deg);
+}
+section.nav-links .tab-nav ul li a > i {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 0 0 0.2rem;
+  padding: 0 0.8rem;
+  color: #ffffff;
+  background: #8e8e8e;
+  border-radius: 50%;
+  font-size: 2rem;
+  text-align: center;
+  font-style: normal;
+}
 
+section.nav-links .tab-nav ul li:hover, 
+section.nav-links .tab-nav ul li.active {
+    background-color: #F7983B;
+    transition: 0.3s;
+}
+section.nav-links .tab-nav ul li.active {
+    display: flex;
+}
+section.nav-links .tab-nav ul li:hover a {
+    color: #ffffff;
+}
+section.nav-links .tab-nav ul li:hover a > i {
+    background-color: #4a4a4a;
+    transition: 0.3s;
+}
+
+section.nav-links .tab-nav ul li.active a {
+    color: #ffffff;
+}
+.sec-wrap > .tab-cont-head {
+    /* display: none; */
+    padding: 0.5rem 0 0.5rem 2rem;
+    background-color: #F7983B;
+}
+.tab-nav ul li .tab-cont-head {
+    display: none;
+}
+.tab-nav ul li.active .tab-cont-head {
+    display: block;
+}
+.tab-nav ul > li .tab-cont-head {
+    margin: 0 0 0 0.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    transform: skew(24deg);
+}
+.tab-cont-head h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    font-style: italic;
+}
+.tab-cont {
+    padding: 1rem 2rem 1rem 0;
+}
+section.nav-links section p {
+    margin: 0 0 1rem 0;
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+section.nav-links .slide-box {
+    min-height: 50%;
+    max-height: 100%;
+}
+.sec-wrap {
+    margin: 6rem 0 0 0;
+    min-height: 3rem;
+    /* border: 1px solid #3366ff; */
+}
 </style>
 
+<section class="nav-links">
 
-<section class="tabs-var-height bkg-grad1">
-    <div class="tab-container">
-    
-      <div class="tab-wrap">
+    <div class="tab-nav">
+        <ul>
+            <li class="step1 active"><a href="#step1">Step <i>1</i></a>
+            <div class="tab-cont-head"><h2>Design & Discovery</h2></div></li>
 
-            <!-- active tab on page load gets checked attribute -->
-            <input type="radio" id="tab1" name="tabGroup1" class="tab" checked="checked">
-            <label for="tab1">Step 1 <!-- Build spec / design --></label>
-        
-            <input type="radio" id="tab2" name="tabGroup1" class="tab">
-            <label for="tab2">Step 2 <!-- Disassembly / Media blast / condition assessment --></label>
+            <li class="step2"><a href="#step2">Step <i>2</i></a>
+            <div class="tab-cont-head"><h2>Metal & Body Work</h2></div></li>
 
-            <input type="radio" id="tab3" name="tabGroup1" class="tab">
-            <label for="tab3">Step 3 <!-- Metalwork / Modification / Pre-assembly & Fit --></label>
+            <li class="step3"><a href="#step3">Step <i>3</i></a>
+            <div class="tab-cont-head"><h2>Paint Prep</h2></li>
 
-            <input type="radio" id="tab4" name="tabGroup1" class="tab">
-            <label for="tab4">Step 4 <!-- Bodywork / Block Sand / Refinement --></label>
+            <li class="step4"><a href="#step4">Step <i>4</i></a>
+            <div class="tab-cont-head"><h2>Paint / Clear coat / Finish</h2></li>
 
-            <input type="radio" id="tab5" name="tabGroup1" class="tab">
-            <label for="tab5">Step 5 <!-- Prime and Block Sand --></label>
+            <li class="step5"><a href="#step5">Step <i>5</i></a>
+            <div class="tab-cont-head"><h2>Re-assembly</h2></li>           
 
-            <input type="radio" id="tab6" name="tabGroup1" class="tab">
-            <label for="tab6">Step 6 <!-- Final Paint Prep --></label>
+            <li class="step6"><a href="#step6">Step <i>6</i></a>
+            <div class="tab-cont-head"><h2>Final Tuning & Delivery</h2></li>  
 
-            <input type="radio" id="tab7" name="tabGroup1" class="tab">
-            <label for="tab7">Step 7 <!-- Final fit / Mock-up --></label>
 
-            <input type="radio" id="tab8" name="tabGroup1" class="tab">
-            <label for="tab8">Step 8 <!-- Paint / Clear coat / Finish --></label>
+            <!-- <li class="step3"><a href="#step3">Step  <i>3</i></a></li> -->
 
-            <input type="radio" id="tab9" name="tabGroup1" class="tab">
-            <label for="tab9">Step 9 <!-- Exterior re-assembly --></label>
+            <!-- <li class="step4"><a href="#step4">Step  <i>4</i></a></li> -->
 
-            <input type="radio" id="tab10" name="tabGroup1" class="tab">
-            <label for="tab10">Step 10 <!-- Exterior re-assembly --></label>
+            <!-- <li class="step5"><a href="#step5">Step  <i>5</i></a></li> -->
 
-            <input type="radio" id="tab11" name="tabGroup1" class="tab">
-            <label for="tab11">Step 11 <!-- Wiring / Plumbing / Exhaust --></label>
+            <!-- <li class="step6"><a href="#step6">Step  <i>6</i></a></li> -->
+         
 
-            <input type="radio" id="tab12" name="tabGroup1" class="tab">
-            <label for="tab12">Step 12 <!-- Wiring / Plumbing / Exhaust --></label>
+        </ul>
+    </div>
 
-            <input type="radio" id="tab13" name="tabGroup1" class="tab">
-            <label for="tab13">Step 13 <!-- Tuning and Validation --></label>
 
-        <div class="tab__content">
-            <h2>Step 1: Build spec / design</h2>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_graffiti-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_dart_vader_graffiti-400.jpeg 400w, /assets/images/67_dart_vader_graffiti-800.jpeg 800w, /assets/images/67_dart_vader_graffiti-1280.jpeg 1280w, /assets/images/67_dart_vader_graffiti-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
+    <section id="step1">
+        <div class="sec-wrap">
+        <!-- <div class="tab-cont-head"><h2>Step 1: Design & Discovery</h2></div> -->
+        <div class="columns">
+            <div class="column">
+                <div id="slider1" class="swiffy-slider slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <ul class="slider-container">
+
+                        <li>
+                            <div class="slide-box">
+                                        <img alt="Brass Tacks rending" loading="lazy" decoding="async" src="/assets/images/Brass_Tacks_rend-400.jpeg" width="2000" height="1270" srcset="/assets/images/Brass_Tacks_rend-400.jpeg 400w, /assets/images/Brass_Tacks_rend-800.jpeg 800w, /assets/images/Brass_Tacks_rend-1280.jpeg 1280w, /assets/images/Brass_Tacks_rend-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                            </div>
+                        </li><!-- END slide 1 -->
+                
+                        <li>
+                            <div class="slide-box">
+                                <img alt="Finn c10 F-02 rendering" loading="lazy" decoding="async" src="/assets/images/Finn_c10_F-02_rend-400.jpeg" width="2000" height="1270" srcset="/assets/images/Finn_c10_F-02_rend-400.jpeg 400w, /assets/images/Finn_c10_F-02_rend-800.jpeg 800w, /assets/images/Finn_c10_F-02_rend-1280.jpeg 1280w, /assets/images/Finn_c10_F-02_rend-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                            </div>
+                        </li><!-- END slide 2 -->
+
+                        <li>
+                            <div class="slide-box">
+                                <img alt="Finn c10 F-02 rendering" loading="lazy" decoding="async" src="/assets/images/68_Dartside_of_the_Moon_rend_int-400.jpeg" width="2000" height="1270" srcset="/assets/images/68_Dartside_of_the_Moon_rend_int-400.jpeg 400w, /assets/images/68_Dartside_of_the_Moon_rend_int-800.jpeg 800w, /assets/images/68_Dartside_of_the_Moon_rend_int-1280.jpeg 1280w, /assets/images/68_Dartside_of_the_Moon_rend_int-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                            </div>
+                        </li><!-- END slide 3 -->
+
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <div class="slider-indicators">
+                        <button class="active"></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div><!-- END swiffy-slider -->
+
+            </div>
+            <div class="column">
+                <div class="tab-cont">
+                    <h3>Build spec / design</h3><!-- (Step 1) -->
                     <p>For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p>
                     <p>Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!</p>
+                    <h3>Disassembly / Media blast / condition assessment</h3><!-- (Step 2) -->
+                    <p>The first thing we do is completely disassemble the car. Every nut, bolt, piece of glass, wires, piece of trim is removed, cataloged and marked. Along the way we take notes for broken bolts, missing parts etc. From here we start a list of what we will need to complete your job in detail. Once the car is back from the media blaster - We will assess body damage and metalwork required - and which panels will be replaced or repaired.</p>    
                 </div>
             </div>
         </div>
-    
-        <div class="tab__content">
-          <h2>Step 2: Disassembly / Media blast / condition assessment</h2>
-          <div class="columns">
-              <div class="column">
-                  <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/7x_Chevelle_engine_shop-400.jpeg" width="2000" height="1333" srcset="/assets/images/7x_Chevelle_engine_shop-400.jpeg 400w, /assets/images/7x_Chevelle_engine_shop-800.jpeg 800w, /assets/images/7x_Chevelle_engine_shop-1280.jpeg 1280w, /assets/images/7x_Chevelle_engine_shop-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-              </div>
-              <div class="column">
-                  <p>The first thing we do is completely disassemble the car. Every nut, bolt, piece of glass, wires, piece of trim is removed, cataloged and marked. Along the way we take notes for broken bolts, missing parts etc. From here we start a list of what we will need to complete your job in detail. Once the car is back from the media blaster - We will assess body damage and metalwork required - and which panels will be replaced or repaired.</p>
-              </div>
-          </div>
-        </div>
-    
-        <div class="tab__content">
-          <h2>Step 3: Metalwork / Modification / Pre-assembly & Fit</h2>
-          <div class="columns">
-              <div class="column">
-                  <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg" width="873" height="582" srcset="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg 400w, /assets/images/014-plymouth-valiant-fender-door-gap-800.jpeg 800w, /assets/images/014-plymouth-valiant-fender-door-gap-873.jpeg 873w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-              </div>
-              <div class="column">
-                  <p>In this step we repair (or replace) all the damaged sheet metal and pre-assemble the car to fit all the panels either on the chassis or on a build stand and refine all the gaps for doors, fenders, trunk and hood. Even new reproduction panels sometimes require significant modifications in metal to ensure proper fit.</p>
-                  <p>If we’re doing body modifications we do them all in this step and fully build the basic car with these mods to ensure all the panels fit and all the holes we don’t need and components we are changing fit. Sometimes we may fully build the car with the engine and transmission and even suspension so that all the modification can be done without any risk of scratching paint.</p>
-              </div>
-          </div>
-        </div>
+    </div>
+    </section>
 
 
-        <div class="tab__content">
-            <h2>Step 4: Bodywork / Block Sand / Refinement</h2>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
+    <section id="step2">
+        <div class="sec-wrap">
+        <!-- <div class="tab-cont-head"><h2>Metal & Body Work</h2></div> -->
+        <div class="columns">
+            <div class="column">
+                <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <ul class="slider-container">
+
+                        <li>
+                            <div class="slide-box">
+                                <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                            </div>
+                        </li><!-- END slide 1 -->
+                
+                        <li>
+                            <div class="slide-box">
+                                <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                            </div>
+                        </li><!-- END slide 2 -->
+
+                        <li>
+                            <div class="slide-box">
+                                <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg" width="873" height="582" srcset="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg 400w, /assets/images/014-plymouth-valiant-fender-door-gap-800.jpeg 800w, /assets/images/014-plymouth-valiant-fender-door-gap-873.jpeg 873w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                            </div>
+                        </li><!-- END slide 3 -->
+
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <div class="slider-indicators">
+                        <button class="active"></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div><!-- END swiffy-slider -->
+
+
+            </div>
+            <div class="column">
+                <div class="tab-cont">
+                    <h3>Metalwork / Modification / Pre-assembly & Fit</h3><!-- Step 3 -->
+                    <p>In this step we repair (or replace) all the damaged sheet metal and pre-assemble the car to fit all the panels either on the chassis or on a build stand and refine all the gaps for doors, fenders, trunk and hood. Even new reproduction panels sometimes require significant modifications in metal to ensure proper fit.</p>
+                    <p>If we’re doing body modifications we do them all in this step and fully build the basic car with these mods to ensure all the panels fit and all the holes we don’t need and components we are changing fit. Sometimes we may fully build the car with the engine and transmission and even suspension so that all the modification can be done without any risk of scratching paint.</p>
+                    <h3>Bodywork / Block Sand / Refinement</h3><!-- Step 4 -->
                     <p>Bodywork / Filler: Once everything is fit and we’re happy with the panel gaps and mods in metal we do our body filler work - We don’t call it “Bondo” and it’s not a bad word. Filler work is required to get the surface of all body panels closer to where we need them to be. Done properly, this filler can last 50+ years without issues.  Can we metalwork your car without using any filler? Totally - but that’s easily 800-1000 hours of labor to get there. Using modern body fillers - and making sure that our metalwork is within 1/16” or less we can get the same or better results in less time.</p>
-                </div>
+                </div>          
             </div>
         </div>
 
+        
 
-        <div class="tab__content">
-            <h2>Step 5: Prime and Block Sand</h2>
-            <section id="endpoints--root">
-                <div class="columns">
-                    <div class="column">
-                        <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                    </div>
-                    <div class="column">
-                        <h3>5.1: Prime round 1</h3>
-                        <p>We follow bodywork with an overall epoxy primer on every surface inside and out and apply a high build primer directly to the epoxy. This encapsulates the metal and filler bonding through and gives us a build of primer to start our block sanding work.</p>
-                    </div>
+    </div>
+    </section>
+
+
+
+
+
+    <section id="step3">
+        <div class="sec-wrap">
+            <!-- <div class="tab-cont-head"><h2>Paint Prep</h2></div> -->
+            <div class="columns">
+                <div class="column">
+                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                        <ul class="slider-container">
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 1 -->
+                    
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg" width="873" height="582" srcset="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg 400w, /assets/images/014-plymouth-valiant-fender-door-gap-800.jpeg 800w, /assets/images/014-plymouth-valiant-fender-door-gap-873.jpeg 873w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 3 -->
+
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div><!-- END swiffy-slider -->
+
+
                 </div>
-            </section>
-            <section id="endpoints--cities-overview">
-                <div class="columns">
-                    <div class="column">
-                        <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/63_Corvette_dk_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/63_Corvette_dk_blue-400.jpeg 400w, /assets/images/63_Corvette_dk_blue-800.jpeg 800w, /assets/images/63_Corvette_dk_blue-1280.jpeg 1280w, /assets/images/63_Corvette_dk_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                    </div>
-                    <div class="column">
-                        <h3>5.2: Block sanding and finish body work</h3>
-                        <p>After primer we will re-assemble the panels and hand block sand with long-boards in 120 / 180 grit finish. At this stage we further refine the lines and bodywork to make every panel and gap laser straight and smooth.</p>
-                    </div>
+                <div class="column">
+                    <div class="tab-cont">
+                        <h3>Prime and Block Sand</h3><!-- Step 5  -->
+                        <!-- <h3>Prime round 1</h3> --><!-- 5.1 -->
+                        <p><b>Prime round 1</b> We follow bodywork with an overall epoxy primer on every surface inside and out and apply a high build primer directly to the epoxy. This encapsulates the metal and filler bonding through and gives us a build of primer to start our block sanding work.</p>
+                        <!-- <h3>Block sanding and finish body work</h3> --><!-- 5.2 -->
+                        <p><b>Block sanding and finish body work</b> After primer we will re-assemble the panels and hand block sand with long-boards in 120 / 180 grit finish. At this stage we further refine the lines and bodywork to make every panel and gap laser straight and smooth.</p>
+                        <!-- <h3>Prime round 2</h3> --><!-- 5.3 -->
+                        <p><b>Prime round 2</b> Here we re-prime the entire exterior again after a clean and mask to fill in all the 180 grit sand scratches and build another layer of primer for further surface refinements. Here we spray a medium build surfacing primer after a thorough cleaning.</p>
+                        <!-- <h3>Block sand… Again</h3> --><!--5.4 -->
+                        <p><b>Block sand… Again</b> Now we switch to block sanding with 220 / 320 grit paper by hand again using longboards. This further smooths the surface of the primer and allows us to get all the final lines and finish very smooth.</p>
+                    </div>          
                 </div>
-            </section>
-            <section id="endpoints--city-detail">
-                <div class="columns">
-                    <div class="column">
-                        <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/63_Corvette_dk_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/63_Corvette_dk_blue-400.jpeg 400w, /assets/images/63_Corvette_dk_blue-800.jpeg 800w, /assets/images/63_Corvette_dk_blue-1280.jpeg 1280w, /assets/images/63_Corvette_dk_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                    </div>
-                    <div class="column">
-                        <h3>5.3: Prime round 2</h3>
-                        <p>Here we re-prime the entire exterior again after a clean and mask to fill in all the 180 grit sand scratches and build another layer of primer for further surface refinements. Here we spray a medium build surfacing primer after a thorough cleaning.</p>
-                    </div>
+            </div>
+
+            <div class="columns">
+                <div class="column">
+                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                        <ul class="slider-container">
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="Finn c10 F-02 rendering" loading="lazy" decoding="async" src="/assets/images/Finn_c10_F-02_rend-400.jpeg" width="2000" height="1270" srcset="/assets/images/Finn_c10_F-02_rend-400.jpeg 400w, /assets/images/Finn_c10_F-02_rend-800.jpeg 800w, /assets/images/Finn_c10_F-02_rend-1280.jpeg 1280w, /assets/images/Finn_c10_F-02_rend-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 1 -->
+                    
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 3 -->
+
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div><!-- END swiffy-slider -->
+
+
                 </div>
-            </section>
-            <section id="endpoints--city-config">
-                <div class="columns">
-                    <div class="column">
-                        <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/63_Corvette_dk_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/63_Corvette_dk_blue-400.jpeg 400w, /assets/images/63_Corvette_dk_blue-800.jpeg 800w, /assets/images/63_Corvette_dk_blue-1280.jpeg 1280w, /assets/images/63_Corvette_dk_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                    </div>
-                    <div class="column">
-                        <h3>5.4: Block sand… Again</h3>
-                        <p>Now we switch to block sanding with 220 / 320 grit paper by hand again using longboards. This further smooths the surface of the primer and allows us to get all the final lines and finish very smooth.</p>
-                    </div>
+                <div class="column">
+                    <div class="tab-cont">
+                        <h3>Final Paint Prep</h3><!-- Step 6 -->
+                        <!-- 6.1 -->
+                        <p><b>Final prime / Sealer</b> This is our final primer stage. At this point the car is taken back apart and a sealer coat is applied to all outside and inside surfaces. This final coat locks everything down and is what the base coat and clear coat will be applied to. We also use this last seal step to apply any urethane seam sealer to panel overlaps and seams.</p>
+                        <!-- 6.2 -->
+                        <p><b>Final sand</b> Final sand: After the sealer is applied, we wet sand all of the panels 600/800 grit to remove any “Orange Peel” and imperfections from the sealer coat and allow the scratches from this sanding round to act as the mechanical bond for the paint and clear coat.</p>
+
+                        <h3>Final fit / Mock-up</h3><!-- Step 7 -->
+                        <p>If we’re spraying a metallic color on the car - at this point we will paint and clear coat the inside of the panels and the door jambs, fender and trunk jambs so that we can spray the car together. This is an important step for metallic paints as when the base coat comes out of the gun - we want to ensure that the flakes are oriented in the right direction from fender to door, door to quarter panels, etc. On solid color cars with no metallic this is the only step we skip as we can just paint the panels and fit them after.</p>
+                        <!-- 7.1  -->
+                        <p><b>Clean and spray jambs</b> Clean everything 3x mask and spray all the insides of panels and the door jambs, fender jambs, and trunk jambs. We give everything 3 coats of base coat followed by 3-4 coats of high quality high solids clear coat.</p>
+                        <!-- 7.2 --> 
+                        <p><b>Assembly and panel align</b> After the jambs and insides are done - it’s time to put it all back together and align the panels for the metallic paint.  We’re sure you’ve seen cars that look like one panel is a bit “off” from the next - that’s because the shop skipped this step and painted a metallic color in pieces. The spray pattern needs to flow from panel to panel.</p>
+
+                    </div>          
                 </div>
-            </section>
+            </div>
+
         </div>
+    </section>    
 
-        <div class="tab__content">
-            <h2>Step 6: Final Paint Prep</h2>
+
+
+    <section id="step4">
+        <div class="sec-wrap">
+            <!-- <div class="tab-cont-head"><h2>Paint / Clear coat / Finish</h2></div> -->
             <div class="columns">
                 <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/65_Mercury_Comet05-400.jpeg" width="2048" height="1365" srcset="/assets/images/65_Mercury_Comet05-400.jpeg 400w, /assets/images/65_Mercury_Comet05-800.jpeg 800w, /assets/images/65_Mercury_Comet05-1280.jpeg 1280w, /assets/images/65_Mercury_Comet05-2048.jpeg 2048w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                        <ul class="slider-container">
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="Finn c10 F-02 rendering" loading="lazy" decoding="async" src="/assets/images/68_Dartside_of_the_Moon_rend_int-400.jpeg" width="2000" height="1270" srcset="/assets/images/68_Dartside_of_the_Moon_rend_int-400.jpeg 400w, /assets/images/68_Dartside_of_the_Moon_rend_int-800.jpeg 800w, /assets/images/68_Dartside_of_the_Moon_rend_int-1280.jpeg 1280w, /assets/images/68_Dartside_of_the_Moon_rend_int-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">                                </div>
+                            </li><!-- END slide 1 -->
+                    
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 3 -->
+
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div><!-- END swiffy-slider -->
+
+
                 </div>
                 <div class="column">
-                    <p>6.1: Final prime / Sealer: This is our final primer stage. At this point the car is taken back apart and a sealer coat is applied to all outside and inside surfaces. This final coat locks everything down and is what the base coat and clear coat will be applied to. We also use this last seal step to apply any urethane seam sealer to panel overlaps and seams.</p>
+                    <div class="tab-cont">
+                        <h3>Painting and Finish</h3><!-- Step 8  -->
+                        <p>It all comes down to this - All the work to get to this point has given us a solid foundation that is straight, smooth and ready to be finished. Most people think that we just sand a car real quick, prime it and spray on the paint - but in reality the actual painting process is the least labor intensive part of what we do. We do hundreds of hours of prep work to get here - and it’s under 20 hours of actual painting.  Here are the paint and finish steps we adhere to.</p>
+                        <!-- 8.1 -->
+                        <p><b>Clean, clean, clean again and mask</b> The spray booth needs to be cleaned and new filters installed. The car and body panels will be cleaned several times here. We can’t have any contaminants on the surface prior to paint. Any areas we are not painting are masked off.</p>
+                        <p></p>
+                        <!-- 8.2 -->
+                        <p><b>Base coat and drop coat</b> We spray 3-4 coats of base coat - and for metallics do a final “drop coat” that ensures there is no striping or panel to panel issues with the metallics in the paint. We feature high quality paint products from Spies Hecker / Axalta for all of our  work.</p>
+                        <!-- 8.3 -->
+                        <p><b>Clearcoat</b>The first phase of clear coat consists of 3-4 coats of clear coat applied with proper flash times between coats. This provides the shine over the base coat and protects it from the sun / elements.</p>
+<!-- 8.4 -->
+                        <p><b>Wet sand</b> After the initial 3-4 coats of clear are laid down - we wet sand all of the outside surfaces with 800-1000 grit sandpaper by hand with blocks to remove the “orange peel” texture, and any imperfections. This mechanical sanding provides us with a mechanical adhesion for the final flow coat.</p>
+<!-- 8.5 -->
+                        <p><b>Flow coat</b> This is the final step of clear coat. We add 2-3 additional coats of clear coat to the wet sanded surfaces to add more depth and shine. We add a little more reducer to the clear allowing it to “flow” and level better.</p>
+<!-- 8.6 -->
+                        <p><b>Wet / dry sand for compound and polish</b> After the flow coat - the surface is smooth and glossy with little orange peel. But we take it a step further to make the surface smooth as a mirror. We start by wet sanding by hand with blocks the entire exterior 1,200 grit. We follow that up with 4 rounds of machine sanding using 1,500 grit, 2,000 grit, 2,500 grit and 3,000 grit.</p>
+<!-- 8.7 -->
+                        <p><b>Compound and polish</b> The wet / dry sand process has left the surface of the clear smooth - but now we have to shine it all back up and remove the 3000 grit scratches. This process involves using compound and polish in 3 steps with a rotary and orbital buffer. This gives the clear coat that wet and glossy look that we’re all aiming for.</p>
+<!-- 8.8 -->
+                        <p><b>Mask and spray urethane texture (optional)</b> For many jobs - we also spray the inside, and underneath of the car with a urethane texture coat. This coating is similar to pickup truck bed liner and offers protection from road debris, as well as heat and sound insulation.</p>
+                    </div>          
                 </div>
             </div>
+
             <div class="columns">
                 <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/66_Chevelle03-400.jpeg" width="1080" height="745" srcset="/assets/images/66_Chevelle03-400.jpeg 400w, /assets/images/66_Chevelle03-800.jpeg 800w, /assets/images/66_Chevelle03-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                        <ul class="slider-container">
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 1 -->
+                    
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg" width="873" height="582" srcset="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg 400w, /assets/images/014-plymouth-valiant-fender-door-gap-800.jpeg 800w, /assets/images/014-plymouth-valiant-fender-door-gap-873.jpeg 873w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+
+                                </div>
+                            </li><!-- END slide 3 -->
+
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div><!-- END swiffy-slider -->
+
+
                 </div>
                 <div class="column">
-                    <p>6.7: Final sand: After the sealer is applied, we wet sand all of the panels 600/800 grit to remove any “Orange Peel” and imperfections from the sealer coat and allow the scratches from this sanding round to act as the mechanical bond for the paint and clear coat.</p>
+                    <div class="tab-cont">
+                        <h3>Final Paint Prep</h3><!-- Step 6 -->
+                        <!-- 6.1 -->
+                        <p><b>Final prime / Sealer</b> This is our final primer stage. At this point the car is taken back apart and a sealer coat is applied to all outside and inside surfaces. This final coat locks everything down and is what the base coat and clear coat will be applied to. We also use this last seal step to apply any urethane seam sealer to panel overlaps and seams.</p>
+                        <!-- 6.2 -->
+                        <p><b>Final sand</b> Final sand: After the sealer is applied, we wet sand all of the panels 600/800 grit to remove any “Orange Peel” and imperfections from the sealer coat and allow the scratches from this sanding round to act as the mechanical bond for the paint and clear coat.</p>
+
+                        <h3>Final fit / Mock-up</h3><!-- Step 7 -->
+                        <p>If we’re spraying a metallic color on the car - at this point we will paint and clear coat the inside of the panels and the door jambs, fender and trunk jambs so that we can spray the car together. This is an important step for metallic paints as when the base coat comes out of the gun - we want to ensure that the flakes are oriented in the right direction from fender to door, door to quarter panels, etc. On solid color cars with no metallic this is the only step we skip as we can just paint the panels and fit them after.</p>
+                        <!-- 7.1  -->
+                        <p><b>Clean and spray jambs</b> Clean everything 3x mask and spray all the insides of panels and the door jambs, fender jambs, and trunk jambs. We give everything 3 coats of base coat followed by 3-4 coats of high quality high solids clear coat.</p>
+                        <!-- 7.2 --> 
+                        <p><b>Assembly and panel align</b> After the jambs and insides are done - it’s time to put it all back together and align the panels for the metallic paint.  We’re sure you’ve seen cars that look like one panel is a bit “off” from the next - that’s because the shop skipped this step and painted a metallic color in pieces. The spray pattern needs to flow from panel to panel.</p>
+
+                    </div>          
                 </div>
             </div>
+
         </div>
+    </section>
 
 
-        <div class="tab__content">
-            <h2>Step 7: Final fit / Mock-up</h2>
+
+    <section id="step5">
+        <div class="sec-wrap">
+            <!-- <div class="tab-cont-head"><h2>Re-assembly</h2></div> -->
             <div class="columns">
                 <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Camaro_shocks-400.jpeg" width="1080" height="720" srcset="/assets/images/67_Camaro_shocks-400.jpeg 400w, /assets/images/67_Camaro_shocks-800.jpeg 800w, /assets/images/67_Camaro_shocks-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                        <ul class="slider-container">
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="Brass Tacks rending" loading="lazy" decoding="async" src="/assets/images/Brass_Tacks_rend-400.jpeg" width="2000" height="1270" srcset="/assets/images/Brass_Tacks_rend-400.jpeg 400w, /assets/images/Brass_Tacks_rend-800.jpeg 800w, /assets/images/Brass_Tacks_rend-1280.jpeg 1280w, /assets/images/Brass_Tacks_rend-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">                                </div>
+                            </li><!-- END slide 1 -->
+                    
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 3 -->
+
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div><!-- END swiffy-slider -->
+
+
                 </div>
                 <div class="column">
-                    <p>If we’re spraying a metallic color on the car - at this point we will paint and clear coat the inside of the panels and the door jambs, fender and trunk jambs so that we can spray the car together. This is an important step for metallic paints as when the base coat comes out of the gun - we want to ensure that the flakes are oriented in the right direction from fender to door, door to quarter panels, etc. On solid color cars with no metallic this is the only step we skip as we can just paint the panels and fit them after.</p>
+                    <div class="tab-cont">
+                        <h3>Exterior re-assembly</h3><!-- Step 9  -->
+                        <p>Now that the paint work is all done - it’s time to install the chrome trim, stainless window moldings and bumpers, handles, door and window weatherstripping. We take great care not to scratch  all of our hard work putting the bright work back on. Glass will be installed at this point as well.</p> 
+                        
+                        <h3>Mechanical Assembly</h3><!-- Step 10  -->
+                        <p>At this stage - the body and paint team hands the car over to the assembly team to put suspension brakes, engine, trans, etc back into the car. Since all the basic components have been fit already - we know there won’t be any surprises here.</p>
+                        
+                        <h3>Wiring / Plumbing / Exhaust</h3><!-- Step 11  -->
+                        <p>Once the components are all in place we do all of the plumbing, wiring and electrical work. Wiring and plumbing can be as tedious and time consuming as prepping for paint. If it’s a restoration - we’ll use the factory harness or a reproduction and materials and routing similar to how the car was built. If we’re doing a Resto-Mod we will hide what we can and go to great lengths to make the harness neat, tidy and serviceable. The final part is usually exhaust - Whether a factory system or fully custom tig welded system or anything in-between. If we’re doing a stereo, or air conditioning - Wei’ll install it now as well.</p>
+                        
+                        <h3>Interior finish</h3><!-- Step 12  -->
+                        <p>Once all the paint, mechanicals and electrical is complete - it’s off to interior for things like seat upholstery, headliner, carpet, door panels and the like. We will either send this out if it’s a full custom job to our preferred interior trim shop - or do some or all of it in house. Full custom jobs may take an interim step before paint to have panels fabricated then finished off and installed when the mechanicals and paint are complete.</p>
+                        
+                    </div>          
                 </div>
             </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Camaro01-400.jpeg" width="1080" height="720" srcset="/assets/images/67_Camaro01-400.jpeg 400w, /assets/images/67_Camaro01-800.jpeg 800w, /assets/images/67_Camaro01-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>7.1:  Clean and spray jambs: Clean everything 3x mask and spray all the insides of panels and the door jambs, fender jambs, and trunk jambs. We give everything 3 coats of base coat followed by 3-4 coats of high quality high solids clear coat.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Cuda_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_Cuda_blue-400.jpeg 400w, /assets/images/67_Cuda_blue-800.jpeg 800w, /assets/images/67_Cuda_blue-1280.jpeg 1280w, /assets/images/67_Cuda_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>7.2: Assembly and panel align: After the jambs and insides are done - it’s time to put it all back together and align the panels for the metallic paint.  We’re sure you’ve seen cars that look like one panel is a bit “off” from the next - that’s because the shop skipped this step and painted a metallic color in pieces. The spray pattern needs to flow from panel to panel.</p>
-                </div>
-            </div>
+
+
         </div>
+    </section>
+
+
+    <section id="step6">
+        <div class="sec-wrap">
+            <!-- <div class="tab-cont-head"><h2>Final Tuning & Deliveryy</h2></div> -->
+            
+            <div class="columns">
+                <div class="column">
+                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                        <ul class="slider-container">
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/63_Corvette_dk_blue-400.jpeg" width="2000" height="1125" srcset="/assets/images/63_Corvette_dk_blue-400.jpeg 400w, /assets/images/63_Corvette_dk_blue-800.jpeg 800w, /assets/images/63_Corvette_dk_blue-1280.jpeg 1280w, /assets/images/63_Corvette_dk_blue-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 1 -->
+                    
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/65_Mercury_Comet05-400.jpeg" width="2048" height="1365" srcset="/assets/images/65_Mercury_Comet05-400.jpeg 400w, /assets/images/65_Mercury_Comet05-800.jpeg 800w, /assets/images/65_Mercury_Comet05-1280.jpeg 1280w, /assets/images/65_Mercury_Comet05-2048.jpeg 2048w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_GTO_red-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_GTO_red-400.jpeg 400w, /assets/images/67_GTO_red-800.jpeg 800w, /assets/images/67_GTO_red-1280.jpeg 1280w, /assets/images/67_GTO_red-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 3 -->
+
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div><!-- END swiffy-slider -->
+
+
+                </div>
+                <div class="column">
+                    <div class="tab-cont">
+                        <h3>Tuning and Validation</h3><!-- Step 13  -->
+                        <p>Once the car is finished - it’s not over. The final steps are to start the engine, tune the carb and timing (or ECU in the case of a car with a modern engine swap) and test drive. We want to get a few miles on the car, and look everything over once more to make sure there are no issues, leaks, loose fasteners, etc. In the case of a full build we’ll want to put a minimum of 500 miles on the car and service it again before we hand you the keys. We know you’ve waited a long time to get here and are excited - but let us make sure it’s as close to 100 percent as it can be.</p>
+                    </div>          
+                </div>
+            </div>
 
 
 
-        <div class="tab__content">
-            <h2>Step 8: Paint / Clear coat / Finish</h2>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_burnout-400.jpeg" width="2000" height="1380" srcset="/assets/images/67_dart_vader_burnout-400.jpeg 400w, /assets/images/67_dart_vader_burnout-800.jpeg 800w, /assets/images/67_dart_vader_burnout-1280.jpeg 1280w, /assets/images/67_dart_vader_burnout-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>It all comes down to this - All the work to get to this point has given us a solid foundation that is straight, smooth and ready to be finished. Most people think that we just sand a car real quick, prime it and spray on the paint - but in reality the actual painting process is the least labor intensive part of what we do. We do hundreds of hours of prep work to get here - and it’s under 20 hours of actual painting.  Here are the paint and finish steps we adhere to.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_cover-400.jpeg" width="2000" height="1470" srcset="/assets/images/67_dart_vader_cover-400.jpeg 400w, /assets/images/67_dart_vader_cover-800.jpeg 800w, /assets/images/67_dart_vader_cover-1280.jpeg 1280w, /assets/images/67_dart_vader_cover-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>8.1: Clean, clean, clean again and mask: The spray booth needs to be cleaned and new filters installed. The car and body panels will be cleaned several times here. We can’t have any contaminants on the surface prior to paint. Any areas we are not painting are masked off.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_graffiti-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_dart_vader_graffiti-400.jpeg 400w, /assets/images/67_dart_vader_graffiti-800.jpeg 800w, /assets/images/67_dart_vader_graffiti-1280.jpeg 1280w, /assets/images/67_dart_vader_graffiti-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>8.2: Base coat and drop coat: We spray 3-4 coats of base coat - and for metallics do a final “drop coat” that ensures there is no striping or panel to panel issues with the metallics in the paint. We feature high quality paint products from Spies Hecker / Axalta for all of our  work.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_dart_vader_headlights-400.jpeg" width="1080" height="720" srcset="/assets/images/67_dart_vader_headlights-400.jpeg 400w, /assets/images/67_dart_vader_headlights-800.jpeg 800w, /assets/images/67_dart_vader_headlights-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>8.3: Clearcoat: The first phase of clear coat consists of 3-4 coats of clear coat applied with proper flash times between coats. This provides the shine over the base coat and protects it from the sun / elements.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_GTO_red_carb-400.jpeg" width="2000" height="1294" srcset="/assets/images/67_GTO_red_carb-400.jpeg 400w, /assets/images/67_GTO_red_carb-800.jpeg 800w, /assets/images/67_GTO_red_carb-1280.jpeg 1280w, /assets/images/67_GTO_red_carb-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>8.4: Wet sand: After the initial 3-4 coats of clear are laid down - we wet sand all of the outside surfaces with 800-1000 grit sandpaper by hand with blocks to remove the “orange peel” texture, and any imperfections. This mechanical sanding provides us with a mechanical adhesion for the final flow coat.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_gto_red_steering_wheel-400.jpeg" width="2000" height="1294" srcset="/assets/images/67_gto_red_steering_wheel-400.jpeg 400w, /assets/images/67_gto_red_steering_wheel-800.jpeg 800w, /assets/images/67_gto_red_steering_wheel-1280.jpeg 1280w, /assets/images/67_gto_red_steering_wheel-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>8.5: Flow coat This is the final step of clear coat. We add 2-3 additional coats of clear coat to the wet sanded surfaces to add more depth and shine. We add a little more reducer to the clear allowing it to “flow” and level better.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_GTO_red-400.jpeg" width="2000" height="1125" srcset="/assets/images/67_GTO_red-400.jpeg 400w, /assets/images/67_GTO_red-800.jpeg 800w, /assets/images/67_GTO_red-1280.jpeg 1280w, /assets/images/67_GTO_red-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>8.6 Wet / dry sand for compound and polish: After the flow coat - the surface is smooth and glossy with little orange peel. But we take it a step further to make the surface smooth as a mirror. We start by wet sanding by hand with blocks the entire exterior 1,200 grit. We follow that up with 4 rounds of machine sanding using 1,500 grit, 2,000 grit, 2,500 grit and 3,000 grit.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_GTO_wheel_brakes-400.jpeg" width="1440" height="930" srcset="/assets/images/67_GTO_wheel_brakes-400.jpeg 400w, /assets/images/67_GTO_wheel_brakes-800.jpeg 800w, /assets/images/67_GTO_wheel_brakes-1280.jpeg 1280w, /assets/images/67_GTO_wheel_brakes-1440.jpeg 1440w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>8.7: Compound and polish: the wet / dry sand process has left the surface of the clear smooth - but now we have to shine it all back up and remove the 3000 grit scratches. This process involves using compound and polish in 3 steps with a rotary and orbital buffer. This gives the clear coat that wet and glossy look that we’re all aiming for.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_body_gaps02-400.jpeg" width="1080" height="720" srcset="/assets/images/67_Nova_body_gaps02-400.jpeg 400w, /assets/images/67_Nova_body_gaps02-800.jpeg 800w, /assets/images/67_Nova_body_gaps02-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>8.8: mask and spray urethane texture (optional): For many jobs - we also spray the inside, and underneath of the car with a urethane texture coat. This coating is similar to pickup truck bed liner and offers protection from road debris, as well as heat and sound insulation.</p>
-                </div>
-            </div>
-
-        </div><!-- END tab__content Step 8 -->
-
-        <div class="tab__content">
-            <h2>Step 9: Exterior re-assembly</h2>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_body03-400.jpeg" width="1080" height="720" srcset="/assets/images/67_Nova_body03-400.jpeg 400w, /assets/images/67_Nova_body03-800.jpeg 800w, /assets/images/67_Nova_body03-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>Now that the paint work is all done - it’s time to install the chrome trim, stainless window moldings and bumpers, handles, door and window weatherstripping. We take great care not to scratch  all of our hard work putting the bright work back on. Glass will be installed at this point as well.</p>
-                </div>
-            </div>
-        </div><!-- END tab__content Step 9 -->
-
-        <div class="tab__content">
-            <h2>Step 10: Mechanical Assembly</h2>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_exhaust01-400.jpeg" width="2000" height="1292" srcset="/assets/images/67_Nova_exhaust01-400.jpeg 400w, /assets/images/67_Nova_exhaust01-800.jpeg 800w, /assets/images/67_Nova_exhaust01-1280.jpeg 1280w, /assets/images/67_Nova_exhaust01-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>At this stage - the body and paint team hands the car over to the assembly team to put suspension brakes, engine, trans, etc back into the car. Since all the basic components have been fit already - we know there won’t be any surprises here.</p>
-                </div>
-            </div>
-        </div><!-- END tab__content Step 10 -->
-
-        <div class="tab__content">
-            <h2>Step 11: Wiring / Plumbing / Exhaust</h2>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_rear_bumper02-400.jpeg" width="1080" height="791" srcset="/assets/images/67_Nova_rear_bumper02-400.jpeg 400w, /assets/images/67_Nova_rear_bumper02-800.jpeg 800w, /assets/images/67_Nova_rear_bumper02-1080.jpeg 1080w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>Once the components are all in place we do all of the plumbing, wiring and electrical work. Wiring and plumbing can be as tedious and time consuming as prepping for paint. If it’s a restoration - we’ll use the factory harness or a reproduction and materials and routing similar to how the car was built. If we’re doing a Resto-Mod we will hide what we can and go to great lengths to make the harness neat, tidy and serviceable. The final part is usually exhaust - Whether a factory system or fully custom tig welded system or anything in-between. If we’re doing a stereo, or air conditioning - Wei’ll install it now as well.</p>
-                </div>
-            </div>
-        </div><!-- END tab__content Step 11 -->
-
-        <div class="tab__content">
-            <h2>Step 12: Interior finish</h2>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_suspension03-400.jpeg" width="2000" height="1333" srcset="/assets/images/67_Nova_suspension03-400.jpeg 400w, /assets/images/67_Nova_suspension03-800.jpeg 800w, /assets/images/67_Nova_suspension03-1280.jpeg 1280w, /assets/images/67_Nova_suspension03-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>Once all the paint, mechanicals and electrical is complete - it’s off to interior for things like seat upholstery, headliner, carpet, door panels and the like. We will either send this out if it’s a full custom job to our preferred interior trim shop - or do some or all of it in house. Full custom jobs may take an interim step before paint to have panels fabricated then finished off and installed when the mechanicals and paint are complete.</p>
-                </div>
-            </div>
-        </div><!-- END tab__content Step 12 -->
-
-        <div class="tab__content">
-            <h2>Step 13: Tuning and Validation</h2>
-            <div class="columns">
-                <div class="column">
-                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/67_Nova_wilwood_brakes3-400.jpeg" width="1440" height="930" srcset="/assets/images/67_Nova_wilwood_brakes3-400.jpeg 400w, /assets/images/67_Nova_wilwood_brakes3-800.jpeg 800w, /assets/images/67_Nova_wilwood_brakes3-1280.jpeg 1280w, /assets/images/67_Nova_wilwood_brakes3-1440.jpeg 1440w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                </div>
-                <div class="column">
-                    <p>Once the car is finished - it’s not over. The final steps are to start the engine, tune the carb and timing (or ECU in the case of a car with a modern engine swap) and test drive. We want to get a few miles on the car, and look everything over once more to make sure there are no issues, leaks, loose fasteners, etc. In the case of a full build we’ll want to put a minimum of 500 miles on the car and service it again before we hand you the keys. We know you’ve waited a long time to get here and are excited - but let us make sure it’s as close to 100 percent as it can be.</p>
-                </div>
-            </div>
-        </div><!-- END tab__content Step 13 -->
-
-
-
-      </div><!-- END tab-wrap -->
-    </div><!-- END tab-container-->
+        </div>
+    </section>
 
 </section>
 
 
 
 
+<script>
+
+/*
+document.addEventListener('click', function(event) {
+  if (!event.target.matches('li a')) return;
+  //dataset.data-target
+
+  event.preventDefault();
+  
+  var element = document.getElementById(event.target.dataset.target);
+  console.log('clicked: '+element.id);
+  
+  element.scrollIntoView({behavior: "smooth"});
+
+});
+*/
+
+/*
+document.querySelectorAll('.tab-nav ul li a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    console.log('A link was clicked');
+  });
+});
+*/
+document.querySelectorAll('.tab-nav ul li a').forEach(link => {
+  link.addEventListener('click', (e) => {
+    // Retrieve href and store in targetUrl variable
+    let targetUrl = e.target.href;
+    // Output value of targetUrl to console
+    console.log('clicked: ' + targetUrl );
+  });
+});
+
+
+const sections = document.querySelectorAll("section.nav-links section");
+const navLi = document.querySelectorAll("section.nav-links .tab-nav ul li");
+const tabHead = document.querySelectorAll("section.nav-links .tab-nav div.tab-cont-head");
+
+window.onscroll = () => {
+  var current = "";
+
+  sections.forEach((section) => {
+    const sectionTop = section.offsetTop;
+    if (pageYOffset >= sectionTop - 60) {
+      current = section.getAttribute("id"); }
+  });
+
+  navLi.forEach((li) => {
+    li.classList.remove("active");
+    if (li.classList.contains(current)) {
+      li.classList.add("active");
+    }
+
+  });
+  
+
+};
+
+
+</script>
 
 
 
@@ -1114,198 +1285,6 @@ section.tabs-var-height label {
 
     
         
-
-
-
-    
-
-    
-
-    
-
-    
-
-<style>
-  section.services-detail-cost-box-alt {
-    margin: 0 0 8rem 0;
-    }
-  .column.detail-cost-box-cont {
-    position: relative;
-  }
-  section.services-detail-cost-box-alt p {
-    margin-bottom: 1rem;
-  }
-  section.services-detail-cost-box-alt table {
-    margin: 2rem auto 0 auto;
-  }
-</style>
-
-<!-- START alt COST LOCKUP -->
-<section class="services-detail-cost-box-alt bkg-grad1">
-  <div class="container">
-    <h1 class="title">
-      
-        What does it all cost?
-      
-    </h1>
-    <p>
-    
-        <p>That’s a very loaded question! On the lower end our paint service requires at a minimum exterior disassembly with all trim and glass removed and stripping to bare metal. On the higher end and rotisserie restoration to concours level or a magazine feature worthy custom Resto-Mod and anything in-between is in our wheelhouse.  Price really comes down to level of fit and finish, modifications and parts we use.</p><p>There is no single price - but see the table below that details the basics for 3 levels of build level based on labor and components / modifications. There is crossover from one extreme to the other and every job is different - but you can use this as a guide to see how low - or far we can go.</p>
-    
-    </p>
-
-
-
-
-
-    <table class="table">
-        <thead>
-            <tr style="background-color: #f79837;">
-                <th colspan="8">Metal / Body / Paint / Finish - Just metal / body / paint work for a standard job to full on show car.</th>
-            </tr>
-          <tr>
-            <th>Description</th>
-            <th>Rate</th>
-            <th>Hrs Low</th>
-            <th>Hrs Med</th>
-            <th>Hrs High</th>
-            <th>Cost Low</th>
-            <th>Cost Med</th>
-            <th>Cost High</th>
-          </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>Basic Disassembly</th>
-                <td>$100.00</td>
-                <td>20</td>
-                <td>30</td>
-                <td>40</td>
-                <td>$2,000.00</td>
-                <td>$3,000.00</td>
-                <td>$4,000.00</td>
-            </tr>
-            <tr>
-                <th>Metalwork</th>
-                <td>$180.00</td>
-                <td>20</td>
-                <td>50</td>
-                <td>100</td>
-                <td>$3,600.00</td>
-                <td>$9,000.00</td>
-                <td>$18,000.00</td>
-            </tr>
-            <tr>
-                <th>Body / Paint prep</th>
-                <td>$140.00</td>
-                <td>80</td>
-                <td>120</td>
-                <td>150</td>
-                <td>$11,200.00</td>
-                <td>$16,800.00</td>
-                <td>$21,000.00</td>
-            </tr>
-            <tr>
-                <th>Paint / Finish</th>
-                <td>$150.00</td>
-                <td>40</td> 
-                <td>80</td>
-                <td>120</td>
-                <td>$6,000.00</td>
-                <td>$12,000.00</td>
-                <td>$18,000.00</td>
-            </tr>
-            <tr>
-                <th>Re-assembly</th>
-                <td>$140.00</td>
-                <td>20</td> 
-                <td>60</td>
-                <td>100</td>
-                <td>$2,800.00</td>
-                <td>$8,400.00</td>
-                <td>$14,000.00</td>
-            </tr>
-            <tr>
-                <th>Paint / Body Materials</th>
-                <td></td>
-                <td></td> 
-                <td></td>
-                <td></td>
-                <td>$4,500.00</td>
-                <td>$6,500.00</td>
-                <td>$8,500.00</td>
-            </tr>
-            <tr>
-                <th>Weatherstripping / Rubber</th>
-                <td></td>
-                <td></td> 
-                <td></td>
-                <td></td>
-                <td>$500.00</td>
-                <td>$800.00</td>
-                <td>$1,500.00</td>
-            </tr>
-            <tr>
-                <th>Trim / Bumpers</th>
-                <td></td>
-                <td></td> 
-                <td></td>
-                <td></td>
-                <td>$1,000.00</td>
-                <td>$2,000.00</td>
-                <td>$6,000.00</td>
-            </tr>
-            <tr style="background-color: #363636; color: #ffffffd1;">
-                <th></th>
-                <td></td>
-                <td></td> 
-                <td></td>
-                <td>Subtotal</td>
-                <td>$31,600.00</td>
-                <td>$58,500.00</td>
-                <td>$91,000.00</td>
-            </tr>
-            <tr style="background-color: #999999;">
-                <th></th>
-                <td></td>
-                <td></td> 
-                <td></td>
-                <td>Labor only</td>
-                <td>$25,600.00</td>
-                <td>$49,200.00</td>
-                <td>$75,000.00</td>
-            </tr>
-            <tr style="background-color: #999999;">
-                <th></th>
-                <td></td>
-                <td></td> 
-                <td></td>
-                <td>Parts/Materials only</td>
-                <td>$6,000.00</td>
-                <td>$9,300.00</td>
-                <td>$16,000.00</td>
-            </tr>
-        </tbody>
-    </table>
-
-
-
-
-
-    
-
-  </div>
-</section>
-<!-- End alt COST LOCKUP --> 
-
-  
-
-    
-
-
-
-
-
     
 
     
@@ -1500,7 +1479,7 @@ section.tabs-var-height label {
 <section class="carousel-cars">
   <div class="container">
     <h3>Cars we've had Our Hands on</h3>
-    <div class="swiffy-slider slider-item-helper slider-item-show4 slider-item-reveal slider-item-snapstart slider-item-nogap">
+    <div id="all-carousel-cars" class="swiffy-slider slider-item-helper slider-item-show4 slider-item-reveal slider-item-snapstart slider-item-nogap">
         <ul class="slider-container">
 
   

@@ -26,14 +26,53 @@
   /* box-shadow: 0 12px 23px rgba(0, 0, 0, 0.23), 0 10px 10px rgba(0, 0, 0, 0.19); */
 }
 .tab-nav {
-    /* position: sticky; */
+    display: flex;
+    position: sticky;
+    width: 100%;
+    padding: 0.4rem 0;
 	top: 2rem;
+    background-color: #fff;
 }
 
 .tab {
   display: none;
 }
+#tab1:checked + .tab-nav + div .inner-div {
+    display: block;
+}
 
+
+
+#tab1:checked ~ #tabContent1.tab__content, 
+#tab2:checked ~ #tabContent2.tab__content, 
+#tab3:checked ~ #tabContent3.tab__content, 
+#tab4:checked ~ #tabContent4.tab__content, 
+#tab5:checked ~ #tabContent5.tab__content, 
+#tab6:checked ~ #tabContent6.tab__content, 
+#tab7:checked ~ #tabContent7.tab__content, 
+#tab8:checked ~ #tabContent8.tab__content, 
+#tab9:checked ~ #tabContent9.tab__content, 
+#tab10:checked ~ #tabContent10.tab__content, 
+#tab11:checked ~ #tabContent11.tab__content, 
+#tab12:checked ~ #tabContent12.tab__content, 
+#tab13:checked ~ #tabContent13.tab__content {
+    /* display: block; */
+    visibility: visible;
+    opacity: 1;
+    transition: 0.5s opacity ease-in, 0.8s transform ease;
+    position: relative;
+    top: 0;
+    transform: translateY(0px);
+    text-shadow: 0 0 0;
+}
+#tab1 + .tab-nav + div .inner-div {
+    display: none;
+}
+
+
+
+
+/*
 .tab:checked:nth-of-type(1) ~ .tab__content:nth-of-type(1), 
 .tab:checked:nth-of-type(2) ~ .tab__content:nth-of-type(2), 
 .tab:checked:nth-of-type(3) ~ .tab__content:nth-of-type(3), 
@@ -54,6 +93,7 @@
   transform: translateY(0px);
   text-shadow: 0 0 0;
 }
+*/
 .tab:first-of-type:not(:last-of-type) + label {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
@@ -65,22 +105,38 @@
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
 }
-.tab:checked + label {
+
+#tab1:checked ~ .tab-nav #label1, 
+#tab2:checked ~ .tab-nav #label2, 
+#tab3:checked ~ .tab-nav #label3, 
+#tab4:checked ~ .tab-nav #label4, 
+#tab5:checked ~ .tab-nav #label5, 
+#tab6:checked ~ .tab-nav #label6, 
+#tab7:checked ~ .tab-nav #label7, 
+#tab8:checked ~ .tab-nav #label8, 
+#tab9:checked ~ .tab-nav #label9, 
+#tab10:checked ~ .tab-nav #label10, 
+#tab11:checked ~ .tab-nav #label11, 
+#tab12:checked ~ .tab-nav #label12, 
+#tab13:checked ~ .tab-nav #label13
+{ 
     color: #fff;
     background-color: #f79837;
-    box-shadow: 0 -1px 0 #fff inset;
+    /* box-shadow: 0 -1px 0 #fff inset; */
     cursor: default;
 }
-.tab:checked + label:hover {
+.tab:checked + .tab-nav label:hover {
   box-shadow: 0 -1px 0 #fff inset;
   background-color: #f79837;
 }
 
-.tab + label:nth-of-type(1) {
+.tab + label:nth-of-type(1), 
+#label1 {
     margin-left: 0;
 }
 
-.tab + label {
+/* .tab + label,  */
+.tab + .tab-nav label {
   /* box-shadow: 0 -1px 0 #eee inset; */
   /* border-radius: 6px 6px 0 0; */
   /* border-left: 2px solid #fff; */
@@ -163,21 +219,46 @@
 
 
 
-.tab + label:hover {
+.tab + label:hover,
+#tab1 ~ .tab-nav #label1:hover,
+#tab2 ~ .tab-nav #label2:hover,
+#tab3 ~ .tab-nav #label3:hover,
+#tab4 ~ .tab-nav #label4:hover,
+#tab5 ~ .tab-nav #label5:hover,
+#tab6 ~ .tab-nav #label6:hover,
+#tab7 ~ .tab-nav #label7:hover,
+#tab8 ~ .tab-nav #label8:hover,
+#tab9 ~ .tab-nav #label9:hover,
+#tab10 ~ .tab-nav #label10:hover,
+#tab11 ~ .tab-nav #label11:hover,
+#tab12 ~ .tab-nav #label12:hover,
+#tab13 ~ .tab-nav #label13:hover
+{
   /* background-color: #f9f9f9; */
   background-color: #f79837;
   /* box-shadow: 0 1px 0 #f4f4f4 inset; */
 }
 .tab__content {
-  padding: 10px 25px;
+    /* display: none; */
+  padding: 2rem;
   background-color: transparent;
   position: absolute;
   width: 100%;
   z-index: -1;
+  visibility: hidden;
   opacity: 0;
+  transition: visibility 0s, opacity 0.5s linear;
   left: 0;
   transform: translateY(-3px);
   border-radius: 6px;
+}
+.tab__content > .columns > .column > p {
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+}
+.tab__content section .column img {
+
 }
 
 section.tabs-var-height input,
@@ -186,8 +267,12 @@ section.tabs-var-height label {
     top: 0;
 }
 
-
-
+.tab__content .slide-box {
+    height: 29rem;
+}
+.tab__content button.slider-nav {
+    z-index: 20;
+}
 </style>
 
 
@@ -196,153 +281,222 @@ section.tabs-var-height label {
     
       <div class="tab-wrap">
 
+        <input type="radio" id="tab1" name="tabGroup1" class="tab" checked="checked">
+        <input type="radio" id="tab2" name="tabGroup1" class="tab">
+        <input type="radio" id="tab3" name="tabGroup1" class="tab">
+        <input type="radio" id="tab4" name="tabGroup1" class="tab">
+        <input type="radio" id="tab5" name="tabGroup1" class="tab">
+        <input type="radio" id="tab6" name="tabGroup1" class="tab">
+        <input type="radio" id="tab7" name="tabGroup1" class="tab">
+        <input type="radio" id="tab8" name="tabGroup1" class="tab">
+        <input type="radio" id="tab9" name="tabGroup1" class="tab">
+        <input type="radio" id="tab10" name="tabGroup1" class="tab">
+        <input type="radio" id="tab11" name="tabGroup1" class="tab">
+        <input type="radio" id="tab12" name="tabGroup1" class="tab">
+        <input type="radio" id="tab13" name="tabGroup1" class="tab">
+
+
+        <div class="tab-nav">
+
             <!-- active tab on page load gets checked attribute -->
-            <input type="radio" id="tab1" name="tabGroup1" class="tab" checked="checked">
-            <label for="tab1">Step 1 <!-- Build spec / design --></label>
+            
+            <label id="label1" for="tab1">Step 1 <!-- Build spec / design --></label>
+            <label id="label2" for="tab2">Step 2 <!-- Disassembly / Media blast / condition assessment --></label>
+            <label id="label3" for="tab3">Step 3 <!-- Metalwork / Modification / Pre-assembly & Fit --></label>
+            <label id="label4" for="tab4">Step 4 <!-- Bodywork / Block Sand / Refinement --></label>
+            <label id="label5" for="tab5">Step 5 <!-- Prime and Block Sand --></label>
+            <label id="label6" for="tab6">Step 6 <!-- Final Paint Prep --></label>
+            <label id="label7" for="tab7">Step 7 <!-- Final fit / Mock-up --></label>
+            <label id="label8" for="tab8">Step 8 <!-- Paint / Clear coat / Finish --></label>
+            <label id="label9" for="tab9">Step 9 <!-- Exterior re-assembly --></label>
+            <label id="label10" for="tab10">Step 10 <!-- Exterior re-assembly --></label>
+            <label id="label11" for="tab11">Step 11 <!-- Wiring / Plumbing / Exhaust --></label>
+            <label id="label12" for="tab12">Step 12 <!-- Wiring / Plumbing / Exhaust --></label>
+            <label id="label13" for="tab13">Step 13 <!-- Tuning and Validation --></label>
+
+        </div><!-- END tab-nav -->
+
         
-            <input type="radio" id="tab2" name="tabGroup1" class="tab">
-            <label for="tab2">Step 2 <!-- Disassembly / Media blast / condition assessment --></label>
 
-            <input type="radio" id="tab3" name="tabGroup1" class="tab">
-            <label for="tab3">Step 3 <!-- Metalwork / Modification / Pre-assembly & Fit --></label>
 
-            <input type="radio" id="tab4" name="tabGroup1" class="tab">
-            <label for="tab4">Step 4 <!-- Bodywork / Block Sand / Refinement --></label>
-
-            <input type="radio" id="tab5" name="tabGroup1" class="tab">
-            <label for="tab5">Step 5 <!-- Prime and Block Sand --></label>
-
-            <input type="radio" id="tab6" name="tabGroup1" class="tab">
-            <label for="tab6">Step 6 <!-- Final Paint Prep --></label>
-
-            <input type="radio" id="tab7" name="tabGroup1" class="tab">
-            <label for="tab7">Step 7 <!-- Final fit / Mock-up --></label>
-
-            <input type="radio" id="tab8" name="tabGroup1" class="tab">
-            <label for="tab8">Step 8 <!-- Paint / Clear coat / Finish --></label>
-
-            <input type="radio" id="tab9" name="tabGroup1" class="tab">
-            <label for="tab9">Step 9 <!-- Exterior re-assembly --></label>
-
-            <input type="radio" id="tab10" name="tabGroup1" class="tab">
-            <label for="tab10">Step 10 <!-- Exterior re-assembly --></label>
-
-            <input type="radio" id="tab11" name="tabGroup1" class="tab">
-            <label for="tab11">Step 11 <!-- Wiring / Plumbing / Exhaust --></label>
-
-            <input type="radio" id="tab12" name="tabGroup1" class="tab">
-            <label for="tab12">Step 12 <!-- Wiring / Plumbing / Exhaust --></label>
-
-            <input type="radio" id="tab13" name="tabGroup1" class="tab">
-            <label for="tab13">Step 13 <!-- Tuning and Validation --></label>
-
-        <div class="tab__content">
-            <h2>Step 1: Build spec / design</h2>
+        <div id="tabContent1" class="tab__content">
             <div class="columns">
                 <div class="column">
-                    {% image "./src/_images/67_dart_vader_graffiti.jpg", "67 Dart Vader" %}
+
+                
+                <div id="slider1" class="swiffy-slider slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <ul class="slider-container">
+
+                        <li>
+                            <div class="slide-box">
+                                        {% image "./src/_images/Brass_Tacks_rend.jpg", "Brass Tacks rending" %}
+                            </div>
+                        </li><!-- END slide 1 -->
+                
+                        <li>
+                            <div class="slide-box">
+                                {% image "./src/_images/Finn_c10_F-02_rend.jpg", "Finn c10 F-02 rendering" %}
+                            </div>
+                        </li><!-- END slide 2 -->
+
+                        <li>
+                            <div class="slide-box">
+                                {% image "./src/_images/68_Dartside_of_the_Moon_rend_int.jpg", "Finn c10 F-02 rendering" %}
+                            </div>
+                        </li><!-- END slide 3 -->
+
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <div class="slider-indicators">
+                        <button class="active"></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div><!-- END swiffy-slider -->
+
+
                 </div>
                 <div class="column">
-                    <p>For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p>
-                    <p>Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!</p>
+                <h3>Step 1: Build spec / design</h3>
+                <p>For a full custom build this may be the most important part of the process as it gives the project a vision to move forward. We’ll not only spec the nuts and bolts components like engine and transmission, suspension, cooling and fuel systems - but also define the stance, body modifications, color and interior designs. We work with each client to realize their vision and our professional design team will offer a set of drawings that brings tasteful mods that will stand the test of time.</p>
+                <p>Just like that guy on TV we provide a set of drawings done by hand that work through the design vision and choices that influence the entire build. We start with a line drawing from several views of the stock vehicle - then through a series of loose sketches we refine the stance, wheel choice and modification ideas. Ultimately after several design reviews with you we refine the design to a set of finished renderings that show what the whole package will look like in the end. It’s a fun process!</p>
                 </div>
             </div>
         </div>
-    
-        <div class="tab__content">
-          <h2>Step 2: Disassembly / Media blast / condition assessment</h2>
+
+
+        <div id="tabContent2" class="tab__content">
           <div class="columns">
               <div class="column">
-                  {% image "./src/_images/7x_Chevelle_engine_shop.jpg", "67 Dart Vader" %}
+
+                
+                <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <ul class="slider-container">
+    
+                        <li>
+                            <div class="slide-box">
+                                {% image "./src/_images/014-plymouth-valiant-fender-door-gap.jpg", "67 Dart Vader" %}
+                            </div>
+                        </li><!-- END slide 1 -->
+                
+                        <li>
+                            <div class="slide-box">
+                                {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
+                            </div>
+                        </li><!-- END slide 2 -->
+    
+                        <li>
+                            <div class="slide-box">
+                                {% image "./src/_images/56_Studebaker_Hawk.jpg", "67 Dart Vader" %}
+                            </div>
+                        </li><!-- END slide 3 -->
+    
+                    </ul>
+                
+                    <button type="button" class="slider-nav"></button>
+                    <button type="button" class="slider-nav slider-nav-next"></button>
+                
+                    <div class="slider-indicators">
+                        <button class="active"></button>
+                        <button></button>
+                        <button></button>
+                    </div>
+                </div><!-- END swiffy-slider -->
+
+
               </div>
               <div class="column">
-                  <p>The first thing we do is completely disassemble the car. Every nut, bolt, piece of glass, wires, piece of trim is removed, cataloged and marked. Along the way we take notes for broken bolts, missing parts etc. From here we start a list of what we will need to complete your job in detail. Once the car is back from the media blaster - We will assess body damage and metalwork required - and which panels will be replaced or repaired.</p>
+                <h3>Step 2: Disassembly / Media blast / condition assessment</h3>
+                <p>The first thing we do is completely disassemble the car. Every nut, bolt, piece of glass, wires, piece of trim is removed, cataloged and marked. Along the way we take notes for broken bolts, missing parts etc. From here we start a list of what we will need to complete your job in detail. Once the car is back from the media blaster - We will assess body damage and metalwork required - and which panels will be replaced or repaired.</p>
               </div>
           </div>
         </div>
     
-        <div class="tab__content">
-          <h2>Step 3: Metalwork / Modification / Pre-assembly & Fit</h2>
+        <div id="tabContent3" class="tab__content">
           <div class="columns">
               <div class="column">
                   {% image "./src/_images/014-plymouth-valiant-fender-door-gap.jpg", "67 Dart Vader" %}
               </div>
               <div class="column">
-                  <p>In this step we repair (or replace) all the damaged sheet metal and pre-assemble the car to fit all the panels either on the chassis or on a build stand and refine all the gaps for doors, fenders, trunk and hood. Even new reproduction panels sometimes require significant modifications in metal to ensure proper fit.</p>
-                  <p>If we’re doing body modifications we do them all in this step and fully build the basic car with these mods to ensure all the panels fit and all the holes we don’t need and components we are changing fit. Sometimes we may fully build the car with the engine and transmission and even suspension so that all the modification can be done without any risk of scratching paint.</p>
+                <h3>Step 3: Metalwork / Modification / Pre-assembly & Fit</h3>
+                <p>In this step we repair (or replace) all the damaged sheet metal and pre-assemble the car to fit all the panels either on the chassis or on a build stand and refine all the gaps for doors, fenders, trunk and hood. Even new reproduction panels sometimes require significant modifications in metal to ensure proper fit.</p>
+                <p>If we’re doing body modifications we do them all in this step and fully build the basic car with these mods to ensure all the panels fit and all the holes we don’t need and components we are changing fit. Sometimes we may fully build the car with the engine and transmission and even suspension so that all the modification can be done without any risk of scratching paint.</p>
               </div>
           </div>
         </div>
 
 
-        <div class="tab__content">
-            <h2>Step 4: Bodywork / Block Sand / Refinement</h2>
+        <div id="tabContent4" class="tab__content">
             <div class="columns">
                 <div class="column">
                     {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
                 </div>
                 <div class="column">
+                    <h3>Step 4: Bodywork / Block Sand / Refinement</h3>
                     <p>Bodywork / Filler: Once everything is fit and we’re happy with the panel gaps and mods in metal we do our body filler work - We don’t call it “Bondo” and it’s not a bad word. Filler work is required to get the surface of all body panels closer to where we need them to be. Done properly, this filler can last 50+ years without issues.  Can we metalwork your car without using any filler? Totally - but that’s easily 800-1000 hours of labor to get there. Using modern body fillers - and making sure that our metalwork is within 1/16” or less we can get the same or better results in less time.</p>
                 </div>
             </div>
         </div>
 
 
-        <div class="tab__content">
-            <h2>Step 5: Prime and Block Sand</h2>
+        <div id="tabContent5" class="tab__content">
             <section id="endpoints--root">
                 <div class="columns">
-                    <div class="column">
+                    <div class="column is-one-third">
                         {% image "./src/_images/56_Studebaker_Hawk.jpg", "67 Dart Vader" %}
                     </div>
                     <div class="column">
-                        <h3>5.1: Prime round 1</h3>
+                        <h3>Step 5: Prime and Block Sand</h3>
+                        <h4>5.1: Prime round 1</h4>
                         <p>We follow bodywork with an overall epoxy primer on every surface inside and out and apply a high build primer directly to the epoxy. This encapsulates the metal and filler bonding through and gives us a build of primer to start our block sanding work.</p>
                     </div>
                 </div>
             </section>
             <section id="endpoints--cities-overview">
                 <div class="columns">
-                    <div class="column">
+                    <div class="column is-one-third">
                         {% image "./src/_images/63_Corvette_dk_blue.jpg", "67 Dart Vader" %}
                     </div>
                     <div class="column">
-                        <h3>5.2: Block sanding and finish body work</h3>
+                        <h4>5.2: Block sanding and finish body work</h4>
                         <p>After primer we will re-assemble the panels and hand block sand with long-boards in 120 / 180 grit finish. At this stage we further refine the lines and bodywork to make every panel and gap laser straight and smooth.</p>
                     </div>
                 </div>
             </section>
             <section id="endpoints--city-detail">
                 <div class="columns">
-                    <div class="column">
+                    <div class="column is-one-third">
                         {% image "./src/_images/63_Corvette_dk_blue.jpg", "67 Dart Vader" %}
                     </div>
                     <div class="column">
-                        <h3>5.3: Prime round 2</h3>
+                        <h4>5.3: Prime round 2</h4>
                         <p>Here we re-prime the entire exterior again after a clean and mask to fill in all the 180 grit sand scratches and build another layer of primer for further surface refinements. Here we spray a medium build surfacing primer after a thorough cleaning.</p>
                     </div>
                 </div>
             </section>
             <section id="endpoints--city-config">
                 <div class="columns">
-                    <div class="column">
+                    <div class="column is-one-third">
                         {% image "./src/_images/63_Corvette_dk_blue.jpg", "67 Dart Vader" %}
                     </div>
                     <div class="column">
-                        <h3>5.4: Block sand… Again</h3>
+                        <h4>5.4: Block sand… Again</h4>
                         <p>Now we switch to block sanding with 220 / 320 grit paper by hand again using longboards. This further smooths the surface of the primer and allows us to get all the final lines and finish very smooth.</p>
                     </div>
                 </div>
             </section>
         </div>
 
-        <div class="tab__content">
-            <h2>Step 6: Final Paint Prep</h2>
+        <div id="tabContent6" class="tab__content">
             <div class="columns">
                 <div class="column">
                     {% image "./src/_images/65_Mercury_Comet05.jpg", "67 Dart Vader" %}
                 </div>
                 <div class="column">
+                    <h3>Step 6: Final Paint Prep</h3>
                     <p>6.1: Final prime / Sealer: This is our final primer stage. At this point the car is taken back apart and a sealer coat is applied to all outside and inside surfaces. This final coat locks everything down and is what the base coat and clear coat will be applied to. We also use this last seal step to apply any urethane seam sealer to panel overlaps and seams.</p>
                 </div>
             </div>
@@ -357,43 +511,43 @@ section.tabs-var-height label {
         </div>
 
 
-        <div class="tab__content">
-            <h2>Step 7: Final fit / Mock-up</h2>
+        <div id="tabContent7" class="tab__content">
             <div class="columns">
                 <div class="column">
                     {% image "./src/_images/67_Camaro_shocks.jpg", "67 Dart Vader" %}
                 </div>
                 <div class="column">
-                    <p>If we’re spraying a metallic color on the car - at this point we will paint and clear coat the inside of the panels and the door jambs, fender and trunk jambs so that we can spray the car together. This is an important step for metallic paints as when the base coat comes out of the gun - we want to ensure that the flakes are oriented in the right direction from fender to door, door to quarter panels, etc. On solid color cars with no metallic this is the only step we skip as we can just paint the panels and fit them after.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    {% image "./src/_images/67_Camaro01.jpg", "67 Dart Vader" %}
-                </div>
-                <div class="column">
-                    <p>7.1:  Clean and spray jambs: Clean everything 3x mask and spray all the insides of panels and the door jambs, fender jambs, and trunk jambs. We give everything 3 coats of base coat followed by 3-4 coats of high quality high solids clear coat.</p>
-                </div>
-            </div>
-            <div class="columns">
-                <div class="column">
-                    {% image "./src/_images/67_Cuda_blue.jpg", "67 Dart Vader" %}
-                </div>
-                <div class="column">
-                    <p>7.2: Assembly and panel align: After the jambs and insides are done - it’s time to put it all back together and align the panels for the metallic paint.  We’re sure you’ve seen cars that look like one panel is a bit “off” from the next - that’s because the shop skipped this step and painted a metallic color in pieces. The spray pattern needs to flow from panel to panel.</p>
+                    <h3>Step 7: Final fit / Mock-up</h3>
+                        <p>If we’re spraying a metallic color on the car - at this point we will paint and clear coat the inside of the panels and the door jambs, fender and trunk jambs so that we can spray the car together. This is an important step for metallic paints as when the base coat comes out of the gun - we want to ensure that the flakes are oriented in the right direction from fender to door, door to quarter panels, etc. On solid color cars with no metallic this is the only step we skip as we can just paint the panels and fit them after.</p>
+
+                    <div class="columns">
+                        <div class="column">
+                            <figure class="image">
+                                {% image "./src/_images/67_Camaro01.jpg", "67 Dart Vader" %}
+                            </figure>            
+                            <p><b>Clean and spray jambs</b> Clean everything 3x mask and spray all the insides of panels and the door jambs, fender jambs, and trunk jambs. We give everything 3 coats of base coat followed by 3-4 coats of high quality high solids clear coat.</p>
+                        </div>
+                        <div class="column">
+                            <figure class="image">
+                                {% image "./src/_images/67_Cuda_blue.jpg", "67 Dart Vader" %}
+                            </figure>
+                            <p><b>Assembly and panel align</b> After the jambs and insides are done - it’s time to put it all back together and align the panels for the metallic paint.  We’re sure you’ve seen cars that look like one panel is a bit “off” from the next - that’s because the shop skipped this step and painted a metallic color in pieces. The spray pattern needs to flow from panel to panel.</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
 
 
 
-        <div class="tab__content">
-            <h2>Step 8: Paint / Clear coat / Finish</h2>
+        <div id="tabContent8" class="tab__content">
             <div class="columns">
                 <div class="column">
                     {% image "./src/_images/67_dart_vader_burnout.jpg", "67 Dart Vader" %}
                 </div>
                 <div class="column">
+                    <h3>Step 8: Paint / Clear coat / Finish</h3>
                     <p>It all comes down to this - All the work to get to this point has given us a solid foundation that is straight, smooth and ready to be finished. Most people think that we just sand a car real quick, prime it and spray on the paint - but in reality the actual painting process is the least labor intensive part of what we do. We do hundreds of hours of prep work to get here - and it’s under 20 hours of actual painting.  Here are the paint and finish steps we adhere to.</p>
                 </div>
             </div>
@@ -464,7 +618,7 @@ section.tabs-var-height label {
 
         </div><!-- END tab__content Step 8 -->
 
-        <div class="tab__content">
+        <div id="tabContent9" class="tab__content">
             <h2>Step 9: Exterior re-assembly</h2>
             <div class="columns">
                 <div class="column">
@@ -476,7 +630,7 @@ section.tabs-var-height label {
             </div>
         </div><!-- END tab__content Step 9 -->
 
-        <div class="tab__content">
+        <div id="tabContent10" class="tab__content">
             <h2>Step 10: Mechanical Assembly</h2>
             <div class="columns">
                 <div class="column">
@@ -488,7 +642,7 @@ section.tabs-var-height label {
             </div>
         </div><!-- END tab__content Step 10 -->
 
-        <div class="tab__content">
+        <div id="tabContent11" class="tab__content">
             <h2>Step 11: Wiring / Plumbing / Exhaust</h2>
             <div class="columns">
                 <div class="column">
@@ -500,7 +654,7 @@ section.tabs-var-height label {
             </div>
         </div><!-- END tab__content Step 11 -->
 
-        <div class="tab__content">
+        <div id="tabContent12" class="tab__content">
             <h2>Step 12: Interior finish</h2>
             <div class="columns">
                 <div class="column">
@@ -512,7 +666,7 @@ section.tabs-var-height label {
             </div>
         </div><!-- END tab__content Step 12 -->
 
-        <div class="tab__content">
+        <div id="tabContent13" class="tab__content">
             <h2>Step 13: Tuning and Validation</h2>
             <div class="columns">
                 <div class="column">

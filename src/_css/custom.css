@@ -125,6 +125,10 @@ section.feat-story .control .button.is-primary:hover {
   background-color: rgb(100, 100, 100);
 }
 
+section .container .column ul li {
+  color: #000;
+}
+
 /* Alloy DARK GREY Primary color */
 .hero.is-primary,
 section.feat-story,
@@ -141,9 +145,8 @@ section.projects-head h2,
 section.blog-cards h2 {
   color: #363636;
 }
-section .container .column ul li {
-  color: #000;
-}
+
+/* DARK GREY */
 section.hero-project .container .column ul li, 
 .container .control a span, 
 section.project-slider .carousel-cont h4, 
@@ -151,7 +154,16 @@ section.project-slider .carousel-cont p,
 section.project-slider .carousel-cont li {
   color: #4a4a4a;
 }
-
+/* MEDIUM DARK GREY
+rgb(122 122 122);  */
+.md-drk-grey {
+  color: #7a7a7a;
+}
+/* LIGHT DARK GREY
+rgb(142 142 142);  */
+.ly-drk-grey {
+  color: #8e8e8e;
+}
 
 a.navbar-item:hover span, 
 .hero.is-primary,
@@ -267,7 +279,8 @@ section.services-listing .title {
   font-size: 2rem;
   font-weight: 500;
 }
-section.feat-story p, section.projects h4 {
+section.feat-story p, section.projects h4, 
+.tab__content h4 {
   font-size: 1.2rem;
   font-weight: 600;
 }
@@ -318,7 +331,8 @@ section.projects-head {
 section.project-slider {
   margin: 0 0 1rem 0;
 }
-body.page section p {
+body.page section p, 
+.tab__content p {
   margin: 0 0 1rem 0;
 }
 
@@ -589,7 +603,6 @@ section.shop-slider {
 
 .slide-box {
   position: relative;
-  height: 19rem;
   background-color: lightGrey;
   overflow-y: hidden;
 }
@@ -1086,7 +1099,10 @@ body.performance-upgrades section.hero-services .sec-bkg-img::before {
 .half-split .columns {
   margin-bottom: 4rem;
 }
-.half-split h3 {
+.half-split h3, 
+.tab__content h3,  /* sec-horz-accordion.njk */
+section.nav-links section h3  /* sec-horz-accordion2.njk */
+{
   margin: 0 0 1rem 0;
   width: fit-content;
   font-size: 2rem;
@@ -1344,12 +1360,14 @@ section.services-detail-cost-box-alt .column .cost-box-inner p {
   transform: rotate(90deg);
   transition: all 0.3s ease-in-out;
 }
+.rnd-orng, 
 .a-btn .rnd-orng, 
 .a-panel .rnd-orng {
   margin: 0 0.6rem 0 0;
   font-size: 1.2rem;
   font-weight: 500;
 }
+.rnd-orng span, 
 .a-btn .rnd-orng span, 
 .a-panel .rnd-orng span {
   width: 3rem;
