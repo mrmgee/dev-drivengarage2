@@ -57,12 +57,20 @@ sectionCont:
     position: 
     text: 
     qaCont:
-      - que: Q1 Restomod
-        ans: A1 Restomod answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q2 Restomod
-        ans: A2 Restomod answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
-      - que: Q3 Restomod
-        ans: A3 Restomod answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+      - que: How long will a full build take?
+        ans: This varies based on the condition of the donor vehicle and other factors.  Typically a  full custom build can take 6 mos. to 24+ mos. depending on level of build, components and parts availability.
+      - que: The guys on TV do it in like 2 weeks - what gives?
+        ans: Ah, the magic of television! Parts that appear from nowhere at a moment's notice, a whole crew working behind the scenes. No labor laws, all nighters… It can take 1,000 to 2,000 hours or more to create a work of art on wheels - it’s simple math.
+      - que: What makes a car a Resto-Mod?
+        ans: Resto-Mod is a play on words - Restoration + Modification. There is a wide range here. A restored car with a modern engine swap can be a Resto-Mod. A restored car with disc brakes instead of factory drums can be considered a Resto-Mod. A car with a coil-over suspension can be considered a Resto-Mod. In our opinion - it takes a combination of these things, along with custom body modifications to fit neatly in the category. 
+      - que: How do you break up payments?
+        ans: We take a small portion for the build spec and design work if that is a part of the process. From there we bill on a regular schedule based on job length for parts, materials and labor. The payment terms will be defined in the build spec and estimate - but in general we bill every 2 weeks for shorter jobs, and every 3-4 for more complex longer term jobs until complete. It can be 4 payments or up to 30 payments depending on the job. 
+      - que: This seems like it’s really expensive - I thought a paint job would only cost a few thousand dollars?
+        ans: Properly done paint work is a very labor intensive process and can take hundreds of hours to do a job that looks good and lasts. Quality materials are expensive, and professional certified technicians don’t come cheap. We don’t compromise on quality for either time or materials.
+      - que: Can’t you just give me a flat price after looking at my car?
+        ans: No way - we work on time / materials and parts. Once the car has been disassembled and blasted we can hone in closer on what it will take. But some cars need more work than others for metal and body, and some cars have parts that are expensive and hard to find.
+      - que: My car has been in another shop for years - they have taken a bunch of money and haven’t done much work to it. Can I have it brought to you to finish?
+        ans: Totally! This happens all the time… “Paint shop jail” is a terrible place to be. Just know that we may have to re-do some of the work that they already did to make sure it's right - and we won’t get involved with getting your car back for you.
     slidelayout: 1
 ---
 

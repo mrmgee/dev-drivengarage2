@@ -13,11 +13,22 @@ section.hero .slide-box {
     min-height: 36rem;
   }
 
+
+@media(min-width:1406px) {
+    section.nav-links {
+        width: 94%;
+        margin: 0 auto;
+    }
+
+}
+
+
+
 section.nav-links section {
     /* height: 75vh; */
     min-height: 75vh;
     width: 100%;
-    padding: 0 0 2rem 0;
+    padding: 0;
     background-color: rgb(248 248 248);
     border: 1px solid #ffffff;
 }
@@ -29,12 +40,19 @@ section.nav-links .tab-nav {
     width: 100%;
     margin: 0 auto;
     padding: 0.5rem 0 0 0;
-    background-color: #eef0f1;
+    /* background-color: #eef0f1; */
+    background-color: #ffffff;
     z-index: 10;
 }
 @media(max-width: 768px) {
+    section.nav-links {
+        width: 100%;
+    }
     section.nav-links .tab-nav {
         top: 60px;
+    }
+    .sec-wrap {
+        width: 100%;
     }
 }
 
@@ -42,28 +60,34 @@ section.nav-links .tab-nav ul {
     display: flex;
     justify-content: center;
 }
-section.nav-links .tab-nav ul li {
+
+section.nav-links .tab-nav ul li a {
+    display: block;
     margin: 0 0.5rem;
     padding: 0.4rem 0.8rem;
     background-color: #e4e4e4; /* rgb(228 228 228); */
-    transform: skew(-24deg);
+    transform: skew(-24deg)!important;
+    color: #363637;
     border-radius:4px;
+    text-decoration: none;
 }
 
-section.nav-links .tab-nav ul li a {
+
+section.nav-links .tab-nav ul li a.active {
+    background-color: #F7983B;
+    transition: 0.3s;
+}
+section.nav-links .tab-nav ul li a span {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #363636;
     transform: skew(24deg);
 }
-section.nav-links .tab-nav ul li a > i {
+
+section.nav-links .tab-nav ul li a > span i {
   width: 3rem;
   height: 3rem;
   margin: 0 0 0 0.2rem;
-  padding: 0 0.8rem;
+  padding: 0 0.6rem;
   color: #ffffff;
   background: #8e8e8e;
   border-radius: 50%;
@@ -72,14 +96,8 @@ section.nav-links .tab-nav ul li a > i {
   font-style: normal;
 }
 
-section.nav-links .tab-nav ul li:hover, 
-section.nav-links .tab-nav ul li.active {
-    background-color: #F7983B;
-    transition: 0.3s;
-}
-section.nav-links .tab-nav ul li.active {
-    display: flex;
-}
+
+
 section.nav-links .tab-nav ul li:hover a {
     color: #ffffff;
 }
@@ -91,28 +109,31 @@ section.nav-links .tab-nav ul li:hover a > i {
 section.nav-links .tab-nav ul li.active a {
     color: #ffffff;
 }
-.sec-wrap > .tab-cont-head {
+.tab-cont-head {
+    position: sticky;
+    top: 68px;
     /* display: none; */
     padding: 0.5rem 0 0.5rem 2rem;
+    background-color: #e4e4e4;
+    z-index: 9;
+}
+.tab-cont-head.active {
     background-color: #F7983B;
 }
-.tab-nav ul li .tab-cont-head {
-    display: none;
-}
-.tab-nav ul li.active .tab-cont-head {
-    display: block;
-}
-.tab-nav ul > li .tab-cont-head {
-    margin: 0 0 0 0.5rem;
+.tab-cont-head h2 {
+    /* display: none; */
+    /* padding: 0.5rem 0 0.5rem 2rem; */
     font-size: 1.6rem;
     font-weight: 600;
-    transform: skew(24deg);
-}
-.tab-cont-head h2 {
-    font-size: 2rem;
-    font-weight: 600;
     font-style: italic;
+    /* background-color: #F7983B; */
 }
+.tab-cont-head h2.active {
+    display: block;
+}
+
+
+
 .tab-cont {
     padding: 1rem 2rem 1rem 0;
 }
@@ -127,67 +148,132 @@ section.nav-links .slide-box {
     max-height: 100%;
 }
 .sec-wrap {
-    margin: 6rem 0 0 0;
+    margin: 2.3rem 0 0 0;  /* 8rem 0 0 0; */
     min-height: 3rem;
-    /* border: 1px solid #3366ff; */
 }
+
+/* .sec-wrap:nth-child(1) {
+    margin: 2rem 0 0 0;
+} */
+
+
+
+/* TESTING */
+/*
+section.nav-links section {
+    border: 1px solid #97d814;
+}
+.sec-wrap {
+    border: 1px solid #3366ff;
+}
+section.nav-links .tab-nav ul li a {
+    border: 1px solid #ff3366;
+}
+.tab-cont-head h2 {
+    border: 1px solid #3366ff;
+}
+*/
+/* end TESTING */
 </style>
 
 <section class="nav-links">
 
     <div class="tab-nav">
         <ul>
-            <li class="step1 active"><a href="#step1">Step <i>1</i></a>
-            <div class="tab-cont-head"><h2>Design & Discovery</h2></div></li>
+            <li class="step1">
+                <a href="#step1">
+                    <span>Step <i>1</i></span>
+                </a>
+            </li>
 
-            <li class="step2"><a href="#step2">Step <i>2</i></a>
-            <div class="tab-cont-head"><h2>Metal & Body Work</h2></div></li>
+            <li class="step2">
+                <a href="#step2">
+                    <span>Step <i>2</i></span>
+                </a>
+            </li>
 
-            <li class="step3"><a href="#step3">Step <i>3</i></a>
-            <div class="tab-cont-head"><h2>Paint Prep</h2></li>
+            <li class="step3">
+                <a href="#step3">
+                    <span>Step <i>3</i></span>
+                </a>
+            </li>
 
-            <li class="step4"><a href="#step4">Step <i>4</i></a>
-            <div class="tab-cont-head"><h2>Paint / Clear coat / Finish</h2></li>
+            <li class="step4">
+                <a href="#step4">
+                    <span>Step <i>4</i></span>
+                </a>
+            </li>
 
-            <li class="step5"><a href="#step5">Step <i>5</i></a>
-            <div class="tab-cont-head"><h2>Re-assembly</h2></li>           
+            <li class="step5">
+                <a href="#step5">
+                    <span>Step <i>5</i></span>
+                </a>
+            </li>           
 
-            <li class="step6"><a href="#step6">Step <i>6</i></a>
-            <div class="tab-cont-head"><h2>Final Tuning & Delivery</h2></li>  
+            <li class="step6">
+                <a href="#step6">
+                    <span>Step <i>6</i></span>
+                </a>
+            </li>  
 
-{% for i in range(3, 7) %}
-            <!-- <li class="step{{ i }}"><a href="#step{{ i }}">Step  <i>{{ i }}</i></a></li> -->
-{% endfor %}         
+    
 
         </ul>
+<!--
+        <div class="tab-cont-head">
+            <h2 class="step1">1: Design & Discovery</h2>
+            <h2 class="step2">2: Metal & Body Work</h2>
+            <h2 class="step3">3: Paint Prep</h2>
+            <h2 class="step4">4: Paint / Clear coat / Finish</h2>
+            <h2 class="step5">5: Re-assembly</h2>
+            <h2 class="step6">6: Final Tuning & Delivery</h2>
+        </div>
+-->
     </div>
 
 
     <section id="step1">
+        <div class="tab-cont-head step1">
+            <h2 class="step1">1: Design & Discovery</h2>
+        </div>
         <div class="sec-wrap">
-        <!-- <div class="tab-cont-head"><h2>Step 1: Design & Discovery</h2></div> -->
+        <!-- Step 1: Design & Discovery -->
         <div class="columns">
             <div class="column">
                 <div id="slider1" class="swiffy-slider slider-indicators-round slider-nav-visible slider-indicators-dark">  
                     <ul class="slider-container">
+                        
+                        <li>
+                            <div class="slide-box">
+                                        {% image "./src/_images/Alberto_hand_rend.jpg", "Alberto hand rendering" %}
+                            </div>
+                        </li><!-- END slide 1 -->
 
                         <li>
                             <div class="slide-box">
                                         {% image "./src/_images/Brass_Tacks_rend.jpg", "Brass Tacks rending" %}
                             </div>
-                        </li><!-- END slide 1 -->
+                        </li><!-- END slide 2 -->
                 
                         <li>
                             <div class="slide-box">
-                                {% image "./src/_images/Finn_c10_F-02_rend.jpg", "Finn c10 F-02 rendering" %}
+                                {% image "./src/_images/Lancer-rear-fender.jpg", "Lancer rear fender" %}
                             </div>
-                        </li><!-- END slide 2 -->
+                        </li><!-- END slide 3 -->
+                
+                        <li>
+                            <div class="slide-box">
+                                {% image "./src/_images/Malibu_disassembly.jpg", "Malibu disassembly" %}
+                            </div>
+                        </li><!-- END slide 4 -->
 
                         <li>
                             <div class="slide-box">
-                                {% image "./src/_images/68_Dartside_of_the_Moon_rend_int.jpg", "Finn c10 F-02 rendering" %}
+                                {% image "./src/_images/C10_yellow_disassembly.jpg", "C10 yellow disassembly" %}
                             </div>
-                        </li><!-- END slide 3 -->
+                        </li><!-- END slide 5 -->
+
+
 
                     </ul>
                 
@@ -217,8 +303,11 @@ section.nav-links .slide-box {
 
 
     <section id="step2">
+        <div class="tab-cont-head step2">
+            <h2 class="step2">2: Metal & Body Work</h2>
+        </div>
         <div class="sec-wrap">
-        <!-- <div class="tab-cont-head"><h2>Metal & Body Work</h2></div> -->
+        <!-- Metal & Body Work -->
         <div class="columns">
             <div class="column">
                 <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
@@ -226,19 +315,19 @@ section.nav-links .slide-box {
 
                         <li>
                             <div class="slide-box">
-                                {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
+                                {% image "./src/_images/67_Nova_green_build_stand.jpg", "67 Nova green build stand" %}
                             </div>
                         </li><!-- END slide 1 -->
                 
                         <li>
                             <div class="slide-box">
-                                {% image "./src/_images/56_Studebaker_Hawk.jpg", "67 Dart Vader" %}
+                                {% image "./src/_images/bodywork_tools.jpg", "bodywork tools" %}
                             </div>
                         </li><!-- END slide 2 -->
 
                         <li>
                             <div class="slide-box">
-                                {% image "./src/_images/014-plymouth-valiant-fender-door-gap.jpg", "67 Dart Vader" %}
+                                {% image "./src/_images/Mustang_teal_bodywork.jpg", "Mustang teal bodywork" %}
                             </div>
                         </li><!-- END slide 3 -->
 
@@ -277,28 +366,31 @@ section.nav-links .slide-box {
 
 
     <section id="step3">
+        <div class="tab-cont-head step3">
+            <h2 class="step3">3: Paint Prep</h2>
+        </div>
         <div class="sec-wrap">
-            <!-- <div class="tab-cont-head"><h2>Paint Prep</h2></div> -->
+            <!-- Paint Prep -->
             <div class="columns">
                 <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <div id="slider3" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
                         <ul class="slider-container">
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/56_Studebaker_Hawk.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/73_dart_paintbooth_prime.jpg", "73 Dart paintbooth prime" %}
                                 </div>
                             </li><!-- END slide 1 -->
-                    
+                            
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/Valiant_green_prime.jpg", "Valiant green prime" %}
                                 </div>
                             </li><!-- END slide 2 -->
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/014-plymouth-valiant-fender-door-gap.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/67_Nova_prime.jpg", "67 Nova prime" %}
                                 </div>
                             </li><!-- END slide 3 -->
 
@@ -333,24 +425,24 @@ section.nav-links .slide-box {
 
             <div class="columns">
                 <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <div id="slider3-2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
                         <ul class="slider-container">
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/Finn_c10_F-02_rend.jpg", "Finn c10 F-02 rendering" %}
-                                </div>
-                            </li><!-- END slide 1 -->
-                    
-                            <li>
-                                <div class="slide-box">
-                                    {% image "./src/_images/56_Studebaker_Hawk.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/67_Nova_front_fender_fit.jpg", "67 Nova front fender fit" %}
                                 </div>
                             </li><!-- END slide 2 -->
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/67_Nova_trunk_fit.jpg", "67 Nova trunk fit" %}
+                                </div>
+                            </li><!-- END slide 3 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    {% image "./src/_images/67_Nova_front_together_full.jpg", "67 Nova front together full" %}
                                 </div>
                             </li><!-- END slide 3 -->
 
@@ -393,27 +485,65 @@ section.nav-links .slide-box {
 
 
     <section id="step4">
+        <div class="tab-cont-head step4">
+            <h2 class="step4">4: Paint / Clear coat / Finish</h2>
+        </div>
         <div class="sec-wrap">
-            <!-- <div class="tab-cont-head"><h2>Paint / Clear coat / Finish</h2></div> -->
+            <!-- Paint / Clear coat / Finish -->
             <div class="columns">
                 <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <div id="slider4" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
                         <ul class="slider-container">
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/68_Dartside_of_the_Moon_rend_int.jpg", "Finn c10 F-02 rendering" %}                                </div>
+                                    {% image "./src/_images/67_Chevelle_paintbooth_cleaning.jpg", "67 Chevelle paintbooth cleaning" %}                                </div>
                             </li><!-- END slide 1 -->
-                    
+
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/56_Studebaker_Hawk.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/Mustang_teal_paintbooth02.jpg", "Mustang teal paintbooth" %}
                                 </div>
                             </li><!-- END slide 2 -->
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/66_Chevelle_silver_side_reflection.jpg", "66 Chevelle silver side reflection" %}
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div><!-- END swiffy-slider -->
+
+
+                    <div id="slider5" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                        <ul class="slider-container">
+
+                            <li>
+                                <div class="slide-box">
+                                    {% image "./src/_images/blue_paintbooth.jpg", "blue paintbooth" %}
+                                </div>
+                            </li><!-- END slide 1 -->
+                    
+                            <li>
+                                <div class="slide-box">
+                                    {% image "./src/_images/73_dart_paintbooth.jpg", "73 dart paintbooth" %}
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    {% image "./src/_images/Camaro_choy_blue.jpg", "Camaro choy blue" %}
+
                                 </div>
                             </li><!-- END slide 3 -->
 
@@ -427,7 +557,7 @@ section.nav-links .slide-box {
                             <button></button>
                             <button></button>
                         </div>
-                    </div><!-- END swiffy-slider -->
+                    </div><!-- END swiffy-slider -->                    
 
 
                 </div>
@@ -456,71 +586,17 @@ section.nav-links .slide-box {
                 </div>
             </div>
 
-            <div class="columns">
-                <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
-                        <ul class="slider-container">
-
-                            <li>
-                                <div class="slide-box">
-                                    {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
-                                </div>
-                            </li><!-- END slide 1 -->
-                    
-                            <li>
-                                <div class="slide-box">
-                                    {% image "./src/_images/56_Studebaker_Hawk.jpg", "67 Dart Vader" %}
-                                </div>
-                            </li><!-- END slide 2 -->
-
-                            <li>
-                                <div class="slide-box">
-                                    {% image "./src/_images/014-plymouth-valiant-fender-door-gap.jpg", "67 Dart Vader" %}
-
-                                </div>
-                            </li><!-- END slide 3 -->
-
-                        </ul>
-                    
-                        <button type="button" class="slider-nav"></button>
-                        <button type="button" class="slider-nav slider-nav-next"></button>
-                    
-                        <div class="slider-indicators">
-                            <button class="active"></button>
-                            <button></button>
-                            <button></button>
-                        </div>
-                    </div><!-- END swiffy-slider -->
-
-
-                </div>
-                <div class="column">
-                    <div class="tab-cont">
-                        <h3>Final Paint Prep</h3><!-- Step 6 -->
-                        <!-- 6.1 -->
-                        <p><b>Final prime / Sealer</b> This is our final primer stage. At this point the car is taken back apart and a sealer coat is applied to all outside and inside surfaces. This final coat locks everything down and is what the base coat and clear coat will be applied to. We also use this last seal step to apply any urethane seam sealer to panel overlaps and seams.</p>
-                        <!-- 6.2 -->
-                        <p><b>Final sand</b> Final sand: After the sealer is applied, we wet sand all of the panels 600/800 grit to remove any “Orange Peel” and imperfections from the sealer coat and allow the scratches from this sanding round to act as the mechanical bond for the paint and clear coat.</p>
-
-                        <h3>Final fit / Mock-up</h3><!-- Step 7 -->
-                        <p>If we’re spraying a metallic color on the car - at this point we will paint and clear coat the inside of the panels and the door jambs, fender and trunk jambs so that we can spray the car together. This is an important step for metallic paints as when the base coat comes out of the gun - we want to ensure that the flakes are oriented in the right direction from fender to door, door to quarter panels, etc. On solid color cars with no metallic this is the only step we skip as we can just paint the panels and fit them after.</p>
-                        <!-- 7.1  -->
-                        <p><b>Clean and spray jambs</b> Clean everything 3x mask and spray all the insides of panels and the door jambs, fender jambs, and trunk jambs. We give everything 3 coats of base coat followed by 3-4 coats of high quality high solids clear coat.</p>
-                        <!-- 7.2 --> 
-                        <p><b>Assembly and panel align</b> After the jambs and insides are done - it’s time to put it all back together and align the panels for the metallic paint.  We’re sure you’ve seen cars that look like one panel is a bit “off” from the next - that’s because the shop skipped this step and painted a metallic color in pieces. The spray pattern needs to flow from panel to panel.</p>
-
-                    </div>          
-                </div>
-            </div>
-
         </div>
     </section>
 
 
 
     <section id="step5">
+        <div class="tab-cont-head step5">
+            <h2 class="step5">5: Re-assembly</h2>
+        </div>
         <div class="sec-wrap">
-            <!-- <div class="tab-cont-head"><h2>Re-assembly</h2></div> -->
+            <!-- Re-assembly -->
             <div class="columns">
                 <div class="column">
                     <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
@@ -581,8 +657,11 @@ section.nav-links .slide-box {
 
 
     <section id="step6">
+        <div class="tab-cont-head step6">
+            <h2 class="step6">6: Final Tuning & Delivery</h2>
+        </div>
         <div class="sec-wrap">
-            <!-- <div class="tab-cont-head"><h2>Final Tuning & Deliveryy</h2></div> -->
+            <!-- Final Tuning & Deliveryy -->
             
             <div class="columns">
                 <div class="column">
@@ -642,27 +721,55 @@ section.nav-links .slide-box {
 <script>
 
 /*
-document.addEventListener('click', function(event) {
-  if (!event.target.matches('li a')) return;
-  //dataset.data-target
+// Working pretty good but still some hitching on scrolling to correct anchor
 
-  event.preventDefault();
-  
-  var element = document.getElementById(event.target.dataset.target);
-  console.log('clicked: '+element.id);
-  
-  element.scrollIntoView({behavior: "smooth"});
+const sections = document.querySelectorAll("section[id]");
 
+// Add an event listener listening for scroll
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+
+  let scrollY = window.pageYOffset;
+  
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
+    sectionId = current.getAttribute("id");
+    
+    if (
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ){
+      document.querySelector(".tab-nav ul li a[href*=" + sectionId + "]").classList.add("active");
+      document.querySelector(".tab-cont-head h2." + sectionId).classList.add("active");
+      
+    } else {
+        document.querySelector(".tab-nav ul li a[href*=" + sectionId + "]").classList.remove("active");
+        document.querySelector(".tab-cont-head h2." + sectionId).classList.remove("active");
+    }
+  });
+}
+
+*/
+
+
+
+
+
+/* LINK TEST 
+document.addEventListener(`click`, e => {
+  const origin = e.target.closest(`a`);
+  
+  if (origin) {
+    const href = origin.href;
+    console.log(href);
+  }
 });
 */
 
 /*
-document.querySelectorAll('.tab-nav ul li a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    console.log('A link was clicked');
-  });
-});
-*/
+- - ORIG works MOSTLY but with some errant clicks --
 document.querySelectorAll('.tab-nav ul li a').forEach(link => {
   link.addEventListener('click', (e) => {
     // Retrieve href and store in targetUrl variable
@@ -696,7 +803,7 @@ window.onscroll = () => {
   
 
 };
-
+*/
 
 </script>
 

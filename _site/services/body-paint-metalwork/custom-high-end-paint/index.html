@@ -14,7 +14,7 @@
 
     <title>Custom High End Paint</title>
     <meta name="description" content="Driven Garage nothern California restomod auto customization and repair shop">
-    <link rel="stylesheet" href="../../../theme.css?v=1694291578">
+    <link rel="stylesheet" href="../../../theme.css?v=1694465112">
     <link rel="icon" type="image/png" href="../../../_images/favicon.png" sizes="32x32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CUbuntu:300,300italic,400,400italic,500,500italic,700,700italic%7CRoboto:300,regular,500" media="all">
 
@@ -1114,8 +1114,46 @@ heroAlt: 67 Dart Vader Mopar Muscle cover featuredImagePos:
     margin-bottom: 1rem;
   }
   section.services-detail-cost-box-alt table {
-    margin: 2rem auto 0 auto;
+    width: 100%
   }
+
+.scroll-container {
+  overflow: auto;
+  margin: 3rem auto 2rem auto;
+}
+.scroll-container h3 {
+  background-color: #f79837;
+  padding: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.scroll {
+  margin: 0;
+}
+.scroll th:first-of-type {
+  position: sticky;
+  left: 0;
+  border-left: none;
+  background: #f4f4f4;
+  color: #212121;
+  font-weight: bold;
+}
+.scroll th:first-of-type:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  height: 100%;
+  width: 1px;
+  background: #000;
+}
+.scroll th:last-of-type {
+  border-right: none;
+}
+
+
 </style>
 
 <!-- START alt COST LOCKUP -->
@@ -1135,12 +1173,11 @@ heroAlt: 67 Dart Vader Mopar Muscle cover featuredImagePos:
 
 
 
-
-    <table class="table">
+<div class="scroll-container">
+    <h3>Metal / Body / Paint / Finish - Just metal / body / paint work for a standard job to full on show car.</h3>
+    <table class="table scroll">
         <thead>
-            <tr style="background-color: #f79837;">
-                <th colspan="8">Metal / Body / Paint / Finish - Just metal / body / paint work for a standard job to full on show car.</th>
-            </tr>
+
           <tr>
             <th>Description</th>
             <th>Rate</th>
@@ -1234,7 +1271,7 @@ heroAlt: 67 Dart Vader Mopar Muscle cover featuredImagePos:
                 <td>$6,000.00</td>
             </tr>
             <tr style="background-color: #363636; color: #ffffffd1;">
-                <th></th>
+                <td></td>
                 <td></td>
                 <td></td> 
                 <td></td>
@@ -1244,7 +1281,7 @@ heroAlt: 67 Dart Vader Mopar Muscle cover featuredImagePos:
                 <td>$91,000.00</td>
             </tr>
             <tr style="background-color: #999999;">
-                <th></th>
+                <td></td>
                 <td></td>
                 <td></td> 
                 <td></td>
@@ -1254,7 +1291,7 @@ heroAlt: 67 Dart Vader Mopar Muscle cover featuredImagePos:
                 <td>$75,000.00</td>
             </tr>
             <tr style="background-color: #999999;">
-                <th></th>
+                <td></td>
                 <td></td>
                 <td></td> 
                 <td></td>
@@ -1265,7 +1302,7 @@ heroAlt: 67 Dart Vader Mopar Muscle cover featuredImagePos:
             </tr>
         </tbody>
     </table>
-
+</div>
 
 
 
@@ -2481,6 +2518,89 @@ function initAcc(elem, option){
 
 initAcc('.accordion.v1', true);
 initAcc('.accordion.v2', false);
+
+</script>
+
+<!-- RESTOMOD tab scroll -->
+<script>
+
+
+
+// To Section
+const navLinks = document.querySelectorAll(
+'.tab-nav ul li a');
+
+
+Array.from(navLinks).forEach(navLink => {
+  const href = navLink.getAttribute('href');
+  const section = document.querySelector(href);
+  const offset = 10 + 20; // nav and offset 50 + 20
+
+  navLink.onclick = e => {
+    // get body position
+    const bodyRect = document.body.getBoundingClientRect().top;
+    // get section position relative
+    const sectionRect = section.getBoundingClientRect().top;
+    // subtract the section from body
+    const sectionPosition = sectionRect - bodyRect;
+    // subtract offset
+    const offsetPosition = sectionPosition - offset;
+
+    e.preventDefault();
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth' });
+
+    console.log("clicked: " + navLink.href + " | bodyRect: " + bodyRect + " sectionRect: " + sectionRect);
+
+  };
+});
+
+
+
+
+
+function scrollToTargetAdjusted(){
+    var element = document.getElementById('targetElement');
+    var headerOffset = 45;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
+}
+
+
+const sections = document.querySelectorAll("section[id]");
+
+// Add an event listener listening for scroll
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+
+  let scrollY = window.pageYOffset;
+  
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
+    sectionId = current.getAttribute("id");
+    
+    if (
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ){
+      document.querySelector(".tab-nav ul li a[href*=" + sectionId + "]").classList.add("active");
+      document.querySelector(".tab-cont-head." + sectionId).classList.add("active");
+      
+    } else {
+        document.querySelector(".tab-nav ul li a[href*=" + sectionId + "]").classList.remove("active");
+        document.querySelector(".tab-cont-head." + sectionId).classList.remove("active");
+    }
+  });
+}
+
 
 </script>
 

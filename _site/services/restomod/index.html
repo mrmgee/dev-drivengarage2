@@ -14,7 +14,7 @@
 
     <title>Restomod &amp; Full Builds</title>
     <meta name="description" content="Driven Garage nothern California restomod auto customization and repair shop">
-    <link rel="stylesheet" href="../../theme.css?v=1694291578">
+    <link rel="stylesheet" href="../../theme.css?v=1694465112">
     <link rel="icon" type="image/png" href="../../_images/favicon.png" sizes="32x32">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic%7CUbuntu:300,300italic,400,400italic,500,500italic,700,700italic%7CRoboto:300,regular,500" media="all">
 
@@ -444,11 +444,22 @@ section.hero .slide-box {
     min-height: 36rem;
   }
 
+
+@media(min-width:1406px) {
+    section.nav-links {
+        width: 94%;
+        margin: 0 auto;
+    }
+
+}
+
+
+
 section.nav-links section {
     /* height: 75vh; */
     min-height: 75vh;
     width: 100%;
-    padding: 0 0 2rem 0;
+    padding: 0;
     background-color: rgb(248 248 248);
     border: 1px solid #ffffff;
 }
@@ -460,12 +471,19 @@ section.nav-links .tab-nav {
     width: 100%;
     margin: 0 auto;
     padding: 0.5rem 0 0 0;
-    background-color: #eef0f1;
+    /* background-color: #eef0f1; */
+    background-color: #ffffff;
     z-index: 10;
 }
 @media(max-width: 768px) {
+    section.nav-links {
+        width: 100%;
+    }
     section.nav-links .tab-nav {
         top: 60px;
+    }
+    .sec-wrap {
+        width: 100%;
     }
 }
 
@@ -473,28 +491,34 @@ section.nav-links .tab-nav ul {
     display: flex;
     justify-content: center;
 }
-section.nav-links .tab-nav ul li {
+
+section.nav-links .tab-nav ul li a {
+    display: block;
     margin: 0 0.5rem;
     padding: 0.4rem 0.8rem;
     background-color: #e4e4e4; /* rgb(228 228 228); */
-    transform: skew(-24deg);
+    transform: skew(-24deg)!important;
+    color: #363637;
     border-radius:4px;
+    text-decoration: none;
 }
 
-section.nav-links .tab-nav ul li a {
+
+section.nav-links .tab-nav ul li a.active {
+    background-color: #F7983B;
+    transition: 0.3s;
+}
+section.nav-links .tab-nav ul li a span {
     display: flex;
     align-items: center;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 500;
-    color: #363636;
     transform: skew(24deg);
 }
-section.nav-links .tab-nav ul li a > i {
+
+section.nav-links .tab-nav ul li a > span i {
   width: 3rem;
   height: 3rem;
   margin: 0 0 0 0.2rem;
-  padding: 0 0.8rem;
+  padding: 0 0.6rem;
   color: #ffffff;
   background: #8e8e8e;
   border-radius: 50%;
@@ -503,14 +527,8 @@ section.nav-links .tab-nav ul li a > i {
   font-style: normal;
 }
 
-section.nav-links .tab-nav ul li:hover, 
-section.nav-links .tab-nav ul li.active {
-    background-color: #F7983B;
-    transition: 0.3s;
-}
-section.nav-links .tab-nav ul li.active {
-    display: flex;
-}
+
+
 section.nav-links .tab-nav ul li:hover a {
     color: #ffffff;
 }
@@ -522,28 +540,31 @@ section.nav-links .tab-nav ul li:hover a > i {
 section.nav-links .tab-nav ul li.active a {
     color: #ffffff;
 }
-.sec-wrap > .tab-cont-head {
+.tab-cont-head {
+    position: sticky;
+    top: 68px;
     /* display: none; */
     padding: 0.5rem 0 0.5rem 2rem;
+    background-color: #e4e4e4;
+    z-index: 9;
+}
+.tab-cont-head.active {
     background-color: #F7983B;
 }
-.tab-nav ul li .tab-cont-head {
-    display: none;
-}
-.tab-nav ul li.active .tab-cont-head {
-    display: block;
-}
-.tab-nav ul > li .tab-cont-head {
-    margin: 0 0 0 0.5rem;
+.tab-cont-head h2 {
+    /* display: none; */
+    /* padding: 0.5rem 0 0.5rem 2rem; */
     font-size: 1.6rem;
     font-weight: 600;
-    transform: skew(24deg);
-}
-.tab-cont-head h2 {
-    font-size: 2rem;
-    font-weight: 600;
     font-style: italic;
+    /* background-color: #F7983B; */
 }
+.tab-cont-head h2.active {
+    display: block;
+}
+
+
+
 .tab-cont {
     padding: 1rem 2rem 1rem 0;
 }
@@ -558,73 +579,132 @@ section.nav-links .slide-box {
     max-height: 100%;
 }
 .sec-wrap {
-    margin: 6rem 0 0 0;
+    margin: 2.3rem 0 0 0;  /* 8rem 0 0 0; */
     min-height: 3rem;
-    /* border: 1px solid #3366ff; */
 }
+
+/* .sec-wrap:nth-child(1) {
+    margin: 2rem 0 0 0;
+} */
+
+
+
+/* TESTING */
+/*
+section.nav-links section {
+    border: 1px solid #97d814;
+}
+.sec-wrap {
+    border: 1px solid #3366ff;
+}
+section.nav-links .tab-nav ul li a {
+    border: 1px solid #ff3366;
+}
+.tab-cont-head h2 {
+    border: 1px solid #3366ff;
+}
+*/
+/* end TESTING */
 </style>
 
 <section class="nav-links">
 
     <div class="tab-nav">
         <ul>
-            <li class="step1 active"><a href="#step1">Step <i>1</i></a>
-            <div class="tab-cont-head"><h2>Design & Discovery</h2></div></li>
+            <li class="step1">
+                <a href="#step1">
+                    <span>Step <i>1</i></span>
+                </a>
+            </li>
 
-            <li class="step2"><a href="#step2">Step <i>2</i></a>
-            <div class="tab-cont-head"><h2>Metal & Body Work</h2></div></li>
+            <li class="step2">
+                <a href="#step2">
+                    <span>Step <i>2</i></span>
+                </a>
+            </li>
 
-            <li class="step3"><a href="#step3">Step <i>3</i></a>
-            <div class="tab-cont-head"><h2>Paint Prep</h2></li>
+            <li class="step3">
+                <a href="#step3">
+                    <span>Step <i>3</i></span>
+                </a>
+            </li>
 
-            <li class="step4"><a href="#step4">Step <i>4</i></a>
-            <div class="tab-cont-head"><h2>Paint / Clear coat / Finish</h2></li>
+            <li class="step4">
+                <a href="#step4">
+                    <span>Step <i>4</i></span>
+                </a>
+            </li>
 
-            <li class="step5"><a href="#step5">Step <i>5</i></a>
-            <div class="tab-cont-head"><h2>Re-assembly</h2></li>           
+            <li class="step5">
+                <a href="#step5">
+                    <span>Step <i>5</i></span>
+                </a>
+            </li>           
 
-            <li class="step6"><a href="#step6">Step <i>6</i></a>
-            <div class="tab-cont-head"><h2>Final Tuning & Delivery</h2></li>  
+            <li class="step6">
+                <a href="#step6">
+                    <span>Step <i>6</i></span>
+                </a>
+            </li>  
 
-
-            <!-- <li class="step3"><a href="#step3">Step  <i>3</i></a></li> -->
-
-            <!-- <li class="step4"><a href="#step4">Step  <i>4</i></a></li> -->
-
-            <!-- <li class="step5"><a href="#step5">Step  <i>5</i></a></li> -->
-
-            <!-- <li class="step6"><a href="#step6">Step  <i>6</i></a></li> -->
-         
+    
 
         </ul>
+<!--
+        <div class="tab-cont-head">
+            <h2 class="step1">1: Design & Discovery</h2>
+            <h2 class="step2">2: Metal & Body Work</h2>
+            <h2 class="step3">3: Paint Prep</h2>
+            <h2 class="step4">4: Paint / Clear coat / Finish</h2>
+            <h2 class="step5">5: Re-assembly</h2>
+            <h2 class="step6">6: Final Tuning & Delivery</h2>
+        </div>
+-->
     </div>
 
 
     <section id="step1">
+        <div class="tab-cont-head step1">
+            <h2 class="step1">1: Design & Discovery</h2>
+        </div>
         <div class="sec-wrap">
-        <!-- <div class="tab-cont-head"><h2>Step 1: Design & Discovery</h2></div> -->
+        <!-- Step 1: Design & Discovery -->
         <div class="columns">
             <div class="column">
                 <div id="slider1" class="swiffy-slider slider-indicators-round slider-nav-visible slider-indicators-dark">  
                     <ul class="slider-container">
+                        
+                        <li>
+                            <div class="slide-box">
+                                        <img alt="Alberto hand rendering" loading="lazy" decoding="async" src="/assets/images/Alberto_hand_rend-400.jpeg" width="1200" height="762" srcset="/assets/images/Alberto_hand_rend-400.jpeg 400w, /assets/images/Alberto_hand_rend-800.jpeg 800w, /assets/images/Alberto_hand_rend-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                            </div>
+                        </li><!-- END slide 1 -->
 
                         <li>
                             <div class="slide-box">
                                         <img alt="Brass Tacks rending" loading="lazy" decoding="async" src="/assets/images/Brass_Tacks_rend-400.jpeg" width="2000" height="1270" srcset="/assets/images/Brass_Tacks_rend-400.jpeg 400w, /assets/images/Brass_Tacks_rend-800.jpeg 800w, /assets/images/Brass_Tacks_rend-1280.jpeg 1280w, /assets/images/Brass_Tacks_rend-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                             </div>
-                        </li><!-- END slide 1 -->
+                        </li><!-- END slide 2 -->
                 
                         <li>
                             <div class="slide-box">
-                                <img alt="Finn c10 F-02 rendering" loading="lazy" decoding="async" src="/assets/images/Finn_c10_F-02_rend-400.jpeg" width="2000" height="1270" srcset="/assets/images/Finn_c10_F-02_rend-400.jpeg 400w, /assets/images/Finn_c10_F-02_rend-800.jpeg 800w, /assets/images/Finn_c10_F-02_rend-1280.jpeg 1280w, /assets/images/Finn_c10_F-02_rend-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                <img alt="Lancer rear fender" loading="lazy" decoding="async" src="/assets/images/Lancer-rear-fender-400.jpeg" width="1200" height="762" srcset="/assets/images/Lancer-rear-fender-400.jpeg 400w, /assets/images/Lancer-rear-fender-800.jpeg 800w, /assets/images/Lancer-rear-fender-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                             </div>
-                        </li><!-- END slide 2 -->
+                        </li><!-- END slide 3 -->
+                
+                        <li>
+                            <div class="slide-box">
+                                <img alt="Malibu disassembly" loading="lazy" decoding="async" src="/assets/images/Malibu_disassembly-400.jpeg" width="1200" height="762" srcset="/assets/images/Malibu_disassembly-400.jpeg 400w, /assets/images/Malibu_disassembly-800.jpeg 800w, /assets/images/Malibu_disassembly-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                            </div>
+                        </li><!-- END slide 4 -->
 
                         <li>
                             <div class="slide-box">
-                                <img alt="Finn c10 F-02 rendering" loading="lazy" decoding="async" src="/assets/images/68_Dartside_of_the_Moon_rend_int-400.jpeg" width="2000" height="1270" srcset="/assets/images/68_Dartside_of_the_Moon_rend_int-400.jpeg 400w, /assets/images/68_Dartside_of_the_Moon_rend_int-800.jpeg 800w, /assets/images/68_Dartside_of_the_Moon_rend_int-1280.jpeg 1280w, /assets/images/68_Dartside_of_the_Moon_rend_int-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                <img alt="C10 yellow disassembly" loading="lazy" decoding="async" src="/assets/images/C10_yellow_disassembly-400.jpeg" width="1200" height="762" srcset="/assets/images/C10_yellow_disassembly-400.jpeg 400w, /assets/images/C10_yellow_disassembly-800.jpeg 800w, /assets/images/C10_yellow_disassembly-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                             </div>
-                        </li><!-- END slide 3 -->
+                        </li><!-- END slide 5 -->
+
+
 
                     </ul>
                 
@@ -654,8 +734,11 @@ section.nav-links .slide-box {
 
 
     <section id="step2">
+        <div class="tab-cont-head step2">
+            <h2 class="step2">2: Metal & Body Work</h2>
+        </div>
         <div class="sec-wrap">
-        <!-- <div class="tab-cont-head"><h2>Metal & Body Work</h2></div> -->
+        <!-- Metal & Body Work -->
         <div class="columns">
             <div class="column">
                 <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
@@ -663,19 +746,19 @@ section.nav-links .slide-box {
 
                         <li>
                             <div class="slide-box">
-                                <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                <img alt="67 Nova green build stand" loading="lazy" decoding="async" src="/assets/images/67_Nova_green_build_stand-400.jpeg" width="1200" height="762" srcset="/assets/images/67_Nova_green_build_stand-400.jpeg 400w, /assets/images/67_Nova_green_build_stand-800.jpeg 800w, /assets/images/67_Nova_green_build_stand-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                             </div>
                         </li><!-- END slide 1 -->
                 
                         <li>
                             <div class="slide-box">
-                                <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                <img alt="bodywork tools" loading="lazy" decoding="async" src="/assets/images/bodywork_tools-400.jpeg" width="1200" height="762" srcset="/assets/images/bodywork_tools-400.jpeg 400w, /assets/images/bodywork_tools-800.jpeg 800w, /assets/images/bodywork_tools-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                             </div>
                         </li><!-- END slide 2 -->
 
                         <li>
                             <div class="slide-box">
-                                <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg" width="873" height="582" srcset="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg 400w, /assets/images/014-plymouth-valiant-fender-door-gap-800.jpeg 800w, /assets/images/014-plymouth-valiant-fender-door-gap-873.jpeg 873w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                <img alt="Mustang teal bodywork" loading="lazy" decoding="async" src="/assets/images/Mustang_teal_bodywork-400.jpeg" width="1200" height="762" srcset="/assets/images/Mustang_teal_bodywork-400.jpeg 400w, /assets/images/Mustang_teal_bodywork-800.jpeg 800w, /assets/images/Mustang_teal_bodywork-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                             </div>
                         </li><!-- END slide 3 -->
 
@@ -714,28 +797,31 @@ section.nav-links .slide-box {
 
 
     <section id="step3">
+        <div class="tab-cont-head step3">
+            <h2 class="step3">3: Paint Prep</h2>
+        </div>
         <div class="sec-wrap">
-            <!-- <div class="tab-cont-head"><h2>Paint Prep</h2></div> -->
+            <!-- Paint Prep -->
             <div class="columns">
                 <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <div id="slider3" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
                         <ul class="slider-container">
 
                             <li>
                                 <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                    <img alt="73 Dart paintbooth prime" loading="lazy" decoding="async" src="/assets/images/73_dart_paintbooth_prime-400.jpeg" width="1200" height="762" srcset="/assets/images/73_dart_paintbooth_prime-400.jpeg 400w, /assets/images/73_dart_paintbooth_prime-800.jpeg 800w, /assets/images/73_dart_paintbooth_prime-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                                 </div>
                             </li><!-- END slide 1 -->
-                    
+                            
                             <li>
                                 <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                    <img alt="Valiant green prime" loading="lazy" decoding="async" src="/assets/images/Valiant_green_prime-400.jpeg" width="1200" height="762" srcset="/assets/images/Valiant_green_prime-400.jpeg 400w, /assets/images/Valiant_green_prime-800.jpeg 800w, /assets/images/Valiant_green_prime-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                                 </div>
                             </li><!-- END slide 2 -->
 
                             <li>
                                 <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg" width="873" height="582" srcset="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg 400w, /assets/images/014-plymouth-valiant-fender-door-gap-800.jpeg 800w, /assets/images/014-plymouth-valiant-fender-door-gap-873.jpeg 873w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                    <img alt="67 Nova prime" loading="lazy" decoding="async" src="/assets/images/67_Nova_prime-400.jpeg" width="1200" height="762" srcset="/assets/images/67_Nova_prime-400.jpeg 400w, /assets/images/67_Nova_prime-800.jpeg 800w, /assets/images/67_Nova_prime-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                                 </div>
                             </li><!-- END slide 3 -->
 
@@ -770,24 +856,24 @@ section.nav-links .slide-box {
 
             <div class="columns">
                 <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <div id="slider3-2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
                         <ul class="slider-container">
 
                             <li>
                                 <div class="slide-box">
-                                    <img alt="Finn c10 F-02 rendering" loading="lazy" decoding="async" src="/assets/images/Finn_c10_F-02_rend-400.jpeg" width="2000" height="1270" srcset="/assets/images/Finn_c10_F-02_rend-400.jpeg 400w, /assets/images/Finn_c10_F-02_rend-800.jpeg 800w, /assets/images/Finn_c10_F-02_rend-1280.jpeg 1280w, /assets/images/Finn_c10_F-02_rend-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                                </div>
-                            </li><!-- END slide 1 -->
-                    
-                            <li>
-                                <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                    <img alt="67 Nova front fender fit" loading="lazy" decoding="async" src="/assets/images/67_Nova_front_fender_fit-400.jpeg" width="1200" height="762" srcset="/assets/images/67_Nova_front_fender_fit-400.jpeg 400w, /assets/images/67_Nova_front_fender_fit-800.jpeg 800w, /assets/images/67_Nova_front_fender_fit-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                                 </div>
                             </li><!-- END slide 2 -->
 
                             <li>
                                 <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                    <img alt="67 Nova trunk fit" loading="lazy" decoding="async" src="/assets/images/67_Nova_trunk_fit-400.jpeg" width="1200" height="762" srcset="/assets/images/67_Nova_trunk_fit-400.jpeg 400w, /assets/images/67_Nova_trunk_fit-800.jpeg 800w, /assets/images/67_Nova_trunk_fit-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 3 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="67 Nova front together full" loading="lazy" decoding="async" src="/assets/images/67_Nova_front_together_full-400.jpeg" width="1200" height="762" srcset="/assets/images/67_Nova_front_together_full-400.jpeg 400w, /assets/images/67_Nova_front_together_full-800.jpeg 800w, /assets/images/67_Nova_front_together_full-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                                 </div>
                             </li><!-- END slide 3 -->
 
@@ -830,27 +916,65 @@ section.nav-links .slide-box {
 
 
     <section id="step4">
+        <div class="tab-cont-head step4">
+            <h2 class="step4">4: Paint / Clear coat / Finish</h2>
+        </div>
         <div class="sec-wrap">
-            <!-- <div class="tab-cont-head"><h2>Paint / Clear coat / Finish</h2></div> -->
+            <!-- Paint / Clear coat / Finish -->
             <div class="columns">
                 <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <div id="slider4" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
                         <ul class="slider-container">
 
                             <li>
                                 <div class="slide-box">
-                                    <img alt="Finn c10 F-02 rendering" loading="lazy" decoding="async" src="/assets/images/68_Dartside_of_the_Moon_rend_int-400.jpeg" width="2000" height="1270" srcset="/assets/images/68_Dartside_of_the_Moon_rend_int-400.jpeg 400w, /assets/images/68_Dartside_of_the_Moon_rend_int-800.jpeg 800w, /assets/images/68_Dartside_of_the_Moon_rend_int-1280.jpeg 1280w, /assets/images/68_Dartside_of_the_Moon_rend_int-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">                                </div>
+                                    <img alt="67 Chevelle paintbooth cleaning" loading="lazy" decoding="async" src="/assets/images/67_Chevelle_paintbooth_cleaning-400.jpeg" width="1200" height="762" srcset="/assets/images/67_Chevelle_paintbooth_cleaning-400.jpeg 400w, /assets/images/67_Chevelle_paintbooth_cleaning-800.jpeg 800w, /assets/images/67_Chevelle_paintbooth_cleaning-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">                                </div>
                             </li><!-- END slide 1 -->
-                    
+
                             <li>
                                 <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                    <img alt="Mustang teal paintbooth" loading="lazy" decoding="async" src="/assets/images/Mustang_teal_paintbooth02-400.jpeg" width="1200" height="762" srcset="/assets/images/Mustang_teal_paintbooth02-400.jpeg 400w, /assets/images/Mustang_teal_paintbooth02-800.jpeg 800w, /assets/images/Mustang_teal_paintbooth02-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
                                 </div>
                             </li><!-- END slide 2 -->
 
                             <li>
                                 <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                    <img alt="66 Chevelle silver side reflection" loading="lazy" decoding="async" src="/assets/images/66_Chevelle_silver_side_reflection-400.jpeg" width="1200" height="762" srcset="/assets/images/66_Chevelle_silver_side_reflection-400.jpeg 400w, /assets/images/66_Chevelle_silver_side_reflection-800.jpeg 800w, /assets/images/66_Chevelle_silver_side_reflection-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                        </ul>
+                    
+                        <button type="button" class="slider-nav"></button>
+                        <button type="button" class="slider-nav slider-nav-next"></button>
+                    
+                        <div class="slider-indicators">
+                            <button class="active"></button>
+                            <button></button>
+                            <button></button>
+                        </div>
+                    </div><!-- END swiffy-slider -->
+
+
+                    <div id="slider5" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                        <ul class="slider-container">
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="blue paintbooth" loading="lazy" decoding="async" src="/assets/images/blue_paintbooth-400.jpeg" width="1400" height="933" srcset="/assets/images/blue_paintbooth-400.jpeg 400w, /assets/images/blue_paintbooth-800.jpeg 800w, /assets/images/blue_paintbooth-1280.jpeg 1280w, /assets/images/blue_paintbooth-1400.jpeg 1400w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 1 -->
+                    
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="73 dart paintbooth" loading="lazy" decoding="async" src="/assets/images/73_dart_paintbooth-400.jpeg" width="1200" height="762" srcset="/assets/images/73_dart_paintbooth-400.jpeg 400w, /assets/images/73_dart_paintbooth-800.jpeg 800w, /assets/images/73_dart_paintbooth-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+                                </div>
+                            </li><!-- END slide 2 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    <img alt="Camaro choy blue" loading="lazy" decoding="async" src="/assets/images/Camaro_choy_blue-400.jpeg" width="1200" height="762" srcset="/assets/images/Camaro_choy_blue-400.jpeg 400w, /assets/images/Camaro_choy_blue-800.jpeg 800w, /assets/images/Camaro_choy_blue-1200.jpeg 1200w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
+
                                 </div>
                             </li><!-- END slide 3 -->
 
@@ -864,7 +988,7 @@ section.nav-links .slide-box {
                             <button></button>
                             <button></button>
                         </div>
-                    </div><!-- END swiffy-slider -->
+                    </div><!-- END swiffy-slider -->                    
 
 
                 </div>
@@ -893,71 +1017,17 @@ section.nav-links .slide-box {
                 </div>
             </div>
 
-            <div class="columns">
-                <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
-                        <ul class="slider-container">
-
-                            <li>
-                                <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/30_Ford_Model_A-400.jpeg" width="2000" height="1125" srcset="/assets/images/30_Ford_Model_A-400.jpeg 400w, /assets/images/30_Ford_Model_A-800.jpeg 800w, /assets/images/30_Ford_Model_A-1280.jpeg 1280w, /assets/images/30_Ford_Model_A-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                                </div>
-                            </li><!-- END slide 1 -->
-                    
-                            <li>
-                                <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/56_Studebaker_Hawk-400.jpeg" width="2000" height="1125" srcset="/assets/images/56_Studebaker_Hawk-400.jpeg 400w, /assets/images/56_Studebaker_Hawk-800.jpeg 800w, /assets/images/56_Studebaker_Hawk-1280.jpeg 1280w, /assets/images/56_Studebaker_Hawk-2000.jpeg 2000w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-                                </div>
-                            </li><!-- END slide 2 -->
-
-                            <li>
-                                <div class="slide-box">
-                                    <img alt="67 Dart Vader" loading="lazy" decoding="async" src="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg" width="873" height="582" srcset="/assets/images/014-plymouth-valiant-fender-door-gap-400.jpeg 400w, /assets/images/014-plymouth-valiant-fender-door-gap-800.jpeg 800w, /assets/images/014-plymouth-valiant-fender-door-gap-873.jpeg 873w" sizes="(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)">
-
-                                </div>
-                            </li><!-- END slide 3 -->
-
-                        </ul>
-                    
-                        <button type="button" class="slider-nav"></button>
-                        <button type="button" class="slider-nav slider-nav-next"></button>
-                    
-                        <div class="slider-indicators">
-                            <button class="active"></button>
-                            <button></button>
-                            <button></button>
-                        </div>
-                    </div><!-- END swiffy-slider -->
-
-
-                </div>
-                <div class="column">
-                    <div class="tab-cont">
-                        <h3>Final Paint Prep</h3><!-- Step 6 -->
-                        <!-- 6.1 -->
-                        <p><b>Final prime / Sealer</b> This is our final primer stage. At this point the car is taken back apart and a sealer coat is applied to all outside and inside surfaces. This final coat locks everything down and is what the base coat and clear coat will be applied to. We also use this last seal step to apply any urethane seam sealer to panel overlaps and seams.</p>
-                        <!-- 6.2 -->
-                        <p><b>Final sand</b> Final sand: After the sealer is applied, we wet sand all of the panels 600/800 grit to remove any “Orange Peel” and imperfections from the sealer coat and allow the scratches from this sanding round to act as the mechanical bond for the paint and clear coat.</p>
-
-                        <h3>Final fit / Mock-up</h3><!-- Step 7 -->
-                        <p>If we’re spraying a metallic color on the car - at this point we will paint and clear coat the inside of the panels and the door jambs, fender and trunk jambs so that we can spray the car together. This is an important step for metallic paints as when the base coat comes out of the gun - we want to ensure that the flakes are oriented in the right direction from fender to door, door to quarter panels, etc. On solid color cars with no metallic this is the only step we skip as we can just paint the panels and fit them after.</p>
-                        <!-- 7.1  -->
-                        <p><b>Clean and spray jambs</b> Clean everything 3x mask and spray all the insides of panels and the door jambs, fender jambs, and trunk jambs. We give everything 3 coats of base coat followed by 3-4 coats of high quality high solids clear coat.</p>
-                        <!-- 7.2 --> 
-                        <p><b>Assembly and panel align</b> After the jambs and insides are done - it’s time to put it all back together and align the panels for the metallic paint.  We’re sure you’ve seen cars that look like one panel is a bit “off” from the next - that’s because the shop skipped this step and painted a metallic color in pieces. The spray pattern needs to flow from panel to panel.</p>
-
-                    </div>          
-                </div>
-            </div>
-
         </div>
     </section>
 
 
 
     <section id="step5">
+        <div class="tab-cont-head step5">
+            <h2 class="step5">5: Re-assembly</h2>
+        </div>
         <div class="sec-wrap">
-            <!-- <div class="tab-cont-head"><h2>Re-assembly</h2></div> -->
+            <!-- Re-assembly -->
             <div class="columns">
                 <div class="column">
                     <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
@@ -1018,8 +1088,11 @@ section.nav-links .slide-box {
 
 
     <section id="step6">
+        <div class="tab-cont-head step6">
+            <h2 class="step6">6: Final Tuning & Delivery</h2>
+        </div>
         <div class="sec-wrap">
-            <!-- <div class="tab-cont-head"><h2>Final Tuning & Deliveryy</h2></div> -->
+            <!-- Final Tuning & Deliveryy -->
             
             <div class="columns">
                 <div class="column">
@@ -1079,27 +1152,55 @@ section.nav-links .slide-box {
 <script>
 
 /*
-document.addEventListener('click', function(event) {
-  if (!event.target.matches('li a')) return;
-  //dataset.data-target
+// Working pretty good but still some hitching on scrolling to correct anchor
 
-  event.preventDefault();
-  
-  var element = document.getElementById(event.target.dataset.target);
-  console.log('clicked: '+element.id);
-  
-  element.scrollIntoView({behavior: "smooth"});
+const sections = document.querySelectorAll("section[id]");
 
+// Add an event listener listening for scroll
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+
+  let scrollY = window.pageYOffset;
+  
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
+    sectionId = current.getAttribute("id");
+    
+    if (
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ){
+      document.querySelector(".tab-nav ul li a[href*=" + sectionId + "]").classList.add("active");
+      document.querySelector(".tab-cont-head h2." + sectionId).classList.add("active");
+      
+    } else {
+        document.querySelector(".tab-nav ul li a[href*=" + sectionId + "]").classList.remove("active");
+        document.querySelector(".tab-cont-head h2." + sectionId).classList.remove("active");
+    }
+  });
+}
+
+*/
+
+
+
+
+
+/* LINK TEST 
+document.addEventListener(`click`, e => {
+  const origin = e.target.closest(`a`);
+  
+  if (origin) {
+    const href = origin.href;
+    console.log(href);
+  }
 });
 */
 
 /*
-document.querySelectorAll('.tab-nav ul li a').forEach(link => {
-  link.addEventListener('click', (e) => {
-    console.log('A link was clicked');
-  });
-});
-*/
+- - ORIG works MOSTLY but with some errant clicks --
 document.querySelectorAll('.tab-nav ul li a').forEach(link => {
   link.addEventListener('click', (e) => {
     // Retrieve href and store in targetUrl variable
@@ -1133,7 +1234,7 @@ window.onscroll = () => {
   
 
 };
-
+*/
 
 </script>
 
@@ -1285,6 +1386,235 @@ window.onscroll = () => {
 
     
         
+
+
+
+    
+
+    
+
+    
+
+    
+
+<style>
+  section.services-detail-cost-box-alt {
+    margin: 0 0 8rem 0;
+    }
+  .column.detail-cost-box-cont {
+    position: relative;
+  }
+  section.services-detail-cost-box-alt p {
+    margin-bottom: 1rem;
+  }
+  section.services-detail-cost-box-alt table {
+    width: 100%
+  }
+
+.scroll-container {
+  overflow: auto;
+  margin: 3rem auto 2rem auto;
+}
+.scroll-container h3 {
+  background-color: #f79837;
+  padding: 0.6rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.scroll {
+  margin: 0;
+}
+.scroll th:first-of-type {
+  position: sticky;
+  left: 0;
+  border-left: none;
+  background: #f4f4f4;
+  color: #212121;
+  font-weight: bold;
+}
+.scroll th:first-of-type:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: -1px;
+  height: 100%;
+  width: 1px;
+  background: #000;
+}
+.scroll th:last-of-type {
+  border-right: none;
+}
+
+
+</style>
+
+<!-- START alt COST LOCKUP -->
+<section class="services-detail-cost-box-alt bkg-grad1">
+  <div class="container">
+    <h1 class="title">
+      
+        What does it all cost?
+      
+    </h1>
+    <p>
+    
+        <p>That’s a very loaded question! On the lower end our paint service requires at a minimum exterior disassembly with all trim and glass removed and stripping to bare metal. On the higher end and rotisserie restoration to concours level or a magazine feature worthy custom Resto-Mod and anything in-between is in our wheelhouse.  Price really comes down to level of fit and finish, modifications and parts we use.</p><p>There is no single price - but see the table below that details the basics for 3 levels of build level based on labor and components / modifications. There is crossover from one extreme to the other and every job is different - but you can use this as a guide to see how low - or far we can go.</p>
+    
+    </p>
+
+
+
+
+<div class="scroll-container">
+    <h3>Metal / Body / Paint / Finish - Just metal / body / paint work for a standard job to full on show car.</h3>
+    <table class="table scroll">
+        <thead>
+
+          <tr>
+            <th>Description</th>
+            <th>Rate</th>
+            <th>Hrs Low</th>
+            <th>Hrs Med</th>
+            <th>Hrs High</th>
+            <th>Cost Low</th>
+            <th>Cost Med</th>
+            <th>Cost High</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>Basic Disassembly</th>
+                <td>$100.00</td>
+                <td>20</td>
+                <td>30</td>
+                <td>40</td>
+                <td>$2,000.00</td>
+                <td>$3,000.00</td>
+                <td>$4,000.00</td>
+            </tr>
+            <tr>
+                <th>Metalwork</th>
+                <td>$180.00</td>
+                <td>20</td>
+                <td>50</td>
+                <td>100</td>
+                <td>$3,600.00</td>
+                <td>$9,000.00</td>
+                <td>$18,000.00</td>
+            </tr>
+            <tr>
+                <th>Body / Paint prep</th>
+                <td>$140.00</td>
+                <td>80</td>
+                <td>120</td>
+                <td>150</td>
+                <td>$11,200.00</td>
+                <td>$16,800.00</td>
+                <td>$21,000.00</td>
+            </tr>
+            <tr>
+                <th>Paint / Finish</th>
+                <td>$150.00</td>
+                <td>40</td> 
+                <td>80</td>
+                <td>120</td>
+                <td>$6,000.00</td>
+                <td>$12,000.00</td>
+                <td>$18,000.00</td>
+            </tr>
+            <tr>
+                <th>Re-assembly</th>
+                <td>$140.00</td>
+                <td>20</td> 
+                <td>60</td>
+                <td>100</td>
+                <td>$2,800.00</td>
+                <td>$8,400.00</td>
+                <td>$14,000.00</td>
+            </tr>
+            <tr>
+                <th>Paint / Body Materials</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$4,500.00</td>
+                <td>$6,500.00</td>
+                <td>$8,500.00</td>
+            </tr>
+            <tr>
+                <th>Weatherstripping / Rubber</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$500.00</td>
+                <td>$800.00</td>
+                <td>$1,500.00</td>
+            </tr>
+            <tr>
+                <th>Trim / Bumpers</th>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td></td>
+                <td>$1,000.00</td>
+                <td>$2,000.00</td>
+                <td>$6,000.00</td>
+            </tr>
+            <tr style="background-color: #363636; color: #ffffffd1;">
+                <td></td>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Subtotal</td>
+                <td>$31,600.00</td>
+                <td>$58,500.00</td>
+                <td>$91,000.00</td>
+            </tr>
+            <tr style="background-color: #999999;">
+                <td></td>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Labor only</td>
+                <td>$25,600.00</td>
+                <td>$49,200.00</td>
+                <td>$75,000.00</td>
+            </tr>
+            <tr style="background-color: #999999;">
+                <td></td>
+                <td></td>
+                <td></td> 
+                <td></td>
+                <td>Parts/Materials only</td>
+                <td>$6,000.00</td>
+                <td>$9,300.00</td>
+                <td>$16,000.00</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+    
+
+  </div>
+</section>
+<!-- End alt COST LOCKUP --> 
+
+  
+
+    
+
+
+
+
+
     
 
     
@@ -1390,7 +1720,7 @@ window.onscroll = () => {
             <span>Q</span>
           </div>
         
-            Q1 Restomod
+            How long will a full build take?
         
          <span></span>
         </div>
@@ -1400,7 +1730,7 @@ window.onscroll = () => {
           </div>
             <p>
             
-                A1 Restomod answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+                This varies based on the condition of the donor vehicle and other factors.  Typically a  full custom build can take 6 mos. to 24+ mos. depending on level of build, components and parts availability.
             
             </p>
         </div>
@@ -1414,7 +1744,7 @@ window.onscroll = () => {
             <span>Q</span>
           </div>
         
-            Q2 Restomod
+            The guys on TV do it in like 2 weeks - what gives?
         
          <span></span>
         </div>
@@ -1424,7 +1754,7 @@ window.onscroll = () => {
           </div>
             <p>
             
-                A2 Restomod answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+                Ah, the magic of television! Parts that appear from nowhere at a moment's notice, a whole crew working behind the scenes. No labor laws, all nighters… It can take 1,000 to 2,000 hours or more to create a work of art on wheels - it’s simple math.
             
             </p>
         </div>
@@ -1438,7 +1768,7 @@ window.onscroll = () => {
             <span>Q</span>
           </div>
         
-            Q3 Restomod
+            What makes a car a Resto-Mod?
         
          <span></span>
         </div>
@@ -1448,7 +1778,103 @@ window.onscroll = () => {
           </div>
             <p>
             
-                A3 Restomod answer text here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras vitae dolor id enim iaculis bibendum. Fusce ut pellentesque erat.
+                Resto-Mod is a play on words - Restoration + Modification. There is a wide range here. A restored car with a modern engine swap can be a Resto-Mod. A restored car with disc brakes instead of factory drums can be considered a Resto-Mod. A car with a coil-over suspension can be considered a Resto-Mod. In our opinion - it takes a combination of these things, along with custom body modifications to fit neatly in the category.
+            
+            </p>
+        </div>
+      </div>
+
+      
+
+      <div class="a-container">
+        <div class="a-btn">
+          <div class="rnd-orng">
+            <span>Q</span>
+          </div>
+        
+            How do you break up payments?
+        
+         <span></span>
+        </div>
+        <div class="a-panel">
+          <div class="rnd-orng">
+            <span>A</span>
+          </div>
+            <p>
+            
+                We take a small portion for the build spec and design work if that is a part of the process. From there we bill on a regular schedule based on job length for parts, materials and labor. The payment terms will be defined in the build spec and estimate - but in general we bill every 2 weeks for shorter jobs, and every 3-4 for more complex longer term jobs until complete. It can be 4 payments or up to 30 payments depending on the job.
+            
+            </p>
+        </div>
+      </div>
+
+      
+
+      <div class="a-container">
+        <div class="a-btn">
+          <div class="rnd-orng">
+            <span>Q</span>
+          </div>
+        
+            This seems like it’s really expensive - I thought a paint job would only cost a few thousand dollars?
+        
+         <span></span>
+        </div>
+        <div class="a-panel">
+          <div class="rnd-orng">
+            <span>A</span>
+          </div>
+            <p>
+            
+                Properly done paint work is a very labor intensive process and can take hundreds of hours to do a job that looks good and lasts. Quality materials are expensive, and professional certified technicians don’t come cheap. We don’t compromise on quality for either time or materials.
+            
+            </p>
+        </div>
+      </div>
+
+      
+
+      <div class="a-container">
+        <div class="a-btn">
+          <div class="rnd-orng">
+            <span>Q</span>
+          </div>
+        
+            Can’t you just give me a flat price after looking at my car?
+        
+         <span></span>
+        </div>
+        <div class="a-panel">
+          <div class="rnd-orng">
+            <span>A</span>
+          </div>
+            <p>
+            
+                No way - we work on time / materials and parts. Once the car has been disassembled and blasted we can hone in closer on what it will take. But some cars need more work than others for metal and body, and some cars have parts that are expensive and hard to find.
+            
+            </p>
+        </div>
+      </div>
+
+      
+
+      <div class="a-container">
+        <div class="a-btn">
+          <div class="rnd-orng">
+            <span>Q</span>
+          </div>
+        
+            My car has been in another shop for years - they have taken a bunch of money and haven’t done much work to it. Can I have it brought to you to finish?
+        
+         <span></span>
+        </div>
+        <div class="a-panel">
+          <div class="rnd-orng">
+            <span>A</span>
+          </div>
+            <p>
+            
+                Totally! This happens all the time… “Paint shop jail” is a terrible place to be. Just know that we may have to re-do some of the work that they already did to make sure it's right - and we won’t get involved with getting your car back for you.
             
             </p>
         </div>
@@ -2389,6 +2815,89 @@ function initAcc(elem, option){
 
 initAcc('.accordion.v1', true);
 initAcc('.accordion.v2', false);
+
+</script>
+
+<!-- RESTOMOD tab scroll -->
+<script>
+
+
+
+// To Section
+const navLinks = document.querySelectorAll(
+'.tab-nav ul li a');
+
+
+Array.from(navLinks).forEach(navLink => {
+  const href = navLink.getAttribute('href');
+  const section = document.querySelector(href);
+  const offset = 10 + 20; // nav and offset 50 + 20
+
+  navLink.onclick = e => {
+    // get body position
+    const bodyRect = document.body.getBoundingClientRect().top;
+    // get section position relative
+    const sectionRect = section.getBoundingClientRect().top;
+    // subtract the section from body
+    const sectionPosition = sectionRect - bodyRect;
+    // subtract offset
+    const offsetPosition = sectionPosition - offset;
+
+    e.preventDefault();
+    window.scrollTo({
+      top: offsetPosition,
+      behavior: 'smooth' });
+
+    console.log("clicked: " + navLink.href + " | bodyRect: " + bodyRect + " sectionRect: " + sectionRect);
+
+  };
+});
+
+
+
+
+
+function scrollToTargetAdjusted(){
+    var element = document.getElementById('targetElement');
+    var headerOffset = 45;
+    var elementPosition = element.getBoundingClientRect().top;
+    var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+  
+    window.scrollTo({
+         top: offsetPosition,
+         behavior: "smooth"
+    });
+}
+
+
+const sections = document.querySelectorAll("section[id]");
+
+// Add an event listener listening for scroll
+window.addEventListener("scroll", navHighlighter);
+
+function navHighlighter() {
+
+  let scrollY = window.pageYOffset;
+  
+  sections.forEach(current => {
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = (current.getBoundingClientRect().top + window.pageYOffset) - 50;
+    sectionId = current.getAttribute("id");
+    
+    if (
+      scrollY > sectionTop &&
+      scrollY <= sectionTop + sectionHeight
+    ){
+      document.querySelector(".tab-nav ul li a[href*=" + sectionId + "]").classList.add("active");
+      document.querySelector(".tab-cont-head." + sectionId).classList.add("active");
+      
+    } else {
+        document.querySelector(".tab-nav ul li a[href*=" + sectionId + "]").classList.remove("active");
+        document.querySelector(".tab-cont-head." + sectionId).classList.remove("active");
+    }
+  });
+}
+
 
 </script>
 
