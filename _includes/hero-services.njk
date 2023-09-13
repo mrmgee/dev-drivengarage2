@@ -3,6 +3,8 @@
 {# {%set fullHeroPath = pagePath+imgHeroPath %} #}
 {%set fullHeroPath = featuredImage %}
 {% set heroAlt = featuredImageAlt %}
+{% set imgSlidePos = "2345" %}  <!-- outputs as class="1234" -->
+{% set imgSizesResp = "100vw" %}
 <!-- 
 pagePath: {{ pagePath }}
 featuredImage: {{ featuredImage }}
@@ -25,7 +27,7 @@ heroAlt: {{ heroAlt }}
         <div class="sec-bkg-img">
 
 {% if fullHeroPath|length %}
-            {% image ""+fullHeroPath, ""+heroAlt %}
+            {% image ""+fullHeroPath, ""+heroAlt, ""+imgSlidePos, ""+imgSizesResp %}
 {% endif %}
 
         {# {% if featuredImage %} #}

@@ -44,6 +44,8 @@ section.nav-links .tab-nav {
     background-color: #ffffff;
     z-index: 10;
 }
+
+/* MOBILE */
 @media(max-width: 768px) {
     section.nav-links {
         width: 100%;
@@ -54,12 +56,16 @@ section.nav-links .tab-nav {
     .sec-wrap {
         width: 100%;
     }
+    section.nav-links .tab-nav ul {
+        flex-wrap: wrap;
+    }
 }
 
 section.nav-links .tab-nav ul {
     display: flex;
     justify-content: center;
 }
+
 
 section.nav-links .tab-nav ul li a {
     display: block;
@@ -117,6 +123,11 @@ section.nav-links .tab-nav ul li.active a {
     background-color: #e4e4e4;
     z-index: 9;
 }
+@media(max-width: 768px) {
+    .tab-cont-head {
+        top: 188px;
+    }
+}
 .tab-cont-head.active {
     background-color: #F7983B;
 }
@@ -146,6 +157,7 @@ section.nav-links section p {
 section.nav-links .slide-box {
     min-height: 50%;
     max-height: 100%;
+    background: rgb(211 211 211 / 0%);
 }
 .sec-wrap {
     margin: 2.3rem 0 0 0;  /* 8rem 0 0 0; */
@@ -175,6 +187,7 @@ section.nav-links .tab-nav ul li a {
 */
 /* end TESTING */
 </style>
+
 
 <section class="nav-links">
 
@@ -571,7 +584,7 @@ section.nav-links .tab-nav ul li a {
                         <!-- 8.2 -->
                         <p><b>Base coat and drop coat</b> We spray 3-4 coats of base coat - and for metallics do a final “drop coat” that ensures there is no striping or panel to panel issues with the metallics in the paint. We feature high quality paint products from Spies Hecker / Axalta for all of our  work.</p>
                         <!-- 8.3 -->
-                        <p><b>Clearcoat</b>The first phase of clear coat consists of 3-4 coats of clear coat applied with proper flash times between coats. This provides the shine over the base coat and protects it from the sun / elements.</p>
+                        <p><b>Clearcoat</b> The first phase of clear coat consists of 3-4 coats of clear coat applied with proper flash times between coats. This provides the shine over the base coat and protects it from the sun / elements.</p>
 <!-- 8.4 -->
                         <p><b>Wet sand</b> After the initial 3-4 coats of clear are laid down - we wet sand all of the outside surfaces with 800-1000 grit sandpaper by hand with blocks to remove the “orange peel” texture, and any imperfections. This mechanical sanding provides us with a mechanical adhesion for the final flow coat.</p>
 <!-- 8.5 -->
@@ -599,25 +612,37 @@ section.nav-links .tab-nav ul li a {
             <!-- Re-assembly -->
             <div class="columns">
                 <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <div id="slider5" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
                         <ul class="slider-container">
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/Brass_Tacks_rend.jpg", "Brass Tacks rending" %}                                </div>
+                                    {% image "./src/_images/67_Nova_bumper_install.jpg", "67 Nova bumper install" %}                                </div>
                             </li><!-- END slide 1 -->
                     
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/30_Ford_Model_A.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/F150_blue_dash_Ross01.jpg", "F150 blue dash Ross" %}
                                 </div>
                             </li><!-- END slide 2 -->
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/56_Studebaker_Hawk.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/69_cuda_engine_install.jpg", "69 cuda engine install" %}
                                 </div>
                             </li><!-- END slide 3 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    {% image "./src/_images/84_Camaro_RS_exhaust.jpg", "84 Camaro RS exhaust" %}
+                                </div>
+                            </li><!-- END slide 4 -->
+
+                            <li>
+                                <div class="slide-box">
+                                    {% image "./src/_images/67_GTO_red_int_door.jpg", "67 GTO red int door" %}
+                                </div>
+                            </li><!-- END slide 5 -->
 
                         </ul>
                     
@@ -642,7 +667,7 @@ section.nav-links .tab-nav ul li a {
                         <p>At this stage - the body and paint team hands the car over to the assembly team to put suspension brakes, engine, trans, etc back into the car. Since all the basic components have been fit already - we know there won’t be any surprises here.</p>
                         
                         <h3>Wiring / Plumbing / Exhaust</h3><!-- Step 11  -->
-                        <p>Once the components are all in place we do all of the plumbing, wiring and electrical work. Wiring and plumbing can be as tedious and time consuming as prepping for paint. If it’s a restoration - we’ll use the factory harness or a reproduction and materials and routing similar to how the car was built. If we’re doing a Resto-Mod we will hide what we can and go to great lengths to make the harness neat, tidy and serviceable. The final part is usually exhaust - Whether a factory system or fully custom tig welded system or anything in-between. If we’re doing a stereo, or air conditioning - Wei’ll install it now as well.</p>
+                        <p>Once the components are all in place we do all of the plumbing, wiring and electrical work. Wiring and plumbing can be as tedious and time consuming as prepping for paint. If it’s a restoration - we’ll use the factory harness or a reproduction and materials and routing similar to how the car was built. If we’re doing a Resto-Mod we will hide what we can and go to great lengths to make the harness neat, tidy and serviceable. The final part is usually exhaust - Whether a factory system or fully custom tig welded system or anything in-between. If we’re doing a stereo, or air conditioning - We’ll install it now as well.</p>
                         
                         <h3>Interior finish</h3><!-- Step 12  -->
                         <p>Once all the paint, mechanicals and electrical is complete - it’s off to interior for things like seat upholstery, headliner, carpet, door panels and the like. We will either send this out if it’s a full custom job to our preferred interior trim shop - or do some or all of it in house. Full custom jobs may take an interim step before paint to have panels fabricated then finished off and installed when the mechanicals and paint are complete.</p>
@@ -665,24 +690,24 @@ section.nav-links .tab-nav ul li a {
             
             <div class="columns">
                 <div class="column">
-                    <div id="slider2" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
+                    <div id="slider6" class="swiffy-slider slider-item-first-visible slider-indicators-round slider-nav-visible slider-indicators-dark">  
                         <ul class="slider-container">
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/63_Corvette_dk_blue.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/63_Corvette_dk_blue.jpg", "63 Corvette dk blue" %}
                                 </div>
                             </li><!-- END slide 1 -->
                     
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/65_Mercury_Comet05.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/65_Mercury_Comet05.jpg", "65 Mercury Comet" %}
                                 </div>
                             </li><!-- END slide 2 -->
 
                             <li>
                                 <div class="slide-box">
-                                    {% image "./src/_images/67_GTO_red.jpg", "67 Dart Vader" %}
+                                    {% image "./src/_images/67_GTO_red.jpg", "67 GTO red" %}
                                 </div>
                             </li><!-- END slide 3 -->
 

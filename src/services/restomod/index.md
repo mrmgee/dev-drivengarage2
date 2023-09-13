@@ -3,6 +3,9 @@ layout: service-cont.njk
 title: Restomod & Full Builds
 bodyName: restomod
 tags: ['service']
+serviceItems:
+  tag: service
+  order: 5
 eleventyNavigation:
   key: Restomod & Full Builds
   parent: Services
@@ -74,4 +77,4 @@ sectionCont:
     slidelayout: 1
 ---
 
-Transform your classic vehicle into a high-performance powerhouse by opting for an engine swap. Brace yourself for an surge in horsepower that will redefine your driving experience like never before
+From concept drawings to completion - we can put modern touches in any classic car giving you a whole package that looks amazing and is a one of a kind performance machine.

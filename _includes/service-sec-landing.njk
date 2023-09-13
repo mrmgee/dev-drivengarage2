@@ -38,15 +38,21 @@ featuredImagePos: "margin-top: -20%;"
 
     {% set imgPostP = post.data.featuredImage %}
     {% set imgPostAlt = post.data.featuredImageAlt %}
+    {% set imgClass = "thumb" %}
+    {% set imgSizesResp = "(min-width: 1420px) 432px, 
+    (min-width: 1220px) 368px, 
+    (min-width: 1040px) 304px, 
+    (min-width: 780px) calc(33.33vw - 16px), 
+    calc(100vw - 24px)"
+    %}
 
     {% if (post.data.title !== title) %}
       <div class="column is-one-third">
         <div class="feat-item-over">
           <a href="{{ post.url }}"></a>
-        {% if imgPostP|length %}
-            {% image ""+imgPostP, ""+imgPostAlt %}
-        {% endif %}
-          
+        {% if imgPostP | length %}
+            {% image ""+imgPostP, ""+imgPostAlt, ""+imgClass, ""+imgSizesResp %}
+        {% endif %} 
           <div class="item__overlay">
             <div class="card-halftone-overlay"></div>
             <h3 aria-hidden="true">{{ post.data.title }}</h3>

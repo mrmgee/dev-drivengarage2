@@ -17,8 +17,13 @@ title: Photo Wall
   {%set imgSlideP = item.image %}
   {%set fullSlideP = pageSlideP+imgSlideP %}
   {% set imgSlideAlt = item.altText %}
-  {% set imgSlidePos = item.position %}
-  {% set imgSizesResp = "12" %}
+{#  {% set imgSlidePos = 'item.position' %} #}
+   {% set imgSlidePos = "1234" %}  <!-- outputs as class="1234" -->
+  {% set imgSizesResp = "(min-width: 1420px) 318px,
+		(min-width: 1220px) 270px,
+		(min-width: 1040px) 222px,
+		(min-width: 780px) calc(25vw - 18px),
+		calc(100vw - 24px)" %}
 
             <div class="column is-one-quarter">
               <div class="slide-box">

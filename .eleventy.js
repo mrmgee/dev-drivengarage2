@@ -8,9 +8,11 @@ const imageShortcode = async (
   alt,
   classVar,
   sizesResp,
-  widths = [400, 800, 1280],
+  widths = [400, 600, 800, 1280, 1440],
   formats = ['jpeg'],
-  sizes = '(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)'
+  sizes = '(min-width: 440px) 100vw, 1280px'
+  //'(min-width: 768px) 100vw, calc(100vw - 24px),'
+//  '(min-width: 1420px) 660px, (min-width: 1220px) 564px, (min-width: 1040px) 468px, (min-width: 780px) 50vw, calc(100vw - 24px)'
 //  '(min-width: 1420px) 318px, (min-width: 1220px) 270px, (min-width: 1040px) 222px, (min-width: 780px) calc(25vw - 18px), calc(100vw - 24px)'
 //  sizes = '(min-width: 768px) 600px, 100vw'
 //   sizes = '(min-width: 930px) 932px, 100vw'
@@ -38,7 +40,7 @@ const imageShortcode = async (
          imageAttributesTemp = {
             class: classVar,
             alt,
-            sizes,
+            sizes: sizesResp,
             loading: "lazy",
             decoding: "async",
         };
@@ -197,6 +199,19 @@ module.exports = function (eleventyConfig) {
             return b.date - a.date; // sort by date - descending
         });
     });
+
+
+    // Order serviceItems collection
+    eleventyConfig.addCollection("service", collection =>
+    collection
+        .getFilteredByTag("service")
+        .filter(function(item) {
+        return "serviceItems" in item.data;
+        })
+        .sort((a, b) => {
+        return (a.data.serviceItems.order || 0) - (b.data.serviceItems.order || 0);
+        })
+    );
 
     // Order performanceUpgrades collection
     eleventyConfig.addCollection("performanceUpgrades", collection =>

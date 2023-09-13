@@ -1,14 +1,22 @@
 ---
+layout: service-sec-landing.njk
 title: Performance Upgrades
+bodyName: performance-upgrades
 tags: ['service']
+serviceItems:
+  tag: service
+  order: 1
 eleventyNavigation:
   key: Performance Upgrades
   parent: Services
   order: 1
 description: Driven Garage nothern California restomod auto customization and repair shop
+introHead: Upgrade your Ride
+intro: If you are like us, it's hard to stop modifying and looking for areas that can be improved. It's been a long time since your car was produced, and you might be surprised to find out what's available for your vehicle to improve overall performance.
 featuredImage: ./src/_images/67_Camaro01.jpg
 featuredImageAlt: "67 Camaro engine"
 featuredImagePos: "margin-top: -20%;"
+collectionName: performanceUpgrades
 mylistfield:
   - "Engine swaps"
   - "EFI conversions"
@@ -18,68 +26,4 @@ mylistfield:
   - "Transmission swaps"
 ---
 
-  {% include "head.njk" %}
-
-  <body class="is-flex is-flex-direction-column performance-upgrades">
-
-    {% include "nav.njk" %}
-
-    {% include "hero-services.njk" %}
-
-<!-- START all Performance Upgrade services -->
-
-
-<section class="services">
-  <div class="container">
-    <h2>Upgrade your Ride</h2>
-    <h3>If you are like us, it's hard to stop modifying and looking for areas that can be improved. It's been a long time since your car was produced, and you might be surprised to find out what's available for your vehicle to improve overall performance.</h3>
-  </div>
-
-  <div class="container">
-    <div class="columns is-multiline">
-<!-- START loop -->
-
-  {%- for post in collections.performanceUpgrades %}
-
-    {%set imgPostP = post.data.featuredImage %}
-    {% set imgPostAlt = post.data.featuredImageAlt %}
-
-    {% if (post.data.title !== title) %}
-      <div class="column is-one-third">
-        <div class="feat-item-over">
-          <a href="{{ post.url }}"></a>
-        {% if imgPostP|length %}
-            {% image ""+imgPostP, ""+imgPostAlt %}
-        {% endif %}
-          
-          <div class="item__overlay">
-            <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">{{ post.data.title }}</h3>
-            <div class="item__body">
-              {% if post.content | length %}
-              <p>{{ post.content | safe }}</p>
-              {% endif %}
-              <div class="control">
-                <a href="#" target="_self">click for more
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- END column {{ loop.index }} -->
-    {% endif %}
-  {%- endfor %}
-
-<!-- END loop -->
-  </div><!-- END  columns -->
-
-  </div>
-</section>
-
-
-
-    {% include "footer.njk" %}
-  </body>
-
-</html>
+From simple bolt on upgrades to drivetrain swaps and everything in-between - if it makes your car go faster, stop better or perform at it’s peak we’ve got it handled.

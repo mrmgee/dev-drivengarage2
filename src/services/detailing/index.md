@@ -3,6 +3,9 @@ layout: perf-up-det04.njk
 title: Detailing
 bodyName: p-detailing
 tags: ['service']
+serviceItems:
+  tag: service
+  order: 8
 eleventyNavigation:
   key: Detailing
   parent: Services
@@ -80,4 +83,4 @@ sectionCont:
     slidelayout: 1
 ---
 
-Transform your classic vehicle into a high-performance powerhouse by opting for an engine swap. Brace yourself for an surge in horsepower that will redefine your driving experience like never before
+As a high end paint shop - who better to help keep your investment looking great? We offer paint correction and protection using the latest ceramic coatings.

@@ -3,6 +3,9 @@ layout: perf-up-det04.njk
 title: Restyling
 bodyName: p-restyling
 tags: ['service']
+serviceItems:
+  tag: service
+  order: 7
 eleventyNavigation:
   key: Restyling
   parent: Services
@@ -75,4 +78,4 @@ sectionCont:
     slidelayout: 1
 ---
 
-Transform your classic vehicle into a high-performance powerhouse by opting for an engine swap. Brace yourself for an surge in horsepower that will redefine your driving experience like never before
+From custom graphics, lighting upgrades and wheel choices - our design team can help make a big impact with tasteful changes to your car or truck.

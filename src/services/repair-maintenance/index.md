@@ -3,6 +3,9 @@ layout: service-sec-landing.njk
 title: Repair & Maintenance
 bodyName: p-repair-maintenance
 tags: ['service']
+serviceItems:
+  tag: service
+  order: 2
 eleventyNavigation:
   key: Repair & Maintenance
   parent: Services

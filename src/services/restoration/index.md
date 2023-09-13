@@ -3,6 +3,9 @@ layout: perf-up-det04.njk
 title: Frame-off Restoration
 bodyName: p-restoration
 tags: ['service']
+serviceItems:
+  tag: service
+  order: 4
 eleventyNavigation:
   key: Restoration
   parent: Services
@@ -93,4 +96,4 @@ sectionCont:
     slidelayout: 1
 ---
 
-Transform your classic vehicle into a high-performance powerhouse by opting for an engine swap. Brace yourself for an surge in horsepower that will redefine your driving experience like never before
+Want your baby restored right? We sweat every detail to bring your car back to factory fresh no matter what year or make or model it is.

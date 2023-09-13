@@ -1,6 +1,6 @@
 ---
 layout: index_layout.njk
-title: Driven Garage - v3-2-8
+title: Driven Garage - v3-2-9
 description: Driven Garage nothern California restomod auto customization and repair shop
 eleventyNavigation:
   key: Home
@@ -170,29 +170,39 @@ eleventyNavigation:
 
 
 
-
-
-
-
 <section class="services">
   <div class="container">
     <h2>Services</h2>
     <h3>Get your classic back on the road, get it serviced, or make it perform better!</h3>
-  </div>
 
-  <div class="container">
-    <div class="columns">
+    <div class="columns is-multiline">
+<!-- START loop -->
 
+  {%- for post in collections.service %}
 
+    {% set imgPostP = post.data.featuredImage %}
+    {% set imgPostAlt = post.data.featuredImageAlt %}
+    {% set imgSizesResp = "(min-width: 1420px) 432px, 
+    (min-width: 1220px) 368px, 
+    (min-width: 1040px) 304px, 
+    (min-width: 780px) calc(33.33vw - 16px), 
+    calc(100vw - 24px)"
+    %}
+
+    {% if (post.data.title !== title) %}
       <div class="column is-one-third">
         <div class="feat-item-over">
-          <a href="/services/performance-upgrades" aria-labelledby="person1"></a>
-          {% image "./src/_images/67_Camaro01.jpg", "67 Camaro engine" %}
+          <a href="{{ post.url }}"></a>
+        {% if imgPostP | length %}
+            {% image ""+imgPostP, ""+imgPostAlt, ""+imgSlidePos, ""+imgSizesResp %}
+        {% endif %}          
           <div class="item__overlay">
             <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">Performance Upgrades</h3>
+            <h3 aria-hidden="true">{{ post.data.title }}</h3>
             <div class="item__body">
-              <p>From simple bolt on upgrades to drivetrain swaps and everything in-between - if it makes your car go faster, stop better or perform at it’s peak we’ve got it handled.</p>
+              {% if post.content | length %}
+              <p>{{ post.content | safe }}</p>
+              {% endif %}
               <div class="control">
                 <a href="#" target="_self">click for more
                   <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
@@ -201,176 +211,17 @@ eleventyNavigation:
             </div>
           </div>
         </div>
-      </div><!-- END column 1 - row 1 -->
+      </div><!-- END column {{ loop.index }} -->
+    {% endif %}
+  {%- endfor %}
 
-      <div class="column is-one-third">
-        <div class="feat-item-over">
-          <a href="services/repair-maintenance/" aria-labelledby="person1"></a>
-            {% image "./src/_images/65_Mustang_quick_service.jpg", "65 Mustang quick service" %}
-          <div class="item__overlay">
-            <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">Repair & Maintenance</h3>
-            <div class="item__body">
-              <p>Get your baby running again or keep it maintained for peak performance so you can hit up cars & coffee with confidence we can get you back on the road and keep you during rubber.</p>
-              <div class="control">
-                <a href="#" target="_self">see the list
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- END column 2 - row 1 -->
-
-
-      <div class="column is-one-third">
-        <div class="feat-item-over">
-          <a href="services/body-paint-metalwork" aria-labelledby="person1"></a>
-          {% image "./src/_images/blue_paintbooth.jpg", "55 Buick" %}          
-          <div class="item__overlay">
-            <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">Body & Paint</h3>
-            <div class="item__body">
-              <p>We do complete high end paint, metal and bodywork starting with full disassembly through show-quality finish work. We specialize in proper metal repair and custom finishes.</p>
-              <div class="control">
-                <a href="#" target="_self">see our process
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div><!-- END column 3 - row 1 -->
-
-    </div>
-
-
-<!-- SECOND ROW -->
-    <div class="columns">
-
-      <div class="column is-one-third">
-        <div class="feat-item-over">
-          <a href="services/restoration" aria-labelledby="person1"></a>
-          {% image "./src/_images/69_cuda_formula_s_340_3-4_f_r.jpg", "’69 Barracuda Formula S 340 three quarters front left" %} 
-          <div class="item__overlay">
-            <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">Restoration</h3>
-            <div class="item__body">
-              <p>Want your baby restored right? We sweat every detail to bring your car back to factory fresh no matter what year or make or model it is.</p>
-              <div class="control">
-                <a href="#" target="_self">see our process
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
-              </div>              
-            </div>
-          </div>
-        </div>
-      </div><!-- END column 1 - row 2 -->
-
-
-
-      <div class="column is-one-third">
-        <div class="feat-item-over">
-          <a href="services/restomod"></a>
-          {% image "./src/_images/67_dart_vader_graffiti.jpg", "68 Dart pinstripe" %}
-          <div class="item__overlay">
-            <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">Restomod & Full Builds</h3>
-            <div class="item__body">
-              <p>From concept drawings to completion - we can put modern touches in any classic car giving you a whole package that looks amazing and is a one of a kind performance machine.</p>
-              <div class="control">
-                <a href="#" target="_self">check it out
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
-              </div>              
-            </div>
-          </div>
-        </div>
-      </div><!-- END column 2 - row 2 -->
-
-
-
-      <div class="column is-one-third">
-        <div class="feat-item-over">
-          <a href="services/car-audio-alarms/"></a>
-          {% image "./src/_images/F100_green_radio.jpg", "70 Mustang03 radio" %}
-          <div class="item__overlay">
-            <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">Car Audio and Security</h3>
-            <div class="item__body">
-              <p>Music and classic cars go hand in hand - we focus on clean sound and even cleaner installation using high end components as well as 2-way GPS enabled security.</p>
-              <div class="control">
-                <a href="#" target="_self">ready to rock?
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
-              </div>              
-            </div>
-          </div>
-        </div>
-      </div><!-- END column 3 - row 2 -->
-
-
-
-
-
-    </div><!-- END Row 2 -->
-
-
-
-
-
-<!-- THIRD ROW -->
-    <div class="columns">
-
-
-      <div class="column is-one-third">
-        <div class="feat-item-over">
-          <a href="services/restyling/"></a>
-          {% image "./src/_images/Dodge_Scat_Pack_Charger_tire_letters.jpg", "Dodge Scat Pack Charger tire letters" %}
-          <div class="item__overlay">
-            <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">Restyling</h3>
-            <div class="item__body">
-              <p>From custom graphics, lighting upgrades and wheel choices - our design team can help make a big impact with tasteful changes to your car or truck.</p>
-              <div class="control">
-                <a href="#" target="_self">see what we do
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
-              </div>              
-            </div>
-          </div>
-        </div>
-      </div><!-- END column 1 - row 3 -->
-
-
-      <div class="column is-one-third">
-        <div class="feat-item-over">
-          <a href="services/detailing/"></a>
-          {% image "./src/_images/68_Dart_pinstripe.jpg", "68 Dart pinstripe" %}
-          <div class="item__overlay">
-            <div class="card-halftone-overlay"></div>
-            <h3 aria-hidden="true">Detailing</h3>
-            <div class="item__body">
-              <p>As a high end paint shop - who better to help keep your investment looking great? We offer paint correction and protection using the latest ceramic coatings.</p>
-              <div class="control">
-                <a href="#" target="_self">click for more
-                  <img src="{{ rootPath }}_images/i-link-arr.png" alt="Link to more">
-                </a>
-              </div>              
-            </div>
-          </div>
-        </div>
-      </div><!-- END column 2 - row 3 -->
-
-
-    </div><!-- END Row 3 -->
-
+<!-- END loop -->
+  </div><!-- END  columns -->
 
   </div>
 </section>
 
-
-
+</section>
 
 
 
