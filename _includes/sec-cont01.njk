@@ -4,9 +4,17 @@
       <div class="container">
 
 {% for cont in sectionCont %}
-  {% set imgP = cont.image %}  {# 67camaro_forsyth-0608.jpg = image file name #}
-  {% set imgAlt = cont.altText %}  {# 67 Camaro Forsyth before rear = sets imgAlt var with alt text string #}
-  {% set imgBkgP = cont.bkgImage %}
+
+    {% set imgPostP = cont.image %}
+    {% set imgPostAlt = cont.altText %}
+    {% set imgSizesResp = "(min-width: 1420px) 660px, 
+    (min-width: 1220px) 564px, 
+    (min-width: 1040px) 468px, 
+    (min-width: 780px) 50vw, 
+    calc(100vw - 24px)"
+    %}
+    {% set imgBkgP = cont.bkgImage %}
+    {% set imgSlidePos = "cont-img" %}
 
     {% if cont.pattern == "sec-2col-pos1" %}
         {# check if even or odd #}
@@ -17,8 +25,8 @@
         <div class="columns"><!-- section:{{ loop.index }} -->
             <div class="column">
                 <figure class="image">
-                    {% if imgP|length %}
-                        {% image ""+imgP, ""+imgAlt %}
+                    {% if imgPostP | length %}
+                        {% image ""+imgPostP, ""+imgPostAlt, ""+imgSlidePos, ""+imgSizesResp %}
                     {% endif %}
                 </figure>
             </div>
@@ -60,9 +68,9 @@
 
             <div class="column">
                 <figure class="image">
-                    <!-- loop:{{ loop.index }} imgP: {{ imgP }} -->
-                    {% if imgP|length %}
-                        {% image ""+imgP, ""+imgAlt %}
+                    <!-- loop:{{ loop.index }} imgPostP: {{ imgPostP }} -->
+                    {% if imgPostP | length %}
+                        {% image ""+imgPostP, ""+imgPostAlt, ""+imgSlidePos, ""+imgSizesResp %}
                     {% endif %}
                     </figure>
             </div>

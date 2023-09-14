@@ -24,8 +24,8 @@ sectionCont:
   - pattern: sec-2col-pos1
     title: We go the extra mile
     subtitle: Tuned to perform
-    image: ./src/_images/engine_swap.jpg
-    altText: Engine swap
+    image: ./src/_images/69_cuda_tech_engine_work.jpg
+    altText: 69 cuda tech engine work
     position: 
     text: You may pay a little more - but while we’re changing your oil we will lube the chassis, check the brakes and other fluids as well as safety items. We’re not trying to sell you anything you don’t need (trust us, we have a backlog of work) but want to keep your baby at its peak.
     CTAlabel: Let's Go >
@@ -48,8 +48,8 @@ sectionCont:
   - pattern: sec-2col-pos2
     title: Ignition Tune Ups
     subtitle: Tuned to perform
-    image: ./src/_images/F150_blue_carb_wiring_Ross03.jpg
-    altText: F150 blue under hood inspection tool Ross
+    image: ./src/_images/84_Camaro_Z28_engine_electrical.jpg
+    altText: 84 Camaro Z28 engine electrical
     position: 0px 0px
     text: Points, electronic ignition, or super performance ignition systems are our everyday around here. We’re more than comfortable with this stuff and can take care of keeping your classic running smooth and efficient.
     slidelayout: 1

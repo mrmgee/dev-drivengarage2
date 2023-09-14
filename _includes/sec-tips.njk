@@ -4,9 +4,19 @@
 {% for cont in sectionCont %}
     {% if cont.pattern == "sec-tips" %}
     
-      {% set imgP = cont.image %}
-      {% set imgAlt = cont.altText %}
+
       {% set imgBkgP = cont.bkgImage %}
+      {% set imgBkgPSizesResp = "100vw" %}
+
+
+      {% set imgPostP = cont.image %}
+      {% set imgPostAlt = cont.altText %}
+      {% set imgSizesResp = "(min-width: 1420px) 660px, 
+      (min-width: 1220px) 564px, 
+      (min-width: 1040px) 468px, 
+      (min-width: 780px) 50vw, 
+      calc(100vw - 24px)"
+      %}
 
 
 <!-- START pro-tips -->
@@ -15,7 +25,7 @@
     <!-- <div class="halftone-overlay"></div> -->
     <div class="sec-bkg-img">
       {% if imgBkgP|length %}
-          {% image ""+imgBkgP, ""+imgAlt %}
+          {% image ""+imgBkgP, ""+imgPostAlt, "bkg-img", ""+imgBkgPSizesResp %}
       {% endif %}
     </div>
     <div class="bkg-stripe primary">
@@ -29,8 +39,8 @@
       <div class="container">
         <div class="columns pad-top">
           <div class="column is-one-third">
-            {% if imgP|length %}
-                {% image ""+imgP, ""+imgAlt %}
+            {% if imgPostP | length %}
+                {% image ""+imgPostP, ""+imgPostAlt, "tips-img", ""+imgSizesResp %}
             {% endif %}
           </div>
           <div class="column">

@@ -25,16 +25,16 @@ sectionCont:
   - pattern: sec-2col-pos1
     title: More Efficient Power Curve
     subtitle: 
-    image: ./src/_images/001-corvette-holley-efi-sniper-quadrajet-throttle-body.jpg
-    altText: Holley EFI Sniper quadrajet throttle body
+    image: ./src/_images/Holley_Street_Fire_cdi.jpg
+    altText: Holley Street Fire cdi
     position: 
     text: EFI isn’t a magic bullet that solves poor running conditions - but it can make your car easier to start both when cold and hot and increase overall reliability in most driving conditions. It won’t double your fuel mileage but will provide a more efficient burn. It won’t add horsepower - but will make your power curve better.
     CTAlabel: 
     slidelayout: 1
   - pattern: sec-tips
     title: Timing Control with EFI
-    image: ./src/_images/CCS_Inition_distributor.jpg
-    altText: CCS Inition distributor
+    image: ./src/_images/Holley_MSD_Atomic_EFI.jpg
+    altText: Holley MSD Atomic EFI
     bkgImage: ./src/_images/70_Mustang01_green_lights.jpg
     text: With a few components we can add timing control to most EFI systems. This enables the EFI computer to control the timing curve on your engine as well as the fuel map. This allows us to dial in your advance curve to make your car more responsive and put the fuel and timing map in concert to help make the most power at the right time.
     slidelayout:

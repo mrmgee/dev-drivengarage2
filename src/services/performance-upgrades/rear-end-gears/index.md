@@ -24,8 +24,8 @@ sectionCont:
   - pattern: sec-2col-pos1
     title: Screaming 4000 RPMs down the highway
     subtitle: 
-    image: ./src/_images/68_orange_steering_shifter01.jpg
-    altText: 68 Scout orange steering wheel and shifter
+    image: ./src/_images/Richmond_Gear_Yukon_Gear-Axle.jpg
+    altText: Richmond Gear Yukon Gear & Axle
     position: 0px 0px
     text: Let us swap your ring and pinion for the right combo to get those RPMs down at cruise. We can install a new gearset that keeps some of the performance of a tall gear - but brings you down to a cruise level.
     slidelayout: 1
@@ -39,8 +39,8 @@ sectionCont:
   - pattern: sec-2col-pos2
     title: Need to fit some big meats in the back?
     subtitle: Tuned to perform
-    image: ./src/_images/69_Custom_S_engine_cu.jpg
-    altText: 69 Custom S engine detail
+    image: ./src/_images/69_cuda_axle_exhaust.jpg
+    altText: 69 cuda axle exhaust
     position: 0px 0px
     text: We can cut and narrow your axles to allow for wider tires. We have the right tools and equipment to cut and line up the new flanges, and on staff certified welders to stitch the new ends on.
     CTAlabel: Let’s burn rubber - I’m ready!
