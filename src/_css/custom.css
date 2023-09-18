@@ -1156,6 +1156,7 @@ section.pro-tips h4 {
   color: #f79837;
 }
 
+
     
 .feat-body .cta-bar h3 {
     margin: 1rem 0 0 4.4rem;
@@ -1236,9 +1237,11 @@ figure.history-quote figcaption {
 
 
 /* COST LOCKUP */
-section.services-detail-cost-box-alt {
-  padding: 2rem 0;
-  /* background-color: #bdbdbd; */
+@media screen and (min-width: 769px) {
+  section.services-detail-cost-box-alt {
+    padding: 2rem 0;
+    /* background-color: #bdbdbd; */
+  }
 }
 .column.detail-cost-box-cont {
   position: relative;
@@ -1821,7 +1824,8 @@ section.feat-story .halftone-overlay {
 /*
 * PROJECTS SECTION
 */
-section.projects-head .control {
+section.projects-head .control, 
+section.testimonial .control {
   top: 1.2rem;
 }
 
@@ -2034,6 +2038,16 @@ section.carousel .halftone-overlay {
 .sec-bkg-img img {
   width: 100%;
   margin-top: -50%;
+}
+
+/* HOME testimonial section  */
+section.testimonial .halftone-overlay, 
+section.testimonial .sec-bkg-img, 
+section.testimonial .sec-bkg-img::before {
+  max-height: 20vh;
+}
+section.testimonial .sec-bkg-img::before {
+  margin-top: 7rem;
 }
 
 /* sec-bkg-img */

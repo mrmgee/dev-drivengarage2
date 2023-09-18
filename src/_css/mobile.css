@@ -93,6 +93,51 @@
         top: 50px;
     }
 
+/* PROCESS How We Work section */
+    .process-item {
+        margin: 0 0 0 0.2rem;
+    }
+    .process-item h5 span {
+        margin: 0 0 0 -0.8rem;
+    }
+    .process-item p {
+        padding: 0.8rem 0.4rem 0.4rem 0.4rem;
+    }
+
+/* FEATURED PROJECTS projects-head section */    
+    section.projects-head h2 {
+        font-size: 2.8rem;
+    }
+    section.projects-head .control, 
+    section.testimonial .control {
+        position: relative;
+        top: 0;
+    }
+
+/* HOME testimonial section  */
+    section.testimonial {
+        padding-right: 0;
+        padding-left: 0;
+    }
+    section.testimonial .container .control {
+        margin: 0;
+    }
+
+    section.testimonial .halftone-overlay, 
+    section.testimonial .sec-bkg-img {
+        display: none;
+    }
+    section.testimonial .header-full {
+        padding: 0.5rem 0 1rem 0;
+    }
+    section.testimonial .header-full .container h3 {
+        font-size: 2rem;
+    }
+    section.testimonial .header-full .container h3, 
+    section.testimonial .header-full .container p {
+        margin: 0 0.4rem;
+    }
+
 
 
 /* SHOP SLIDER section */
@@ -107,7 +152,7 @@
         font-size: 1rem;
         font-weight: 400;
     }
-    
+
 
 
 /* SERVICES landing page */
@@ -164,12 +209,14 @@
 
 
     section.hero-services .halftone-overlay {
-        max-height: 11.5rem;
+        max-height: 11rem;
     }
     section.hero-services .sec-bkg-img {
         max-height: 8rem;
     }
     section.hero-services .sec-bkg-img::before {
+        position: relative;
+        min-height: 8rem;
         max-height: 11.5rem;
     }
     section.hero-services .sec-bkg-img img {
@@ -193,6 +240,65 @@
     }
     section.project-slider .carousel-cont p {
         font-size: 0.94rem;
+    }
+
+
+
+/* SERVICE nav-links tabs */
+
+/* TESTING
+    .tab-cont-head, .tab-cont-head.active {
+        background-color: rgb(228 228 228 / 0%);
+    }
+
+    .tab-cont-head {
+        border: 1px solid #3366ff;
+    }
+    .sec-wrap {
+        margin: 4.8rem 0 0 0;
+    }
+*/
+
+
+
+/* SERVICE detail pro-tip */
+
+    section.pro-tips {
+      background-color: #363636;
+    }
+    section.pro-tips .sec-bkg-img {
+      display: none;
+    }
+    section.pro-tips .is-overlay {
+      position: relative;
+    }
+    .know-tips {
+      flex-direction: column;
+      padding: 0.5rem 0 0 0;
+    }
+    .bkg-stripe.primary .know-tips h3 {
+      font-size: 1.8rem;
+    }
+    section.pro-tips .know-tips h3 {
+      padding: 0 0 0 0.4rem;
+    }
+    section.pro-tips span.hilite i:before, section.pro-tips span.hilite i:after {
+      display: none;
+    }
+    section.pro-tips .column p:last-of-type {
+      padding: 0 0 1rem 0;
+    }
+
+    
+/* SERVICE detail cost */
+    .cost-box-inner {
+        margin: 0 auto 1rem auto;
+    }
+/*
+* CAROUSEL CARS
+*/
+    section.carousel-cars > .container > h3 {
+        font-size: 1.8rem;
     }
 
 /*
