@@ -1,0 +1,499 @@
+:root {
+    --grid-max-width: 84rem; /* = 1344px */    /*  77.50rem = 1240px  */  /* Bulma 1344px */
+    --grid-gutter: var(--space-s-l, clamp(1.13rem, 0.65rem + 2.39vw, 2.50rem));
+    --grid-columns: 12;
+
+    --space-3xs: clamp(0.31rem, 0.31rem + 0.00vw, 0.31rem);
+    --space-2xs: clamp(0.56rem, 0.54rem + 0.11vw, 0.63rem);
+    --space-xs: clamp(0.88rem, 0.85rem + 0.11vw, 0.94rem);
+    --space-s: clamp(1.13rem, 1.08rem + 0.22vw, 1.25rem);
+    --space-m: clamp(1.69rem, 1.62rem + 0.33vw, 1.88rem);
+    --space-l: clamp(2.25rem, 2.16rem + 0.43vw, 2.50rem);
+    --space-xl: clamp(3.38rem, 3.24rem + 0.65vw, 3.75rem);
+    --space-2xl: clamp(4.50rem, 4.33rem + 0.87vw, 5.00rem);
+    --space-3xl: clamp(6.75rem, 6.49rem + 1.30vw, 7.50rem);
+  
+    /* One-up pairs */
+    --space-3xs-2xs: clamp(0.31rem, 0.20rem + 0.54vw, 0.63rem);
+    --space-2xs-xs: clamp(0.56rem, 0.43rem + 0.65vw, 0.94rem);
+    --space-xs-s: clamp(0.88rem, 0.74rem + 0.65vw, 1.25rem);
+    --space-s-m: clamp(1.13rem, 0.86rem + 1.30vw, 1.88rem);
+    --space-m-l: clamp(1.69rem, 1.40rem + 1.41vw, 2.50rem);
+    --space-l-xl: clamp(2.25rem, 1.73rem + 2.61vw, 3.75rem);
+    --space-xl-2xl: clamp(3.38rem, 2.81rem + 2.83vw, 5.00rem);
+    --space-2xl-3xl: clamp(4.50rem, 3.46rem + 5.22vw, 7.50rem);
+  
+    /* Custom pairs */
+    --space-s-l: clamp(1.13rem, 0.65rem + 2.39vw, 2.50rem);
+
+    /* ORIG BASE 18px
+    --step--2: clamp(0.78rem, 0.77rem + 0.03vw, 0.80rem);
+    --step--1: clamp(0.94rem, 0.92rem + 0.11vw, 1.00rem);
+    --step-0: clamp(1.13rem, 1.08rem + 0.22vw, 1.25rem);
+    --step-1: clamp(1.35rem, 1.28rem + 0.37vw, 1.56rem);
+    --step-2: clamp(1.62rem, 1.50rem + 0.58vw, 1.95rem);
+    --step-3: clamp(1.94rem, 1.77rem + 0.87vw, 2.44rem);
+    --step-4: clamp(2.33rem, 2.08rem + 1.25vw, 3.05rem);
+    --step-5: clamp(2.80rem, 2.45rem + 1.77vw, 3.82rem);
+    */
+
+    /* BASE 16px  */
+    --step--2: clamp(0.69rem, 0.66rem + 0.18vw, 0.80rem);
+    --step--1: clamp(0.83rem, 0.78rem + 0.29vw, 1.00rem);
+    --step-0: clamp(1.00rem, 0.91rem + 0.43vw, 1.25rem);
+    --step-1: clamp(1.20rem, 1.07rem + 0.63vw, 1.56rem);
+    --step-2: clamp(1.44rem, 1.26rem + 0.89vw, 1.95rem);
+    --step-3: clamp(1.73rem, 1.48rem + 1.24vw, 2.44rem);
+    --step-4: clamp(2.07rem, 1.73rem + 1.70vw, 3.05rem);
+    --step-5: clamp(2.49rem, 2.03rem + 2.31vw, 3.82rem);
+}
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+	font-family: Ubuntu, Helvetica, sans-serif;
+    color: #4a4a4a;
+    font-weight: 300;
+    line-height: 1.5;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+a {
+    color: currentColor;
+    cursor: pointer;
+    text-decoration: none;
+}
+img,
+picture {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 400;
+}
+
+.grid {
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); */
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: var(--space-s);
+    padding-block-end: var(--space-m);
+
+    /* max-inline-size: 1000px; */
+    max-inline-size: calc(100vw - 10%);
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+}
+.container {
+    max-width: var(--grid-max-width);
+    margin-inline: auto;
+}
+
+.box {
+    display: grid;
+    grid-template-columns:
+        repeat(
+        auto-fit,
+        minmax(
+            clamp(
+            33.3333% - var(--gap),
+            (40rem - 100%) * 999,
+            100%),
+            1fr
+        )
+        );
+    align-self: start;
+    /* max-height: 19rem; */
+}
+  
+.box > * {
+    grid-area: box;
+}
+
+/* Box styles */
+.box {
+    position: relative;
+    overflow: hidden;
+}
+.box .card-overlay {
+    /* TESTING */
+	transform: translate3d(0,90%,0);
+	transition: transform .3s;
+    
+	background: rgba(0,0,0,.45);
+    /* border: 1px solid #33ff66; */
+}
+.card-halftone-overlay {
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url(/_images/ai_halftone01.svg) repeat-x;
+	/* opacity: 0; */
+	z-index: -1;
+  }
+
+.box > img {
+  position: relative;
+  inline-size: 100%;
+  height: auto;
+  z-index: -2;
+}
+.box a img {
+	/* max-height: 15em; */
+    aspect-ratio: 3/2;
+	object-fit: cover;
+	transition: transform .3s;
+}
+.card-overlay h3, 
+figcaption h3 {
+	margin: 0;
+	padding: 0.4rem;
+	color: #f79837;
+	background-color: #363636!important;
+/*	font-size: 1.13rem;  */
+    font-size: var(--step-0);
+	font-weight: 600;
+	text-transform: uppercase;
+/* NECESSARY?    
+	transform: translate3d(0, -100%, 0);
+	transition: transform 300ms;
+*/    
+  }
+  figcaption h3 {
+    align-self: start;    
+  }
+.card-overlay p, 
+figcaption p {
+    margin: 0;
+	padding: 0.4rem 1rem 0 1rem;
+/*    font-size: 1.3rem;  */
+    font-size: var(--step-0);
+	font-weight: 300;
+    line-height: 1.5;
+    color: #ffffff;
+}
+@media screen and (max-width: 768px) {
+    figcaption p {
+        font-weight: 500;
+    }
+}
+
+.card-overlay .control,
+figcaption .control {
+	/* width: 8rem; */
+	height: 1.2rem;
+	right: 0.4rem;
+	bottom: 0.4rem;
+	/* background-color: rgba(0, 0, 0, 0.33); */
+	z-index: 8;
+}
+.card-overlay .control a, 
+figcaption .control {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 1rem;
+    line-height: 1.2rem;
+    color: #dbdbdb;
+}
+
+.card-overlay .control a img, 
+figcaption .control img {
+    margin: 0 0 0 0.4rem;
+    max-width: 1.2rem;
+}
+/* Transitions */
+.box:hover .card-overlay {
+	transform: translate3d(0,0,0);
+}
+.box:hover .card-halftone-overlay {
+    opacity: 1;
+}
+.box:hover a img {
+    transform: scale(1.2);
+}
+
+
+
+
+
+
+/***
+ Modern CSS Solutions Demo Styles
+ */
+ .gallery {
+    list-style: none;
+    max-width: var(--grid-max-width);
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(20ch, 1fr)); */
+    grid-template-columns: repeat(auto-fit, minmax(min(432px, 100%), 1fr));
+    grid-gap: var(--space-s);
+  }
+  
+  .gallery img {
+    display: block;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: var(--gallery-height);
+    transform: scale(1) translate(0, 0);
+    transition: transform 200ms ease-in;
+  }
+  
+  .gallery figure {
+    --gallery-height: 19rem;
+    --gallery-aspect-ratio: 4/3;
+    /* reset figure default margin */
+    margin: 0;
+    height: var(--gallery-height);
+    background-color: #010709;
+    display: grid;
+    grid-template-areas: "card";
+    place-items: end;
+    overflow: hidden;
+  }
+  
+  @supports (aspect-ratio: 1) {
+    .gallery figure, 
+    .gallery img {
+      aspect-ratio: var(--gallery-aspect-ratio);
+      /* Remove height to prevent distorting aspect-ratio */
+      height: auto;
+    }
+  }
+  .gallery figure > * {
+    grid-area: card;
+  }
+  
+  .gallery figcaption {
+    display: grid;
+      height: 100%;
+      background: rgba(0,0,0,.45);
+    transition: transform 200ms ease-in;
+    /* Visual styles for the caption */
+  
+    /* background-color: rgba(255, 255, 255, 0.87); */
+    /* provide stacking context */
+    z-index: 1;
+  }
+  
+  .gallery figure:hover figcaption,
+  .gallery figure:focus figcaption {
+    transform: translateY(0);
+  }
+  
+  .gallery figure:hover img,
+  .gallery figure:focus img {
+    transform: scale(1.3) translate(-8%, -3%);
+  }
+  
+  .gallery figure:focus {
+    outline: 2px solid white;
+    outline-offset: 2px;
+  }
+  
+  @media (any-hover: hover) and (any-pointer: fine) {
+    .gallery figcaption {
+      transform: translateY(90%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .gallery * {
+      transition-duration: 0ms !important;
+    }
+  
+    .gallery img {
+      transform: none !important;
+    }
+  
+    .gallery figcaption {
+      transition-delay: 0ms;
+    }
+  }
+
+
+
+
+
+/* HERO */
+.hero {
+	display: grid;
+	grid-template: "container";
+	place-items: center;
+	place-content: center;
+	overflow: hidden;
+	max-height: clamp(450px, 50vh, 600px);
+    margin-bottom: var(--space-xl);
+}
+.hero > * {
+	grid-area: container;
+	/* max-width: 1000px; */
+}
+
+.hero figure img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+.hero h2 {
+	position: relative;
+	z-index: 1;
+	font-size: clamp(1rem, 5vw, 3rem);
+	padding: 0.5rem;
+	text-align: center;
+}
+
+
+/* SERVICES content */
+
+section.half-split {
+    max-width: var(--grid-max-width);
+    margin: 0 auto;
+}
+
+section.half-split article {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(auto-fill,minmax(clamp(48%, (400px - 100vw)*1000, 100%),1fr));
+    grid-gap: var(--space-s);
+}
+section.half-split article .column {
+    padding: 1rem;
+}
+
+section.half-split article figure {
+    margin: 0;
+    padding: 0.75rem;
+
+}
+
+@supports (aspect-ratio: 1) {
+    xxsection.half-split article figure img {
+        aspect-ratio: var(--gallery-aspect-ratio);
+        /* Remove height to prevent distorting aspect-ratio */
+        height: auto;
+    }
+}
+
+section.half-split article h3 {
+    width: fit-content;
+    font-size: var(--step-2);
+    font-weight: 500;
+    border-bottom: 2px solid #f79837;
+} 
+section.half-split article p {
+    font-size: var(--step-0);
+    line-height: 2rem;
+}    
+
+
+/* PRO TIPS */
+section.pro-tips {
+    background-color: #363636;
+}
+section.pro-tips .column {
+    width: 100%;
+    margin: 0;
+    display: grid;
+}
+section.pro-tips .know-tips {
+    max-width: var(--grid-max-width);
+    margin: 0 auto 3rem auto;
+}
+
+.know-tips {
+    display: flex;
+    justify-content: space-between;
+}
+.know-tips h3 {
+    font-size: var(--step-2);
+    font-weight: 500;
+    color: #fff;
+}
+.know-tips span.hilite {
+    margin: 0.6rem 0;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
+}
+span.hilite {
+    display: inline-block;
+    position: relative;
+    padding: 0 0.4rem 0 0.2rem;
+    background: #f79837;
+    transform: skew(-8deg);
+    z-index: 4;
+}
+span.hilite i:before {
+    left: -4%;
+    transform: rotate(4deg) translatey(-0.5em);
+}
+span.hilite i:after {
+    left: 0;
+    transform: rotate(4deg) translatey(1em);
+}
+span.hilite i:after, span.hilite i:before {
+    display: inline-block;
+    position: absolute;
+    background: #f79837;
+    content: "";
+    opacity: .5;
+    height: 70%;
+    width: 100%;
+}
+span.hilite i:after, span.hilite i:before {
+    z-index: -1;
+}
+
+
+
+section.pro-tips figure > * {
+    grid-area: pro-tips;
+}
+
+section.pro-tips > .column > figure {
+    --tips-height: 26rem;
+    margin: 0;
+    height: var(--tips-height);
+    display: grid;
+
+    place-items: end;
+    overflow: hidden;
+}
+section.pro-tips figure > img {
+    display: block;
+    width: 100%;
+    height: var(--tips-height);
+    object-fit: cover;
+}
+section.pro-tips figcaption {
+    display: grid;
+    
+    height: 100%;
+    z-index: 1;
+}
+
+section.pro-tips article {
+    margin: 0 calc((100vw - (var(--grid-max-width))) / 2);
+    max-width: var(--grid-max-width);
+    padding: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-columns: repeat(auto-fill,minmax(clamp(48%, (400px - 100vw)*1000, 100%),1fr));
+    grid-gap: var(--space-s);
+}

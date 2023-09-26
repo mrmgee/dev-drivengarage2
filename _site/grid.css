@@ -1,0 +1,435 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+body {
+	min-height: 100vh;
+	font-family: Ubuntu, Helvetica, sans-serif;
+  }
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+
+/* HERO */
+.hero {
+	display: grid;
+	grid-template: "container";
+	place-items: center;
+	place-content: center;
+	overflow: hidden;
+	max-height: clamp(450px, 50vh, 600px);
+}
+.hero > * {
+	grid-area: container;
+	/* max-width: 1000px; */
+}
+
+.hero figure img {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16 / 9;
+	object-fit: cover;
+}
+.hero h2 {
+	position: relative;
+	z-index: 1;
+	font-size: clamp(1rem, 5vw, 3rem);
+	padding: 0.5rem;
+	text-align: center;
+}
+
+
+
+
+/* Home 1 SERVICES */
+:root {
+	--space: 0.5rem;
+	--space-sm: calc(var(--space) / 2);
+	--space-lg: calc(var(--space) * 4);
+  }
+
+
+section.overlay {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
+	grid-gap: calc(var(--space) * 2);
+	padding-block-end: var(--space-lg);
+
+	/* max-inline-size: 1000px; */
+	max-inline-size: calc(100vw - 10%);
+	margin-inline-start: auto;
+	margin-inline-end: auto;
+  }
+
+/* Grid properties */
+.box {
+  display: grid;
+/*  
+  grid-template:
+    [box-start] "tagline actions" [box-end] /
+    [box-start] 1fr auto [box-end];
+*/
+
+
+	grid-template-columns:
+    repeat(
+      auto-fit,
+      minmax(
+        clamp(
+          33.3333% - var(--gap),
+          (40rem - 100%) * 999,
+          100%),
+        1fr
+      )
+    );
+
+}
+
+.box > *,
+.box::before {
+  grid-area: box;
+}
+
+.tag {
+  place-self: start;
+}
+
+.title {
+  place-self: center;
+}
+
+.tagline {
+  grid-area: tagline;
+  place-self: end start;
+}
+
+.actions {
+  grid-area: actions;
+  place-self: end;
+}
+
+/* Box styles */
+.box {
+  --color: white;
+  --bg-color: crimson;
+
+  direction: var(--direction, ltr);
+  position: relative;
+  overflow: hidden;
+  /* padding: var(--space-sm); */
+  color: var(--color, white);
+  /* border: 4px solid var(--bg-color, crimson); */
+}
+
+.XXbox::before {
+  content: "";
+  position: relative;
+  background: black;
+  opacity: 0.4;
+  z-index: -1;
+  transition: opacity 200ms ease-out;
+}
+
+
+.card-halftone-overlay {
+	position:absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: url(/_images/ai_halftone01.svg) repeat-x;
+	/* opacity: 0; */
+	z-index: -1;
+  }
+
+.box > img {
+  position: relative;
+  inline-size: 100%;
+  height: auto;
+  z-index: -2;
+}
+.box a img {
+	max-height: 15em;
+	object-fit: cover;
+	transition: transform .3s;
+}
+
+.tag {
+  padding: var(--space);
+  color: var(--color);
+  font-size: 0.75rem;
+  letter-spacing: 0.05rem;
+  background-color: var(--bg-color);
+}
+
+.title {
+  padding: var(--space);
+  font-size: 1.5rem;
+  font-family: var(--font-secondary);
+  line-height: 1.2;
+  /* text-align: center; */
+  user-select: none;
+}
+
+.card-overlay h3 {
+	margin: 0;
+	padding: 0.4rem;
+	color: #f79837;
+	background-color: #363636!important;
+	font-size: 1.13rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	transform: translate3d(0, -100%, 0);
+	transition: transform 300ms;
+  }
+.card-overlay p {
+	padding: 1rem;
+    font-size: 1.3rem;
+	font-weight: 200;
+}
+
+
+.title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.title a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.tagline {
+  padding: var(--space-sm) var(--space);
+  font-family: var(--font-secondary);
+  font-size: 0.9rem;
+  font-style: italic;
+  line-height: 1.2;
+  user-select: none;
+}
+
+.actions {
+  position: relative;
+  display: flex;
+  padding: var(--space-sm);
+  gap: var(--space-sm);
+}
+
+.btn {
+  display: flex;
+  cursor: pointer;
+  padding: var(--space);
+  font-size: inherit;
+  font-family: inherit;
+  color: var(--color);
+  background-color: var(--bg-color);
+  border: none;
+}
+
+.btn:hover {
+  filter: contrast(80%);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+[data-icon] {
+  inline-size: 1em;
+  fill: currentcolor;
+}
+
+
+.card-overlay .control {
+	/* width: 8rem; */
+	height: 1.2rem;
+	right: 0.4rem;
+	bottom: 0.4rem;
+	background-color: rgba(0, 0, 0, 0.33);
+	z-index: 8;
+}
+.card-overlay .control a {
+  display: flex;
+  justify-content: flex-end;
+  line-height: 1.2rem;
+}
+
+.card-overlay .control a img {
+  margin: 0 0 0 0.4rem;
+  max-width: 1.2rem;
+}
+
+/* Transitions */
+.box {
+  transition: border-color 200ms ease;
+}
+
+.box:hover {
+  border-color: transparent;
+}
+
+.box .card-overlay {
+	transform: translate3d(0,100%,0);
+	transition: transform .3s;
+	background: rgba(0,0,0,.45);
+}
+.box .card-overlay > .title {
+	transform: translate3d(0,-100%,0);
+}
+.box .tagline {
+  opacity: 0;
+}
+
+.box .title,
+.box .tagline,
+.box::before {
+  transition: opacity 200ms ease;
+}
+
+.box:hover .title,
+.box:hover .tagline,
+.box:hover::before {
+  opacity: 0;
+}
+
+.box:hover .tagline, 
+.box:hover .card-halftone-overlay {
+  opacity: 1;
+}
+.box:hover .tagline {
+	background: rgba(0,0,0,.45);
+	transform: translate3d(0,0,0);
+	z-index: 2;
+}
+.box:hover .card-overlay {
+	transform: translate3d(0,0,0);
+}
+.box:hover .card-overlay > .title {
+	opacity: 1;
+	transform: translate3d(0,0,0);
+}
+.box:hover .card-overlay h3 {
+	transform: translate3d(0,0,0);
+}
+
+.img {
+  transition: transform 200ms ease-out;
+}
+
+.box:hover .img {
+  transform: scale(1.05);
+}
+
+.box:hover a img {
+    transform: scale(1.2);
+}
+
+/* Other styles */
+
+
+
+
+
+
+
+
+
+
+
+/* Home SERVICES */
+section.services .container.grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-gap: 2rem;
+}
+
+.grid > article {
+	display: grid;
+	grid-template: "card";
+	place-items: center;
+	place-content: center;
+
+	border: 1px solid #3366ff;
+}
+.grid > article > * {
+	grid-area: card;
+}
+.grid > article h3, 
+.grid > article p, 
+.grid > article .control {
+	position: relative;
+}
